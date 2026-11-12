@@ -1,0 +1,46 @@
+name: Release
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+    inputs:
+      bump:
+        description: The bump. "auto" takes it from the commits since the last tag.
+        type: choice
+        options: [auto, patch, minor, major]
+        default: auto
+
+permissions:
+  contents: write # push the tag and create the GitHub release
+  id-token: write # npm trusted publishing (OIDC) and provenance
+
+concurrency:
+  group: release
+  cancel-in-progress: false
+
+jobs:
+  # The trusted publisher of the npm package. It releases only when a commit since the last
+  # tag is fix, perf, feat or breaking (see scripts/release.ts).
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          fetch-depth: 0
+          fetch-tags: true
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version: 24
+          registry-url: https://registry.npmjs.org
+      - run: corepack enable
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm typecheck
+      - run: pnpm test
+      - name: Release
+        env:
+          GH_TOKEN: ${{ github.token }}
+          # A push has no inputs: then the bump comes from the commits.
+          BUMP: ${{ inputs.bump || 'auto' }}
+        run: |
+          if [ "$BUMP" = "auto" ]; then pnpm release; else pnpm release --bump "$BUMP"; fi

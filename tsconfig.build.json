@@ -1,0 +1,7 @@
+{
+  // The published package: only the sources in src. The generated checks and the mapping files
+  // are for the type check of the repo, not for the package.
+  "extends": "./tsconfig.json",
+  "include": ["src"],
+  "exclude": ["src/**/*.check.ts"]
+}

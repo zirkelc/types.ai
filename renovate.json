@@ -1,0 +1,26 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": ["config:recommended"],
+  "semanticCommits": "enabled",
+  "minimumReleaseAge": "1 day",
+  "rangeStrategy": "bump",
+  "packageRules": [
+    {
+      "description": "The SDK packages in one pull request. A change of their types fails the generated checks, and the fix is an edit of the mapping in that pull request.",
+      "matchPackageNames": ["ai", "@ai-sdk/**", "@tanstack/**"],
+      "matchDepTypes": ["devDependencies"],
+      "groupName": "SDK packages"
+    },
+    {
+      "description": "The peer dependency ranges are part of the published package and change only by hand.",
+      "matchDepTypes": ["peerDependencies"],
+      "enabled": false
+    },
+    {
+      "description": "Minor and patch updates of dev dependencies merge when CI passes.",
+      "matchDepTypes": ["devDependencies"],
+      "matchUpdateTypes": ["minor", "patch"],
+      "automerge": true
+    }
+  ]
+}

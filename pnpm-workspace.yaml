@@ -1,0 +1,8 @@
+# Build scripts of dependencies stay off. These packages work without them:
+# - esbuild (a dependency of tsx): the binary comes from its platform package.
+# - @google/genai and protobufjs (dependencies of the TanStack AI Gemini adapter): only their
+#   types are used here.
+allowBuilds:
+  esbuild: false
+  '@google/genai': false
+  protobufjs: false

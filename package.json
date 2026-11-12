@@ -1,0 +1,118 @@
+{
+  "name": "ai-types",
+  "version": "0.0.0",
+  "description": "Type-safe model options for AI SDKs",
+  "keywords": [
+    "ai",
+    "ai-sdk",
+    "anthropic",
+    "google",
+    "llm",
+    "models.dev",
+    "openai",
+    "tanstack",
+    "types"
+  ],
+  "license": "MIT",
+  "author": "Chris Cook",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zirkelc/ai-types.git"
+  },
+  "files": [
+    "dist"
+  ],
+  "type": "module",
+  "sideEffects": false,
+  "exports": {
+    "./models": {
+      "types": "./dist/models/index.d.mts",
+      "default": "./dist/models/index.mjs"
+    },
+    "./models/*": {
+      "types": "./dist/models/*.d.mts",
+      "default": "./dist/models/*.mjs"
+    },
+    "./ai-sdk": {
+      "types": "./dist/ai-sdk/index.d.mts",
+      "default": "./dist/ai-sdk/index.mjs"
+    },
+    "./ai-sdk/*": {
+      "types": "./dist/ai-sdk/*.d.mts",
+      "default": "./dist/ai-sdk/*.mjs"
+    },
+    "./tanstack": {
+      "types": "./dist/tanstack/index.d.mts",
+      "default": "./dist/tanstack/index.mjs"
+    },
+    "./tanstack/*": {
+      "types": "./dist/tanstack/*.d.mts",
+      "default": "./dist/tanstack/*.mjs"
+    },
+    "./package.json": "./package.json"
+  },
+  "scripts": {
+    "fetch-models": "tsx scripts/fetch.ts",
+    "generate": "tsx scripts/generate.ts && oxfmt src",
+    "sync": "pnpm fetch-models && pnpm generate",
+    "cross-check": "tsx scripts/cross-check.ts",
+    "build": "tsdown",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "lint": "oxlint",
+    "fmt": "oxfmt",
+    "fmt:check": "oxfmt --check",
+    "diff-data": "tsx scripts/diff-data.ts",
+    "release": "tsx scripts/release.ts"
+  },
+  "devDependencies": {
+    "@ai-sdk/anthropic": "^4.0.0",
+    "@ai-sdk/google": "^4.0.0",
+    "@ai-sdk/openai": "^4.0.0",
+    "@tanstack/ai": "^1.4.0",
+    "@tanstack/ai-anthropic": "^1.1.1",
+    "@tanstack/ai-gemini": "^1.2.1",
+    "@tanstack/ai-openai": "^1.1.1",
+    "@types/node": "^26.6.6",
+    "ai": "^7.0.0",
+    "oxfmt": "^0.78.0",
+    "oxlint": "^1.93.0",
+    "tsdown": "^0.23.0",
+    "tsx": "^4.23.15",
+    "typescript": "7.0.2",
+    "vitest": "^5.1.0",
+    "zod": "^4.6.7"
+  },
+  "peerDependencies": {
+    "@ai-sdk/anthropic": "^4.0.0",
+    "@ai-sdk/google": "^4.0.0",
+    "@ai-sdk/openai": "^4.0.0",
+    "@tanstack/ai-anthropic": "^1.0.0",
+    "@tanstack/ai-gemini": "^1.0.0",
+    "@tanstack/ai-openai": "^1.0.0"
+  },
+  "peerDependenciesMeta": {
+    "@ai-sdk/anthropic": {
+      "optional": true
+    },
+    "@ai-sdk/google": {
+      "optional": true
+    },
+    "@ai-sdk/openai": {
+      "optional": true
+    },
+    "@tanstack/ai-anthropic": {
+      "optional": true
+    },
+    "@tanstack/ai-gemini": {
+      "optional": true
+    },
+    "@tanstack/ai-openai": {
+      "optional": true
+    }
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "packageManager": "pnpm@12.14.0"
+}

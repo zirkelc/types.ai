@@ -1,0 +1,105 @@
+name: Sync models.dev
+
+on:
+  # The daily schedule is off until the first manual runs work.
+  # schedule:
+  #   - cron: '0 5 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  issues: write
+
+concurrency:
+  group: sync
+  cancel-in-progress: false
+
+jobs:
+  # Fetches the models.dev data, generates the types and opens or updates one pull request.
+  # The pull request uses a GitHub App token, because events of the built-in token start no
+  # other workflows: with it, CI would not run on the pull request and its merge would not
+  # start the release.
+  sync:
+    runs-on: ubuntu-latest
+    env:
+      BRANCH: automated/sync-models-dev
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version: 24
+      - run: corepack enable
+      - run: pnpm install --frozen-lockfile
+
+      - run: pnpm sync
+
+      - name: Classify the changes
+        id: diff
+        run: pnpm diff-data --out "$RUNNER_TEMP/pr-body.md"
+
+      # Differences between models.dev and the AI SDK model catalogs. Warnings in the job summary only.
+      - name: Cross-check with the AI SDK catalogs
+        run: pnpm cross-check
+
+      - name: Create app token
+        id: app
+        uses: actions/create-github-app-token@64ab729a6294000f5aa4a4bc0b73d1f32bc45510 # v3.3.0
+        with:
+          client-id: ${{ vars.SYNC_APP_CLIENT_ID }}
+          private-key: ${{ secrets.SYNC_APP_PRIVATE_KEY }}
+          permission-contents: write
+          permission-pull-requests: write
+
+      # One rolling pull request. Each run replaces its branch, so there is never more than one.
+      # Without changes, the action closes nothing and opens nothing.
+      - name: Open or update the pull request
+        id: pr
+        uses: peter-evans/create-pull-request@3ffccacd46053766916f087ce41d627c0b8cf2d1 # v8.1.3
+        with:
+          token: ${{ steps.app.outputs.token }}
+          branch: ${{ env.BRANCH }}
+          base: main
+          add-paths: |
+            data/models.json
+            src/**
+          commit-message: 'fix(data): sync models.dev'
+          title: 'fix(data): sync models.dev'
+          body-path: ${{ runner.temp }}/pr-body.md
+          delete-branch: true
+
+      # Additions merge when CI passes. Removals can make the types narrower, so they wait for
+      # a review. The squash commit takes the pull request title, which gives a patch release.
+      - name: Auto-merge or request a review
+        if: steps.pr.outputs.pull-request-number != ''
+        env:
+          GH_TOKEN: ${{ steps.app.outputs.token }}
+          PR: ${{ steps.pr.outputs.pull-request-number }}
+          SAFE: ${{ steps.diff.outputs.safe }}
+        run: |
+          if [ "$SAFE" = "true" ]; then
+            gh pr edit "$PR" --remove-label needs-review || true
+            gh pr merge "$PR" --auto --squash
+          else
+            gh label create needs-review --color D93F0B --description "The change can make the types narrower" --force
+            gh pr edit "$PR" --add-label needs-review
+            gh pr merge "$PR" --disable-auto || true
+          fi
+
+      # Only for failures before a pull request exists (models.dev is down, or its schema
+      # changed). A failing check on the pull request shows itself on the pull request.
+      - name: Report failure
+        if: failure()
+        env:
+          GH_TOKEN: ${{ github.token }}
+          RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+        run: |
+          gh label create sync-failure --color B60205 --description "The daily sync failed" --force
+          ISSUE=$(gh issue list --label sync-failure --state open --json number --jq '.[0].number')
+          BODY="The daily sync failed: $RUN_URL"
+          if [ -n "$ISSUE" ]; then
+            gh issue comment "$ISSUE" --body "$BODY"
+          else
+            gh issue create --title "Daily sync failed" --label sync-failure --body "$BODY"
+          fi
