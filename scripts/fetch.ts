@@ -15,7 +15,7 @@ const SOURCE_URL = process.env.MODELS_DEV_URL ?? 'https://models.dev/experimenta
 
 async function download(file: string | undefined): Promise<unknown> {
   if (file) return JSON.parse(await readFile(file, 'utf8'));
-  const response = await fetch(SOURCE_URL, { headers: { 'user-agent': 'ai-types-sync' } });
+  const response = await fetch(SOURCE_URL, { headers: { 'user-agent': 'types.ai-sync' } });
   if (!response.ok) throw new Error(`GET ${SOURCE_URL} failed: ${response.status}`);
   return response.json();
 }

@@ -108,7 +108,7 @@ describe('ProviderOptions<openai>', () => {
   });
 });
 
-describe('override import ai-types/ai-sdk/openai', () => {
+describe('override import types.ai/ai-sdk/openai', () => {
   test('should equal the original type without a model', () => {
     // Assert
     expectTypeOf<OpenAILanguageModelResponsesOptions>().toEqualTypeOf<Sdk.OpenAILanguageModelResponsesOptions>();

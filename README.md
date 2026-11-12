@@ -3,12 +3,12 @@
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="assets/logo-dark.png" />
   <source media="(prefers-color-scheme: light)" srcset="assets/logo-light.png" />
-  <img src="assets/logo-light.png" alt="ai-types logo" width="400" />
+  <img src="assets/logo-light.png" alt="types.ai logo" width="400" />
 </picture>
 
 <p align="center">Types for AI model options</p>
 <p align="center">
-  <a href="https://www.npmjs.com/package/ai-types" alt="ai-types"><img src="https://img.shields.io/npm/dt/ai-types?label=ai-types"></a> <a href="https://github.com/zirkelc/ai-types/actions/workflows/ci.yml" alt="CI"><img src="https://img.shields.io/github/actions/workflow/status/zirkelc/ai-types/ci.yml?branch=main"></a>
+  <a href="https://www.npmjs.com/package/types.ai" alt="types.ai"><img src="https://img.shields.io/npm/dt/types.ai?label=types.ai"></a> <a href="https://github.com/zirkelc/ai-types/actions/workflows/ci.yml" alt="CI"><img src="https://img.shields.io/github/actions/workflow/status/zirkelc/ai-types/ci.yml?branch=main"></a>
 </p>
 
 </div>
@@ -28,7 +28,7 @@ A wrong value compiles, and then fails at run time with an API error. This libra
 ## Installation
 
 ```bash
-npm install -D ai-types
+npm install -D types.ai
 ```
 
 There is nothing else to install. The types build on the types of the SDK packages that your project already uses (for example `@ai-sdk/openai` or `@tanstack/ai-openai`), so these are optional peer dependencies.
@@ -60,15 +60,15 @@ Pick the import path for your SDK:
 
 | Import path | Use it for |
 | --- | --- |
-| `ai-types/ai-sdk/<provider>` | The types of `@ai-sdk/<provider>`, with a model parameter on the option types. The normal choice. |
-| `ai-types/ai-sdk` | `ModelOptions` and `ProviderOptions` with the provider ID as a parameter, for code with more than one provider. |
-| `ai-types/tanstack/<provider>` | The types of `@tanstack/ai-<provider>`, with a model parameter on the option types. |
-| `ai-types/tanstack` | `ModelOptions` with the provider ID as a parameter. |
-| `ai-types/models` | SDK-agnostic types of the model data, for example `ReasoningEffort`. |
-| `ai-types/models/<provider>` | The model data of the provider at run time. |
+| `types.ai/ai-sdk/<provider>` | The types of `@ai-sdk/<provider>`, with a model parameter on the option types. The normal choice. |
+| `types.ai/ai-sdk` | `ModelOptions` and `ProviderOptions` with the provider ID as a parameter, for code with more than one provider. |
+| `types.ai/tanstack/<provider>` | The types of `@tanstack/ai-<provider>`, with a model parameter on the option types. |
+| `types.ai/tanstack` | `ModelOptions` with the provider ID as a parameter. |
+| `types.ai/models` | SDK-agnostic types of the model data, for example `ReasoningEffort`. |
+| `types.ai/models/<provider>` | The model data of the provider at run time. |
 
 > [!NOTE]
-> `ai-types/ai-sdk` and `ai-types/tanstack` refer to the types of all provider packages of the SDK, and a project usually has only some of them. With `skipLibCheck: true` (the value that `tsc --init` sets), the providers that are not installed are simply not available. With `skipLibCheck: false`, TypeScript reports `Cannot find module` for them. Then use the provider entries.
+> `types.ai/ai-sdk` and `types.ai/tanstack` refer to the types of all provider packages of the SDK, and a project usually has only some of them. With `skipLibCheck: true` (the value that `tsc --init` sets), the providers that are not installed are simply not available. With `skipLibCheck: false`, TypeScript reports `Cannot find module` for them. Then use the provider entries.
 
 All types follow the same rules:
 
@@ -81,12 +81,12 @@ All types follow the same rules:
 
 ### AI SDK
 
-`ai-types/ai-sdk/<provider>` exports all types of the AI SDK provider package. The option types get an optional model parameter. Use them with [`satisfies`](https://www.typescriptlang.org/docs/handbook/release-notes/typescript-4-9.html#the-satisfies-operator), as the AI SDK docs do, and add the model:
+`types.ai/ai-sdk/<provider>` exports all types of the AI SDK provider package. The option types get an optional model parameter. Use them with [`satisfies`](https://www.typescriptlang.org/docs/handbook/release-notes/typescript-4-9.html#the-satisfies-operator), as the AI SDK docs do, and add the model:
 
 ```typescript
 import { openai } from '@ai-sdk/openai';
 import { generateText } from 'ai';
-import type { OpenAILanguageModelResponsesOptions } from 'ai-types/ai-sdk/openai';
+import type { OpenAILanguageModelResponsesOptions } from 'types.ai/ai-sdk/openai';
 
 await generateText({
   model: openai('gpt-6-luna'),
@@ -108,11 +108,11 @@ Without a model, the types are equal to the original types. Thus you can replace
 
 ```diff
 - import type { OpenAILanguageModelResponsesOptions } from '@ai-sdk/openai';
-+ import type { OpenAILanguageModelResponsesOptions } from 'ai-types/ai-sdk/openai';
++ import type { OpenAILanguageModelResponsesOptions } from 'types.ai/ai-sdk/openai';
 ```
 
 ```typescript
-import type { OpenAILanguageModelResponsesOptions } from 'ai-types/ai-sdk/openai';
+import type { OpenAILanguageModelResponsesOptions } from 'types.ai/ai-sdk/openai';
 
 // With a model: narrowed to gpt-5
 const options = { reasoningEffort: 'xhigh' } satisfies OpenAILanguageModelResponsesOptions<'gpt-5'>;
@@ -130,7 +130,7 @@ const original = { reasoningEffort: 'xhigh' } satisfies OpenAILanguageModelRespo
 Each provider package has one options type per API. The Chat Completions API of OpenAI (`openai.chat('gpt-5')`) has its own type:
 
 ```typescript
-import type { OpenAILanguageModelChatOptions } from 'ai-types/ai-sdk/openai';
+import type { OpenAILanguageModelChatOptions } from 'types.ai/ai-sdk/openai';
 
 const options = { reasoningEffort: 'minimal' } satisfies OpenAILanguageModelChatOptions<'gpt-6-luna'>;
 //                ~~~~~~~~~~~~~~~
@@ -139,18 +139,18 @@ const options = { reasoningEffort: 'minimal' } satisfies OpenAILanguageModelChat
 
 | Provider entry | Option types | Narrowed fields |
 | --- | --- | --- |
-| `ai-types/ai-sdk/openai` | `OpenAILanguageModelResponsesOptions`, `OpenAILanguageModelChatOptions` | `reasoningEffort`, `reasoningEffortUpdate`, `serviceTier`, `store`, `promptCacheKey`, `promptCacheOptions.ttl` |
-| `ai-types/ai-sdk/anthropic` | `AnthropicLanguageModelOptions` | `effort`, `thinking` (adaptive), `speed`, `cacheControl.ttl` |
-| `ai-types/ai-sdk/google` | `GoogleLanguageModelOptions` | `thinkingConfig.thinkingLevel`, `thinkingConfig.thinkingBudget`, `serviceTier` |
+| `types.ai/ai-sdk/openai` | `OpenAILanguageModelResponsesOptions`, `OpenAILanguageModelChatOptions` | `reasoningEffort`, `reasoningEffortUpdate`, `serviceTier`, `store`, `promptCacheKey`, `promptCacheOptions.ttl` |
+| `types.ai/ai-sdk/anthropic` | `AnthropicLanguageModelOptions` | `effort`, `thinking` (adaptive), `speed`, `cacheControl.ttl` |
+| `types.ai/ai-sdk/google` | `GoogleLanguageModelOptions` | `thinkingConfig.thinkingLevel`, `thinkingConfig.thinkingBudget`, `serviceTier` |
 
 #### Provider-Agnostic Types
 
-`ai-types/ai-sdk` has the same types with the provider ID as the first parameter. Use them for code that works with more than one provider, for example a shared helper with the provider as a type parameter, or one call with options for two providers.
+`types.ai/ai-sdk` has the same types with the provider ID as the first parameter. Use them for code that works with more than one provider, for example a shared helper with the provider as a type parameter, or one call with options for two providers.
 
 `ModelOptions<PROVIDER, MODEL, TARGET?>` is the options type of one provider and model. `TARGET` selects the options type, for example `chat` for the Chat Completions API of OpenAI. The default is the first options type in the [table](#option-types). With `TARGET`, you can make your own generic type:
 
 ```typescript
-import type { ModelOptions } from 'ai-types/ai-sdk';
+import type { ModelOptions } from 'types.ai/ai-sdk';
 
 // For openai('gpt-5'): the Responses API
 type ResponsesModelOptions<MODEL extends string> = ModelOptions<'openai', MODEL, 'responses'>;
@@ -166,7 +166,7 @@ const options = { reasoningEffort: 'minimal' } satisfies ChatModelOptions<'gpt-6
 `ProviderOptions<PROVIDER, MODEL, TARGET?>` is the `providerOptions` object with the provider key. With an intersection, each provider is checked against its own model:
 
 ```typescript
-import type { ProviderOptions } from 'ai-types/ai-sdk';
+import type { ProviderOptions } from 'types.ai/ai-sdk';
 
 const providerOptions = {
   openai: { reasoningEffort: 'none' },
@@ -182,7 +182,7 @@ The types also work in [Vitest type tests](https://vitest.dev/guide/testing-type
 
 ```typescript
 import { expectTypeOf, test } from 'vitest';
-import type { OpenAILanguageModelResponsesOptions } from 'ai-types/ai-sdk/openai';
+import type { OpenAILanguageModelResponsesOptions } from 'types.ai/ai-sdk/openai';
 
 const tripPlannerOptions = { reasoningEffort: 'high', serviceTier: 'flex' } as const;
 
@@ -193,12 +193,12 @@ test('trip planner options are valid for gpt-6-luna', () => {
 
 ### TanStack AI
 
-`ai-types/tanstack/<provider>` exports all types of the TanStack AI adapter package, with an optional model parameter on the option types. They start from TanStack AI's own per-model type and narrow it further, so the narrowing of TanStack AI stays. A model that only TanStack AI knows keeps TanStack AI's per-model type.
+`types.ai/tanstack/<provider>` exports all types of the TanStack AI adapter package, with an optional model parameter on the option types. They start from TanStack AI's own per-model type and narrow it further, so the narrowing of TanStack AI stays. A model that only TanStack AI knows keeps TanStack AI's per-model type.
 
 ```typescript
 import { chat } from '@tanstack/ai';
 import { openaiText } from '@tanstack/ai-openai';
-import type { OpenAITextProviderOptions } from 'ai-types/tanstack/openai';
+import type { OpenAITextProviderOptions } from 'types.ai/tanstack/openai';
 
 chat({
   adapter: openaiText('gpt-6-luna'),
@@ -217,27 +217,27 @@ TanStack AI types reasoning with the top-level `reasoning` option of `chat()`, p
 
 | Provider entry | Option types | Narrowed fields |
 | --- | --- | --- |
-| `ai-types/tanstack/openai` | `OpenAITextProviderOptions`, `OpenAIChatCompletionsProviderOptions` | `service_tier`, `store`, `prompt_cache_key`, `temperature`, `top_p` |
-| `ai-types/tanstack/anthropic` | `AnthropicTextProviderOptions` | `temperature`, `top_p`, `top_k`, `cache_control.ttl` |
-| `ai-types/tanstack/google` | `GeminiTextProviderOptions` | `temperature`, `topP`, `topK` |
+| `types.ai/tanstack/openai` | `OpenAITextProviderOptions`, `OpenAIChatCompletionsProviderOptions` | `service_tier`, `store`, `prompt_cache_key`, `temperature`, `top_p` |
+| `types.ai/tanstack/anthropic` | `AnthropicTextProviderOptions` | `temperature`, `top_p`, `top_k`, `cache_control.ttl` |
+| `types.ai/tanstack/google` | `GeminiTextProviderOptions` | `temperature`, `topP`, `topK` |
 
-The provider IDs are the models.dev IDs, so the entry of the Gemini adapter is `ai-types/tanstack/google`.
+The provider IDs are the models.dev IDs, so the entry of the Gemini adapter is `types.ai/tanstack/google`.
 
-`ai-types/tanstack` has the provider-agnostic `ModelOptions<PROVIDER, MODEL, TARGET?>`, the same as for the AI SDK:
+`types.ai/tanstack` has the provider-agnostic `ModelOptions<PROVIDER, MODEL, TARGET?>`, the same as for the AI SDK:
 
 ```typescript
-import type { ModelOptions } from 'ai-types/tanstack';
+import type { ModelOptions } from 'types.ai/tanstack';
 
 const options = { service_tier: 'flex' } satisfies ModelOptions<'openai', 'gpt-6-luna'>;
 ```
 
 ### Model Data
 
-`ai-types/models` has SDK-agnostic types of the model data, for code that does not use one of the SDKs. `ai-types/models/<provider>` has the same data at run time, typed as literals.
+`types.ai/models` has SDK-agnostic types of the model data, for code that does not use one of the SDKs. `types.ai/models/<provider>` has the same data at run time, typed as literals.
 
 ```typescript
-import type { ReasoningEffort, ServiceTier } from 'ai-types/models';
-import { models } from 'ai-types/models/openai';
+import type { ReasoningEffort, ServiceTier } from 'types.ai/models';
+import { models } from 'types.ai/models/openai';
 
 type Effort = ReasoningEffort<'openai', 'gpt-5'>; // 'minimal' | 'low' | 'medium' | 'high'
 type Tier = ServiceTier<'openai', 'gpt-6-luna'>; // 'flex' | 'priority'
@@ -247,7 +247,7 @@ models['gpt-6-luna'].capabilities.reasoning.effort; // readonly ['none', 'low', 
 
 ## API
 
-### `ai-types/ai-sdk`
+### `types.ai/ai-sdk`
 
 #### `ModelOptions<PROVIDER, MODEL, TARGET?>`
 
@@ -289,15 +289,15 @@ type AISDKTarget<'openai'> = 'responses' | 'chat';
 type AISDKModelId<'openai'> = 'gpt-5' | 'gpt-6-luna' | ...; // the models.dev model IDs
 ```
 
-### `ai-types/ai-sdk/<provider>`
+### `types.ai/ai-sdk/<provider>`
 
 Each entry re-exports all types of the AI SDK provider package. The option types and their deprecated aliases get an optional `MODEL` parameter. Each option type also has a `...ByModel` map of all known models.
 
 | Entry | Option types (alias) |
 | --- | --- |
-| `ai-types/ai-sdk/openai` | `OpenAILanguageModelResponsesOptions` (`OpenAIResponsesProviderOptions`), `OpenAILanguageModelChatOptions` (`OpenAIChatLanguageModelOptions`) |
-| `ai-types/ai-sdk/anthropic` | `AnthropicLanguageModelOptions` (`AnthropicProviderOptions`) |
-| `ai-types/ai-sdk/google` | `GoogleLanguageModelOptions` (`GoogleGenerativeAIProviderOptions`) |
+| `types.ai/ai-sdk/openai` | `OpenAILanguageModelResponsesOptions` (`OpenAIResponsesProviderOptions`), `OpenAILanguageModelChatOptions` (`OpenAIChatLanguageModelOptions`) |
+| `types.ai/ai-sdk/anthropic` | `AnthropicLanguageModelOptions` (`AnthropicProviderOptions`) |
+| `types.ai/ai-sdk/google` | `GoogleLanguageModelOptions` (`GoogleGenerativeAIProviderOptions`) |
 
 ```ts
 type Options = OpenAILanguageModelResponsesOptions<'gpt-6-luna'>; // narrowed
@@ -305,7 +305,7 @@ type Original = OpenAILanguageModelResponsesOptions; // equal to the @ai-sdk/ope
 type All = OpenAILanguageModelResponsesOptionsByModel; // { 'gpt-5': ...; 'gpt-6-luna': ...; ... }
 ```
 
-### `ai-types/tanstack`
+### `types.ai/tanstack`
 
 #### `ModelOptions<PROVIDER, MODEL, TARGET?>`
 
@@ -332,21 +332,21 @@ type TanStackTarget<'openai'> = 'responses' | 'chat';
 type TanStackModelId<'openai'> = 'gpt-5' | 'gpt-6-luna' | ...;
 ```
 
-### `ai-types/tanstack/<provider>`
+### `types.ai/tanstack/<provider>`
 
 Each entry re-exports all types of the TanStack AI adapter package. The option types get an optional `MODEL` parameter and a `...ByModel` map.
 
 | Entry | Option types |
 | --- | --- |
-| `ai-types/tanstack/openai` | `OpenAITextProviderOptions`, `OpenAIChatCompletionsProviderOptions` |
-| `ai-types/tanstack/anthropic` | `AnthropicTextProviderOptions` |
-| `ai-types/tanstack/google` | `GeminiTextProviderOptions` |
+| `types.ai/tanstack/openai` | `OpenAITextProviderOptions`, `OpenAIChatCompletionsProviderOptions` |
+| `types.ai/tanstack/anthropic` | `AnthropicTextProviderOptions` |
+| `types.ai/tanstack/google` | `GeminiTextProviderOptions` |
 
 ```ts
 type Options = GeminiTextProviderOptions<'gemini-2.5-pro'>;
 ```
 
-### `ai-types/models`
+### `types.ai/models`
 
 | Type                                    | Description                                                                   |
 | --------------------------------------- | ----------------------------------------------------------------------------- |
@@ -366,11 +366,11 @@ type Updates = ApiCapabilities<'openai', 'gpt-6-luna', 'responses'>['effort_upda
 The entry also exports the shapes of the model data, for code that works with any model: `Capabilities`, `ReasoningCapability`, `ReasoningDefault`, `ReasoningEffortValue`, `CacheCapability`, `ApiEntry` and `Models`.
 
 ```ts
-import type { Capabilities } from 'ai-types/models';
+import type { Capabilities } from 'types.ai/models';
 // { tools; reasoning; cache?; structured_output?; temperature?; top_p?; top_k?; effort_updates?; store?; prompt_cache_key?; service_tier?; ... }
 ```
 
-### `ai-types/models/<provider>`
+### `types.ai/models/<provider>`
 
 ```ts
 const models: { readonly [modelId]: Model }; // the models.dev data of the provider, as const
@@ -379,7 +379,7 @@ type Models = typeof models;
 ```
 
 ```ts
-import { models, provider } from 'ai-types/models/anthropic';
+import { models, provider } from 'types.ai/models/anthropic';
 
 provider.name; // 'Anthropic'
 models['claude-opus-5'].capabilities.reasoning; // { supported: true, effort: [...] }

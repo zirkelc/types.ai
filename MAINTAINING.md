@@ -1,4 +1,4 @@
-# Maintaining ai-types
+# Maintaining types.ai
 
 ## Pipeline
 
