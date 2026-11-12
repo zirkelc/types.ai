@@ -25,6 +25,14 @@ function run(command: string, args: ReadonlyArray<string>): string {
   return execFileSync(command, args, { cwd: ROOT, encoding: 'utf8' }).trim();
 }
 
+/**
+ * Runs a command in the terminal of the user. A local publish can ask for a one-time password
+ * or a browser confirmation, and npm asks only when it has a terminal.
+ */
+function runInteractive(command: string, args: ReadonlyArray<string>): void {
+  execFileSync(command, args, { cwd: ROOT, stdio: 'inherit' });
+}
+
 function lastTag(): string | undefined {
   try {
     return run('git', ['describe', '--tags', '--abbrev=0', '--match', 'v[0-9]*']);
@@ -68,7 +76,7 @@ async function main(): Promise<void> {
   const inActions = process.env.GITHUB_ACTIONS === 'true';
   run('npm', ['version', version, '--no-git-tag-version', '--allow-same-version']);
   run('pnpm', ['build']);
-  run('npm', ['publish', '--access', 'public', ...(inActions ? ['--provenance'] : [])]);
+  runInteractive('npm', ['publish', '--access', 'public', ...(inActions ? ['--provenance'] : [])]);
 
   run('git', ['tag', `v${version}`]);
   run('git', ['push', 'origin', `v${version}`]);
