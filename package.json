@@ -17,7 +17,7 @@
   "author": "Chris Cook",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/zirkelc/ai-types.git"
+    "url": "git+https://github.com/zirkelc/types.ai.git"
   },
   "files": [
     "dist"

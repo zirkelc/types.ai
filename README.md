@@ -8,7 +8,7 @@
 
 <p align="center">Types for AI model options</p>
 <p align="center">
-  <a href="https://www.npmjs.com/package/types.ai" alt="types.ai"><img src="https://img.shields.io/npm/dt/types.ai?label=types.ai"></a> <a href="https://github.com/zirkelc/ai-types/actions/workflows/ci.yml" alt="CI"><img src="https://img.shields.io/github/actions/workflow/status/zirkelc/ai-types/ci.yml?branch=main"></a>
+  <a href="https://www.npmjs.com/package/types.ai" alt="types.ai"><img src="https://img.shields.io/npm/dt/types.ai?label=types.ai"></a> <a href="https://github.com/zirkelc/types.ai/actions/workflows/ci.yml" alt="CI"><img src="https://img.shields.io/github/actions/workflow/status/zirkelc/types.ai/ci.yml?branch=main"></a>
 </p>
 
 </div>

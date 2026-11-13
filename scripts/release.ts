@@ -10,6 +10,9 @@
  *
  * The version lives only in the tags and on npm, so the release never commits to main.
  *
+ * With `--dry-run`, it builds and runs `npm publish --dry-run`, but publishes nothing and creates
+ * no tag and no release.
+ *
  * Usage: pnpm release [--bump patch|minor|major] [--dry-run]
  */
 import { execFileSync } from 'node:child_process';
@@ -71,12 +74,26 @@ async function main(): Promise<void> {
   console.log(
     `Release ${version} (${bump}, ${messages.length} commits since ${tag ?? 'the start'}).`,
   );
-  if (values['dry-run']) return;
 
+  const dryRun = values['dry-run'];
   const inActions = process.env.GITHUB_ACTIONS === 'true';
   run('npm', ['version', version, '--no-git-tag-version', '--allow-same-version']);
-  run('pnpm', ['build']);
-  runInteractive('npm', ['publish', '--access', 'public', ...(inActions ? ['--provenance'] : [])]);
+  try {
+    run('pnpm', ['build']);
+    runInteractive('npm', [
+      'publish',
+      '--access',
+      'public',
+      ...(inActions ? ['--provenance'] : []),
+      ...(dryRun ? ['--dry-run'] : []),
+    ]);
+  } finally {
+    if (dryRun) run('git', ['checkout', '--', 'package.json']);
+  }
+  if (dryRun) {
+    console.log(`Dry run: ${version} was not published, no tag and no release.`);
+    return;
+  }
 
   run('git', ['tag', `v${version}`]);
   run('git', ['push', 'origin', `v${version}`]);
