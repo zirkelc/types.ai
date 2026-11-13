@@ -35,12 +35,12 @@ There is nothing else to install. The types build on the types of the SDK packag
 
 ## How It Works
 
-A daily GitHub workflow downloads the [models.dev v2 API](https://models.dev/experimental/v2.0/api.json), and generates the types from it with one mapping per SDK package. The mapping connects the models.dev capabilities to the SDK option fields, for example `reasoning.effort` to `reasoningEffort`.
+Twice a day, a GitHub workflow downloads the [models.dev v2 API](https://models.dev/experimental/v2.0/api.json), and generates the types from it with one mapping per SDK package. The mapping connects the models.dev capabilities to the SDK option fields, for example `reasoning.effort` to `reasoningEffort`.
 
 ```mermaid
 sequenceDiagram
     participant Data as models.dev
-    participant Sync as Daily sync
+    participant Sync as Sync (twice a day)
     participant Types as Generated types
     participant SDK as SDK types
 
@@ -52,7 +52,7 @@ sequenceDiagram
 
 A generated check compiles each type against the SDK type. Thus an object that satisfies a type of this library is also accepted by the SDK.
 
-models.dev is a community database, and a wrong value there gives a wrong type here. New and changed data is published automatically. Removed data (a model, an effort value) is reviewed by hand first, because it makes types narrower. It then also goes out as a patch release, so a patch update can remove a value that your code uses. Pin the version if you need stable types. A daily cross-check compares models.dev with the model catalogs of the AI SDK. Report wrong model data to [models.dev](https://github.com/anomalyco/models.dev). See [MAINTAINING.md](MAINTAINING.md) for the details of the pipeline.
+models.dev is a community database, and a wrong value there gives a wrong type here. New and changed data is published automatically. Removed data (a model, an effort value) is reviewed by hand first, because it makes types narrower. It then also goes out as a patch release, so a patch update can remove a value that your code uses. Pin the version if you need stable types. A cross-check in each sync compares models.dev with the model catalogs of the AI SDK. Report wrong model data to [models.dev](https://github.com/anomalyco/models.dev). See [MAINTAINING.md](MAINTAINING.md) for the details of the pipeline.
 
 ## Usage
 

@@ -1,9 +1,9 @@
 name: Sync models.dev
 
 on:
-  # The daily schedule is off until the first manual runs work.
-  # schedule:
-  #   - cron: '0 5 * * *'
+  # Twice a day, at 05:00 and 17:00 UTC.
+  schedule:
+    - cron: '0 5,17 * * *'
   workflow_dispatch:
 
 permissions:
@@ -114,11 +114,11 @@ jobs:
           GH_TOKEN: ${{ github.token }}
           RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
         run: |
-          gh label create sync-failure --color B60205 --description "The daily sync failed" --force
+          gh label create sync-failure --color B60205 --description "The models.dev sync failed" --force
           ISSUE=$(gh issue list --label sync-failure --state open --json number --jq '.[0].number')
-          BODY="The daily sync failed: $RUN_URL"
+          BODY="The models.dev sync failed: $RUN_URL"
           if [ -n "$ISSUE" ]; then
             gh issue comment "$ISSUE" --body "$BODY"
           else
-            gh issue create --title "Daily sync failed" --label sync-failure --body "$BODY"
+            gh issue create --title "models.dev sync failed" --label sync-failure --body "$BODY"
           fi
