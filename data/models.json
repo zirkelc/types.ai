@@ -3992,6 +3992,142 @@
           "release_date": "2026-11-10",
           "type": "chat"
         },
+        "gemini-4-hydrogen": {
+          "api": {
+            "chat-completions": {
+              "capabilities": {
+                "tools": {
+                  "choice": [
+                    "auto",
+                    "none",
+                    "required",
+                    "tool"
+                  ],
+                  "strict": true,
+                  "updates": false
+                }
+              },
+              "sdk": {
+                "aisdk": "@ai-sdk/openai-compatible"
+              }
+            },
+            "generate-content": {
+              "capabilities": {
+                "tools": {
+                  "choice": [
+                    "auto",
+                    "none",
+                    "required",
+                    "tool"
+                  ],
+                  "strict": true,
+                  "updates": false
+                }
+              },
+              "sdk": {
+                "aisdk": "@ai-sdk/google"
+              }
+            },
+            "interactions": {
+              "capabilities": {
+                "tools": {
+                  "choice": [
+                    "auto",
+                    "none",
+                    "required",
+                    "tool"
+                  ],
+                  "strict": true,
+                  "updates": false
+                }
+              },
+              "sdk": {
+                "aisdk": "@ai-sdk/google"
+              }
+            }
+          },
+          "capabilities": {
+            "cache": {
+              "implicit": {
+                "min_tokens": 4096
+              }
+            },
+            "effort_updates": false,
+            "reasoning": {
+              "default": {
+                "type": "effort",
+                "value": "high"
+              },
+              "effort": [
+                "low",
+                "medium",
+                "high",
+                "xhigh"
+              ],
+              "supported": true
+            },
+            "service_tier": [
+              "flex",
+              "priority"
+            ],
+            "structured_output": true,
+            "system_updates": false,
+            "temperature": true,
+            "tools": {
+              "supported": true
+            },
+            "top_k": false,
+            "top_p": false
+          },
+          "family": "gemini",
+          "id": "gemini-4-hydrogen",
+          "knowledge": "2026-03",
+          "last_updated": "2026-11-12",
+          "limit": {
+            "context": 1048576,
+            "output": 65536
+          },
+          "modalities": {
+            "input": [
+              "text",
+              "image/png",
+              "image/jpeg",
+              "image/webp",
+              "image/heic",
+              "image/heif",
+              "video/mp4",
+              "video/mpeg",
+              "video/mov",
+              "video/avi",
+              "video/x-flv",
+              "video/mpg",
+              "video/webm",
+              "video/wmv",
+              "video/3gpp",
+              "audio/wav",
+              "audio/mp3",
+              "audio/aiff",
+              "audio/aac",
+              "audio/ogg",
+              "audio/flac",
+              "audio/mpeg",
+              "audio/m4a",
+              "audio/l16",
+              "audio/opus",
+              "audio/alaw",
+              "audio/mulaw",
+              "audio/webm",
+              "application/pdf"
+            ],
+            "output": [
+              "text"
+            ]
+          },
+          "name": "Gemini 4 Hydrogen",
+          "open_weights": false,
+          "release_date": "2026-11-12",
+          "type": "chat"
+        },
         "gemini-flash-latest": {
           "api": {
             "chat-completions": {
@@ -6940,10 +7076,12 @@
             "store": true,
             "structured_output": true,
             "system_updates": true,
-            "temperature": false,
+            "temperature": true,
             "tools": {
               "supported": true
-            }
+            },
+            "top_k": false,
+            "top_p": true
           },
           "family": "gpt",
           "id": "gpt-5.5",
@@ -7130,12 +7268,12 @@
             "store": true,
             "structured_output": true,
             "system_updates": true,
-            "temperature": false,
+            "temperature": true,
             "tools": {
               "supported": true
             },
             "top_k": false,
-            "top_p": false
+            "top_p": true
           },
           "family": "gpt-sol",
           "id": "gpt-5.6",
@@ -7336,12 +7474,12 @@
             "store": true,
             "structured_output": true,
             "system_updates": true,
-            "temperature": false,
+            "temperature": true,
             "tools": {
               "supported": true
             },
             "top_k": false,
-            "top_p": false
+            "top_p": true
           },
           "family": "gpt-luna",
           "id": "gpt-5.6-luna",
@@ -7453,12 +7591,12 @@
             "store": true,
             "structured_output": true,
             "system_updates": true,
-            "temperature": false,
+            "temperature": true,
             "tools": {
               "supported": true
             },
             "top_k": false,
-            "top_p": false
+            "top_p": true
           },
           "family": "gpt-sol",
           "id": "gpt-5.6-sol",
@@ -7570,12 +7708,12 @@
             "store": true,
             "structured_output": true,
             "system_updates": true,
-            "temperature": false,
+            "temperature": true,
             "tools": {
               "supported": true
             },
             "top_k": false,
-            "top_p": false
+            "top_p": true
           },
           "family": "gpt-terra",
           "id": "gpt-5.6-terra",
@@ -7815,12 +7953,12 @@
             "store": true,
             "structured_output": true,
             "system_updates": false,
-            "temperature": false,
+            "temperature": true,
             "tools": {
               "supported": true
             },
             "top_k": false,
-            "top_p": false
+            "top_p": true
           },
           "family": "gpt-luna",
           "id": "gpt-6-luna",
@@ -7932,12 +8070,12 @@
             "store": true,
             "structured_output": true,
             "system_updates": true,
-            "temperature": false,
+            "temperature": true,
             "tools": {
               "supported": true
             },
             "top_k": false,
-            "top_p": false
+            "top_p": true
           },
           "family": "gpt-sol",
           "id": "gpt-6-sol",
@@ -8165,12 +8303,12 @@
             "store": true,
             "structured_output": true,
             "system_updates": true,
-            "temperature": false,
+            "temperature": true,
             "tools": {
               "supported": true
             },
             "top_k": false,
-            "top_p": false
+            "top_p": true
           },
           "family": "gpt-terra",
           "id": "gpt-6.1-terra",
@@ -8429,12 +8567,12 @@
             "store": true,
             "structured_output": true,
             "system_updates": true,
-            "temperature": false,
+            "temperature": true,
             "tools": {
               "supported": true
             },
             "top_k": false,
-            "top_p": false
+            "top_p": true
           },
           "family": "gpt-sol",
           "id": "gpt-daybreak-blue-latest",

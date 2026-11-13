@@ -195,7 +195,7 @@ export type OpenAITextProviderOptionsByModelGenerated = {
    */
   'gpt-5.5': PatchLoose<
     ResponsesSubType<'gpt-5.5'>,
-    { service_tier: 'flex' | 'priority' | 'auto' | 'default'; temperature: never }
+    { service_tier: 'flex' | 'priority' | 'auto' | 'default' }
   >;
   /**
    * GPT-5.5 Pro. Released 2026-04-23.
@@ -209,7 +209,7 @@ export type OpenAITextProviderOptionsByModelGenerated = {
    */
   'gpt-5.6': PatchLoose<
     ResponsesSubType<'gpt-5.6'>,
-    { service_tier: 'flex' | 'priority' | 'auto' | 'default'; temperature: never; top_p: never }
+    { service_tier: 'flex' | 'priority' | 'auto' | 'default' }
   >;
   /**
    * GPT-5.6 Cyber. Released 2026-08-07.
@@ -223,21 +223,21 @@ export type OpenAITextProviderOptionsByModelGenerated = {
    */
   'gpt-5.6-luna': PatchLoose<
     ResponsesSubType<'gpt-5.6-luna'>,
-    { service_tier: 'flex' | 'priority' | 'auto' | 'default'; temperature: never; top_p: never }
+    { service_tier: 'flex' | 'priority' | 'auto' | 'default' }
   >;
   /**
    * GPT-5.6 Sol. Released 2026-07-09.
    */
   'gpt-5.6-sol': PatchLoose<
     ResponsesSubType<'gpt-5.6-sol'>,
-    { service_tier: 'flex' | 'priority' | 'auto' | 'default'; temperature: never; top_p: never }
+    { service_tier: 'flex' | 'priority' | 'auto' | 'default' }
   >;
   /**
    * GPT-5.6 Terra. Released 2026-07-09.
    */
   'gpt-5.6-terra': PatchLoose<
     ResponsesSubType<'gpt-5.6-terra'>,
-    { service_tier: 'flex' | 'priority' | 'auto' | 'default'; temperature: never; top_p: never }
+    { service_tier: 'flex' | 'priority' | 'auto' | 'default' }
   >;
   /**
    * GPT-6 Astra. Released 2026-09-04.
@@ -251,14 +251,14 @@ export type OpenAITextProviderOptionsByModelGenerated = {
    */
   'gpt-6-luna': PatchLoose<
     ResponsesSubType<'gpt-6-luna'>,
-    { service_tier: 'flex' | 'priority' | 'auto' | 'default'; temperature: never; top_p: never }
+    { service_tier: 'flex' | 'priority' | 'auto' | 'default' }
   >;
   /**
    * GPT-6 Sol. Released 2026-09-22.
    */
   'gpt-6-sol': PatchLoose<
     ResponsesSubType<'gpt-6-sol'>,
-    { service_tier: 'flex' | 'priority' | 'auto' | 'default'; temperature: never; top_p: never }
+    { service_tier: 'flex' | 'priority' | 'auto' | 'default' }
   >;
   /**
    * GPT-6.1 Sol. Released 2026-09-29.
@@ -272,14 +272,14 @@ export type OpenAITextProviderOptionsByModelGenerated = {
    */
   'gpt-6.1-terra': PatchLoose<
     ResponsesSubType<'gpt-6.1-terra'>,
-    { service_tier: 'flex' | 'priority' | 'auto' | 'default'; temperature: never; top_p: never }
+    { service_tier: 'flex' | 'priority' | 'auto' | 'default' }
   >;
   /**
    * Daybreak Blue. Released 2026-08-07.
    */
   'gpt-daybreak-blue-latest': PatchLoose<
     ResponsesSubType<'gpt-daybreak-blue-latest'>,
-    { service_tier: 'flex' | 'priority' | 'auto' | 'default'; temperature: never; top_p: never }
+    { service_tier: 'flex' | 'priority' | 'auto' | 'default' }
   >;
   /**
    * Daybreak Red. Released 2026-08-07.
@@ -494,35 +494,35 @@ export type OpenAIChatCompletionsProviderOptionsByModelGenerated = {
    */
   'gpt-5.5': PatchLoose<
     ChatSubType<'gpt-5.5'>,
-    { service_tier: 'flex' | 'priority' | 'auto' | 'default'; temperature: never }
+    { service_tier: 'flex' | 'priority' | 'auto' | 'default' }
   >;
   /**
    * GPT-5.6. Released 2026-07-09.
    */
   'gpt-5.6': PatchLoose<
     ChatSubType<'gpt-5.6'>,
-    { service_tier: 'flex' | 'priority' | 'auto' | 'default'; temperature: never; top_p: never }
+    { service_tier: 'flex' | 'priority' | 'auto' | 'default' }
   >;
   /**
    * GPT-5.6 Luna. Released 2026-07-09.
    */
   'gpt-5.6-luna': PatchLoose<
     ChatSubType<'gpt-5.6-luna'>,
-    { service_tier: 'flex' | 'priority' | 'auto' | 'default'; temperature: never; top_p: never }
+    { service_tier: 'flex' | 'priority' | 'auto' | 'default' }
   >;
   /**
    * GPT-5.6 Sol. Released 2026-07-09.
    */
   'gpt-5.6-sol': PatchLoose<
     ChatSubType<'gpt-5.6-sol'>,
-    { service_tier: 'flex' | 'priority' | 'auto' | 'default'; temperature: never; top_p: never }
+    { service_tier: 'flex' | 'priority' | 'auto' | 'default' }
   >;
   /**
    * GPT-5.6 Terra. Released 2026-07-09.
    */
   'gpt-5.6-terra': PatchLoose<
     ChatSubType<'gpt-5.6-terra'>,
-    { service_tier: 'flex' | 'priority' | 'auto' | 'default'; temperature: never; top_p: never }
+    { service_tier: 'flex' | 'priority' | 'auto' | 'default' }
   >;
   /**
    * GPT-6 Astra. Released 2026-09-04.
@@ -536,14 +536,14 @@ export type OpenAIChatCompletionsProviderOptionsByModelGenerated = {
    */
   'gpt-6-luna': PatchLoose<
     ChatSubType<'gpt-6-luna'>,
-    { service_tier: 'flex' | 'priority' | 'auto' | 'default'; temperature: never; top_p: never }
+    { service_tier: 'flex' | 'priority' | 'auto' | 'default' }
   >;
   /**
    * GPT-6 Sol. Released 2026-09-22.
    */
   'gpt-6-sol': PatchLoose<
     ChatSubType<'gpt-6-sol'>,
-    { service_tier: 'flex' | 'priority' | 'auto' | 'default'; temperature: never; top_p: never }
+    { service_tier: 'flex' | 'priority' | 'auto' | 'default' }
   >;
   /**
    * GPT-6.1 Sol. Released 2026-09-29.
@@ -557,7 +557,7 @@ export type OpenAIChatCompletionsProviderOptionsByModelGenerated = {
    */
   'gpt-6.1-terra': PatchLoose<
     ChatSubType<'gpt-6.1-terra'>,
-    { service_tier: 'flex' | 'priority' | 'auto' | 'default'; temperature: never; top_p: never }
+    { service_tier: 'flex' | 'priority' | 'auto' | 'default' }
   >;
   /**
    * GPT-Audio. Released 2025-08-28.
