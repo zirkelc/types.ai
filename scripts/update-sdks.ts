@@ -1,7 +1,7 @@
 /**
  * Updates the SDK packages within their ranges in package.json (no new major) and writes the
- * changed versions for the sync PR. pnpm keeps its minimum release age, so a version that is too
- * new waits for a later sync.
+ * changed versions for the sync PR. The SDK packages have no minimum release age in the pnpm
+ * settings, so a new version is taken at once.
  *
  * The sync runs it before it generates, so that new model data and the SDK types that accept it
  * are tested together in one pull request.

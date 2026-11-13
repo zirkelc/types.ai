@@ -6,3 +6,11 @@ allowBuilds:
   esbuild: false
   '@google/genai': false
   protobufjs: false
+
+# The SDK packages are only used for their types, so their new versions install at once. All other
+# packages (build and test tools, whose code runs in CI) keep the default minimum release age.
+minimumReleaseAgeExclude:
+  - ai
+  - '@ai-sdk/*'
+  - '@tanstack/ai'
+  - '@tanstack/ai-*'
