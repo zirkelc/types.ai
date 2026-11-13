@@ -201,10 +201,10 @@ import { openaiText } from '@tanstack/ai-openai';
 import type { OpenAITextProviderOptions } from 'types.ai/tanstack/openai';
 
 chat({
-  adapter: openaiText('gpt-6-luna'),
+  adapter: openaiText('gpt-5'),
   threadId: 'trip-planner',
   messages: [{ role: 'user', content: 'Plan a three-day trip to Lisbon.' }],
-  modelOptions: { temperature: 0.2 } satisfies OpenAITextProviderOptions<'gpt-6-luna'>,
+  modelOptions: { temperature: 0.2 } satisfies OpenAITextProviderOptions<'gpt-5'>,
   //              ~~~~~~~~~~~
   // Error: Type 'number' is not assignable to type 'undefined'.
 });

@@ -21,12 +21,12 @@ describe('ModelOptions<openai> for TanStack AI', () => {
 
   test('should remove sampling options that the model does not accept', () => {
     // Arrange
-    // @ts-expect-error gpt-6-luna does not accept temperature
-    const luna = { temperature: 0.5 } satisfies ModelOptions<'openai', 'gpt-6-luna'>;
+    // @ts-expect-error gpt-5 does not accept temperature
+    const gpt5 = { temperature: 0.5 } satisfies ModelOptions<'openai', 'gpt-5'>;
     const gpt41 = { temperature: 0.5 } satisfies ModelOptions<'openai', 'gpt-4.1'>;
 
     // Assert
-    expectTypeOf(luna).not.toBeNever();
+    expectTypeOf(gpt5).not.toBeNever();
     expectTypeOf(gpt41.temperature).toEqualTypeOf<number>();
   });
 
