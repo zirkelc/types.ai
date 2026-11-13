@@ -67,7 +67,7 @@ export type Check_generate_content_thinkingConfig_thinkingLevel_exists_1 = Asser
 
 export type Check_generate_content_thinkingConfig_thinkingLevel_values = Assert<
   Extends<
-    'minimal' | 'low' | 'medium' | 'high',
+    'minimal' | 'low' | 'medium' | 'high' | 'xhigh',
     NonNullable<NonNullable<Sdk.GoogleLanguageModelOptions['thinkingConfig']>['thinkingLevel']>
   >
 >;

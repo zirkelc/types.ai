@@ -27,6 +27,17 @@ export type GenerateContentModelIds = KnownModelIds<
 /** The model IDs of other model types that this target does not accept. */
 type GenerateContentWrongModels = WrongModels<GenerateContentModelIds, OtherModelIds>;
 
+type GenerateContent_45780cae = Patch<
+  GenerateContentBase,
+  {
+    thinkingConfig: Patch<
+      NonNullable<GenerateContentBase['thinkingConfig']>,
+      { thinkingLevel: 'low' | 'medium' | 'high' | 'xhigh'; thinkingBudget: never }
+    >;
+    serviceTier: 'flex' | 'priority' | 'standard';
+  }
+>;
+
 type GenerateContent_47287253 = Patch<
   GenerateContentBase,
   {
@@ -167,6 +178,11 @@ export type GoogleLanguageModelOptionsByModel = {
    * Default reasoning (models.dev): effort `medium`.
    */
   'gemini-4-carbon': GenerateContent_97fce35d;
+  /**
+   * Gemini 4 Hydrogen. Released 2026-11-12.
+   * Default reasoning (models.dev): effort `high`.
+   */
+  'gemini-4-hydrogen': GenerateContent_45780cae;
   /**
    * Gemini Flash Latest. Released 2026-08-13.
    */
