@@ -6,10 +6,17 @@
   "rangeStrategy": "bump",
   "packageRules": [
     {
-      "description": "The SDK packages in one pull request. A change of their types fails the generated checks, and the fix is an edit of the mapping in that pull request.",
+      "description": "The major updates of the SDK packages in one pull request. A change of their types fails the generated checks, and the fix is an edit of the mapping in that pull request.",
       "matchPackageNames": ["ai", "@ai-sdk/**", "@tanstack/**"],
       "matchDepTypes": ["devDependencies"],
       "groupName": "SDK packages"
+    },
+    {
+      "description": "The sync workflow updates the SDK packages within their ranges, together with the model data. Renovate only opens the major updates, which also need new peer dependency ranges.",
+      "matchPackageNames": ["ai", "@ai-sdk/**", "@tanstack/**"],
+      "matchDepTypes": ["devDependencies"],
+      "matchUpdateTypes": ["minor", "patch"],
+      "enabled": false
     },
     {
       "description": "The peer dependency ranges are part of the published package and change only by hand.",

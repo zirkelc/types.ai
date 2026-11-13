@@ -33,11 +33,27 @@ jobs:
       - run: corepack enable
       - run: pnpm install --frozen-lockfile
 
+      # Minor and patch updates of the SDK packages go into the same pull request as the data, so
+      # that a new value in models.dev and the SDK version that accepts it are tested together.
+      - name: Update the SDK packages
+        run: pnpm update-sdks --out "$RUNNER_TEMP/sdk-updates.md"
+
       - run: pnpm sync
 
       - name: Classify the changes
         id: diff
-        run: pnpm diff-data --out "$RUNNER_TEMP/pr-body.md"
+        run: |
+          pnpm diff-data --out "$RUNNER_TEMP/pr-body.md"
+          if [ -s "$RUNNER_TEMP/sdk-updates.md" ]; then
+            printf '\n' >> "$RUNNER_TEMP/pr-body.md"
+            cat "$RUNNER_TEMP/sdk-updates.md" >> "$RUNNER_TEMP/pr-body.md"
+          fi
+          # Only SDK updates change nothing in the package, so they give no release.
+          if git diff --quiet -- data src; then
+            echo "title=chore(deps): update SDK packages" >> "$GITHUB_OUTPUT"
+          else
+            echo "title=fix(data): sync models.dev" >> "$GITHUB_OUTPUT"
+          fi
 
       # Differences between models.dev and the AI SDK model catalogs. Warnings in the job summary only.
       - name: Cross-check with the AI SDK catalogs
@@ -64,13 +80,16 @@ jobs:
           add-paths: |
             data/models.json
             src/**
-          commit-message: 'fix(data): sync models.dev'
-          title: 'fix(data): sync models.dev'
+            package.json
+            pnpm-lock.yaml
+          commit-message: ${{ steps.diff.outputs.title }}
+          title: ${{ steps.diff.outputs.title }}
           body-path: ${{ runner.temp }}/pr-body.md
           delete-branch: true
 
       # Additions merge when CI passes. Removals can make the types narrower, so they wait for
-      # a review. The squash commit takes the pull request title, which gives a patch release.
+      # a review. The squash commit takes the pull request title: a data change gives a patch
+      # release, SDK updates alone give no release.
       - name: Auto-merge or request a review
         if: steps.pr.outputs.pull-request-number != ''
         env:

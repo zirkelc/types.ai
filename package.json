@@ -55,6 +55,7 @@
     "fetch-models": "tsx scripts/fetch.ts",
     "generate": "tsx scripts/generate.ts && oxfmt src",
     "sync": "pnpm fetch-models && pnpm generate",
+    "update-sdks": "tsx scripts/update-sdks.ts",
     "cross-check": "tsx scripts/cross-check.ts",
     "build": "tsdown",
     "typecheck": "tsc --noEmit",
