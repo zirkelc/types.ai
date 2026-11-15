@@ -7858,6 +7858,97 @@
           "release_date": "2026-09-04",
           "type": "chat"
         },
+        "gpt-6-cyber": {
+          "api": {
+            "responses": {
+              "capabilities": {
+                "tools": {
+                  "choice": [
+                    "auto",
+                    "none",
+                    "required",
+                    "tool"
+                  ],
+                  "freeform": [
+                    "text",
+                    "lark",
+                    "regex"
+                  ],
+                  "search": true,
+                  "strict": true,
+                  "updates": true
+                }
+              },
+              "sdk": {
+                "aisdk": "@ai-sdk/openai"
+              }
+            }
+          },
+          "capabilities": {
+            "cache": {
+              "explicit": {
+                "max_breakpoints": 4,
+                "min_tokens": 1024,
+                "ttl": [
+                  "30m",
+                  "12h"
+                ]
+              },
+              "implicit": {
+                "min_tokens": 1024,
+                "ttl": [
+                  "30m",
+                  "12h"
+                ]
+              }
+            },
+            "effort_updates": false,
+            "prompt_cache_key": true,
+            "reasoning": {
+              "effort": [
+                "low",
+                "medium",
+                "high",
+                "xhigh",
+                "max"
+              ],
+              "supported": true
+            },
+            "store": true,
+            "structured_output": true,
+            "system_updates": true,
+            "temperature": false,
+            "tools": {
+              "supported": true
+            },
+            "top_k": false,
+            "top_p": false
+          },
+          "family": "gpt",
+          "id": "gpt-6-cyber",
+          "last_updated": "2026-11-05",
+          "limit": {
+            "context": 1050000,
+            "input": 922000,
+            "output": 128000
+          },
+          "modalities": {
+            "input": [
+              "text",
+              "image/jpeg",
+              "image/png",
+              "image/gif",
+              "image/webp"
+            ],
+            "output": [
+              "text"
+            ]
+          },
+          "name": "GPT-6 Cyber",
+          "open_weights": false,
+          "release_date": "2026-11-05",
+          "type": "chat"
+        },
         "gpt-6-luna": {
           "api": {
             "chat-completions": {

@@ -247,6 +247,10 @@ export type OpenAITextProviderOptionsByModelGenerated = {
     { service_tier: 'flex' | 'priority' | 'auto' | 'default'; temperature: never; top_p: never }
   >;
   /**
+   * GPT-6 Cyber. Released 2026-11-05.
+   */
+  'gpt-6-cyber': PatchLoose<ResponsesSubType<'gpt-6-cyber'>, { temperature: never; top_p: never }>;
+  /**
    * GPT-6 Luna. Released 2026-09-22.
    */
   'gpt-6-luna': PatchLoose<
