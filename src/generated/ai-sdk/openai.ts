@@ -162,6 +162,18 @@ type Responses_9d9fc986 = Patch<
   }
 >;
 
+type Responses_9f0193e5 = Patch<
+  ResponsesBase,
+  {
+    reasoningEffort: 'low' | 'medium' | 'high' | 'xhigh' | 'max';
+    reasoningEffortUpdate: never;
+    promptCacheOptions: Patch<
+      NonNullable<ResponsesBase['promptCacheOptions']>,
+      { ttl: '30m' | '12h' }
+    >;
+  }
+>;
+
 type Responses_a085a309 = Patch<
   ResponsesBase,
   {
@@ -350,6 +362,10 @@ export type OpenAILanguageModelResponsesOptionsByModel = {
    * GPT-6 Astra. Released 2026-09-04.
    */
   'gpt-6-astra': Responses_504d577b;
+  /**
+   * GPT-6 Cyber. Released 2026-11-05.
+   */
+  'gpt-6-cyber': Responses_9f0193e5;
   /**
    * GPT-6 Luna. Released 2026-09-22.
    */
