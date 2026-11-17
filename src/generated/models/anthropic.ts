@@ -17,7 +17,7 @@ export const models = {
   'claude-fable-5': {
     api: {
       'chat-completions': {
-        capabilities: { tools: { choice: ['auto', 'none', 'required', 'tool'], updates: false } },
+        capabilities: { tools: { choice: ['auto', 'none', 'required', 'tool'], updates: [] } },
         sdk: { aisdk: '@ai-sdk/openai-compatible' },
       },
       messages: {
@@ -27,7 +27,7 @@ export const models = {
             choice: ['auto', 'none', 'required', 'tool'],
             search: true,
             strict: true,
-            updates: true,
+            updates: ['add', 'remove', 'replace'],
           },
         },
         sdk: { aisdk: '@ai-sdk/anthropic' },
@@ -65,14 +65,19 @@ export const models = {
   'claude-fable-5-1': {
     api: {
       'chat-completions': {
-        capabilities: { tools: { choice: ['auto', 'none'], updates: false } },
+        capabilities: { tools: { choice: ['auto', 'none'], updates: [] } },
         sdk: { aisdk: '@ai-sdk/openai-compatible' },
       },
       messages: {
         capabilities: {
           effort_updates: true,
           system_updates: true,
-          tools: { choice: ['auto', 'none'], search: true, strict: true, updates: true },
+          tools: {
+            choice: ['auto', 'none'],
+            search: true,
+            strict: true,
+            updates: ['add', 'remove', 'replace'],
+          },
         },
         sdk: { aisdk: '@ai-sdk/anthropic' },
       },
@@ -112,14 +117,19 @@ export const models = {
   'claude-fable-5-2': {
     api: {
       'chat-completions': {
-        capabilities: { tools: { choice: ['auto', 'none'], updates: false } },
+        capabilities: { tools: { choice: ['auto', 'none'], updates: [] } },
         sdk: { aisdk: '@ai-sdk/openai-compatible' },
       },
       messages: {
         capabilities: {
           effort_updates: true,
           system_updates: true,
-          tools: { choice: ['auto', 'none'], search: true, strict: true, updates: true },
+          tools: {
+            choice: ['auto', 'none'],
+            search: true,
+            strict: true,
+            updates: ['add', 'remove', 'replace'],
+          },
         },
         sdk: { aisdk: '@ai-sdk/anthropic' },
       },
@@ -160,7 +170,7 @@ export const models = {
   'claude-haiku-4-5': {
     api: {
       'chat-completions': {
-        capabilities: { tools: { choice: ['auto', 'none', 'required', 'tool'], updates: false } },
+        capabilities: { tools: { choice: ['auto', 'none', 'required', 'tool'], updates: [] } },
         sdk: { aisdk: '@ai-sdk/openai-compatible' },
       },
       messages: {
@@ -169,7 +179,7 @@ export const models = {
             choice: ['auto', 'none', 'required', 'tool'],
             search: true,
             strict: true,
-            updates: false,
+            updates: [],
           },
         },
         sdk: { aisdk: '@ai-sdk/anthropic' },
@@ -210,7 +220,7 @@ export const models = {
   'claude-haiku-4-5-20251001': {
     api: {
       'chat-completions': {
-        capabilities: { tools: { choice: ['auto', 'none', 'required', 'tool'], updates: false } },
+        capabilities: { tools: { choice: ['auto', 'none', 'required', 'tool'], updates: [] } },
         sdk: { aisdk: '@ai-sdk/openai-compatible' },
       },
       messages: {
@@ -219,7 +229,7 @@ export const models = {
             choice: ['auto', 'none', 'required', 'tool'],
             search: true,
             strict: true,
-            updates: false,
+            updates: [],
           },
         },
         sdk: { aisdk: '@ai-sdk/anthropic' },
@@ -258,7 +268,7 @@ export const models = {
   'claude-haiku-5-5': {
     api: {
       'chat-completions': {
-        capabilities: { tools: { choice: ['auto', 'none', 'required', 'tool'], updates: false } },
+        capabilities: { tools: { choice: ['auto', 'none', 'required', 'tool'], updates: [] } },
         sdk: { aisdk: '@ai-sdk/openai-compatible' },
       },
       messages: {
@@ -269,7 +279,7 @@ export const models = {
             choice: ['auto', 'none', 'required', 'tool'],
             search: true,
             strict: true,
-            updates: true,
+            updates: ['add', 'remove', 'replace'],
           },
         },
         sdk: { aisdk: '@ai-sdk/anthropic' },
@@ -314,7 +324,7 @@ export const models = {
   'claude-opus-4-5': {
     api: {
       'chat-completions': {
-        capabilities: { tools: { choice: ['auto', 'none', 'required', 'tool'], updates: false } },
+        capabilities: { tools: { choice: ['auto', 'none', 'required', 'tool'], updates: [] } },
         sdk: { aisdk: '@ai-sdk/openai-compatible' },
       },
       messages: {
@@ -323,7 +333,7 @@ export const models = {
             choice: ['auto', 'none', 'required', 'tool'],
             search: true,
             strict: true,
-            updates: false,
+            updates: [],
           },
         },
         sdk: { aisdk: '@ai-sdk/anthropic' },
@@ -364,7 +374,7 @@ export const models = {
   'claude-opus-4-5-20251101': {
     api: {
       'chat-completions': {
-        capabilities: { tools: { choice: ['auto', 'none', 'required', 'tool'], updates: false } },
+        capabilities: { tools: { choice: ['auto', 'none', 'required', 'tool'], updates: [] } },
         sdk: { aisdk: '@ai-sdk/openai-compatible' },
       },
       messages: {
@@ -373,7 +383,7 @@ export const models = {
             choice: ['auto', 'none', 'required', 'tool'],
             search: true,
             strict: true,
-            updates: false,
+            updates: [],
           },
         },
         sdk: { aisdk: '@ai-sdk/anthropic' },
@@ -412,7 +422,7 @@ export const models = {
   'claude-opus-4-6': {
     api: {
       'chat-completions': {
-        capabilities: { tools: { choice: ['auto', 'none', 'required', 'tool'], updates: false } },
+        capabilities: { tools: { choice: ['auto', 'none', 'required', 'tool'], updates: [] } },
         sdk: { aisdk: '@ai-sdk/openai-compatible' },
       },
       messages: {
@@ -421,7 +431,7 @@ export const models = {
             choice: ['auto', 'none', 'required', 'tool'],
             search: true,
             strict: true,
-            updates: false,
+            updates: [],
           },
         },
         sdk: { aisdk: '@ai-sdk/anthropic' },
@@ -464,7 +474,7 @@ export const models = {
   'claude-opus-4-7': {
     api: {
       'chat-completions': {
-        capabilities: { tools: { choice: ['auto', 'none', 'required', 'tool'], updates: false } },
+        capabilities: { tools: { choice: ['auto', 'none', 'required', 'tool'], updates: [] } },
         sdk: { aisdk: '@ai-sdk/openai-compatible' },
       },
       messages: {
@@ -473,7 +483,7 @@ export const models = {
             choice: ['auto', 'none', 'required', 'tool'],
             search: true,
             strict: true,
-            updates: false,
+            updates: [],
           },
         },
         sdk: { aisdk: '@ai-sdk/anthropic' },
@@ -512,7 +522,7 @@ export const models = {
   'claude-opus-4-8': {
     api: {
       'chat-completions': {
-        capabilities: { tools: { choice: ['auto', 'none', 'required', 'tool'], updates: false } },
+        capabilities: { tools: { choice: ['auto', 'none', 'required', 'tool'], updates: [] } },
         sdk: { aisdk: '@ai-sdk/openai-compatible' },
       },
       messages: {
@@ -522,7 +532,7 @@ export const models = {
             choice: ['auto', 'none', 'required', 'tool'],
             search: true,
             strict: true,
-            updates: true,
+            updates: ['add', 'remove', 'replace'],
           },
         },
         sdk: { aisdk: '@ai-sdk/anthropic' },
@@ -562,7 +572,7 @@ export const models = {
   'claude-opus-5': {
     api: {
       'chat-completions': {
-        capabilities: { tools: { choice: ['auto', 'none', 'required', 'tool'], updates: false } },
+        capabilities: { tools: { choice: ['auto', 'none', 'required', 'tool'], updates: [] } },
         sdk: { aisdk: '@ai-sdk/openai-compatible' },
       },
       messages: {
@@ -573,7 +583,7 @@ export const models = {
             choice: ['auto', 'none', 'required', 'tool'],
             search: true,
             strict: true,
-            updates: true,
+            updates: ['add', 'remove', 'replace'],
           },
         },
         sdk: { aisdk: '@ai-sdk/anthropic' },
@@ -615,14 +625,19 @@ export const models = {
   'claude-opus-5-5': {
     api: {
       'chat-completions': {
-        capabilities: { tools: { choice: ['auto', 'none'], updates: false } },
+        capabilities: { tools: { choice: ['auto', 'none'], updates: [] } },
         sdk: { aisdk: '@ai-sdk/openai-compatible' },
       },
       messages: {
         capabilities: {
           effort_updates: true,
           system_updates: true,
-          tools: { choice: ['auto', 'none'], search: true, strict: true, updates: true },
+          tools: {
+            choice: ['auto', 'none'],
+            search: true,
+            strict: true,
+            updates: ['add', 'remove', 'replace'],
+          },
         },
         sdk: { aisdk: '@ai-sdk/anthropic' },
       },
@@ -663,7 +678,7 @@ export const models = {
   'claude-sonnet-4-5': {
     api: {
       'chat-completions': {
-        capabilities: { tools: { choice: ['auto', 'none', 'required', 'tool'], updates: false } },
+        capabilities: { tools: { choice: ['auto', 'none', 'required', 'tool'], updates: [] } },
         sdk: { aisdk: '@ai-sdk/openai-compatible' },
       },
       messages: {
@@ -672,7 +687,7 @@ export const models = {
             choice: ['auto', 'none', 'required', 'tool'],
             search: true,
             strict: true,
-            updates: false,
+            updates: [],
           },
         },
         sdk: { aisdk: '@ai-sdk/anthropic' },
@@ -714,7 +729,7 @@ export const models = {
   'claude-sonnet-4-5-20250929': {
     api: {
       'chat-completions': {
-        capabilities: { tools: { choice: ['auto', 'none', 'required', 'tool'], updates: false } },
+        capabilities: { tools: { choice: ['auto', 'none', 'required', 'tool'], updates: [] } },
         sdk: { aisdk: '@ai-sdk/openai-compatible' },
       },
       messages: {
@@ -723,7 +738,7 @@ export const models = {
             choice: ['auto', 'none', 'required', 'tool'],
             search: true,
             strict: true,
-            updates: false,
+            updates: [],
           },
         },
         sdk: { aisdk: '@ai-sdk/anthropic' },
@@ -763,7 +778,7 @@ export const models = {
   'claude-sonnet-4-6': {
     api: {
       'chat-completions': {
-        capabilities: { tools: { choice: ['auto', 'none', 'required', 'tool'], updates: false } },
+        capabilities: { tools: { choice: ['auto', 'none', 'required', 'tool'], updates: [] } },
         sdk: { aisdk: '@ai-sdk/openai-compatible' },
       },
       messages: {
@@ -772,7 +787,7 @@ export const models = {
             choice: ['auto', 'none', 'required', 'tool'],
             search: true,
             strict: true,
-            updates: false,
+            updates: [],
           },
         },
         sdk: { aisdk: '@ai-sdk/anthropic' },
@@ -815,7 +830,7 @@ export const models = {
   'claude-sonnet-5': {
     api: {
       'chat-completions': {
-        capabilities: { tools: { choice: ['auto', 'none', 'required', 'tool'], updates: false } },
+        capabilities: { tools: { choice: ['auto', 'none', 'required', 'tool'], updates: [] } },
         sdk: { aisdk: '@ai-sdk/openai-compatible' },
       },
       messages: {
@@ -825,7 +840,7 @@ export const models = {
             choice: ['auto', 'none', 'required', 'tool'],
             search: true,
             strict: true,
-            updates: false,
+            updates: [],
           },
         },
         sdk: { aisdk: '@ai-sdk/anthropic' },
@@ -868,14 +883,19 @@ export const models = {
   'claude-sonnet-5-5': {
     api: {
       'chat-completions': {
-        capabilities: { tools: { choice: ['auto', 'none'], updates: false } },
+        capabilities: { tools: { choice: ['auto', 'none'], updates: [] } },
         sdk: { aisdk: '@ai-sdk/openai-compatible' },
       },
       messages: {
         capabilities: {
           effort_updates: true,
           system_updates: true,
-          tools: { choice: ['auto', 'none'], search: true, strict: true, updates: true },
+          tools: {
+            choice: ['auto', 'none'],
+            search: true,
+            strict: true,
+            updates: ['add', 'remove', 'replace'],
+          },
         },
         sdk: { aisdk: '@ai-sdk/anthropic' },
       },

@@ -16,10 +16,7 @@ export const provider = {
 export const models = {
   'deep-research-max-preview-04-2026': {
     api: {
-      interactions: {
-        capabilities: { tools: { updates: false } },
-        sdk: { aisdk: '@ai-sdk/google' },
-      },
+      interactions: { capabilities: { tools: { updates: [] } }, sdk: { aisdk: '@ai-sdk/google' } },
     },
     capabilities: {
       cache: { implicit: true },
@@ -77,10 +74,7 @@ export const models = {
   },
   'deep-research-preview-04-2026': {
     api: {
-      interactions: {
-        capabilities: { tools: { updates: false } },
-        sdk: { aisdk: '@ai-sdk/google' },
-      },
+      interactions: { capabilities: { tools: { updates: [] } }, sdk: { aisdk: '@ai-sdk/google' } },
     },
     capabilities: {
       cache: { implicit: true },
@@ -139,7 +133,7 @@ export const models = {
   'gemini-2.5-computer-use-preview-10-2025': {
     api: {
       'generate-content': {
-        capabilities: { tools: { updates: false } },
+        capabilities: { tools: { updates: [] } },
         sdk: { aisdk: '@ai-sdk/google' },
       },
     },
@@ -170,19 +164,19 @@ export const models = {
     api: {
       'chat-completions': {
         capabilities: {
-          tools: { choice: ['auto', 'none', 'required', 'tool'], strict: true, updates: false },
+          tools: { choice: ['auto', 'none', 'required', 'tool'], strict: true, updates: [] },
         },
         sdk: { aisdk: '@ai-sdk/openai-compatible' },
       },
       'generate-content': {
         capabilities: {
-          tools: { choice: ['auto', 'none', 'required', 'tool'], strict: true, updates: false },
+          tools: { choice: ['auto', 'none', 'required', 'tool'], strict: true, updates: [] },
         },
         sdk: { aisdk: '@ai-sdk/google' },
       },
       interactions: {
         capabilities: {
-          tools: { choice: ['auto', 'none', 'required', 'tool'], strict: true, updates: false },
+          tools: { choice: ['auto', 'none', 'required', 'tool'], strict: true, updates: [] },
         },
         sdk: { aisdk: '@ai-sdk/google' },
       },
@@ -252,19 +246,19 @@ export const models = {
     api: {
       'chat-completions': {
         capabilities: {
-          tools: { choice: ['auto', 'none', 'required', 'tool'], strict: true, updates: false },
+          tools: { choice: ['auto', 'none', 'required', 'tool'], strict: true, updates: [] },
         },
         sdk: { aisdk: '@ai-sdk/openai-compatible' },
       },
       'generate-content': {
         capabilities: {
-          tools: { choice: ['auto', 'none', 'required', 'tool'], strict: true, updates: false },
+          tools: { choice: ['auto', 'none', 'required', 'tool'], strict: true, updates: [] },
         },
         sdk: { aisdk: '@ai-sdk/google' },
       },
       interactions: {
         capabilities: {
-          tools: { choice: ['auto', 'none', 'required', 'tool'], strict: true, updates: false },
+          tools: { choice: ['auto', 'none', 'required', 'tool'], strict: true, updates: [] },
         },
         sdk: { aisdk: '@ai-sdk/google' },
       },
@@ -334,19 +328,19 @@ export const models = {
     api: {
       'chat-completions': {
         capabilities: {
-          tools: { choice: ['auto', 'none', 'required', 'tool'], strict: true, updates: false },
+          tools: { choice: ['auto', 'none', 'required', 'tool'], strict: true, updates: [] },
         },
         sdk: { aisdk: '@ai-sdk/openai-compatible' },
       },
       'generate-content': {
         capabilities: {
-          tools: { choice: ['auto', 'none', 'required', 'tool'], strict: true, updates: false },
+          tools: { choice: ['auto', 'none', 'required', 'tool'], strict: true, updates: [] },
         },
         sdk: { aisdk: '@ai-sdk/google' },
       },
       interactions: {
         capabilities: {
-          tools: { choice: ['auto', 'none', 'required', 'tool'], strict: true, updates: false },
+          tools: { choice: ['auto', 'none', 'required', 'tool'], strict: true, updates: [] },
         },
         sdk: { aisdk: '@ai-sdk/google' },
       },
@@ -411,19 +405,19 @@ export const models = {
     api: {
       'chat-completions': {
         capabilities: {
-          tools: { choice: ['auto', 'none', 'required', 'tool'], strict: true, updates: false },
+          tools: { choice: ['auto', 'none', 'required', 'tool'], strict: true, updates: [] },
         },
         sdk: { aisdk: '@ai-sdk/openai-compatible' },
       },
       'generate-content': {
         capabilities: {
-          tools: { choice: ['auto', 'none', 'required', 'tool'], strict: true, updates: false },
+          tools: { choice: ['auto', 'none', 'required', 'tool'], strict: true, updates: [] },
         },
         sdk: { aisdk: '@ai-sdk/google' },
       },
       interactions: {
         capabilities: {
-          tools: { choice: ['auto', 'none', 'required', 'tool'], strict: true, updates: false },
+          tools: { choice: ['auto', 'none', 'required', 'tool'], strict: true, updates: [] },
         },
         sdk: { aisdk: '@ai-sdk/google' },
       },
@@ -492,19 +486,19 @@ export const models = {
     api: {
       'chat-completions': {
         capabilities: {
-          tools: { choice: ['auto', 'none', 'required', 'tool'], strict: true, updates: false },
+          tools: { choice: ['auto', 'none', 'required', 'tool'], strict: true, updates: [] },
         },
         sdk: { aisdk: '@ai-sdk/openai-compatible' },
       },
       'generate-content': {
         capabilities: {
-          tools: { choice: ['auto', 'none', 'required', 'tool'], strict: true, updates: false },
+          tools: { choice: ['auto', 'none', 'required', 'tool'], strict: true, updates: [] },
         },
         sdk: { aisdk: '@ai-sdk/google' },
       },
       interactions: {
         capabilities: {
-          tools: { choice: ['auto', 'none', 'required', 'tool'], strict: true, updates: false },
+          tools: { choice: ['auto', 'none', 'required', 'tool'], strict: true, updates: [] },
         },
         sdk: { aisdk: '@ai-sdk/google' },
       },
@@ -569,19 +563,19 @@ export const models = {
     api: {
       'chat-completions': {
         capabilities: {
-          tools: { choice: ['auto', 'none', 'required', 'tool'], strict: true, updates: false },
+          tools: { choice: ['auto', 'none', 'required', 'tool'], strict: true, updates: [] },
         },
         sdk: { aisdk: '@ai-sdk/openai-compatible' },
       },
       'generate-content': {
         capabilities: {
-          tools: { choice: ['auto', 'none', 'required', 'tool'], strict: true, updates: false },
+          tools: { choice: ['auto', 'none', 'required', 'tool'], strict: true, updates: [] },
         },
         sdk: { aisdk: '@ai-sdk/google' },
       },
       interactions: {
         capabilities: {
-          tools: { choice: ['auto', 'none', 'required', 'tool'], strict: true, updates: false },
+          tools: { choice: ['auto', 'none', 'required', 'tool'], strict: true, updates: [] },
         },
         sdk: { aisdk: '@ai-sdk/google' },
       },
@@ -647,19 +641,19 @@ export const models = {
     api: {
       'chat-completions': {
         capabilities: {
-          tools: { choice: ['auto', 'none', 'required', 'tool'], strict: true, updates: false },
+          tools: { choice: ['auto', 'none', 'required', 'tool'], strict: true, updates: [] },
         },
         sdk: { aisdk: '@ai-sdk/openai-compatible' },
       },
       'generate-content': {
         capabilities: {
-          tools: { choice: ['auto', 'none', 'required', 'tool'], strict: true, updates: false },
+          tools: { choice: ['auto', 'none', 'required', 'tool'], strict: true, updates: [] },
         },
         sdk: { aisdk: '@ai-sdk/google' },
       },
       interactions: {
         capabilities: {
-          tools: { choice: ['auto', 'none', 'required', 'tool'], strict: true, updates: false },
+          tools: { choice: ['auto', 'none', 'required', 'tool'], strict: true, updates: [] },
         },
         sdk: { aisdk: '@ai-sdk/google' },
       },
@@ -728,19 +722,19 @@ export const models = {
     api: {
       'chat-completions': {
         capabilities: {
-          tools: { choice: ['auto', 'none', 'required', 'tool'], strict: true, updates: false },
+          tools: { choice: ['auto', 'none', 'required', 'tool'], strict: true, updates: [] },
         },
         sdk: { aisdk: '@ai-sdk/openai-compatible' },
       },
       'generate-content': {
         capabilities: {
-          tools: { choice: ['auto', 'none', 'required', 'tool'], strict: true, updates: false },
+          tools: { choice: ['auto', 'none', 'required', 'tool'], strict: true, updates: [] },
         },
         sdk: { aisdk: '@ai-sdk/google' },
       },
       interactions: {
         capabilities: {
-          tools: { choice: ['auto', 'none', 'required', 'tool'], strict: true, updates: false },
+          tools: { choice: ['auto', 'none', 'required', 'tool'], strict: true, updates: [] },
         },
         sdk: { aisdk: '@ai-sdk/google' },
       },
@@ -805,19 +799,19 @@ export const models = {
     api: {
       'chat-completions': {
         capabilities: {
-          tools: { choice: ['auto', 'none', 'required', 'tool'], strict: true, updates: false },
+          tools: { choice: ['auto', 'none', 'required', 'tool'], strict: true, updates: [] },
         },
         sdk: { aisdk: '@ai-sdk/openai-compatible' },
       },
       'generate-content': {
         capabilities: {
-          tools: { choice: ['auto', 'none', 'required', 'tool'], strict: true, updates: false },
+          tools: { choice: ['auto', 'none', 'required', 'tool'], strict: true, updates: [] },
         },
         sdk: { aisdk: '@ai-sdk/google' },
       },
       interactions: {
         capabilities: {
-          tools: { choice: ['auto', 'none', 'required', 'tool'], strict: true, updates: false },
+          tools: { choice: ['auto', 'none', 'required', 'tool'], strict: true, updates: [] },
         },
         sdk: { aisdk: '@ai-sdk/google' },
       },
@@ -882,19 +876,19 @@ export const models = {
     api: {
       'chat-completions': {
         capabilities: {
-          tools: { choice: ['auto', 'none', 'required', 'tool'], strict: true, updates: false },
+          tools: { choice: ['auto', 'none', 'required', 'tool'], strict: true, updates: [] },
         },
         sdk: { aisdk: '@ai-sdk/openai-compatible' },
       },
       'generate-content': {
         capabilities: {
-          tools: { choice: ['auto', 'none', 'required', 'tool'], strict: true, updates: false },
+          tools: { choice: ['auto', 'none', 'required', 'tool'], strict: true, updates: [] },
         },
         sdk: { aisdk: '@ai-sdk/google' },
       },
       interactions: {
         capabilities: {
-          tools: { choice: ['auto', 'none', 'required', 'tool'], strict: true, updates: false },
+          tools: { choice: ['auto', 'none', 'required', 'tool'], strict: true, updates: [] },
         },
         sdk: { aisdk: '@ai-sdk/google' },
       },
@@ -963,19 +957,19 @@ export const models = {
     api: {
       'chat-completions': {
         capabilities: {
-          tools: { choice: ['auto', 'none', 'required', 'tool'], strict: true, updates: false },
+          tools: { choice: ['auto', 'none', 'required', 'tool'], strict: true, updates: [] },
         },
         sdk: { aisdk: '@ai-sdk/openai-compatible' },
       },
       'generate-content': {
         capabilities: {
-          tools: { choice: ['auto', 'none', 'required', 'tool'], strict: true, updates: false },
+          tools: { choice: ['auto', 'none', 'required', 'tool'], strict: true, updates: [] },
         },
         sdk: { aisdk: '@ai-sdk/google' },
       },
       interactions: {
         capabilities: {
-          tools: { choice: ['auto', 'none', 'required', 'tool'], strict: true, updates: false },
+          tools: { choice: ['auto', 'none', 'required', 'tool'], strict: true, updates: [] },
         },
         sdk: { aisdk: '@ai-sdk/google' },
       },
@@ -1044,19 +1038,19 @@ export const models = {
     api: {
       'chat-completions': {
         capabilities: {
-          tools: { choice: ['auto', 'none', 'required', 'tool'], strict: true, updates: false },
+          tools: { choice: ['auto', 'none', 'required', 'tool'], strict: true, updates: [] },
         },
         sdk: { aisdk: '@ai-sdk/openai-compatible' },
       },
       'generate-content': {
         capabilities: {
-          tools: { choice: ['auto', 'none', 'required', 'tool'], strict: true, updates: false },
+          tools: { choice: ['auto', 'none', 'required', 'tool'], strict: true, updates: [] },
         },
         sdk: { aisdk: '@ai-sdk/google' },
       },
       interactions: {
         capabilities: {
-          tools: { choice: ['auto', 'none', 'required', 'tool'], strict: true, updates: false },
+          tools: { choice: ['auto', 'none', 'required', 'tool'], strict: true, updates: [] },
         },
         sdk: { aisdk: '@ai-sdk/google' },
       },
@@ -1121,19 +1115,19 @@ export const models = {
     api: {
       'chat-completions': {
         capabilities: {
-          tools: { choice: ['auto', 'none', 'required', 'tool'], strict: true, updates: false },
+          tools: { choice: ['auto', 'none', 'required', 'tool'], strict: true, updates: [] },
         },
         sdk: { aisdk: '@ai-sdk/openai-compatible' },
       },
       'generate-content': {
         capabilities: {
-          tools: { choice: ['auto', 'none', 'required', 'tool'], strict: true, updates: false },
+          tools: { choice: ['auto', 'none', 'required', 'tool'], strict: true, updates: [] },
         },
         sdk: { aisdk: '@ai-sdk/google' },
       },
       interactions: {
         capabilities: {
-          tools: { choice: ['auto', 'none', 'required', 'tool'], strict: true, updates: false },
+          tools: { choice: ['auto', 'none', 'required', 'tool'], strict: true, updates: [] },
         },
         sdk: { aisdk: '@ai-sdk/google' },
       },
@@ -1201,19 +1195,19 @@ export const models = {
     api: {
       'chat-completions': {
         capabilities: {
-          tools: { choice: ['auto', 'none', 'required', 'tool'], strict: true, updates: false },
+          tools: { choice: ['auto', 'none', 'required', 'tool'], strict: true, updates: [] },
         },
         sdk: { aisdk: '@ai-sdk/openai-compatible' },
       },
       'generate-content': {
         capabilities: {
-          tools: { choice: ['auto', 'none', 'required', 'tool'], strict: true, updates: false },
+          tools: { choice: ['auto', 'none', 'required', 'tool'], strict: true, updates: [] },
         },
         sdk: { aisdk: '@ai-sdk/google' },
       },
       interactions: {
         capabilities: {
-          tools: { choice: ['auto', 'none', 'required', 'tool'], strict: true, updates: false },
+          tools: { choice: ['auto', 'none', 'required', 'tool'], strict: true, updates: [] },
         },
         sdk: { aisdk: '@ai-sdk/google' },
       },
@@ -1282,19 +1276,19 @@ export const models = {
     api: {
       'chat-completions': {
         capabilities: {
-          tools: { choice: ['auto', 'none', 'required', 'tool'], strict: true, updates: false },
+          tools: { choice: ['auto', 'none', 'required', 'tool'], strict: true, updates: [] },
         },
         sdk: { aisdk: '@ai-sdk/openai-compatible' },
       },
       'generate-content': {
         capabilities: {
-          tools: { choice: ['auto', 'none', 'required', 'tool'], strict: true, updates: false },
+          tools: { choice: ['auto', 'none', 'required', 'tool'], strict: true, updates: [] },
         },
         sdk: { aisdk: '@ai-sdk/google' },
       },
       interactions: {
         capabilities: {
-          tools: { choice: ['auto', 'none', 'required', 'tool'], strict: true, updates: false },
+          tools: { choice: ['auto', 'none', 'required', 'tool'], strict: true, updates: [] },
         },
         sdk: { aisdk: '@ai-sdk/google' },
       },
@@ -1363,19 +1357,19 @@ export const models = {
     api: {
       'chat-completions': {
         capabilities: {
-          tools: { choice: ['auto', 'none', 'required', 'tool'], strict: true, updates: false },
+          tools: { choice: ['auto', 'none', 'required', 'tool'], strict: true, updates: [] },
         },
         sdk: { aisdk: '@ai-sdk/openai-compatible' },
       },
       'generate-content': {
         capabilities: {
-          tools: { choice: ['auto', 'none', 'required', 'tool'], strict: true, updates: false },
+          tools: { choice: ['auto', 'none', 'required', 'tool'], strict: true, updates: [] },
         },
         sdk: { aisdk: '@ai-sdk/google' },
       },
       interactions: {
         capabilities: {
-          tools: { choice: ['auto', 'none', 'required', 'tool'], strict: true, updates: false },
+          tools: { choice: ['auto', 'none', 'required', 'tool'], strict: true, updates: [] },
         },
         sdk: { aisdk: '@ai-sdk/google' },
       },
@@ -1444,19 +1438,19 @@ export const models = {
     api: {
       'chat-completions': {
         capabilities: {
-          tools: { choice: ['auto', 'none', 'required', 'tool'], strict: true, updates: false },
+          tools: { choice: ['auto', 'none', 'required', 'tool'], strict: true, updates: [] },
         },
         sdk: { aisdk: '@ai-sdk/openai-compatible' },
       },
       'generate-content': {
         capabilities: {
-          tools: { choice: ['auto', 'none', 'required', 'tool'], strict: true, updates: false },
+          tools: { choice: ['auto', 'none', 'required', 'tool'], strict: true, updates: [] },
         },
         sdk: { aisdk: '@ai-sdk/google' },
       },
       interactions: {
         capabilities: {
-          tools: { choice: ['auto', 'none', 'required', 'tool'], strict: true, updates: false },
+          tools: { choice: ['auto', 'none', 'required', 'tool'], strict: true, updates: [] },
         },
         sdk: { aisdk: '@ai-sdk/google' },
       },
@@ -1520,19 +1514,19 @@ export const models = {
     api: {
       'chat-completions': {
         capabilities: {
-          tools: { choice: ['auto', 'none', 'required', 'tool'], strict: true, updates: false },
+          tools: { choice: ['auto', 'none', 'required', 'tool'], strict: true, updates: [] },
         },
         sdk: { aisdk: '@ai-sdk/openai-compatible' },
       },
       'generate-content': {
         capabilities: {
-          tools: { choice: ['auto', 'none', 'required', 'tool'], strict: true, updates: false },
+          tools: { choice: ['auto', 'none', 'required', 'tool'], strict: true, updates: [] },
         },
         sdk: { aisdk: '@ai-sdk/google' },
       },
       interactions: {
         capabilities: {
-          tools: { choice: ['auto', 'none', 'required', 'tool'], strict: true, updates: false },
+          tools: { choice: ['auto', 'none', 'required', 'tool'], strict: true, updates: [] },
         },
         sdk: { aisdk: '@ai-sdk/google' },
       },
@@ -1596,19 +1590,19 @@ export const models = {
     api: {
       'chat-completions': {
         capabilities: {
-          tools: { choice: ['auto', 'none', 'required', 'tool'], strict: true, updates: false },
+          tools: { choice: ['auto', 'none', 'required', 'tool'], strict: true, updates: [] },
         },
         sdk: { aisdk: '@ai-sdk/openai-compatible' },
       },
       'generate-content': {
         capabilities: {
-          tools: { choice: ['auto', 'none', 'required', 'tool'], strict: true, updates: false },
+          tools: { choice: ['auto', 'none', 'required', 'tool'], strict: true, updates: [] },
         },
         sdk: { aisdk: '@ai-sdk/google' },
       },
       interactions: {
         capabilities: {
-          tools: { choice: ['auto', 'none', 'required', 'tool'], strict: true, updates: false },
+          tools: { choice: ['auto', 'none', 'required', 'tool'], strict: true, updates: [] },
         },
         sdk: { aisdk: '@ai-sdk/google' },
       },
@@ -1676,19 +1670,19 @@ export const models = {
     api: {
       'chat-completions': {
         capabilities: {
-          tools: { choice: ['auto', 'none', 'required', 'tool'], strict: true, updates: false },
+          tools: { choice: ['auto', 'none', 'required', 'tool'], strict: true, updates: [] },
         },
         sdk: { aisdk: '@ai-sdk/openai-compatible' },
       },
       'generate-content': {
         capabilities: {
-          tools: { choice: ['auto', 'none', 'required', 'tool'], strict: true, updates: false },
+          tools: { choice: ['auto', 'none', 'required', 'tool'], strict: true, updates: [] },
         },
         sdk: { aisdk: '@ai-sdk/google' },
       },
       interactions: {
         capabilities: {
-          tools: { choice: ['auto', 'none', 'required', 'tool'], strict: true, updates: false },
+          tools: { choice: ['auto', 'none', 'required', 'tool'], strict: true, updates: [] },
         },
         sdk: { aisdk: '@ai-sdk/google' },
       },
@@ -1754,19 +1748,19 @@ export const models = {
     api: {
       'chat-completions': {
         capabilities: {
-          tools: { choice: ['auto', 'none', 'required', 'tool'], strict: true, updates: false },
+          tools: { choice: ['auto', 'none', 'required', 'tool'], strict: true, updates: [] },
         },
         sdk: { aisdk: '@ai-sdk/openai-compatible' },
       },
       'generate-content': {
         capabilities: {
-          tools: { choice: ['auto', 'none', 'required', 'tool'], strict: true, updates: false },
+          tools: { choice: ['auto', 'none', 'required', 'tool'], strict: true, updates: [] },
         },
         sdk: { aisdk: '@ai-sdk/google' },
       },
       interactions: {
         capabilities: {
-          tools: { choice: ['auto', 'none', 'required', 'tool'], strict: true, updates: false },
+          tools: { choice: ['auto', 'none', 'required', 'tool'], strict: true, updates: [] },
         },
         sdk: { aisdk: '@ai-sdk/google' },
       },
@@ -1798,19 +1792,19 @@ export const models = {
     api: {
       'chat-completions': {
         capabilities: {
-          tools: { choice: ['auto', 'none', 'required', 'tool'], strict: true, updates: false },
+          tools: { choice: ['auto', 'none', 'required', 'tool'], strict: true, updates: [] },
         },
         sdk: { aisdk: '@ai-sdk/openai-compatible' },
       },
       'generate-content': {
         capabilities: {
-          tools: { choice: ['auto', 'none', 'required', 'tool'], strict: true, updates: false },
+          tools: { choice: ['auto', 'none', 'required', 'tool'], strict: true, updates: [] },
         },
         sdk: { aisdk: '@ai-sdk/google' },
       },
       interactions: {
         capabilities: {
-          tools: { choice: ['auto', 'none', 'required', 'tool'], strict: true, updates: false },
+          tools: { choice: ['auto', 'none', 'required', 'tool'], strict: true, updates: [] },
         },
         sdk: { aisdk: '@ai-sdk/google' },
       },

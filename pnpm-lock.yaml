@@ -176,17 +176,17 @@ importers:
         specifier: ^4.0.118
         version: 4.0.118(zod@4.6.7)
       '@tanstack/ai':
-        specifier: ^1.4.0
-        version: 1.4.0(@opentelemetry/api@1.10.0)(zod@4.6.7)
+        specifier: ^1.5.0
+        version: 1.5.0(@opentelemetry/api@1.10.0)(zod@4.6.7)
       '@tanstack/ai-anthropic':
-        specifier: ^1.1.1
-        version: 1.1.1(@tanstack/ai@1.4.0(@opentelemetry/api@1.10.0)(zod@4.6.7))(zod@4.6.7)
+        specifier: ^1.2.0
+        version: 1.2.0(@tanstack/ai@1.5.0(@opentelemetry/api@1.10.0)(zod@4.6.7))(zod@4.6.7)
       '@tanstack/ai-gemini':
-        specifier: ^1.2.2
-        version: 1.2.2(@tanstack/ai@1.4.0(@opentelemetry/api@1.10.0)(zod@4.6.7))
+        specifier: ^1.2.3
+        version: 1.2.3(@tanstack/ai@1.5.0(@opentelemetry/api@1.10.0)(zod@4.6.7))
       '@tanstack/ai-openai':
         specifier: ^1.1.1
-        version: 1.1.1(@tanstack/ai@1.4.0(@opentelemetry/api@1.10.0)(zod@4.6.7))(google-auth-library@10.9.1)(undici@7.30.2)(ws@8.22.2)(zod@4.6.7)
+        version: 1.1.1(@tanstack/ai@1.5.0(@opentelemetry/api@1.10.0)(zod@4.6.7))(google-auth-library@10.9.1)(undici@7.30.2)(ws@8.22.2)(zod@4.6.7)
       '@types/node':
         specifier: ^26.6.6
         version: 26.6.6
@@ -961,11 +961,11 @@ packages:
   '@standard-schema/spec@1.1.0':
     resolution: {integrity: sha512-l2aFy5jALhniG5HgqrD6jXLi/rUWrKvqN/qJx6yoJsgKhblVd+iqqU4RCXavm/jPityDo5TCvKMnpjKnOriy0w==}
 
-  '@tanstack/ai-anthropic@1.1.1':
-    resolution: {integrity: sha512-pQvU543yZ+HoLvuInTqx9xe93hWu0nBYyPPkXtsUQOBF2yO+aAfTyJpBZE9zz6EO2t/s5uVVJFq1BBwiNYOFag==}
+  '@tanstack/ai-anthropic@1.2.0':
+    resolution: {integrity: sha512-Se5594t7tUQd5Ro8mqhiXb6BDPBsUbxaDuxoSKbRvtWNiZruI5Zhz74mFTQfE2+OY2zG0Kxr8AZDubfdX5eeYw==}
     peerDependencies:
       '@anthropic-ai/vertex-sdk': ^0.19.0
-      '@tanstack/ai': ^1.2.0
+      '@tanstack/ai': ^1.5.0
     peerDependenciesMeta:
       '@anthropic-ai/vertex-sdk':
         optional: true
@@ -973,10 +973,10 @@ packages:
   '@tanstack/ai-event-client@1.0.1':
     resolution: {integrity: sha512-IURnn4oRKJbtbAuC3GcXRcuKHi8DrPmwuACqaTq6ApSGlyJyHhq0NTksKEmzql2Z12+njFjsKSXG9c7UbSHTxg==}
 
-  '@tanstack/ai-gemini@1.2.2':
-    resolution: {integrity: sha512-TvPtHF2aajwgXIxsZKBIeQYT/X5Da3ZvTQgwpIX4blh/BCnC7N/4hs2Q3JG0r4IqIFToJSNfohoSVNBxpFTajg==}
+  '@tanstack/ai-gemini@1.2.3':
+    resolution: {integrity: sha512-CM6BWkFfg5yIsuDjtqr32gk68zZVpE9mTFcfW3qcxplQ1sysdFGM8DHEk1yyyqPUu6JsnOFS+9VodY77nFL36Q==}
     peerDependencies:
-      '@tanstack/ai': ^1.4.0
+      '@tanstack/ai': ^1.5.0
 
   '@tanstack/ai-openai@1.1.1':
     resolution: {integrity: sha512-IzieUf8FmAaZOVV4ADM3PrL0W7GQ+SPB1BOLHU/EG+cVGcg+KuunlflNrjJJB7pcvJTZUoOhgBn2ljn8NH4mdw==}
@@ -986,8 +986,8 @@ packages:
   '@tanstack/ai-utils@1.1.0':
     resolution: {integrity: sha512-li47v/794azVLourgteS/+jjH/ZF+cIp/3RMVA1VybtKAFiMy3ZGxREU10OzfUghMzYLdfpK2l6ahvlWxNVHug==}
 
-  '@tanstack/ai@1.4.0':
-    resolution: {integrity: sha512-3f0D9gFCk8LUe9qAPCsRkjlXU2bqbIKKMGGo9P6Q6O0vR+5/0N/J3x1J2QWYY8L3LNvJliZBDnutudEIRzNU8w==}
+  '@tanstack/ai@1.5.0':
+    resolution: {integrity: sha512-GyiXuJGRgLsvo+OepnaY/ggTEf2VOB8iR+8pXvOsiqYL2Y9i5uXklrF51HnGFrzrlr/pG8AnxZ4voDJ+Svb6cg==}
     engines: {node: '>=18'}
     peerDependencies:
       '@opentelemetry/api': '>=1.9.0'
@@ -2222,10 +2222,10 @@ snapshots:
 
   '@standard-schema/spec@1.1.0': {}
 
-  '@tanstack/ai-anthropic@1.1.1(@tanstack/ai@1.4.0(@opentelemetry/api@1.10.0)(zod@4.6.7))(zod@4.6.7)':
+  '@tanstack/ai-anthropic@1.2.0(@tanstack/ai@1.5.0(@opentelemetry/api@1.10.0)(zod@4.6.7))(zod@4.6.7)':
     dependencies:
       '@anthropic-ai/sdk': 0.135.0(zod@4.6.7)
-      '@tanstack/ai': 1.4.0(@opentelemetry/api@1.10.0)(zod@4.6.7)
+      '@tanstack/ai': 1.5.0(@opentelemetry/api@1.10.0)(zod@4.6.7)
       '@tanstack/ai-utils': 1.1.0
     transitivePeerDependencies:
       - zod
@@ -2234,10 +2234,10 @@ snapshots:
     dependencies:
       '@tanstack/devtools-event-client': 0.4.4
 
-  '@tanstack/ai-gemini@1.2.2(@tanstack/ai@1.4.0(@opentelemetry/api@1.10.0)(zod@4.6.7))':
+  '@tanstack/ai-gemini@1.2.3(@tanstack/ai@1.5.0(@opentelemetry/api@1.10.0)(zod@4.6.7))':
     dependencies:
       '@google/genai': 2.32.0
-      '@tanstack/ai': 1.4.0(@opentelemetry/api@1.10.0)(zod@4.6.7)
+      '@tanstack/ai': 1.5.0(@opentelemetry/api@1.10.0)(zod@4.6.7)
       '@tanstack/ai-utils': 1.1.0
       partial-json: 0.1.7
     transitivePeerDependencies:
@@ -2246,11 +2246,11 @@ snapshots:
       - supports-color
       - utf-8-validate
 
-  '@tanstack/ai-openai@1.1.1(@tanstack/ai@1.4.0(@opentelemetry/api@1.10.0)(zod@4.6.7))(google-auth-library@10.9.1)(undici@7.30.2)(ws@8.22.2)(zod@4.6.7)':
+  '@tanstack/ai-openai@1.1.1(@tanstack/ai@1.5.0(@opentelemetry/api@1.10.0)(zod@4.6.7))(google-auth-library@10.9.1)(undici@7.30.2)(ws@8.22.2)(zod@4.6.7)':
     dependencies:
-      '@tanstack/ai': 1.4.0(@opentelemetry/api@1.10.0)(zod@4.6.7)
+      '@tanstack/ai': 1.5.0(@opentelemetry/api@1.10.0)(zod@4.6.7)
       '@tanstack/ai-utils': 1.1.0
-      '@tanstack/openai-base': 1.0.4(@tanstack/ai@1.4.0(@opentelemetry/api@1.10.0)(zod@4.6.7))(google-auth-library@10.9.1)(undici@7.30.2)(ws@8.22.2)(zod@4.6.7)
+      '@tanstack/openai-base': 1.0.4(@tanstack/ai@1.5.0(@opentelemetry/api@1.10.0)(zod@4.6.7))(google-auth-library@10.9.1)(undici@7.30.2)(ws@8.22.2)(zod@4.6.7)
       openai: 7.55.0(google-auth-library@10.9.1)(undici@7.30.2)(ws@8.22.2)(zod@4.6.7)
     transitivePeerDependencies:
       - '@aws-sdk/credential-provider-node'
@@ -2263,7 +2263,7 @@ snapshots:
 
   '@tanstack/ai-utils@1.1.0': {}
 
-  '@tanstack/ai@1.4.0(@opentelemetry/api@1.10.0)(zod@4.6.7)':
+  '@tanstack/ai@1.5.0(@opentelemetry/api@1.10.0)(zod@4.6.7)':
     dependencies:
       '@ag-ui/core': 1.0.0(zod@4.6.7)
       '@cfworker/json-schema': 4.1.6
@@ -2279,9 +2279,9 @@ snapshots:
 
   '@tanstack/devtools-event-client@0.4.4': {}
 
-  '@tanstack/openai-base@1.0.4(@tanstack/ai@1.4.0(@opentelemetry/api@1.10.0)(zod@4.6.7))(google-auth-library@10.9.1)(undici@7.30.2)(ws@8.22.2)(zod@4.6.7)':
+  '@tanstack/openai-base@1.0.4(@tanstack/ai@1.5.0(@opentelemetry/api@1.10.0)(zod@4.6.7))(google-auth-library@10.9.1)(undici@7.30.2)(ws@8.22.2)(zod@4.6.7)':
     dependencies:
-      '@tanstack/ai': 1.4.0(@opentelemetry/api@1.10.0)(zod@4.6.7)
+      '@tanstack/ai': 1.5.0(@opentelemetry/api@1.10.0)(zod@4.6.7)
       '@tanstack/ai-utils': 1.1.0
       openai: 7.55.0(google-auth-library@10.9.1)(undici@7.30.2)(ws@8.22.2)(zod@4.6.7)
     transitivePeerDependencies:
