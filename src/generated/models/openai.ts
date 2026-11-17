@@ -22,7 +22,7 @@ export const models = {
             choice: ['auto', 'none', 'required', 'tool'],
             freeform: ['text', 'lark', 'regex'],
             strict: true,
-            updates: false,
+            updates: [],
           },
         },
         sdk: { aisdk: '@ai-sdk/openai' },
@@ -33,7 +33,7 @@ export const models = {
             choice: ['auto', 'none', 'required', 'tool'],
             freeform: ['text', 'lark', 'regex'],
             strict: true,
-            updates: true,
+            updates: [],
           },
         },
         sdk: { aisdk: '@ai-sdk/openai' },
@@ -95,10 +95,10 @@ export const models = {
   'gpt-4': {
     api: {
       'chat-completions': {
-        capabilities: { tools: { updates: false } },
+        capabilities: { tools: { updates: [] } },
         sdk: { aisdk: '@ai-sdk/openai' },
       },
-      responses: { capabilities: { tools: { updates: false } }, sdk: { aisdk: '@ai-sdk/openai' } },
+      responses: { capabilities: { tools: { updates: [] } }, sdk: { aisdk: '@ai-sdk/openai' } },
     },
     capabilities: {
       cache: false,
@@ -125,11 +125,11 @@ export const models = {
   'gpt-4-turbo': {
     api: {
       'chat-completions': {
-        capabilities: { tools: { choice: ['auto', 'none', 'required', 'tool'], updates: false } },
+        capabilities: { tools: { choice: ['auto', 'none', 'required', 'tool'], updates: [] } },
         sdk: { aisdk: '@ai-sdk/openai' },
       },
       responses: {
-        capabilities: { tools: { choice: ['auto', 'none', 'required', 'tool'], updates: false } },
+        capabilities: { tools: { choice: ['auto', 'none', 'required', 'tool'], updates: [] } },
         sdk: { aisdk: '@ai-sdk/openai' },
       },
     },
@@ -162,13 +162,13 @@ export const models = {
     api: {
       'chat-completions': {
         capabilities: {
-          tools: { choice: ['auto', 'none', 'required', 'tool'], strict: true, updates: false },
+          tools: { choice: ['auto', 'none', 'required', 'tool'], strict: true, updates: [] },
         },
         sdk: { aisdk: '@ai-sdk/openai' },
       },
       responses: {
         capabilities: {
-          tools: { choice: ['auto', 'none', 'required', 'tool'], strict: true, updates: true },
+          tools: { choice: ['auto', 'none', 'required', 'tool'], strict: true, updates: [] },
         },
         sdk: { aisdk: '@ai-sdk/openai' },
       },
@@ -203,13 +203,13 @@ export const models = {
     api: {
       'chat-completions': {
         capabilities: {
-          tools: { choice: ['auto', 'none', 'required', 'tool'], strict: true, updates: false },
+          tools: { choice: ['auto', 'none', 'required', 'tool'], strict: true, updates: [] },
         },
         sdk: { aisdk: '@ai-sdk/openai' },
       },
       responses: {
         capabilities: {
-          tools: { choice: ['auto', 'none', 'required', 'tool'], strict: true, updates: true },
+          tools: { choice: ['auto', 'none', 'required', 'tool'], strict: true, updates: [] },
         },
         sdk: { aisdk: '@ai-sdk/openai' },
       },
@@ -244,13 +244,13 @@ export const models = {
     api: {
       'chat-completions': {
         capabilities: {
-          tools: { choice: ['auto', 'none', 'required', 'tool'], strict: true, updates: false },
+          tools: { choice: ['auto', 'none', 'required', 'tool'], strict: true, updates: [] },
         },
         sdk: { aisdk: '@ai-sdk/openai' },
       },
       responses: {
         capabilities: {
-          tools: { choice: ['auto', 'none', 'required', 'tool'], strict: true, updates: true },
+          tools: { choice: ['auto', 'none', 'required', 'tool'], strict: true, updates: [] },
         },
         sdk: { aisdk: '@ai-sdk/openai' },
       },
@@ -286,13 +286,13 @@ export const models = {
     api: {
       'chat-completions': {
         capabilities: {
-          tools: { choice: ['auto', 'none', 'required', 'tool'], strict: true, updates: false },
+          tools: { choice: ['auto', 'none', 'required', 'tool'], strict: true, updates: [] },
         },
         sdk: { aisdk: '@ai-sdk/openai' },
       },
       responses: {
         capabilities: {
-          tools: { choice: ['auto', 'none', 'required', 'tool'], strict: true, updates: true },
+          tools: { choice: ['auto', 'none', 'required', 'tool'], strict: true, updates: [] },
         },
         sdk: { aisdk: '@ai-sdk/openai' },
       },
@@ -326,10 +326,10 @@ export const models = {
   'gpt-4o-2024-05-13': {
     api: {
       'chat-completions': {
-        capabilities: { tools: { updates: false } },
+        capabilities: { tools: { updates: [] } },
         sdk: { aisdk: '@ai-sdk/openai' },
       },
-      responses: { capabilities: { tools: { updates: false } }, sdk: { aisdk: '@ai-sdk/openai' } },
+      responses: { capabilities: { tools: { updates: [] } }, sdk: { aisdk: '@ai-sdk/openai' } },
     },
     capabilities: {
       cache: false,
@@ -361,13 +361,13 @@ export const models = {
     api: {
       'chat-completions': {
         capabilities: {
-          tools: { choice: ['auto', 'none', 'required', 'tool'], strict: true, updates: false },
+          tools: { choice: ['auto', 'none', 'required', 'tool'], strict: true, updates: [] },
         },
         sdk: { aisdk: '@ai-sdk/openai' },
       },
       responses: {
         capabilities: {
-          tools: { choice: ['auto', 'none', 'required', 'tool'], strict: true, updates: true },
+          tools: { choice: ['auto', 'none', 'required', 'tool'], strict: true, updates: [] },
         },
         sdk: { aisdk: '@ai-sdk/openai' },
       },
@@ -401,13 +401,13 @@ export const models = {
     api: {
       'chat-completions': {
         capabilities: {
-          tools: { choice: ['auto', 'none', 'required', 'tool'], strict: true, updates: false },
+          tools: { choice: ['auto', 'none', 'required', 'tool'], strict: true, updates: [] },
         },
         sdk: { aisdk: '@ai-sdk/openai' },
       },
       responses: {
         capabilities: {
-          tools: { choice: ['auto', 'none', 'required', 'tool'], strict: true, updates: true },
+          tools: { choice: ['auto', 'none', 'required', 'tool'], strict: true, updates: [] },
         },
         sdk: { aisdk: '@ai-sdk/openai' },
       },
@@ -441,13 +441,13 @@ export const models = {
     api: {
       'chat-completions': {
         capabilities: {
-          tools: { choice: ['auto', 'none', 'required', 'tool'], strict: true, updates: false },
+          tools: { choice: ['auto', 'none', 'required', 'tool'], strict: true, updates: [] },
         },
         sdk: { aisdk: '@ai-sdk/openai' },
       },
       responses: {
         capabilities: {
-          tools: { choice: ['auto', 'none', 'required', 'tool'], strict: true, updates: true },
+          tools: { choice: ['auto', 'none', 'required', 'tool'], strict: true, updates: [] },
         },
         sdk: { aisdk: '@ai-sdk/openai' },
       },
@@ -486,7 +486,7 @@ export const models = {
             choice: ['auto', 'none', 'required', 'tool'],
             freeform: ['text', 'lark', 'regex'],
             strict: true,
-            updates: false,
+            updates: [],
           },
         },
         sdk: { aisdk: '@ai-sdk/openai' },
@@ -497,7 +497,7 @@ export const models = {
             choice: ['auto', 'none', 'required', 'tool'],
             freeform: ['text', 'lark', 'regex'],
             strict: true,
-            updates: true,
+            updates: [],
           },
         },
         sdk: { aisdk: '@ai-sdk/openai' },
@@ -539,7 +539,7 @@ export const models = {
             choice: ['auto', 'none', 'required', 'tool'],
             freeform: ['text', 'lark', 'regex'],
             strict: true,
-            updates: false,
+            updates: [],
           },
         },
         sdk: { aisdk: '@ai-sdk/openai' },
@@ -550,7 +550,7 @@ export const models = {
             choice: ['auto', 'none', 'required', 'tool'],
             freeform: ['text', 'lark', 'regex'],
             strict: true,
-            updates: true,
+            updates: [],
           },
         },
         sdk: { aisdk: '@ai-sdk/openai' },
@@ -590,7 +590,7 @@ export const models = {
             choice: ['auto', 'none', 'required', 'tool'],
             freeform: ['text', 'lark', 'regex'],
             strict: true,
-            updates: false,
+            updates: [],
           },
         },
         sdk: { aisdk: '@ai-sdk/openai' },
@@ -601,7 +601,7 @@ export const models = {
             choice: ['auto', 'none', 'required', 'tool'],
             freeform: ['text', 'lark', 'regex'],
             strict: true,
-            updates: true,
+            updates: [],
           },
         },
         sdk: { aisdk: '@ai-sdk/openai' },
@@ -641,7 +641,7 @@ export const models = {
             choice: ['auto', 'none', 'required', 'tool'],
             freeform: ['text', 'lark', 'regex'],
             strict: true,
-            updates: false,
+            updates: [],
           },
         },
         sdk: { aisdk: '@ai-sdk/openai' },
@@ -701,7 +701,7 @@ export const models = {
             choice: ['auto', 'none', 'required', 'tool'],
             freeform: ['text', 'lark', 'regex'],
             strict: true,
-            updates: false,
+            updates: [],
           },
         },
         sdk: { aisdk: '@ai-sdk/openai' },
@@ -712,7 +712,7 @@ export const models = {
             choice: ['auto', 'none', 'required', 'tool'],
             freeform: ['text', 'lark', 'regex'],
             strict: true,
-            updates: true,
+            updates: [],
           },
         },
         sdk: { aisdk: '@ai-sdk/openai' },
@@ -752,7 +752,7 @@ export const models = {
             choice: ['auto', 'none', 'required', 'tool'],
             freeform: ['text', 'lark', 'regex'],
             strict: true,
-            updates: false,
+            updates: [],
           },
         },
         sdk: { aisdk: '@ai-sdk/openai' },
@@ -763,7 +763,7 @@ export const models = {
             choice: ['auto', 'none', 'required', 'tool'],
             freeform: ['text', 'lark', 'regex'],
             strict: true,
-            updates: true,
+            updates: [],
           },
         },
         sdk: { aisdk: '@ai-sdk/openai' },
@@ -803,7 +803,7 @@ export const models = {
             choice: ['auto', 'none', 'required', 'tool'],
             freeform: ['text', 'lark', 'regex'],
             strict: true,
-            updates: false,
+            updates: [],
           },
         },
         sdk: { aisdk: '@ai-sdk/openai' },
@@ -841,7 +841,7 @@ export const models = {
             choice: ['auto', 'none', 'required', 'tool'],
             freeform: ['text', 'lark', 'regex'],
             strict: true,
-            updates: true,
+            updates: [],
           },
         },
         sdk: { aisdk: '@ai-sdk/openai' },
@@ -875,7 +875,7 @@ export const models = {
   },
   'gpt-5.3-codex-spark': {
     api: {
-      responses: { capabilities: { tools: { updates: true } }, sdk: { aisdk: '@ai-sdk/openai' } },
+      responses: { capabilities: { tools: { updates: [] } }, sdk: { aisdk: '@ai-sdk/openai' } },
     },
     capabilities: {
       effort_updates: false,
@@ -908,7 +908,7 @@ export const models = {
             choice: ['auto', 'none', 'required', 'tool'],
             freeform: ['text', 'lark', 'regex'],
             strict: true,
-            updates: false,
+            updates: [],
           },
         },
         sdk: { aisdk: '@ai-sdk/openai' },
@@ -920,7 +920,7 @@ export const models = {
             freeform: ['text', 'lark', 'regex'],
             search: true,
             strict: true,
-            updates: true,
+            updates: [],
           },
         },
         sdk: { aisdk: '@ai-sdk/openai' },
@@ -960,7 +960,7 @@ export const models = {
             choice: ['auto', 'none', 'required', 'tool'],
             freeform: ['text', 'lark', 'regex'],
             strict: true,
-            updates: false,
+            updates: [],
           },
         },
         sdk: { aisdk: '@ai-sdk/openai' },
@@ -972,7 +972,7 @@ export const models = {
             freeform: ['text', 'lark', 'regex'],
             search: true,
             strict: true,
-            updates: true,
+            updates: [],
           },
         },
         sdk: { aisdk: '@ai-sdk/openai' },
@@ -1012,7 +1012,7 @@ export const models = {
             choice: ['auto', 'none', 'required', 'tool'],
             freeform: ['text', 'lark', 'regex'],
             strict: true,
-            updates: false,
+            updates: [],
           },
         },
         sdk: { aisdk: '@ai-sdk/openai' },
@@ -1023,7 +1023,7 @@ export const models = {
             choice: ['auto', 'none', 'required', 'tool'],
             freeform: ['text', 'lark', 'regex'],
             strict: true,
-            updates: true,
+            updates: [],
           },
         },
         sdk: { aisdk: '@ai-sdk/openai' },
@@ -1064,7 +1064,7 @@ export const models = {
             freeform: ['text', 'lark', 'regex'],
             search: true,
             strict: true,
-            updates: false,
+            updates: [],
           },
         },
         sdk: { aisdk: '@ai-sdk/openai' },
@@ -1103,7 +1103,7 @@ export const models = {
             choice: ['auto', 'none', 'required', 'tool'],
             freeform: ['text', 'lark', 'regex'],
             strict: true,
-            updates: false,
+            updates: [],
           },
         },
         sdk: { aisdk: '@ai-sdk/openai' },
@@ -1115,7 +1115,7 @@ export const models = {
             freeform: ['text', 'lark', 'regex'],
             search: true,
             strict: true,
-            updates: true,
+            updates: [],
           },
         },
         sdk: { aisdk: '@ai-sdk/openai' },
@@ -1158,7 +1158,7 @@ export const models = {
             freeform: ['text', 'lark', 'regex'],
             search: true,
             strict: true,
-            updates: false,
+            updates: [],
           },
         },
         sdk: { aisdk: '@ai-sdk/openai' },
@@ -1197,7 +1197,7 @@ export const models = {
             choice: ['auto', 'none', 'required', 'tool'],
             freeform: ['text', 'lark', 'regex'],
             strict: true,
-            updates: false,
+            updates: [],
           },
         },
         sdk: { aisdk: '@ai-sdk/openai' },
@@ -1210,7 +1210,7 @@ export const models = {
             freeform: ['text', 'lark', 'regex'],
             search: true,
             strict: true,
-            updates: true,
+            updates: ['add', 'remove', 'replace'],
           },
         },
         sdk: { aisdk: '@ai-sdk/openai' },
@@ -1256,7 +1256,7 @@ export const models = {
             freeform: ['text', 'lark', 'regex'],
             search: true,
             strict: true,
-            updates: true,
+            updates: ['add', 'remove', 'replace'],
           },
         },
         sdk: { aisdk: '@ai-sdk/openai' },
@@ -1300,7 +1300,7 @@ export const models = {
             choice: ['auto', 'none', 'required', 'tool'],
             freeform: ['text', 'lark', 'regex'],
             strict: true,
-            updates: false,
+            updates: [],
           },
         },
         sdk: { aisdk: '@ai-sdk/openai' },
@@ -1313,7 +1313,7 @@ export const models = {
             freeform: ['text', 'lark', 'regex'],
             search: true,
             strict: true,
-            updates: true,
+            updates: ['add', 'remove', 'replace'],
           },
         },
         sdk: { aisdk: '@ai-sdk/openai' },
@@ -1358,7 +1358,7 @@ export const models = {
             choice: ['auto', 'none', 'required', 'tool'],
             freeform: ['text', 'lark', 'regex'],
             strict: true,
-            updates: false,
+            updates: [],
           },
         },
         sdk: { aisdk: '@ai-sdk/openai' },
@@ -1371,7 +1371,7 @@ export const models = {
             freeform: ['text', 'lark', 'regex'],
             search: true,
             strict: true,
-            updates: true,
+            updates: ['add', 'remove', 'replace'],
           },
         },
         sdk: { aisdk: '@ai-sdk/openai' },
@@ -1416,7 +1416,7 @@ export const models = {
             choice: ['auto', 'none', 'required', 'tool'],
             freeform: ['text', 'lark', 'regex'],
             strict: true,
-            updates: false,
+            updates: [],
           },
         },
         sdk: { aisdk: '@ai-sdk/openai' },
@@ -1429,7 +1429,7 @@ export const models = {
             freeform: ['text', 'lark', 'regex'],
             search: true,
             strict: true,
-            updates: true,
+            updates: ['add', 'remove', 'replace'],
           },
         },
         sdk: { aisdk: '@ai-sdk/openai' },
@@ -1473,7 +1473,7 @@ export const models = {
           tools: {
             choice: ['auto', 'none', 'required', 'tool'],
             freeform: ['text', 'lark', 'regex'],
-            updates: false,
+            updates: [],
           },
         },
         sdk: { aisdk: '@ai-sdk/openai' },
@@ -1486,7 +1486,7 @@ export const models = {
             freeform: ['text', 'lark', 'regex'],
             search: true,
             strict: true,
-            updates: true,
+            updates: ['add', 'remove', 'replace'],
           },
         },
         sdk: { aisdk: '@ai-sdk/openai' },
@@ -1532,7 +1532,7 @@ export const models = {
             freeform: ['text', 'lark', 'regex'],
             search: true,
             strict: true,
-            updates: true,
+            updates: ['add', 'remove', 'replace'],
           },
         },
         sdk: { aisdk: '@ai-sdk/openai' },
@@ -1576,12 +1576,12 @@ export const models = {
             choice: ['auto', 'none', 'required', 'tool'],
             freeform: ['text', 'lark', 'regex'],
             strict: true,
-            updates: false,
+            updates: [],
           },
         },
         sdk: { aisdk: '@ai-sdk/openai' },
       },
-      decisions: { capabilities: { tools: { updates: false } }, sdk: { aisdk: '@ai-sdk/openai' } },
+      decisions: { capabilities: { tools: { updates: [] } }, sdk: { aisdk: '@ai-sdk/openai' } },
       responses: {
         capabilities: {
           effort_updates: true,
@@ -1591,7 +1591,7 @@ export const models = {
             freeform: ['text', 'lark', 'regex'],
             search: true,
             strict: true,
-            updates: true,
+            updates: ['add', 'remove', 'replace'],
           },
         },
         sdk: { aisdk: '@ai-sdk/openai' },
@@ -1636,7 +1636,7 @@ export const models = {
             choice: ['auto', 'none', 'required', 'tool'],
             freeform: ['text', 'lark', 'regex'],
             strict: true,
-            updates: false,
+            updates: [],
           },
         },
         sdk: { aisdk: '@ai-sdk/openai' },
@@ -1649,7 +1649,7 @@ export const models = {
             freeform: ['text', 'lark', 'regex'],
             search: true,
             strict: true,
-            updates: true,
+            updates: ['add', 'remove', 'replace'],
           },
         },
         sdk: { aisdk: '@ai-sdk/openai' },
@@ -1693,7 +1693,7 @@ export const models = {
           tools: {
             choice: ['auto', 'none', 'required', 'tool'],
             freeform: ['text', 'lark', 'regex'],
-            updates: false,
+            updates: [],
           },
         },
         sdk: { aisdk: '@ai-sdk/openai' },
@@ -1706,7 +1706,7 @@ export const models = {
             freeform: ['text', 'lark', 'regex'],
             search: true,
             strict: true,
-            updates: true,
+            updates: ['add', 'remove', 'replace'],
           },
         },
         sdk: { aisdk: '@ai-sdk/openai' },
@@ -1751,7 +1751,7 @@ export const models = {
             choice: ['auto', 'none', 'required', 'tool'],
             freeform: ['text', 'lark', 'regex'],
             strict: true,
-            updates: false,
+            updates: [],
           },
         },
         sdk: { aisdk: '@ai-sdk/openai' },
@@ -1764,7 +1764,7 @@ export const models = {
             freeform: ['text', 'lark', 'regex'],
             search: true,
             strict: true,
-            updates: true,
+            updates: ['add', 'remove', 'replace'],
           },
         },
         sdk: { aisdk: '@ai-sdk/openai' },
@@ -1804,7 +1804,7 @@ export const models = {
   'gpt-audio': {
     api: {
       'chat-completions': {
-        capabilities: { tools: { updates: false } },
+        capabilities: { tools: { updates: [] } },
         sdk: { aisdk: '@ai-sdk/openai' },
       },
     },
@@ -1844,7 +1844,7 @@ export const models = {
   'gpt-audio-1.5': {
     api: {
       'chat-completions': {
-        capabilities: { tools: { updates: false } },
+        capabilities: { tools: { updates: [] } },
         sdk: { aisdk: '@ai-sdk/openai' },
       },
     },
@@ -1883,7 +1883,7 @@ export const models = {
   'gpt-audio-mini': {
     api: {
       'chat-completions': {
-        capabilities: { tools: { updates: false } },
+        capabilities: { tools: { updates: [] } },
         sdk: { aisdk: '@ai-sdk/openai' },
       },
     },
@@ -1929,7 +1929,7 @@ export const models = {
             freeform: ['text', 'lark', 'regex'],
             search: true,
             strict: true,
-            updates: true,
+            updates: ['add', 'remove', 'replace'],
           },
         },
         sdk: { aisdk: '@ai-sdk/openai' },
@@ -1975,7 +1975,7 @@ export const models = {
             freeform: ['text', 'lark', 'regex'],
             search: true,
             strict: true,
-            updates: true,
+            updates: ['add', 'remove', 'replace'],
           },
         },
         sdk: { aisdk: '@ai-sdk/openai' },
@@ -2015,13 +2015,13 @@ export const models = {
     api: {
       'chat-completions': {
         capabilities: {
-          tools: { choice: ['auto', 'none', 'required', 'tool'], strict: true, updates: false },
+          tools: { choice: ['auto', 'none', 'required', 'tool'], strict: true, updates: [] },
         },
         sdk: { aisdk: '@ai-sdk/openai' },
       },
       responses: {
         capabilities: {
-          tools: { choice: ['auto', 'none', 'required', 'tool'], strict: true, updates: true },
+          tools: { choice: ['auto', 'none', 'required', 'tool'], strict: true, updates: [] },
         },
         sdk: { aisdk: '@ai-sdk/openai' },
       },
@@ -2056,7 +2056,7 @@ export const models = {
     api: {
       responses: {
         capabilities: {
-          tools: { choice: ['auto', 'none', 'required', 'tool'], strict: true, updates: false },
+          tools: { choice: ['auto', 'none', 'required', 'tool'], strict: true, updates: [] },
         },
         sdk: { aisdk: '@ai-sdk/openai' },
       },
@@ -2090,13 +2090,13 @@ export const models = {
     api: {
       'chat-completions': {
         capabilities: {
-          tools: { choice: ['auto', 'none', 'required', 'tool'], strict: true, updates: false },
+          tools: { choice: ['auto', 'none', 'required', 'tool'], strict: true, updates: [] },
         },
         sdk: { aisdk: '@ai-sdk/openai' },
       },
       responses: {
         capabilities: {
-          tools: { choice: ['auto', 'none', 'required', 'tool'], strict: true, updates: true },
+          tools: { choice: ['auto', 'none', 'required', 'tool'], strict: true, updates: [] },
         },
         sdk: { aisdk: '@ai-sdk/openai' },
       },
@@ -2131,13 +2131,13 @@ export const models = {
     api: {
       'chat-completions': {
         capabilities: {
-          tools: { choice: ['auto', 'none', 'required', 'tool'], strict: true, updates: false },
+          tools: { choice: ['auto', 'none', 'required', 'tool'], strict: true, updates: [] },
         },
         sdk: { aisdk: '@ai-sdk/openai' },
       },
       responses: {
         capabilities: {
-          tools: { choice: ['auto', 'none', 'required', 'tool'], strict: true, updates: true },
+          tools: { choice: ['auto', 'none', 'required', 'tool'], strict: true, updates: [] },
         },
         sdk: { aisdk: '@ai-sdk/openai' },
       },
@@ -2169,7 +2169,7 @@ export const models = {
     api: {
       responses: {
         capabilities: {
-          tools: { choice: ['auto', 'none', 'required', 'tool'], strict: true, updates: false },
+          tools: { choice: ['auto', 'none', 'required', 'tool'], strict: true, updates: [] },
         },
         sdk: { aisdk: '@ai-sdk/openai' },
       },
@@ -2202,13 +2202,13 @@ export const models = {
     api: {
       'chat-completions': {
         capabilities: {
-          tools: { choice: ['auto', 'none', 'required', 'tool'], strict: true, updates: false },
+          tools: { choice: ['auto', 'none', 'required', 'tool'], strict: true, updates: [] },
         },
         sdk: { aisdk: '@ai-sdk/openai' },
       },
       responses: {
         capabilities: {
-          tools: { choice: ['auto', 'none', 'required', 'tool'], strict: true, updates: true },
+          tools: { choice: ['auto', 'none', 'required', 'tool'], strict: true, updates: [] },
         },
         sdk: { aisdk: '@ai-sdk/openai' },
       },

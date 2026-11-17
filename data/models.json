@@ -15,7 +15,7 @@
                     "required",
                     "tool"
                   ],
-                  "updates": false
+                  "updates": []
                 }
               },
               "sdk": {
@@ -34,7 +34,11 @@
                   ],
                   "search": true,
                   "strict": true,
-                  "updates": true
+                  "updates": [
+                    "add",
+                    "remove",
+                    "replace"
+                  ]
                 }
               },
               "sdk": {
@@ -110,7 +114,7 @@
                     "auto",
                     "none"
                   ],
-                  "updates": false
+                  "updates": []
                 }
               },
               "sdk": {
@@ -128,7 +132,11 @@
                   ],
                   "search": true,
                   "strict": true,
-                  "updates": true
+                  "updates": [
+                    "add",
+                    "remove",
+                    "replace"
+                  ]
                 }
               },
               "sdk": {
@@ -207,7 +215,7 @@
                     "auto",
                     "none"
                   ],
-                  "updates": false
+                  "updates": []
                 }
               },
               "sdk": {
@@ -225,7 +233,11 @@
                   ],
                   "search": true,
                   "strict": true,
-                  "updates": true
+                  "updates": [
+                    "add",
+                    "remove",
+                    "replace"
+                  ]
                 }
               },
               "sdk": {
@@ -309,7 +321,7 @@
                     "required",
                     "tool"
                   ],
-                  "updates": false
+                  "updates": []
                 }
               },
               "sdk": {
@@ -327,7 +339,7 @@
                   ],
                   "search": true,
                   "strict": true,
-                  "updates": false
+                  "updates": []
                 }
               },
               "sdk": {
@@ -404,7 +416,7 @@
                     "required",
                     "tool"
                   ],
-                  "updates": false
+                  "updates": []
                 }
               },
               "sdk": {
@@ -422,7 +434,7 @@
                   ],
                   "search": true,
                   "strict": true,
-                  "updates": false
+                  "updates": []
                 }
               },
               "sdk": {
@@ -497,7 +509,7 @@
                     "required",
                     "tool"
                   ],
-                  "updates": false
+                  "updates": []
                 }
               },
               "sdk": {
@@ -517,7 +529,11 @@
                   ],
                   "search": true,
                   "strict": true,
-                  "updates": true
+                  "updates": [
+                    "add",
+                    "remove",
+                    "replace"
+                  ]
                 }
               },
               "sdk": {
@@ -599,7 +615,7 @@
                     "required",
                     "tool"
                   ],
-                  "updates": false
+                  "updates": []
                 }
               },
               "sdk": {
@@ -617,7 +633,7 @@
                   ],
                   "search": true,
                   "strict": true,
-                  "updates": false
+                  "updates": []
                 }
               },
               "sdk": {
@@ -699,7 +715,7 @@
                     "required",
                     "tool"
                   ],
-                  "updates": false
+                  "updates": []
                 }
               },
               "sdk": {
@@ -717,7 +733,7 @@
                   ],
                   "search": true,
                   "strict": true,
-                  "updates": false
+                  "updates": []
                 }
               },
               "sdk": {
@@ -797,7 +813,7 @@
                     "required",
                     "tool"
                   ],
-                  "updates": false
+                  "updates": []
                 }
               },
               "sdk": {
@@ -815,7 +831,7 @@
                   ],
                   "search": true,
                   "strict": true,
-                  "updates": false
+                  "updates": []
                 }
               },
               "sdk": {
@@ -896,7 +912,7 @@
                     "required",
                     "tool"
                   ],
-                  "updates": false
+                  "updates": []
                 }
               },
               "sdk": {
@@ -914,7 +930,7 @@
                   ],
                   "search": true,
                   "strict": true,
-                  "updates": false
+                  "updates": []
                 }
               },
               "sdk": {
@@ -993,7 +1009,7 @@
                     "required",
                     "tool"
                   ],
-                  "updates": false
+                  "updates": []
                 }
               },
               "sdk": {
@@ -1012,7 +1028,11 @@
                   ],
                   "search": true,
                   "strict": true,
-                  "updates": true
+                  "updates": [
+                    "add",
+                    "remove",
+                    "replace"
+                  ]
                 }
               },
               "sdk": {
@@ -1094,7 +1114,7 @@
                     "required",
                     "tool"
                   ],
-                  "updates": false
+                  "updates": []
                 }
               },
               "sdk": {
@@ -1114,7 +1134,11 @@
                   ],
                   "search": true,
                   "strict": true,
-                  "updates": true
+                  "updates": [
+                    "add",
+                    "remove",
+                    "replace"
+                  ]
                 }
               },
               "sdk": {
@@ -1196,7 +1220,7 @@
                     "auto",
                     "none"
                   ],
-                  "updates": false
+                  "updates": []
                 }
               },
               "sdk": {
@@ -1214,7 +1238,11 @@
                   ],
                   "search": true,
                   "strict": true,
-                  "updates": true
+                  "updates": [
+                    "add",
+                    "remove",
+                    "replace"
+                  ]
                 }
               },
               "sdk": {
@@ -1298,7 +1326,7 @@
                     "required",
                     "tool"
                   ],
-                  "updates": false
+                  "updates": []
                 }
               },
               "sdk": {
@@ -1316,7 +1344,7 @@
                   ],
                   "search": true,
                   "strict": true,
-                  "updates": false
+                  "updates": []
                 }
               },
               "sdk": {
@@ -1394,7 +1422,7 @@
                     "required",
                     "tool"
                   ],
-                  "updates": false
+                  "updates": []
                 }
               },
               "sdk": {
@@ -1412,7 +1440,7 @@
                   ],
                   "search": true,
                   "strict": true,
-                  "updates": false
+                  "updates": []
                 }
               },
               "sdk": {
@@ -1488,7 +1516,7 @@
                     "required",
                     "tool"
                   ],
-                  "updates": false
+                  "updates": []
                 }
               },
               "sdk": {
@@ -1506,7 +1534,7 @@
                   ],
                   "search": true,
                   "strict": true,
-                  "updates": false
+                  "updates": []
                 }
               },
               "sdk": {
@@ -1587,7 +1615,7 @@
                     "required",
                     "tool"
                   ],
-                  "updates": false
+                  "updates": []
                 }
               },
               "sdk": {
@@ -1606,7 +1634,7 @@
                   ],
                   "search": true,
                   "strict": true,
-                  "updates": false
+                  "updates": []
                 }
               },
               "sdk": {
@@ -1684,7 +1712,7 @@
                     "auto",
                     "none"
                   ],
-                  "updates": false
+                  "updates": []
                 }
               },
               "sdk": {
@@ -1702,7 +1730,11 @@
                   ],
                   "search": true,
                   "strict": true,
-                  "updates": true
+                  "updates": [
+                    "add",
+                    "remove",
+                    "replace"
+                  ]
                 }
               },
               "sdk": {
@@ -1784,7 +1816,7 @@
             "interactions": {
               "capabilities": {
                 "tools": {
-                  "updates": false
+                  "updates": []
                 }
               },
               "sdk": {
@@ -1863,7 +1895,7 @@
             "interactions": {
               "capabilities": {
                 "tools": {
-                  "updates": false
+                  "updates": []
                 }
               },
               "sdk": {
@@ -1942,7 +1974,7 @@
             "generate-content": {
               "capabilities": {
                 "tools": {
-                  "updates": false
+                  "updates": []
                 }
               },
               "sdk": {
@@ -2001,7 +2033,7 @@
                     "tool"
                   ],
                   "strict": true,
-                  "updates": false
+                  "updates": []
                 }
               },
               "sdk": {
@@ -2018,7 +2050,7 @@
                     "tool"
                   ],
                   "strict": true,
-                  "updates": false
+                  "updates": []
                 }
               },
               "sdk": {
@@ -2035,7 +2067,7 @@
                     "tool"
                   ],
                   "strict": true,
-                  "updates": false
+                  "updates": []
                 }
               },
               "sdk": {
@@ -2137,7 +2169,7 @@
                     "tool"
                   ],
                   "strict": true,
-                  "updates": false
+                  "updates": []
                 }
               },
               "sdk": {
@@ -2154,7 +2186,7 @@
                     "tool"
                   ],
                   "strict": true,
-                  "updates": false
+                  "updates": []
                 }
               },
               "sdk": {
@@ -2171,7 +2203,7 @@
                     "tool"
                   ],
                   "strict": true,
-                  "updates": false
+                  "updates": []
                 }
               },
               "sdk": {
@@ -2271,7 +2303,7 @@
                     "tool"
                   ],
                   "strict": true,
-                  "updates": false
+                  "updates": []
                 }
               },
               "sdk": {
@@ -2288,7 +2320,7 @@
                     "tool"
                   ],
                   "strict": true,
-                  "updates": false
+                  "updates": []
                 }
               },
               "sdk": {
@@ -2305,7 +2337,7 @@
                     "tool"
                   ],
                   "strict": true,
-                  "updates": false
+                  "updates": []
                 }
               },
               "sdk": {
@@ -2402,7 +2434,7 @@
                     "tool"
                   ],
                   "strict": true,
-                  "updates": false
+                  "updates": []
                 }
               },
               "sdk": {
@@ -2419,7 +2451,7 @@
                     "tool"
                   ],
                   "strict": true,
-                  "updates": false
+                  "updates": []
                 }
               },
               "sdk": {
@@ -2436,7 +2468,7 @@
                     "tool"
                   ],
                   "strict": true,
-                  "updates": false
+                  "updates": []
                 }
               },
               "sdk": {
@@ -2537,7 +2569,7 @@
                     "tool"
                   ],
                   "strict": true,
-                  "updates": false
+                  "updates": []
                 }
               },
               "sdk": {
@@ -2554,7 +2586,7 @@
                     "tool"
                   ],
                   "strict": true,
-                  "updates": false
+                  "updates": []
                 }
               },
               "sdk": {
@@ -2571,7 +2603,7 @@
                     "tool"
                   ],
                   "strict": true,
-                  "updates": false
+                  "updates": []
                 }
               },
               "sdk": {
@@ -2668,7 +2700,7 @@
                     "tool"
                   ],
                   "strict": true,
-                  "updates": false
+                  "updates": []
                 }
               },
               "sdk": {
@@ -2685,7 +2717,7 @@
                     "tool"
                   ],
                   "strict": true,
-                  "updates": false
+                  "updates": []
                 }
               },
               "sdk": {
@@ -2702,7 +2734,7 @@
                     "tool"
                   ],
                   "strict": true,
-                  "updates": false
+                  "updates": []
                 }
               },
               "sdk": {
@@ -2800,7 +2832,7 @@
                     "tool"
                   ],
                   "strict": true,
-                  "updates": false
+                  "updates": []
                 }
               },
               "sdk": {
@@ -2817,7 +2849,7 @@
                     "tool"
                   ],
                   "strict": true,
-                  "updates": false
+                  "updates": []
                 }
               },
               "sdk": {
@@ -2834,7 +2866,7 @@
                     "tool"
                   ],
                   "strict": true,
-                  "updates": false
+                  "updates": []
                 }
               },
               "sdk": {
@@ -2936,7 +2968,7 @@
                     "tool"
                   ],
                   "strict": true,
-                  "updates": false
+                  "updates": []
                 }
               },
               "sdk": {
@@ -2953,7 +2985,7 @@
                     "tool"
                   ],
                   "strict": true,
-                  "updates": false
+                  "updates": []
                 }
               },
               "sdk": {
@@ -2970,7 +3002,7 @@
                     "tool"
                   ],
                   "strict": true,
-                  "updates": false
+                  "updates": []
                 }
               },
               "sdk": {
@@ -3066,7 +3098,7 @@
                     "tool"
                   ],
                   "strict": true,
-                  "updates": false
+                  "updates": []
                 }
               },
               "sdk": {
@@ -3083,7 +3115,7 @@
                     "tool"
                   ],
                   "strict": true,
-                  "updates": false
+                  "updates": []
                 }
               },
               "sdk": {
@@ -3100,7 +3132,7 @@
                     "tool"
                   ],
                   "strict": true,
-                  "updates": false
+                  "updates": []
                 }
               },
               "sdk": {
@@ -3197,7 +3229,7 @@
                     "tool"
                   ],
                   "strict": true,
-                  "updates": false
+                  "updates": []
                 }
               },
               "sdk": {
@@ -3214,7 +3246,7 @@
                     "tool"
                   ],
                   "strict": true,
-                  "updates": false
+                  "updates": []
                 }
               },
               "sdk": {
@@ -3231,7 +3263,7 @@
                     "tool"
                   ],
                   "strict": true,
-                  "updates": false
+                  "updates": []
                 }
               },
               "sdk": {
@@ -3332,7 +3364,7 @@
                     "tool"
                   ],
                   "strict": true,
-                  "updates": false
+                  "updates": []
                 }
               },
               "sdk": {
@@ -3349,7 +3381,7 @@
                     "tool"
                   ],
                   "strict": true,
-                  "updates": false
+                  "updates": []
                 }
               },
               "sdk": {
@@ -3366,7 +3398,7 @@
                     "tool"
                   ],
                   "strict": true,
-                  "updates": false
+                  "updates": []
                 }
               },
               "sdk": {
@@ -3469,7 +3501,7 @@
                     "tool"
                   ],
                   "strict": true,
-                  "updates": false
+                  "updates": []
                 }
               },
               "sdk": {
@@ -3486,7 +3518,7 @@
                     "tool"
                   ],
                   "strict": true,
-                  "updates": false
+                  "updates": []
                 }
               },
               "sdk": {
@@ -3503,7 +3535,7 @@
                     "tool"
                   ],
                   "strict": true,
-                  "updates": false
+                  "updates": []
                 }
               },
               "sdk": {
@@ -3599,7 +3631,7 @@
                     "tool"
                   ],
                   "strict": true,
-                  "updates": false
+                  "updates": []
                 }
               },
               "sdk": {
@@ -3616,7 +3648,7 @@
                     "tool"
                   ],
                   "strict": true,
-                  "updates": false
+                  "updates": []
                 }
               },
               "sdk": {
@@ -3633,7 +3665,7 @@
                     "tool"
                   ],
                   "strict": true,
-                  "updates": false
+                  "updates": []
                 }
               },
               "sdk": {
@@ -3734,7 +3766,7 @@
                     "tool"
                   ],
                   "strict": true,
-                  "updates": false
+                  "updates": []
                 }
               },
               "sdk": {
@@ -3751,7 +3783,7 @@
                     "tool"
                   ],
                   "strict": true,
-                  "updates": false
+                  "updates": []
                 }
               },
               "sdk": {
@@ -3768,7 +3800,7 @@
                     "tool"
                   ],
                   "strict": true,
-                  "updates": false
+                  "updates": []
                 }
               },
               "sdk": {
@@ -3869,7 +3901,7 @@
                     "tool"
                   ],
                   "strict": true,
-                  "updates": false
+                  "updates": []
                 }
               },
               "sdk": {
@@ -3886,7 +3918,7 @@
                     "tool"
                   ],
                   "strict": true,
-                  "updates": false
+                  "updates": []
                 }
               },
               "sdk": {
@@ -3903,7 +3935,7 @@
                     "tool"
                   ],
                   "strict": true,
-                  "updates": false
+                  "updates": []
                 }
               },
               "sdk": {
@@ -4004,7 +4036,7 @@
                     "tool"
                   ],
                   "strict": true,
-                  "updates": false
+                  "updates": []
                 }
               },
               "sdk": {
@@ -4021,7 +4053,7 @@
                     "tool"
                   ],
                   "strict": true,
-                  "updates": false
+                  "updates": []
                 }
               },
               "sdk": {
@@ -4038,7 +4070,7 @@
                     "tool"
                   ],
                   "strict": true,
-                  "updates": false
+                  "updates": []
                 }
               },
               "sdk": {
@@ -4140,7 +4172,7 @@
                     "tool"
                   ],
                   "strict": true,
-                  "updates": false
+                  "updates": []
                 }
               },
               "sdk": {
@@ -4157,7 +4189,7 @@
                     "tool"
                   ],
                   "strict": true,
-                  "updates": false
+                  "updates": []
                 }
               },
               "sdk": {
@@ -4174,7 +4206,7 @@
                     "tool"
                   ],
                   "strict": true,
-                  "updates": false
+                  "updates": []
                 }
               },
               "sdk": {
@@ -4266,7 +4298,7 @@
                     "tool"
                   ],
                   "strict": true,
-                  "updates": false
+                  "updates": []
                 }
               },
               "sdk": {
@@ -4283,7 +4315,7 @@
                     "tool"
                   ],
                   "strict": true,
-                  "updates": false
+                  "updates": []
                 }
               },
               "sdk": {
@@ -4300,7 +4332,7 @@
                     "tool"
                   ],
                   "strict": true,
-                  "updates": false
+                  "updates": []
                 }
               },
               "sdk": {
@@ -4393,7 +4425,7 @@
                     "tool"
                   ],
                   "strict": true,
-                  "updates": false
+                  "updates": []
                 }
               },
               "sdk": {
@@ -4410,7 +4442,7 @@
                     "tool"
                   ],
                   "strict": true,
-                  "updates": false
+                  "updates": []
                 }
               },
               "sdk": {
@@ -4427,7 +4459,7 @@
                     "tool"
                   ],
                   "strict": true,
-                  "updates": false
+                  "updates": []
                 }
               },
               "sdk": {
@@ -4525,7 +4557,7 @@
                     "tool"
                   ],
                   "strict": true,
-                  "updates": false
+                  "updates": []
                 }
               },
               "sdk": {
@@ -4542,7 +4574,7 @@
                     "tool"
                   ],
                   "strict": true,
-                  "updates": false
+                  "updates": []
                 }
               },
               "sdk": {
@@ -4559,7 +4591,7 @@
                     "tool"
                   ],
                   "strict": true,
-                  "updates": false
+                  "updates": []
                 }
               },
               "sdk": {
@@ -4654,7 +4686,7 @@
                     "tool"
                   ],
                   "strict": true,
-                  "updates": false
+                  "updates": []
                 }
               },
               "sdk": {
@@ -4671,7 +4703,7 @@
                     "tool"
                   ],
                   "strict": true,
-                  "updates": false
+                  "updates": []
                 }
               },
               "sdk": {
@@ -4688,7 +4720,7 @@
                     "tool"
                   ],
                   "strict": true,
-                  "updates": false
+                  "updates": []
                 }
               },
               "sdk": {
@@ -4748,7 +4780,7 @@
                     "tool"
                   ],
                   "strict": true,
-                  "updates": false
+                  "updates": []
                 }
               },
               "sdk": {
@@ -4765,7 +4797,7 @@
                     "tool"
                   ],
                   "strict": true,
-                  "updates": false
+                  "updates": []
                 }
               },
               "sdk": {
@@ -4782,7 +4814,7 @@
                     "tool"
                   ],
                   "strict": true,
-                  "updates": false
+                  "updates": []
                 }
               },
               "sdk": {
@@ -4854,7 +4886,7 @@
                     "regex"
                   ],
                   "strict": true,
-                  "updates": false
+                  "updates": []
                 }
               },
               "sdk": {
@@ -4876,7 +4908,7 @@
                     "regex"
                   ],
                   "strict": true,
-                  "updates": true
+                  "updates": []
                 }
               },
               "sdk": {
@@ -4985,7 +5017,7 @@
             "chat-completions": {
               "capabilities": {
                 "tools": {
-                  "updates": false
+                  "updates": []
                 }
               },
               "sdk": {
@@ -4995,7 +5027,7 @@
             "responses": {
               "capabilities": {
                 "tools": {
-                  "updates": false
+                  "updates": []
                 }
               },
               "sdk": {
@@ -5050,7 +5082,7 @@
                     "required",
                     "tool"
                   ],
-                  "updates": false
+                  "updates": []
                 }
               },
               "sdk": {
@@ -5066,7 +5098,7 @@
                     "required",
                     "tool"
                   ],
-                  "updates": false
+                  "updates": []
                 }
               },
               "sdk": {
@@ -5126,7 +5158,7 @@
                     "tool"
                   ],
                   "strict": true,
-                  "updates": false
+                  "updates": []
                 }
               },
               "sdk": {
@@ -5143,7 +5175,7 @@
                     "tool"
                   ],
                   "strict": true,
-                  "updates": true
+                  "updates": []
                 }
               },
               "sdk": {
@@ -5214,7 +5246,7 @@
                     "tool"
                   ],
                   "strict": true,
-                  "updates": false
+                  "updates": []
                 }
               },
               "sdk": {
@@ -5231,7 +5263,7 @@
                     "tool"
                   ],
                   "strict": true,
-                  "updates": true
+                  "updates": []
                 }
               },
               "sdk": {
@@ -5299,7 +5331,7 @@
                     "tool"
                   ],
                   "strict": true,
-                  "updates": false
+                  "updates": []
                 }
               },
               "sdk": {
@@ -5316,7 +5348,7 @@
                     "tool"
                   ],
                   "strict": true,
-                  "updates": true
+                  "updates": []
                 }
               },
               "sdk": {
@@ -5384,7 +5416,7 @@
                     "tool"
                   ],
                   "strict": true,
-                  "updates": false
+                  "updates": []
                 }
               },
               "sdk": {
@@ -5401,7 +5433,7 @@
                     "tool"
                   ],
                   "strict": true,
-                  "updates": true
+                  "updates": []
                 }
               },
               "sdk": {
@@ -5462,7 +5494,7 @@
             "chat-completions": {
               "capabilities": {
                 "tools": {
-                  "updates": false
+                  "updates": []
                 }
               },
               "sdk": {
@@ -5472,7 +5504,7 @@
             "responses": {
               "capabilities": {
                 "tools": {
-                  "updates": false
+                  "updates": []
                 }
               },
               "sdk": {
@@ -5535,7 +5567,7 @@
                     "tool"
                   ],
                   "strict": true,
-                  "updates": false
+                  "updates": []
                 }
               },
               "sdk": {
@@ -5552,7 +5584,7 @@
                     "tool"
                   ],
                   "strict": true,
-                  "updates": true
+                  "updates": []
                 }
               },
               "sdk": {
@@ -5616,7 +5648,7 @@
                     "tool"
                   ],
                   "strict": true,
-                  "updates": false
+                  "updates": []
                 }
               },
               "sdk": {
@@ -5633,7 +5665,7 @@
                     "tool"
                   ],
                   "strict": true,
-                  "updates": true
+                  "updates": []
                 }
               },
               "sdk": {
@@ -5697,7 +5729,7 @@
                     "tool"
                   ],
                   "strict": true,
-                  "updates": false
+                  "updates": []
                 }
               },
               "sdk": {
@@ -5714,7 +5746,7 @@
                     "tool"
                   ],
                   "strict": true,
-                  "updates": true
+                  "updates": []
                 }
               },
               "sdk": {
@@ -5787,7 +5819,7 @@
                     "regex"
                   ],
                   "strict": true,
-                  "updates": false
+                  "updates": []
                 }
               },
               "sdk": {
@@ -5809,7 +5841,7 @@
                     "regex"
                   ],
                   "strict": true,
-                  "updates": true
+                  "updates": []
                 }
               },
               "sdk": {
@@ -5894,7 +5926,7 @@
                     "regex"
                   ],
                   "strict": true,
-                  "updates": false
+                  "updates": []
                 }
               },
               "sdk": {
@@ -5916,7 +5948,7 @@
                     "regex"
                   ],
                   "strict": true,
-                  "updates": true
+                  "updates": []
                 }
               },
               "sdk": {
@@ -5996,7 +6028,7 @@
                     "regex"
                   ],
                   "strict": true,
-                  "updates": false
+                  "updates": []
                 }
               },
               "sdk": {
@@ -6018,7 +6050,7 @@
                     "regex"
                   ],
                   "strict": true,
-                  "updates": true
+                  "updates": []
                 }
               },
               "sdk": {
@@ -6097,7 +6129,7 @@
                     "regex"
                   ],
                   "strict": true,
-                  "updates": false
+                  "updates": []
                 }
               },
               "sdk": {
@@ -6207,7 +6239,7 @@
                     "regex"
                   ],
                   "strict": true,
-                  "updates": false
+                  "updates": []
                 }
               },
               "sdk": {
@@ -6229,7 +6261,7 @@
                     "regex"
                   ],
                   "strict": true,
-                  "updates": true
+                  "updates": []
                 }
               },
               "sdk": {
@@ -6312,7 +6344,7 @@
                     "regex"
                   ],
                   "strict": true,
-                  "updates": false
+                  "updates": []
                 }
               },
               "sdk": {
@@ -6334,7 +6366,7 @@
                     "regex"
                   ],
                   "strict": true,
-                  "updates": true
+                  "updates": []
                 }
               },
               "sdk": {
@@ -6418,7 +6450,7 @@
                     "regex"
                   ],
                   "strict": true,
-                  "updates": false
+                  "updates": []
                 }
               },
               "sdk": {
@@ -6488,7 +6520,7 @@
                     "regex"
                   ],
                   "strict": true,
-                  "updates": true
+                  "updates": []
                 }
               },
               "sdk": {
@@ -6557,7 +6589,7 @@
             "responses": {
               "capabilities": {
                 "tools": {
-                  "updates": true
+                  "updates": []
                 }
               },
               "sdk": {
@@ -6629,7 +6661,7 @@
                     "regex"
                   ],
                   "strict": true,
-                  "updates": false
+                  "updates": []
                 }
               },
               "sdk": {
@@ -6652,7 +6684,7 @@
                   ],
                   "search": true,
                   "strict": true,
-                  "updates": true
+                  "updates": []
                 }
               },
               "sdk": {
@@ -6737,7 +6769,7 @@
                     "regex"
                   ],
                   "strict": true,
-                  "updates": false
+                  "updates": []
                 }
               },
               "sdk": {
@@ -6760,7 +6792,7 @@
                   ],
                   "search": true,
                   "strict": true,
-                  "updates": true
+                  "updates": []
                 }
               },
               "sdk": {
@@ -6841,7 +6873,7 @@
                     "regex"
                   ],
                   "strict": true,
-                  "updates": false
+                  "updates": []
                 }
               },
               "sdk": {
@@ -6863,7 +6895,7 @@
                     "regex"
                   ],
                   "strict": true,
-                  "updates": true
+                  "updates": []
                 }
               },
               "sdk": {
@@ -6944,7 +6976,7 @@
                   ],
                   "search": true,
                   "strict": true,
-                  "updates": false
+                  "updates": []
                 }
               },
               "sdk": {
@@ -7017,7 +7049,7 @@
                     "regex"
                   ],
                   "strict": true,
-                  "updates": false
+                  "updates": []
                 }
               },
               "sdk": {
@@ -7040,7 +7072,7 @@
                   ],
                   "search": true,
                   "strict": true,
-                  "updates": true
+                  "updates": []
                 }
               },
               "sdk": {
@@ -7128,7 +7160,7 @@
                   ],
                   "search": true,
                   "strict": true,
-                  "updates": false
+                  "updates": []
                 }
               },
               "sdk": {
@@ -7202,7 +7234,7 @@
                     "regex"
                   ],
                   "strict": true,
-                  "updates": false
+                  "updates": []
                 }
               },
               "sdk": {
@@ -7226,7 +7258,11 @@
                   ],
                   "search": true,
                   "strict": true,
-                  "updates": true
+                  "updates": [
+                    "add",
+                    "remove",
+                    "replace"
+                  ]
                 }
               },
               "sdk": {
@@ -7320,7 +7356,11 @@
                   ],
                   "search": true,
                   "strict": true,
-                  "updates": true
+                  "updates": [
+                    "add",
+                    "remove",
+                    "replace"
+                  ]
                 }
               },
               "sdk": {
@@ -7408,7 +7448,7 @@
                     "regex"
                   ],
                   "strict": true,
-                  "updates": false
+                  "updates": []
                 }
               },
               "sdk": {
@@ -7432,7 +7472,11 @@
                   ],
                   "search": true,
                   "strict": true,
-                  "updates": true
+                  "updates": [
+                    "add",
+                    "remove",
+                    "replace"
+                  ]
                 }
               },
               "sdk": {
@@ -7525,7 +7569,7 @@
                     "regex"
                   ],
                   "strict": true,
-                  "updates": false
+                  "updates": []
                 }
               },
               "sdk": {
@@ -7549,7 +7593,11 @@
                   ],
                   "search": true,
                   "strict": true,
-                  "updates": true
+                  "updates": [
+                    "add",
+                    "remove",
+                    "replace"
+                  ]
                 }
               },
               "sdk": {
@@ -7642,7 +7690,7 @@
                     "regex"
                   ],
                   "strict": true,
-                  "updates": false
+                  "updates": []
                 }
               },
               "sdk": {
@@ -7666,7 +7714,11 @@
                   ],
                   "search": true,
                   "strict": true,
-                  "updates": true
+                  "updates": [
+                    "add",
+                    "remove",
+                    "replace"
+                  ]
                 }
               },
               "sdk": {
@@ -7758,7 +7810,7 @@
                     "lark",
                     "regex"
                   ],
-                  "updates": false
+                  "updates": []
                 }
               },
               "sdk": {
@@ -7782,7 +7834,11 @@
                   ],
                   "search": true,
                   "strict": true,
-                  "updates": true
+                  "updates": [
+                    "add",
+                    "remove",
+                    "replace"
+                  ]
                 }
               },
               "sdk": {
@@ -7876,7 +7932,11 @@
                   ],
                   "search": true,
                   "strict": true,
-                  "updates": true
+                  "updates": [
+                    "add",
+                    "remove",
+                    "replace"
+                  ]
                 }
               },
               "sdk": {
@@ -7967,7 +8027,7 @@
                     "regex"
                   ],
                   "strict": true,
-                  "updates": false
+                  "updates": []
                 }
               },
               "sdk": {
@@ -7977,7 +8037,7 @@
             "decisions": {
               "capabilities": {
                 "tools": {
-                  "updates": false
+                  "updates": []
                 }
               },
               "sdk": {
@@ -8002,7 +8062,11 @@
                   ],
                   "search": true,
                   "strict": true,
-                  "updates": true
+                  "updates": [
+                    "add",
+                    "remove",
+                    "replace"
+                  ]
                 }
               },
               "sdk": {
@@ -8095,7 +8159,7 @@
                     "regex"
                   ],
                   "strict": true,
-                  "updates": false
+                  "updates": []
                 }
               },
               "sdk": {
@@ -8119,7 +8183,11 @@
                   ],
                   "search": true,
                   "strict": true,
-                  "updates": true
+                  "updates": [
+                    "add",
+                    "remove",
+                    "replace"
+                  ]
                 }
               },
               "sdk": {
@@ -8211,7 +8279,7 @@
                     "lark",
                     "regex"
                   ],
-                  "updates": false
+                  "updates": []
                 }
               },
               "sdk": {
@@ -8235,7 +8303,11 @@
                   ],
                   "search": true,
                   "strict": true,
-                  "updates": true
+                  "updates": [
+                    "add",
+                    "remove",
+                    "replace"
+                  ]
                 }
               },
               "sdk": {
@@ -8328,7 +8400,7 @@
                     "regex"
                   ],
                   "strict": true,
-                  "updates": false
+                  "updates": []
                 }
               },
               "sdk": {
@@ -8352,7 +8424,11 @@
                   ],
                   "search": true,
                   "strict": true,
-                  "updates": true
+                  "updates": [
+                    "add",
+                    "remove",
+                    "replace"
+                  ]
                 }
               },
               "sdk": {
@@ -8433,7 +8509,7 @@
             "chat-completions": {
               "capabilities": {
                 "tools": {
-                  "updates": false
+                  "updates": []
                 }
               },
               "sdk": {
@@ -8490,7 +8566,7 @@
             "chat-completions": {
               "capabilities": {
                 "tools": {
-                  "updates": false
+                  "updates": []
                 }
               },
               "sdk": {
@@ -8546,7 +8622,7 @@
             "chat-completions": {
               "capabilities": {
                 "tools": {
-                  "updates": false
+                  "updates": []
                 }
               },
               "sdk": {
@@ -8616,7 +8692,11 @@
                   ],
                   "search": true,
                   "strict": true,
-                  "updates": true
+                  "updates": [
+                    "add",
+                    "remove",
+                    "replace"
+                  ]
                 }
               },
               "sdk": {
@@ -8710,7 +8790,11 @@
                   ],
                   "search": true,
                   "strict": true,
-                  "updates": true
+                  "updates": [
+                    "add",
+                    "remove",
+                    "replace"
+                  ]
                 }
               },
               "sdk": {
@@ -8793,7 +8877,7 @@
                     "tool"
                   ],
                   "strict": true,
-                  "updates": false
+                  "updates": []
                 }
               },
               "sdk": {
@@ -8810,7 +8894,7 @@
                     "tool"
                   ],
                   "strict": true,
-                  "updates": true
+                  "updates": []
                 }
               },
               "sdk": {
@@ -8881,7 +8965,7 @@
                     "tool"
                   ],
                   "strict": true,
-                  "updates": false
+                  "updates": []
                 }
               },
               "sdk": {
@@ -8946,7 +9030,7 @@
                     "tool"
                   ],
                   "strict": true,
-                  "updates": false
+                  "updates": []
                 }
               },
               "sdk": {
@@ -8963,7 +9047,7 @@
                     "tool"
                   ],
                   "strict": true,
-                  "updates": true
+                  "updates": []
                 }
               },
               "sdk": {
@@ -9037,7 +9121,7 @@
                     "tool"
                   ],
                   "strict": true,
-                  "updates": false
+                  "updates": []
                 }
               },
               "sdk": {
@@ -9054,7 +9138,7 @@
                     "tool"
                   ],
                   "strict": true,
-                  "updates": true
+                  "updates": []
                 }
               },
               "sdk": {
@@ -9120,7 +9204,7 @@
                     "tool"
                   ],
                   "strict": true,
-                  "updates": false
+                  "updates": []
                 }
               },
               "sdk": {
@@ -9184,7 +9268,7 @@
                     "tool"
                   ],
                   "strict": true,
-                  "updates": false
+                  "updates": []
                 }
               },
               "sdk": {
@@ -9201,7 +9285,7 @@
                     "tool"
                   ],
                   "strict": true,
-                  "updates": true
+                  "updates": []
                 }
               },
               "sdk": {
