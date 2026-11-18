@@ -8504,6 +8504,244 @@
           "release_date": "2026-10-26",
           "type": "chat"
         },
+        "gpt-6.2-astra": {
+          "api": {
+            "chat-completions": {
+              "capabilities": {
+                "tools": {
+                  "choice": [
+                    "auto",
+                    "none",
+                    "required",
+                    "tool"
+                  ],
+                  "freeform": [
+                    "text",
+                    "lark",
+                    "regex"
+                  ],
+                  "updates": []
+                }
+              },
+              "sdk": {
+                "aisdk": "@ai-sdk/openai"
+              }
+            },
+            "responses": {
+              "capabilities": {
+                "effort_updates": true,
+                "tools": {
+                  "choice": [
+                    "auto",
+                    "none",
+                    "required",
+                    "tool"
+                  ],
+                  "freeform": [
+                    "text",
+                    "lark",
+                    "regex"
+                  ],
+                  "search": true,
+                  "strict": true,
+                  "updates": [
+                    "add",
+                    "remove",
+                    "replace"
+                  ]
+                }
+              },
+              "sdk": {
+                "aisdk": "@ai-sdk/openai"
+              }
+            }
+          },
+          "capabilities": {
+            "cache": {
+              "explicit": {
+                "max_breakpoints": 4,
+                "min_tokens": 1024,
+                "ttl": [
+                  "30m",
+                  "12h"
+                ]
+              },
+              "implicit": {
+                "min_tokens": 1024
+              }
+            },
+            "effort_updates": false,
+            "prompt_cache_key": true,
+            "reasoning": {
+              "effort": [
+                "low",
+                "medium",
+                "high",
+                "xhigh",
+                "max"
+              ],
+              "supported": true
+            },
+            "service_tier": [
+              "priority",
+              "ultrafast"
+            ],
+            "store": true,
+            "structured_output": true,
+            "system_updates": true,
+            "temperature": false,
+            "tools": {
+              "supported": true
+            },
+            "top_k": false,
+            "top_p": false
+          },
+          "family": "gpt-astra",
+          "id": "gpt-6.2-astra",
+          "knowledge": "2026-05-18",
+          "last_updated": "2026-11-17",
+          "limit": {
+            "context": 1050000,
+            "input": 922000,
+            "output": 128000
+          },
+          "modalities": {
+            "input": [
+              "text",
+              "image/jpeg",
+              "image/png",
+              "image/gif",
+              "image/webp",
+              "application/pdf"
+            ],
+            "output": [
+              "text"
+            ]
+          },
+          "name": "GPT-6.2 Astra",
+          "open_weights": false,
+          "release_date": "2026-11-17",
+          "type": "chat"
+        },
+        "gpt-6.2-sol": {
+          "api": {
+            "chat-completions": {
+              "capabilities": {
+                "tools": {
+                  "choice": [
+                    "auto",
+                    "none",
+                    "required",
+                    "tool"
+                  ],
+                  "freeform": [
+                    "text",
+                    "lark",
+                    "regex"
+                  ],
+                  "updates": []
+                }
+              },
+              "sdk": {
+                "aisdk": "@ai-sdk/openai"
+              }
+            },
+            "responses": {
+              "capabilities": {
+                "effort_updates": true,
+                "tools": {
+                  "choice": [
+                    "auto",
+                    "none",
+                    "required",
+                    "tool"
+                  ],
+                  "freeform": [
+                    "text",
+                    "lark",
+                    "regex"
+                  ],
+                  "search": true,
+                  "strict": true,
+                  "updates": [
+                    "add",
+                    "remove",
+                    "replace"
+                  ]
+                }
+              },
+              "sdk": {
+                "aisdk": "@ai-sdk/openai"
+              }
+            }
+          },
+          "capabilities": {
+            "cache": {
+              "explicit": {
+                "max_breakpoints": 4,
+                "min_tokens": 1024,
+                "ttl": [
+                  "30m",
+                  "12h"
+                ]
+              },
+              "implicit": {
+                "min_tokens": 1024
+              }
+            },
+            "effort_updates": false,
+            "prompt_cache_key": true,
+            "reasoning": {
+              "effort": [
+                "low",
+                "medium",
+                "high",
+                "xhigh",
+                "max"
+              ],
+              "supported": true
+            },
+            "service_tier": [
+              "priority",
+              "ultrafast"
+            ],
+            "store": true,
+            "structured_output": true,
+            "system_updates": true,
+            "temperature": false,
+            "tools": {
+              "supported": true
+            },
+            "top_k": false,
+            "top_p": false
+          },
+          "family": "gpt-sol",
+          "id": "gpt-6.2-sol",
+          "knowledge": "2026-06-01",
+          "last_updated": "2026-11-17",
+          "limit": {
+            "context": 1050000,
+            "input": 922000,
+            "output": 128000
+          },
+          "modalities": {
+            "input": [
+              "text",
+              "image/jpeg",
+              "image/png",
+              "image/gif",
+              "image/webp",
+              "application/pdf"
+            ],
+            "output": [
+              "text"
+            ]
+          },
+          "name": "GPT-6.2 Sol",
+          "open_weights": false,
+          "release_date": "2026-11-17",
+          "type": "chat"
+        },
         "gpt-audio": {
           "api": {
             "chat-completions": {
