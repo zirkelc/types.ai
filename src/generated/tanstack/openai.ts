@@ -279,6 +279,20 @@ export type OpenAITextProviderOptionsByModelGenerated = {
     { service_tier: 'flex' | 'priority' | 'auto' | 'default' }
   >;
   /**
+   * GPT-6.2 Astra. Released 2026-11-17.
+   */
+  'gpt-6.2-astra': PatchLoose<
+    ResponsesSubType<'gpt-6.2-astra'>,
+    { service_tier: 'priority' | 'auto' | 'default'; temperature: never; top_p: never }
+  >;
+  /**
+   * GPT-6.2 Sol. Released 2026-11-17.
+   */
+  'gpt-6.2-sol': PatchLoose<
+    ResponsesSubType<'gpt-6.2-sol'>,
+    { service_tier: 'priority' | 'auto' | 'default'; temperature: never; top_p: never }
+  >;
+  /**
    * Daybreak Blue. Released 2026-08-07.
    */
   'gpt-daybreak-blue-latest': PatchLoose<
@@ -562,6 +576,20 @@ export type OpenAIChatCompletionsProviderOptionsByModelGenerated = {
   'gpt-6.1-terra': PatchLoose<
     ChatSubType<'gpt-6.1-terra'>,
     { service_tier: 'flex' | 'priority' | 'auto' | 'default' }
+  >;
+  /**
+   * GPT-6.2 Astra. Released 2026-11-17.
+   */
+  'gpt-6.2-astra': PatchLoose<
+    ChatSubType<'gpt-6.2-astra'>,
+    { service_tier: 'priority' | 'auto' | 'default'; temperature: never; top_p: never }
+  >;
+  /**
+   * GPT-6.2 Sol. Released 2026-11-17.
+   */
+  'gpt-6.2-sol': PatchLoose<
+    ChatSubType<'gpt-6.2-sol'>,
+    { service_tier: 'priority' | 'auto' | 'default'; temperature: never; top_p: never }
   >;
   /**
    * GPT-Audio. Released 2025-08-28.

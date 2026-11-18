@@ -183,6 +183,19 @@ type Responses_a085a309 = Patch<
   }
 >;
 
+type Responses_a3672e8e = Patch<
+  ResponsesBase,
+  {
+    reasoningEffort: 'low' | 'medium' | 'high' | 'xhigh' | 'max';
+    reasoningEffortUpdate: 'low' | 'medium' | 'high' | 'xhigh' | 'max';
+    serviceTier: 'priority' | 'fast' | 'ultrafast' | 'auto' | 'default';
+    promptCacheOptions: Patch<
+      NonNullable<ResponsesBase['promptCacheOptions']>,
+      { ttl: '30m' | '12h' }
+    >;
+  }
+>;
+
 type Responses_a37f532e = Patch<
   ResponsesBase,
   {
@@ -383,6 +396,14 @@ export type OpenAILanguageModelResponsesOptionsByModel = {
    */
   'gpt-6.1-terra': Responses_187a5f95;
   /**
+   * GPT-6.2 Astra. Released 2026-11-17.
+   */
+  'gpt-6.2-astra': Responses_a3672e8e;
+  /**
+   * GPT-6.2 Sol. Released 2026-11-17.
+   */
+  'gpt-6.2-sol': Responses_a3672e8e;
+  /**
    * Daybreak Blue. Released 2026-08-07.
    */
   'gpt-daybreak-blue-latest': Responses_271be344;
@@ -453,6 +474,14 @@ type ChatBase = Sdk.OpenAILanguageModelChatOptions;
 export type ChatModelIds = KnownModelIds<Parameters<Sdk.OpenAIProvider['chat']>[0]>;
 /** The model IDs of other model types that this target does not accept. */
 type ChatWrongModels = WrongModels<ChatModelIds, OtherModelIds>;
+
+type Chat_3cc5d749 = Patch<
+  ChatBase,
+  {
+    reasoningEffort: 'low' | 'medium' | 'high' | 'xhigh' | 'max';
+    serviceTier: 'priority' | 'fast' | 'ultrafast' | 'auto' | 'default';
+  }
+>;
 
 type Chat_785f1848 = Patch<
   ChatBase,
@@ -659,6 +688,14 @@ export type OpenAILanguageModelChatOptionsByModel = {
    * GPT-6.1 Terra. Released 2026-10-26.
    */
   'gpt-6.1-terra': Chat_81f4aecc;
+  /**
+   * GPT-6.2 Astra. Released 2026-11-17.
+   */
+  'gpt-6.2-astra': Chat_3cc5d749;
+  /**
+   * GPT-6.2 Sol. Released 2026-11-17.
+   */
+  'gpt-6.2-sol': Chat_3cc5d749;
   /**
    * GPT-Audio. Released 2025-08-28.
    * @deprecated The model is deprecated (models.dev).
