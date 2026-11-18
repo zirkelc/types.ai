@@ -44,8 +44,6 @@ function buildTree(results: Array<[path: string, result: FieldResult]>): PatchNo
       }
       node = child;
     }
-    if (node.children.size > 0)
-      throw new Error(`Field "${path}" is also a parent of other fields.`);
     node.leaf = result;
   }
   return root;
@@ -81,7 +79,18 @@ function renderFields({
   for (const [segment, child] of node.children) {
     const childBase = loose ? `At<${base}, ${literal(segment)}>` : indexed({ base, segment });
     let expression: string | undefined;
-    if (child.leaf) {
+    // A field that is also the parent of other fields: `never` replaces the nested fields, and
+    // `keep` lets the nested fields narrow the type. Other results cannot be combined with them.
+    if (
+      child.leaf &&
+      child.children.size > 0 &&
+      child.leaf.kind !== 'keep' &&
+      child.leaf.kind !== 'never'
+    )
+      throw new Error(
+        `Field "${segment}" is a ${child.leaf.kind} and also a parent of other fields.`,
+      );
+    if (child.leaf && (child.leaf.kind !== 'keep' || child.children.size === 0)) {
       expression = renderLeaf({ result: child.leaf, base: childBase });
     } else {
       const nested = renderFields({ node: child, base: childBase, loose });

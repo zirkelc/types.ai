@@ -92,6 +92,44 @@ describe('emitProvider', () => {
   });
 });
 
+describe('emitProvider nested fields', () => {
+  const cacheData: DataFile = {
+    source: 'fixture',
+    providers: {
+      openai: {
+        id: 'openai',
+        name: 'OpenAI',
+        models: {
+          explicit: model('explicit', { cache: { explicit: { ttl: ['30m'] } } }),
+          implicit: model('implicit', { cache: { implicit: { min_tokens: 1_024 } } }),
+        },
+      },
+    },
+  };
+  const cacheMapping: Mapping = {
+    ...mapping,
+    targets: [
+      {
+        ...mapping.targets[0]!,
+        fields: {
+          promptCacheOptions: { kind: 'flag', from: 'cache.explicit', missing: 'never' },
+          'promptCacheOptions.ttl': { kind: 'enum', from: 'cache.explicit.ttl', missing: 'never' },
+        },
+      },
+    ],
+  };
+
+  test('should narrow the nested fields when the parent field keeps its type', () => {
+    // Act
+    const { types } = emitProvider({ data: cacheData, mapping: cacheMapping });
+
+    // Assert
+    expect(types).toContain(
+      "promptCacheOptions: Patch<NonNullable<ResponsesBase['promptCacheOptions']>, { ttl: '30m'; }>;",
+    );
+  });
+});
+
 describe('emitProvider model IDs', () => {
   test('should read the model IDs of the target and of other model types from the SDK', () => {
     // Act

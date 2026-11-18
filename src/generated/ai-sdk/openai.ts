@@ -36,15 +36,6 @@ type Responses_094dc607 = Patch<
   }
 >;
 
-type Responses_12a498c5 = Patch<
-  ResponsesBase,
-  {
-    reasoningEffort: 'low' | 'medium' | 'high';
-    reasoningEffortUpdate: never;
-    promptCacheOptions: Patch<NonNullable<ResponsesBase['promptCacheOptions']>, { ttl: never }>;
-  }
->;
-
 type Responses_187a5f95 = Patch<
   ResponsesBase,
   {
@@ -58,12 +49,12 @@ type Responses_187a5f95 = Patch<
   }
 >;
 
-type Responses_1a1c326d = Patch<
+type Responses_1ec3f5aa = Patch<
   ResponsesBase,
   {
-    reasoningEffort: 'none' | 'low' | 'medium' | 'high' | 'xhigh';
+    reasoningEffort: 'low' | 'medium' | 'high';
     reasoningEffortUpdate: never;
-    promptCacheOptions: Patch<NonNullable<ResponsesBase['promptCacheOptions']>, { ttl: never }>;
+    promptCacheOptions: never;
   }
 >;
 
@@ -80,13 +71,43 @@ type Responses_271be344 = Patch<
   }
 >;
 
-type Responses_39207ce8 = Patch<
+type Responses_2a1f63b9 = Patch<
   ResponsesBase,
   {
-    reasoningEffort: never;
+    reasoningEffort: 'none' | 'low' | 'medium' | 'high' | 'xhigh';
     reasoningEffortUpdate: never;
-    serviceTier: 'priority' | 'fast' | 'auto' | 'default';
-    promptCacheOptions: Patch<NonNullable<ResponsesBase['promptCacheOptions']>, { ttl: never }>;
+    serviceTier: 'flex' | 'priority' | 'fast' | 'auto' | 'default';
+    promptCacheOptions: never;
+  }
+>;
+
+type Responses_4895440c = Patch<
+  ResponsesBase,
+  {
+    reasoningEffort: 'none' | 'low' | 'medium' | 'high' | 'xhigh';
+    reasoningEffortUpdate: never;
+    serviceTier: 'flex' | 'auto' | 'default';
+    promptCacheOptions: never;
+  }
+>;
+
+type Responses_492be964 = Patch<
+  ResponsesBase,
+  {
+    reasoningEffort: 'none' | 'low' | 'medium' | 'high';
+    reasoningEffortUpdate: never;
+    serviceTier: 'flex' | 'priority' | 'fast' | 'auto' | 'default';
+    promptCacheOptions: never;
+  }
+>;
+
+type Responses_4f605e9d = Patch<
+  ResponsesBase,
+  {
+    reasoningEffort: 'minimal' | 'low' | 'medium' | 'high';
+    reasoningEffortUpdate: never;
+    serviceTier: 'flex' | 'auto' | 'default';
+    promptCacheOptions: never;
   }
 >;
 
@@ -103,62 +124,42 @@ type Responses_504d577b = Patch<
   }
 >;
 
-type Responses_5ed665b7 = Patch<
+type Responses_7b3f3862 = Patch<
   ResponsesBase,
   {
     reasoningEffort: 'none' | 'low' | 'medium' | 'high' | 'xhigh';
     reasoningEffortUpdate: never;
-    serviceTier: 'flex' | 'auto' | 'default';
-    promptCacheOptions: Patch<NonNullable<ResponsesBase['promptCacheOptions']>, { ttl: never }>;
+    promptCacheOptions: never;
   }
 >;
 
-type Responses_7ee191ea = Patch<
-  ResponsesBase,
-  {
-    reasoningEffort: 'medium' | 'high' | 'xhigh';
-    reasoningEffortUpdate: never;
-    promptCacheOptions: Patch<NonNullable<ResponsesBase['promptCacheOptions']>, { ttl: never }>;
-  }
->;
-
-type Responses_803f582f = Patch<
-  ResponsesBase,
-  {
-    reasoningEffort: 'medium' | 'high' | 'xhigh';
-    reasoningEffortUpdate: never;
-    serviceTier: 'flex' | 'auto' | 'default';
-    promptCacheOptions: Patch<NonNullable<ResponsesBase['promptCacheOptions']>, { ttl: never }>;
-  }
->;
-
-type Responses_830da9f0 = Patch<
+type Responses_81ba2498 = Patch<
   ResponsesBase,
   {
     reasoningEffort: 'minimal' | 'low' | 'medium' | 'high';
     reasoningEffortUpdate: never;
-    serviceTier: 'flex' | 'auto' | 'default';
-    promptCacheOptions: Patch<NonNullable<ResponsesBase['promptCacheOptions']>, { ttl: never }>;
+    serviceTier: 'flex' | 'priority' | 'fast' | 'auto' | 'default';
+    promptCacheOptions: never;
   }
 >;
 
-type Responses_898f0045 = Patch<
+type Responses_88d80b4c = Patch<
+  ResponsesBase,
+  {
+    reasoningEffort: never;
+    reasoningEffortUpdate: never;
+    serviceTier: 'priority' | 'fast' | 'auto' | 'default';
+    promptCacheOptions: never;
+  }
+>;
+
+type Responses_9a0f73d4 = Patch<
   ResponsesBase,
   {
     reasoningEffort: 'none' | 'low' | 'medium' | 'high' | 'xhigh';
     reasoningEffortUpdate: never;
     serviceTier: 'priority' | 'fast' | 'auto' | 'default';
-    promptCacheOptions: Patch<NonNullable<ResponsesBase['promptCacheOptions']>, { ttl: never }>;
-  }
->;
-
-type Responses_9d9fc986 = Patch<
-  ResponsesBase,
-  {
-    reasoningEffort: 'low' | 'medium' | 'high';
-    reasoningEffortUpdate: never;
-    serviceTier: 'flex' | 'priority' | 'fast' | 'auto' | 'default';
-    promptCacheOptions: Patch<NonNullable<ResponsesBase['promptCacheOptions']>, { ttl: never }>;
+    promptCacheOptions: never;
   }
 >;
 
@@ -171,15 +172,6 @@ type Responses_9f0193e5 = Patch<
       NonNullable<ResponsesBase['promptCacheOptions']>,
       { ttl: '30m' | '12h' }
     >;
-  }
->;
-
-type Responses_a085a309 = Patch<
-  ResponsesBase,
-  {
-    reasoningEffort: 'high';
-    reasoningEffortUpdate: never;
-    promptCacheOptions: Patch<NonNullable<ResponsesBase['promptCacheOptions']>, { ttl: never }>;
   }
 >;
 
@@ -196,43 +188,43 @@ type Responses_a3672e8e = Patch<
   }
 >;
 
-type Responses_a37f532e = Patch<
+type Responses_bb9a7d61 = Patch<
   ResponsesBase,
   {
-    reasoningEffort: never;
+    reasoningEffort: 'medium' | 'high' | 'xhigh';
     reasoningEffortUpdate: never;
-    promptCacheOptions: Patch<NonNullable<ResponsesBase['promptCacheOptions']>, { ttl: never }>;
+    serviceTier: 'flex' | 'auto' | 'default';
+    promptCacheOptions: never;
   }
 >;
 
-type Responses_cbbff79a = Patch<
+type Responses_c6f185e4 = Patch<
   ResponsesBase,
   {
-    reasoningEffort: 'minimal' | 'low' | 'medium' | 'high';
+    reasoningEffort: 'medium' | 'high' | 'xhigh';
     reasoningEffortUpdate: never;
-    serviceTier: 'flex' | 'priority' | 'fast' | 'auto' | 'default';
-    promptCacheOptions: Patch<NonNullable<ResponsesBase['promptCacheOptions']>, { ttl: never }>;
+    promptCacheOptions: never;
   }
 >;
 
-type Responses_e8d83eef = Patch<
+type Responses_e9c72a24 = Patch<
+  ResponsesBase,
+  { reasoningEffort: never; reasoningEffortUpdate: never; promptCacheOptions: never }
+>;
+
+type Responses_efbadb48 = Patch<
   ResponsesBase,
   {
-    reasoningEffort: 'none' | 'low' | 'medium' | 'high' | 'xhigh';
+    reasoningEffort: 'low' | 'medium' | 'high';
     reasoningEffortUpdate: never;
     serviceTier: 'flex' | 'priority' | 'fast' | 'auto' | 'default';
-    promptCacheOptions: Patch<NonNullable<ResponsesBase['promptCacheOptions']>, { ttl: never }>;
+    promptCacheOptions: never;
   }
 >;
 
-type Responses_fd503902 = Patch<
+type Responses_f2131aa6 = Patch<
   ResponsesBase,
-  {
-    reasoningEffort: 'none' | 'low' | 'medium' | 'high';
-    reasoningEffortUpdate: never;
-    serviceTier: 'flex' | 'priority' | 'fast' | 'auto' | 'default';
-    promptCacheOptions: Patch<NonNullable<ResponsesBase['promptCacheOptions']>, { ttl: never }>;
-  }
+  { reasoningEffort: 'high'; reasoningEffortUpdate: never; promptCacheOptions: never }
 >;
 
 /** The OpenAILanguageModelResponsesOptions for each known model ID. */
@@ -241,116 +233,116 @@ export type OpenAILanguageModelResponsesOptionsByModel = {
   /**
    * Chat Latest. Released 2026-05-05.
    */
-  'chat-latest': Responses_a37f532e;
+  'chat-latest': Responses_e9c72a24;
   /**
    * GPT-3.5-turbo. Released 2023-03-01.
    * @deprecated The model is deprecated (models.dev).
    */
-  'gpt-3.5-turbo': Responses_a37f532e;
+  'gpt-3.5-turbo': Responses_e9c72a24;
   /**
    * GPT-4. Released 2023-11-06.
    * @deprecated The model is deprecated (models.dev).
    */
-  'gpt-4': Responses_a37f532e;
+  'gpt-4': Responses_e9c72a24;
   /**
    * GPT-4 Turbo. Released 2023-11-06.
    * @deprecated The model is deprecated (models.dev).
    */
-  'gpt-4-turbo': Responses_a37f532e;
+  'gpt-4-turbo': Responses_e9c72a24;
   /**
    * GPT-4.1. Released 2025-04-14.
    */
-  'gpt-4.1': Responses_39207ce8;
+  'gpt-4.1': Responses_88d80b4c;
   /**
    * GPT-4.1 mini. Released 2025-04-14.
    */
-  'gpt-4.1-mini': Responses_39207ce8;
+  'gpt-4.1-mini': Responses_88d80b4c;
   /**
    * GPT-4.1 nano. Released 2025-04-14.
    * @deprecated The model is deprecated (models.dev).
    */
-  'gpt-4.1-nano': Responses_39207ce8;
+  'gpt-4.1-nano': Responses_88d80b4c;
   /**
    * GPT-4o. Released 2024-05-13.
    */
-  'gpt-4o': Responses_39207ce8;
+  'gpt-4o': Responses_88d80b4c;
   /**
    * GPT-4o (2024-05-13). Released 2024-05-13.
    * @deprecated The model is deprecated (models.dev).
    */
-  'gpt-4o-2024-05-13': Responses_39207ce8;
+  'gpt-4o-2024-05-13': Responses_88d80b4c;
   /**
    * GPT-4o (2024-08-06). Released 2024-08-06.
    */
-  'gpt-4o-2024-08-06': Responses_a37f532e;
+  'gpt-4o-2024-08-06': Responses_e9c72a24;
   /**
    * GPT-4o (2024-11-20). Released 2024-11-20.
    */
-  'gpt-4o-2024-11-20': Responses_a37f532e;
+  'gpt-4o-2024-11-20': Responses_e9c72a24;
   /**
    * GPT-4o mini. Released 2024-07-18.
    */
-  'gpt-4o-mini': Responses_39207ce8;
+  'gpt-4o-mini': Responses_88d80b4c;
   /**
    * GPT-5. Released 2025-08-07.
    */
-  'gpt-5': Responses_cbbff79a;
+  'gpt-5': Responses_81ba2498;
   /**
    * GPT-5 Mini. Released 2025-08-07.
    */
-  'gpt-5-mini': Responses_cbbff79a;
+  'gpt-5-mini': Responses_81ba2498;
   /**
    * GPT-5 Nano. Released 2025-08-07.
    */
-  'gpt-5-nano': Responses_830da9f0;
+  'gpt-5-nano': Responses_4f605e9d;
   /**
    * GPT-5 Pro. Released 2025-10-06.
    */
-  'gpt-5-pro': Responses_a085a309;
+  'gpt-5-pro': Responses_f2131aa6;
   /**
    * GPT-5.1. Released 2025-11-13.
    */
-  'gpt-5.1': Responses_fd503902;
+  'gpt-5.1': Responses_492be964;
   /**
    * GPT-5.2. Released 2025-12-11.
    */
-  'gpt-5.2': Responses_e8d83eef;
+  'gpt-5.2': Responses_2a1f63b9;
   /**
    * GPT-5.2 Pro. Released 2025-12-11.
    */
-  'gpt-5.2-pro': Responses_7ee191ea;
+  'gpt-5.2-pro': Responses_c6f185e4;
   /**
    * GPT-5.3 Codex. Released 2026-02-05.
    */
-  'gpt-5.3-codex': Responses_898f0045;
+  'gpt-5.3-codex': Responses_9a0f73d4;
   /**
    * GPT-5.3 Codex Spark. Released 2026-02-05.
    */
-  'gpt-5.3-codex-spark': Responses_1a1c326d;
+  'gpt-5.3-codex-spark': Responses_7b3f3862;
   /**
    * GPT-5.4. Released 2026-03-05.
    */
-  'gpt-5.4': Responses_e8d83eef;
+  'gpt-5.4': Responses_2a1f63b9;
   /**
    * GPT-5.4 mini. Released 2026-03-17.
    */
-  'gpt-5.4-mini': Responses_e8d83eef;
+  'gpt-5.4-mini': Responses_2a1f63b9;
   /**
    * GPT-5.4 nano. Released 2026-03-17.
    */
-  'gpt-5.4-nano': Responses_5ed665b7;
+  'gpt-5.4-nano': Responses_4895440c;
   /**
    * GPT-5.4 Pro. Released 2026-03-05.
    */
-  'gpt-5.4-pro': Responses_803f582f;
+  'gpt-5.4-pro': Responses_bb9a7d61;
   /**
    * GPT-5.5. Released 2026-04-23.
    */
-  'gpt-5.5': Responses_e8d83eef;
+  'gpt-5.5': Responses_2a1f63b9;
   /**
    * GPT-5.5 Pro. Released 2026-04-23.
    */
-  'gpt-5.5-pro': Responses_803f582f;
+  'gpt-5.5-pro': Responses_bb9a7d61;
   /**
    * GPT-5.6. Released 2026-07-09.
    */
@@ -415,30 +407,30 @@ export type OpenAILanguageModelResponsesOptionsByModel = {
    * o1. Released 2024-12-05.
    * @deprecated The model is deprecated (models.dev).
    */
-  o1: Responses_12a498c5;
+  o1: Responses_1ec3f5aa;
   /**
    * o1-pro. Released 2025-03-19.
    * @deprecated The model is deprecated (models.dev).
    */
-  'o1-pro': Responses_12a498c5;
+  'o1-pro': Responses_1ec3f5aa;
   /**
    * o3. Released 2025-04-16.
    */
-  o3: Responses_9d9fc986;
+  o3: Responses_efbadb48;
   /**
    * o3-mini. Released 2024-12-20.
    * @deprecated The model is deprecated (models.dev).
    */
-  'o3-mini': Responses_12a498c5;
+  'o3-mini': Responses_1ec3f5aa;
   /**
    * o3-pro. Released 2025-06-10.
    */
-  'o3-pro': Responses_12a498c5;
+  'o3-pro': Responses_1ec3f5aa;
   /**
    * o4-mini. Released 2025-04-16.
    * @deprecated The model is deprecated (models.dev).
    */
-  'o4-mini': Responses_9d9fc986;
+  'o4-mini': Responses_efbadb48;
 };
 
 /**

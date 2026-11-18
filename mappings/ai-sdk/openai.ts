@@ -40,7 +40,9 @@ export default defineMapping({
         serviceTier,
         store: { kind: 'flag', from: 'store' },
         promptCacheKey: { kind: 'flag', from: 'prompt_cache_key' },
-        // Explicit cache TTLs exist only on models with explicit caching (GPT-5.6 and later).
+        // Only models with explicit caching (GPT-5.6 and later) accept `prompt_cache_options`.
+        // OpenAI rejects the whole object on the other models, also without a `ttl`.
+        promptCacheOptions: { kind: 'flag', from: 'cache.explicit', missing: 'never' },
         'promptCacheOptions.ttl': { kind: 'enum', from: 'cache.explicit.ttl', missing: 'never' },
       },
     }),

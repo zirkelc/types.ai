@@ -96,6 +96,10 @@ export type Check_responses_promptCacheKey_exists = Assert<
   HasKey<Sdk.OpenAILanguageModelResponsesOptions, 'promptCacheKey'>
 >;
 
+export type Check_responses_promptCacheOptions_exists = Assert<
+  HasKey<Sdk.OpenAILanguageModelResponsesOptions, 'promptCacheOptions'>
+>;
+
 export type Check_responses_promptCacheOptions_ttl_exists_0 = Assert<
   HasKey<Sdk.OpenAILanguageModelResponsesOptions, 'promptCacheOptions'>
 >;

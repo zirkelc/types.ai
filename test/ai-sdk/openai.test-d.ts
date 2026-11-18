@@ -45,6 +45,23 @@ describe('ModelOptions<openai>', () => {
     expectTypeOf(gpt5).not.toBeNever();
   });
 
+  test('should allow promptCacheOptions only for models with an explicit cache', () => {
+    // Arrange
+    type Gpt54 = ModelOptions<'openai', 'gpt-5.4'>;
+    type Luna = ModelOptions<'openai', 'gpt-6-luna'>;
+    const luna = { promptCacheOptions: { mode: 'explicit', ttl: '12h' } } satisfies Luna;
+    // @ts-expect-error gpt-5.4 has no explicit cache, also without a ttl
+    const gpt54 = { promptCacheOptions: { mode: 'explicit' } } satisfies Gpt54;
+
+    // Assert
+    expectTypeOf<Gpt54['promptCacheOptions']>().toEqualTypeOf<undefined>();
+    expectTypeOf<NonNullable<Luna['promptCacheOptions']>['ttl']>().toEqualTypeOf<
+      '30m' | '12h' | undefined
+    >();
+    expectTypeOf(luna.promptCacheOptions.ttl).toEqualTypeOf<'12h'>();
+    expectTypeOf(gpt54).not.toBeNever();
+  });
+
   test('should make reasoningEffort never for a model without reasoning', () => {
     // Arrange
     type Gpt41 = ModelOptions<'openai', 'gpt-4.1'>;
