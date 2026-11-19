@@ -184,6 +184,11 @@ export type GoogleLanguageModelOptionsByModel = {
    */
   'gemini-4-hydrogen': GenerateContent_45780cae;
   /**
+   * Gemini 4 Neon. Released 2026-11-18.
+   * Default reasoning (models.dev): effort `high`.
+   */
+  'gemini-4-neon': GenerateContent_45780cae;
+  /**
    * Gemini Flash Latest. Released 2026-08-13.
    */
   'gemini-flash-latest': GenerateContent_b3a16e9b;

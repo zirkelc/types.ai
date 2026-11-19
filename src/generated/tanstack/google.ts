@@ -121,6 +121,14 @@ export type GeminiTextProviderOptionsByModelGenerated = {
     { topP: never; topK: never }
   >;
   /**
+   * Gemini 4 Neon. Released 2026-11-18.
+   * Default reasoning (models.dev): effort `high`.
+   */
+  'gemini-4-neon': PatchLoose<
+    GenerateContentSubType<'gemini-4-neon'>,
+    { topP: never; topK: never }
+  >;
+  /**
    * Gemini Flash Latest. Released 2026-08-13.
    */
   'gemini-flash-latest': GenerateContentSubType<'gemini-flash-latest'>;
