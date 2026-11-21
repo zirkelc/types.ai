@@ -1840,7 +1840,7 @@
             "top_k": false,
             "top_p": false
           },
-          "family": "gemini-pro",
+          "family": "gemini-deep-research-max",
           "id": "deep-research-max-preview-04-2026",
           "knowledge": "2025-01",
           "last_updated": "2026-04-21",
@@ -1919,7 +1919,7 @@
             "top_k": false,
             "top_p": false
           },
-          "family": "gemini-pro",
+          "family": "gemini-deep-research",
           "id": "deep-research-preview-04-2026",
           "knowledge": "2025-01",
           "last_updated": "2026-04-21",
@@ -1995,7 +1995,7 @@
             "top_k": true,
             "top_p": true
           },
-          "family": "gemini-pro",
+          "family": "gemini-computer-use",
           "id": "gemini-2.5-computer-use-preview-10-2025",
           "knowledge": "2025-01",
           "last_updated": "2025-10-07",
@@ -4763,7 +4763,7 @@
             "top_k": true,
             "top_p": true
           },
-          "family": "gemini",
+          "family": "gemini-robotics-er",
           "id": "gemini-robotics-er-2-preview",
           "last_updated": "2026-07-30",
           "limit": {
@@ -5073,6 +5073,7 @@
             "top_k": false,
             "top_p": false
           },
+          "family": "gpt",
           "id": "chat-latest",
           "knowledge": "2026-04-20",
           "last_updated": "2026-05-28",
@@ -8905,7 +8906,7 @@
             "top_k": false,
             "top_p": true
           },
-          "family": "gpt",
+          "family": "gpt-audio",
           "id": "gpt-audio",
           "knowledge": "2023-10-01",
           "last_updated": "2025-08-28",
@@ -8962,7 +8963,7 @@
             "top_k": false,
             "top_p": true
           },
-          "family": "gpt",
+          "family": "gpt-audio",
           "id": "gpt-audio-1.5",
           "knowledge": "2024-09-30",
           "last_updated": "2026-02-23",
@@ -9018,7 +9019,7 @@
             "top_k": false,
             "top_p": true
           },
-          "family": "gpt-mini",
+          "family": "gpt-audio-mini",
           "id": "gpt-audio-mini",
           "knowledge": "2023-10-01",
           "last_updated": "2025-10-06",
@@ -9738,6 +9739,7 @@
             "top_k": false,
             "top_p": false
           },
+          "family": "omni-moderation",
           "id": "omni-moderation-latest",
           "last_updated": "2024-09-26",
           "limit": {
