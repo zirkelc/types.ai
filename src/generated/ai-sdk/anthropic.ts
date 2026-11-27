@@ -65,77 +65,240 @@ type Messages_e54a7b19 = Patch<
 
 export type AnthropicLanguageModelOptionsByModel = {
   /**
-   * Claude Fable 5. Released 2026-06-07.
+   * @name Claude Fable 5
+   * @provider Anthropic
+   * @family claude-fable
+   * @released 2026-06-07
+   * @updated 2026-06-09
+   * @context 1,000,000 tokens
+   * @maxOutput 128,000 tokens
+   * @modalities text, image/jpeg, image/png, image/gif, image/webp, application/pdf -> text
+   * @reasoning effort `low`, `medium`, `high`, `xhigh`, `max`
    */
   'claude-fable-5': Messages_3b6d679a;
   /**
-   * Claude Fable 5.1. Released 2026-09-01.
+   * @name Claude Fable 5.1
+   * @provider Anthropic
+   * @family claude-fable
+   * @released 2026-09-01
+   * @updated 2026-09-01
+   * @knowledge 2026-06
+   * @context 1,000,000 tokens
+   * @maxOutput 128,000 tokens
+   * @modalities text, image/jpeg, image/png, image/gif, image/webp, application/pdf -> text
+   * @reasoning effort `low`, `medium`, `high`, `xhigh`, `max`
    */
   'claude-fable-5-1': Messages_3b6d679a;
   /**
-   * Claude Fable 5.2. Released 2026-11-09.
+   * @name Claude Fable 5.2
+   * @provider Anthropic
+   * @family claude-fable
+   * @released 2026-11-09
+   * @updated 2026-11-09
+   * @knowledge 2026-06
+   * @context 1,000,000 tokens
+   * @maxOutput 128,000 tokens
+   * @modalities text, image/jpeg, image/png, image/gif, image/webp, application/pdf -> text
+   * @reasoning effort `low`, `medium`, `high`, `xhigh`, `max`
    */
   'claude-fable-5-2': Messages_7d935ff2;
   /**
-   * Claude Haiku 4.5 (latest). Released 2025-10-15.
+   * @name Claude Haiku 4.5 (latest)
+   * @provider Anthropic
+   * @family claude-haiku
+   * @released 2025-10-15
+   * @updated 2025-10-15
+   * @knowledge 2025-02-28
+   * @context 200,000 tokens
+   * @maxOutput 64,000 tokens
+   * @modalities text, image/jpeg, image/png, image/gif, image/webp, application/pdf -> text
+   * @reasoning budget 1,024+ tokens
    */
   'claude-haiku-4-5': Messages_071eee39;
   /**
-   * Claude Haiku 4.5. Released 2025-10-15.
+   * @name Claude Haiku 4.5
+   * @provider Anthropic
+   * @family claude-haiku
+   * @released 2025-10-15
+   * @updated 2025-10-15
+   * @knowledge 2025-02-28
+   * @context 200,000 tokens
+   * @maxOutput 64,000 tokens
+   * @modalities text, image/jpeg, image/png, image/gif, image/webp, application/pdf -> text
+   * @reasoning budget 1,024+ tokens
    */
   'claude-haiku-4-5-20251001': Messages_071eee39;
   /**
-   * Claude Haiku 5.5. Released 2026-10-07.
+   * @name Claude Haiku 5.5
+   * @provider Anthropic
+   * @family claude-haiku
+   * @released 2026-10-07
+   * @updated 2026-10-07
+   * @knowledge 2026-06
+   * @context 1,000,000 tokens
+   * @maxOutput 128,000 tokens
+   * @modalities text, image/jpeg, image/png, image/gif, image/webp, application/pdf -> text
+   * @reasoning effort `low`, `medium`, `high`, `xhigh`, `max`, toggle
    */
   'claude-haiku-5-5': Messages_3b6d679a;
   /**
-   * Claude Opus 4.5 (latest). Released 2025-11-24.
+   * @name Claude Opus 4.5 (latest)
+   * @provider Anthropic
+   * @family claude-opus
+   * @released 2025-11-24
+   * @updated 2025-11-24
+   * @knowledge 2025-05
+   * @context 200,000 tokens
+   * @maxOutput 64,000 tokens
+   * @modalities text, image/jpeg, image/png, image/gif, image/webp, application/pdf -> text
+   * @reasoning effort `low`, `medium`, `high`, budget 1,024+ tokens
    */
   'claude-opus-4-5': Messages_2a0333b6;
   /**
-   * Claude Opus 4.5. Released 2025-11-24.
+   * @name Claude Opus 4.5
+   * @provider Anthropic
+   * @family claude-opus
+   * @released 2025-11-24
+   * @updated 2025-11-01
+   * @knowledge 2025-05
+   * @context 200,000 tokens
+   * @maxOutput 64,000 tokens
+   * @modalities text, image/jpeg, image/png, image/gif, image/webp, application/pdf -> text
+   * @reasoning effort `low`, `medium`, `high`, budget 1,024+ tokens
    */
   'claude-opus-4-5-20251101': Messages_2a0333b6;
   /**
-   * Claude Opus 4.6. Released 2026-02-04.
+   * @name Claude Opus 4.6
+   * @provider Anthropic
+   * @family claude-opus
+   * @released 2026-02-04
+   * @updated 2026-03-13
+   * @knowledge 2025-05-31
+   * @context 1,000,000 tokens
+   * @maxOutput 128,000 tokens
+   * @modalities text, image/jpeg, image/png, image/gif, image/webp, application/pdf -> text
+   * @reasoning effort `low`, `medium`, `high`, `max`, budget 1,024+ tokens
    */
   'claude-opus-4-6': Messages_e54a7b19;
   /**
-   * Claude Opus 4.7. Released 2026-04-14.
+   * @name Claude Opus 4.7
+   * @provider Anthropic
+   * @family claude-opus
+   * @released 2026-04-14
+   * @updated 2026-04-16
+   * @knowledge 2026-01-31
+   * @context 1,000,000 tokens
+   * @maxOutput 128,000 tokens
+   * @modalities text, image/jpeg, image/png, image/gif, image/webp, application/pdf -> text
+   * @reasoning effort `low`, `medium`, `high`, `xhigh`, `max`
    */
   'claude-opus-4-7': Messages_3b6d679a;
   /**
-   * Claude Opus 4.8. Released 2026-05-28.
+   * @name Claude Opus 4.8
+   * @provider Anthropic
+   * @family claude-opus
+   * @released 2026-05-28
+   * @updated 2026-05-28
+   * @knowledge 2026-01
+   * @context 1,000,000 tokens
+   * @maxOutput 128,000 tokens
+   * @modalities text, image/jpeg, image/png, image/gif, image/webp, application/pdf -> text
+   * @reasoning effort `low`, `medium`, `high`, `xhigh`, `max`
    */
   'claude-opus-4-8': Messages_7d935ff2;
   /**
-   * Claude Opus 5. Released 2026-07-24.
+   * @name Claude Opus 5
+   * @provider Anthropic
+   * @family claude-opus
+   * @released 2026-07-24
+   * @updated 2026-07-24
+   * @knowledge 2026-05
+   * @context 1,000,000 tokens
+   * @maxOutput 128,000 tokens
+   * @modalities text, image/jpeg, image/png, image/gif, image/webp, application/pdf -> text
+   * @reasoning effort `low`, `medium`, `high`, `xhigh`, `max`
    */
   'claude-opus-5': Messages_7d935ff2;
   /**
-   * Claude Opus 5.5. Released 2026-09-22.
+   * @name Claude Opus 5.5
+   * @provider Anthropic
+   * @family claude-opus
+   * @released 2026-09-22
+   * @updated 2026-09-22
+   * @knowledge 2026-06
+   * @context 1,000,000 tokens
+   * @maxOutput 128,000 tokens
+   * @modalities text, image/jpeg, image/png, image/gif, image/webp, application/pdf -> text
+   * @reasoning effort `low`, `medium`, `high`, `xhigh`, `max`
    */
   'claude-opus-5-5': Messages_7d935ff2;
   /**
-   * Claude Sonnet 4.5 (latest). Released 2025-09-29.
+   * @name Claude Sonnet 4.5 (latest)
+   * @provider Anthropic
+   * @family claude-sonnet
+   * @status deprecated
+   * @released 2025-09-29
+   * @updated 2025-09-29
+   * @knowledge 2025-07-31
+   * @context 200,000 tokens
+   * @maxOutput 64,000 tokens
+   * @modalities text, image/jpeg, image/png, image/gif, image/webp, application/pdf -> text
+   * @reasoning budget 1,024+ tokens
    * @deprecated The model is deprecated (models.dev).
    */
   'claude-sonnet-4-5': Messages_071eee39;
   /**
-   * Claude Sonnet 4.5. Released 2025-09-29.
+   * @name Claude Sonnet 4.5
+   * @provider Anthropic
+   * @family claude-sonnet
+   * @status deprecated
+   * @released 2025-09-29
+   * @updated 2025-09-29
+   * @knowledge 2025-07-31
+   * @context 200,000 tokens
+   * @maxOutput 64,000 tokens
+   * @modalities text, image/jpeg, image/png, image/gif, image/webp, application/pdf -> text
+   * @reasoning budget 1,024+ tokens
    * @deprecated The model is deprecated (models.dev).
    */
   'claude-sonnet-4-5-20250929': Messages_071eee39;
   /**
-   * Claude Sonnet 4.6. Released 2026-02-17.
+   * @name Claude Sonnet 4.6
+   * @provider Anthropic
+   * @family claude-sonnet
+   * @released 2026-02-17
+   * @updated 2026-03-13
+   * @knowledge 2025-08-31
+   * @context 1,000,000 tokens
+   * @maxOutput 128,000 tokens
+   * @modalities text, image/jpeg, image/png, image/gif, image/webp, application/pdf -> text
+   * @reasoning effort `low`, `medium`, `high`, `max`, budget 1,024+ tokens
    */
   'claude-sonnet-4-6': Messages_e54a7b19;
   /**
-   * Claude Sonnet 5. Released 2026-06-29.
+   * @name Claude Sonnet 5
+   * @provider Anthropic
+   * @family claude-sonnet
+   * @released 2026-06-29
+   * @updated 2026-06-30
+   * @knowledge 2026-01-31
+   * @context 1,000,000 tokens
+   * @maxOutput 128,000 tokens
+   * @modalities text, image/jpeg, image/png, image/gif, image/webp, application/pdf -> text
+   * @reasoning effort `low`, `medium`, `high`, `xhigh`, `max`, toggle
    */
   'claude-sonnet-5': Messages_3b6d679a;
   /**
-   * Claude Sonnet 5.5. Released 2026-09-28.
+   * @name Claude Sonnet 5.5
+   * @provider Anthropic
+   * @family claude-sonnet
+   * @released 2026-09-28
+   * @updated 2026-09-28
+   * @knowledge 2026-06
+   * @context 1,000,000 tokens
+   * @maxOutput 128,000 tokens
+   * @modalities text, image/jpeg, image/png, image/gif, image/webp, application/pdf -> text
+   * @reasoning effort `low`, `medium`, `high`, `xhigh`, `max`
    */
   'claude-sonnet-5-5': Messages_3b6d679a;
 };

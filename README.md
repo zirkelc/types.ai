@@ -66,6 +66,7 @@ Pick the import path for your SDK:
 | `types.ai/tanstack` | `ModelOptions` with the provider ID as a parameter. |
 | `types.ai/models` | SDK-agnostic types of the model data, for example `ReasoningEffort`. |
 | `types.ai/models/<provider>` | The model data of the provider at run time. |
+| `types.ai/models/<provider>/<model>` | The model data of one model at run time. A bundle then holds only the models that you import. |
 
 > [!NOTE]
 > `types.ai/ai-sdk` and `types.ai/tanstack` refer to the types of all provider packages of the SDK, and a project usually has only some of them. With `skipLibCheck: true` (the value that `tsc --init` sets), the providers that are not installed are simply not available. With `skipLibCheck: false`, TypeScript reports `Cannot find module` for them. Then use the provider entries.
@@ -245,6 +246,16 @@ type Tier = ServiceTier<'openai', 'gpt-6-luna'>; // 'flex' | 'priority'
 models['gpt-6-luna'].capabilities.reasoning.effort; // readonly ['none', 'low', 'medium', 'high', 'xhigh', 'max']
 ```
 
+`models` holds the data of all models of the provider, and a bundler cannot remove the models that you do not use. To bundle only some models, import each model from its own subpath. The subpath is the model ID.
+
+```typescript
+import { model } from 'types.ai/models/openai/gpt-6-luna';
+import { model as terra } from 'types.ai/models/openai/gpt-6.1-terra';
+
+model.limit.input; // 922000
+terra.capabilities.cache; // the same literal type as models['gpt-6.1-terra'].capabilities.cache
+```
+
 ## API
 
 ### `types.ai/ai-sdk`
@@ -384,6 +395,21 @@ import { models, provider } from 'types.ai/models/anthropic';
 provider.name; // 'Anthropic'
 models['claude-opus-5'].capabilities.reasoning; // { supported: true, effort: [...] }
 ```
+
+### `types.ai/models/<provider>/<model>`
+
+```ts
+const model: Model; // the models.dev data of one model, as const
+type Model = typeof model; // the same type as Models['<model>'] of types.ai/models/<provider>
+```
+
+```ts
+import { model } from 'types.ai/models/anthropic/claude-opus-5';
+
+model.capabilities.cache; // the cache capability of claude-opus-5
+```
+
+The subpath is the models.dev model ID. A model that models.dev removes also loses its subpath, in the same release as the data change.
 
 ## License
 

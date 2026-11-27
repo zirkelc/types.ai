@@ -6,7 +6,10 @@ import type {
   ReasoningEffort,
   ServiceTier,
 } from '../src/models';
-import { models } from '../src/models/openai';
+import { models, type Models } from '../src/models/openai';
+import { model as gpt61Terra, type Model as Gpt61Terra } from '../src/models/openai/gpt-6.1-terra';
+import { model as claudeOpus5 } from '../src/models/anthropic/claude-opus-5';
+import { model as gemini25Pro } from '../src/models/google/gemini-2.5-pro';
 
 describe('core types', () => {
   test('should list the providers', () => {
@@ -44,5 +47,13 @@ describe('core types', () => {
       readonly ['none', 'low', 'medium', 'high', 'xhigh', 'max']
     >();
     expectTypeOf<'gpt-6-luna'>().toExtend<ModelId<'openai'>>();
+  });
+
+  test('should type a model module as the same model in the provider models', () => {
+    // Assert
+    expectTypeOf(gpt61Terra).toEqualTypeOf<Models['gpt-6.1-terra']>();
+    expectTypeOf<Gpt61Terra>().toEqualTypeOf<Models['gpt-6.1-terra']>();
+    expectTypeOf(claudeOpus5.id).toEqualTypeOf<'claude-opus-5'>();
+    expectTypeOf(gemini25Pro.id).toEqualTypeOf<'gemini-2.5-pro'>();
   });
 });

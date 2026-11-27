@@ -105,113 +105,315 @@ type GenerateContent_b3a16e9b = Patch<
 
 export type GoogleLanguageModelOptionsByModel = {
   /**
-   * Gemini 2.5 Computer Use Preview 10-2025. Released 2025-10-07.
+   * @name Gemini 2.5 Computer Use Preview 10-2025
+   * @provider Google
+   * @family gemini-computer-use
+   * @released 2025-10-07
+   * @updated 2025-10-07
+   * @knowledge 2025-01
+   * @context 128,000 tokens
+   * @maxOutput 64,000 tokens
+   * @modalities text, image/png, image/jpeg, image/webp, image/heic, image/heif -> text
+   * @reasoning supported
    */
   'gemini-2.5-computer-use-preview-10-2025': GenerateContent_6dd8d976;
   /**
-   * Gemini 2.5 Flash. Released 2025-06-17.
-   * Default reasoning (models.dev): toggle `true`.
+   * @name Gemini 2.5 Flash
+   * @provider Google
+   * @family gemini-flash
+   * @released 2025-06-17
+   * @updated 2025-06-17
+   * @knowledge 2025-01
+   * @context 1,048,576 tokens
+   * @maxOutput 65,536 tokens
+   * @modalities text, image/png, image/jpeg, image/webp, image/heic, image/heif, audio/wav, audio/mp3, audio/aiff, audio/aac, audio/ogg, audio/flac, audio/mpeg, audio/m4a, audio/l16, audio/opus, audio/alaw, audio/mulaw, audio/webm, video/mp4, video/mpeg, video/mov, video/avi, video/x-flv, video/mpg, video/webm, video/wmv, video/3gpp, application/pdf -> text
+   * @reasoning toggle, budget 0-24,576 tokens (default toggle `true`)
    */
   'gemini-2.5-flash': GenerateContent_9673b8cc;
   /**
-   * Gemini 2.5 Flash-Lite. Released 2025-06-17.
-   * Default reasoning (models.dev): toggle `false`.
+   * @name Gemini 2.5 Flash-Lite
+   * @provider Google
+   * @family gemini-flash-lite
+   * @released 2025-06-17
+   * @updated 2025-06-17
+   * @knowledge 2025-01
+   * @context 1,048,576 tokens
+   * @maxOutput 65,536 tokens
+   * @modalities text, image/png, image/jpeg, image/webp, image/heic, image/heif, audio/wav, audio/mp3, audio/aiff, audio/aac, audio/ogg, audio/flac, audio/mpeg, audio/m4a, audio/l16, audio/opus, audio/alaw, audio/mulaw, audio/webm, video/mp4, video/mpeg, video/mov, video/avi, video/x-flv, video/mpg, video/webm, video/wmv, video/3gpp, application/pdf -> text
+   * @reasoning toggle, budget 512-24,576 tokens (default toggle `false`)
    */
   'gemini-2.5-flash-lite': GenerateContent_9673b8cc;
   /**
-   * Gemini 2.5 Pro. Released 2025-06-17.
+   * @name Gemini 2.5 Pro
+   * @provider Google
+   * @family gemini-pro
+   * @released 2025-06-17
+   * @updated 2025-06-17
+   * @knowledge 2025-01
+   * @context 1,048,576 tokens
+   * @maxOutput 65,536 tokens
+   * @modalities text, image/png, image/jpeg, image/webp, image/heic, image/heif, audio/wav, audio/mp3, audio/aiff, audio/aac, audio/ogg, audio/flac, audio/mpeg, audio/m4a, audio/l16, audio/opus, audio/alaw, audio/mulaw, audio/webm, video/mp4, video/mpeg, video/mov, video/avi, video/x-flv, video/mpg, video/webm, video/wmv, video/3gpp, application/pdf -> text
+   * @reasoning budget 128-32,768 tokens
    */
   'gemini-2.5-pro': GenerateContent_9673b8cc;
   /**
-   * Gemini 3 Flash Preview. Released 2025-12-17.
-   * Default reasoning (models.dev): effort `high`.
+   * @name Gemini 3 Flash Preview
+   * @provider Google
+   * @family gemini-flash
+   * @released 2025-12-17
+   * @updated 2025-12-17
+   * @knowledge 2025-01
+   * @context 1,048,576 tokens
+   * @maxOutput 65,536 tokens
+   * @modalities text, image/png, image/jpeg, image/webp, image/heic, image/heif, video/mp4, video/mpeg, video/mov, video/avi, video/x-flv, video/mpg, video/webm, video/wmv, video/3gpp, audio/wav, audio/mp3, audio/aiff, audio/aac, audio/ogg, audio/flac, audio/mpeg, audio/m4a, audio/l16, audio/opus, audio/alaw, audio/mulaw, audio/webm, application/pdf -> text
+   * @reasoning effort `minimal`, `low`, `medium`, `high` (default effort `high`)
    */
   'gemini-3-flash-preview': GenerateContent_5405faed;
   /**
-   * Gemini 3.1 Flash Lite. Released 2026-05-07.
+   * @name Gemini 3.1 Flash Lite
+   * @provider Google
+   * @family gemini-flash-lite
+   * @released 2026-05-07
+   * @updated 2026-05-07
+   * @knowledge 2025-01
+   * @context 1,048,576 tokens
+   * @maxOutput 65,536 tokens
+   * @modalities text, image/png, image/jpeg, image/webp, image/heic, image/heif, video/mp4, video/mpeg, video/mov, video/avi, video/x-flv, video/mpg, video/webm, video/wmv, video/3gpp, audio/wav, audio/mp3, audio/aiff, audio/aac, audio/ogg, audio/flac, audio/mpeg, audio/m4a, audio/l16, audio/opus, audio/alaw, audio/mulaw, audio/webm, application/pdf -> text
+   * @reasoning effort `minimal`, `low`, `medium`, `high`
    */
   'gemini-3.1-flash-lite': GenerateContent_5405faed;
   /**
-   * Gemini 3.1 Flash Lite Preview. Released 2026-03-03.
+   * @name Gemini 3.1 Flash Lite Preview
+   * @provider Google
+   * @family gemini-flash-lite
+   * @status deprecated
+   * @released 2026-03-03
+   * @updated 2026-03-03
+   * @knowledge 2025-01
+   * @context 1,048,576 tokens
+   * @maxOutput 65,536 tokens
+   * @modalities text, image/png, image/jpeg, image/webp, image/heic, image/heif, video/mp4, video/mpeg, video/mov, video/avi, video/x-flv, video/mpg, video/webm, video/wmv, video/3gpp, audio/wav, audio/mp3, audio/aiff, audio/aac, audio/ogg, audio/flac, audio/mpeg, audio/m4a, audio/l16, audio/opus, audio/alaw, audio/mulaw, audio/webm, application/pdf -> text
+   * @reasoning effort `minimal`, `low`, `medium`, `high`
    * @deprecated The model is deprecated (models.dev).
    */
   'gemini-3.1-flash-lite-preview': GenerateContent_5405faed;
   /**
-   * Gemini 3.1 Pro Preview. Released 2026-02-19.
-   * Default reasoning (models.dev): effort `high`.
+   * @name Gemini 3.1 Pro Preview
+   * @provider Google
+   * @family gemini-pro
+   * @released 2026-02-19
+   * @updated 2026-02-19
+   * @knowledge 2025-01
+   * @context 1,048,576 tokens
+   * @maxOutput 65,536 tokens
+   * @modalities text, image/png, image/jpeg, image/webp, image/heic, image/heif, video/mp4, video/mpeg, video/mov, video/avi, video/x-flv, video/mpg, video/webm, video/wmv, video/3gpp, audio/wav, audio/mp3, audio/aiff, audio/aac, audio/ogg, audio/flac, audio/mpeg, audio/m4a, audio/l16, audio/opus, audio/alaw, audio/mulaw, audio/webm, application/pdf -> text
+   * @reasoning effort `low`, `medium`, `high` (default effort `high`)
    */
   'gemini-3.1-pro-preview': GenerateContent_97fce35d;
   /**
-   * Gemini 3.1 Pro Preview Custom Tools. Released 2026-02-19.
+   * @name Gemini 3.1 Pro Preview Custom Tools
+   * @provider Google
+   * @family gemini-pro
+   * @released 2026-02-19
+   * @updated 2026-02-19
+   * @knowledge 2025-01
+   * @context 1,048,576 tokens
+   * @maxOutput 65,536 tokens
+   * @modalities text, image/png, image/jpeg, image/webp, image/heic, image/heif, video/mp4, video/mpeg, video/mov, video/avi, video/x-flv, video/mpg, video/webm, video/wmv, video/3gpp, audio/wav, audio/mp3, audio/aiff, audio/aac, audio/ogg, audio/flac, audio/mpeg, audio/m4a, audio/l16, audio/opus, audio/alaw, audio/mulaw, audio/webm, application/pdf -> text
+   * @reasoning effort `low`, `medium`, `high`
    */
   'gemini-3.1-pro-preview-customtools': GenerateContent_97fce35d;
   /**
-   * Gemini 3.5 Flash. Released 2026-05-19.
+   * @name Gemini 3.5 Flash
+   * @provider Google
+   * @family gemini-flash
+   * @released 2026-05-19
+   * @updated 2026-05-19
+   * @knowledge 2025-01
+   * @context 1,048,576 tokens
+   * @maxOutput 65,536 tokens
+   * @modalities text, image/png, image/jpeg, image/webp, image/heic, image/heif, video/mp4, video/mpeg, video/mov, video/avi, video/x-flv, video/mpg, video/webm, video/wmv, video/3gpp, audio/wav, audio/mp3, audio/aiff, audio/aac, audio/ogg, audio/flac, audio/mpeg, audio/m4a, audio/l16, audio/opus, audio/alaw, audio/mulaw, audio/webm, application/pdf -> text
+   * @reasoning effort `minimal`, `low`, `medium`, `high`
    */
   'gemini-3.5-flash': GenerateContent_5405faed;
   /**
-   * Gemini 3.5 Flash Lite. Released 2026-07-21.
-   * Default reasoning (models.dev): effort `minimal`.
+   * @name Gemini 3.5 Flash Lite
+   * @provider Google
+   * @family gemini-flash-lite
+   * @released 2026-07-21
+   * @updated 2026-07-21
+   * @knowledge 2026-03
+   * @context 1,048,576 tokens
+   * @maxOutput 65,536 tokens
+   * @modalities text, image/png, image/jpeg, image/webp, image/heic, image/heif, video/mp4, video/mpeg, video/mov, video/avi, video/x-flv, video/mpg, video/webm, video/wmv, video/3gpp, audio/wav, audio/mp3, audio/aiff, audio/aac, audio/ogg, audio/flac, audio/mpeg, audio/m4a, audio/l16, audio/opus, audio/alaw, audio/mulaw, audio/webm, application/pdf -> text
+   * @reasoning effort `minimal`, `low`, `medium`, `high` (default effort `minimal`)
    */
   'gemini-3.5-flash-lite': GenerateContent_5405faed;
   /**
-   * Gemini 3.6 Flash. Released 2026-07-21.
-   * Default reasoning (models.dev): effort `medium`.
+   * @name Gemini 3.6 Flash
+   * @provider Google
+   * @family gemini-flash
+   * @released 2026-07-21
+   * @updated 2026-07-21
+   * @knowledge 2026-03
+   * @context 1,048,576 tokens
+   * @maxOutput 65,536 tokens
+   * @modalities text, image/png, image/jpeg, image/webp, image/heic, image/heif, video/mp4, video/mpeg, video/mov, video/avi, video/x-flv, video/mpg, video/webm, video/wmv, video/3gpp, audio/wav, audio/mp3, audio/aiff, audio/aac, audio/ogg, audio/flac, audio/mpeg, audio/m4a, audio/l16, audio/opus, audio/alaw, audio/mulaw, audio/webm, application/pdf -> text
+   * @reasoning effort `minimal`, `low`, `medium`, `high` (default effort `medium`)
    */
   'gemini-3.6-flash': GenerateContent_5405faed;
   /**
-   * Gemini 3.7 Flash. Released 2026-08-13.
+   * @name Gemini 3.7 Flash
+   * @provider Google
+   * @family gemini-flash
+   * @released 2026-08-13
+   * @updated 2026-08-13
+   * @knowledge 2026-03
+   * @context 1,048,576 tokens
+   * @maxOutput 65,536 tokens
+   * @modalities text, image/png, image/jpeg, image/webp, image/heic, image/heif, video/mp4, video/mpeg, video/mov, video/avi, video/x-flv, video/mpg, video/webm, video/wmv, video/3gpp, audio/wav, audio/mp3, audio/aiff, audio/aac, audio/ogg, audio/flac, audio/mpeg, audio/m4a, audio/l16, audio/opus, audio/alaw, audio/mulaw, audio/webm, application/pdf -> text
+   * @reasoning effort `low`, `medium`, `high`
    */
   'gemini-3.7-flash': GenerateContent_97fce35d;
   /**
-   * Gemini 3.8 Flash. Released 2026-09-02.
-   * Default reasoning (models.dev): effort `medium`.
+   * @name Gemini 3.8 Flash
+   * @provider Google
+   * @family gemini-flash
+   * @released 2026-09-02
+   * @updated 2026-09-02
+   * @context 1,048,576 tokens
+   * @maxOutput 65,536 tokens
+   * @modalities text, image/png, image/jpeg, image/webp, image/heic, image/heif, video/mp4, video/mpeg, video/mov, video/avi, video/x-flv, video/mpg, video/webm, video/wmv, video/3gpp, audio/wav, audio/mp3, audio/aiff, audio/aac, audio/ogg, audio/flac, audio/mpeg, audio/m4a, audio/l16, audio/opus, audio/alaw, audio/mulaw, audio/webm, application/pdf -> text
+   * @reasoning effort `low`, `medium`, `high` (default effort `medium`)
    */
   'gemini-3.8-flash': GenerateContent_97fce35d;
   /**
-   * Gemini 4 Argon. Released 2026-10-13.
-   * Default reasoning (models.dev): effort `medium`.
+   * @name Gemini 4 Argon
+   * @provider Google
+   * @family gemini
+   * @released 2026-10-13
+   * @updated 2026-10-13
+   * @knowledge 2026-03
+   * @context 1,048,576 tokens
+   * @maxOutput 32,768 tokens
+   * @modalities text, image/png, image/jpeg, image/webp, image/heic, image/heif, video/mp4, video/mpeg, video/mov, video/avi, video/x-flv, video/mpg, video/webm, video/wmv, video/3gpp, audio/wav, audio/mp3, audio/aiff, audio/aac, audio/ogg, audio/flac, audio/mpeg, audio/m4a, audio/l16, audio/opus, audio/alaw, audio/mulaw, audio/webm, application/pdf -> text
+   * @reasoning effort `low`, `medium`, `high` (default effort `medium`)
    */
   'gemini-4-argon': GenerateContent_97fce35d;
   /**
-   * Gemini 4 Carbon. Released 2026-11-10.
-   * Default reasoning (models.dev): effort `medium`.
+   * @name Gemini 4 Carbon
+   * @provider Google
+   * @family gemini
+   * @released 2026-11-10
+   * @updated 2026-11-10
+   * @knowledge 2026-03
+   * @context 1,048,576 tokens
+   * @maxOutput 32,768 tokens
+   * @modalities text, image/png, image/jpeg, image/webp, image/heic, image/heif, video/mp4, video/mpeg, video/mov, video/avi, video/x-flv, video/mpg, video/webm, video/wmv, video/3gpp, audio/wav, audio/mp3, audio/aiff, audio/aac, audio/ogg, audio/flac, audio/mpeg, audio/m4a, audio/l16, audio/opus, audio/alaw, audio/mulaw, audio/webm, application/pdf -> text
+   * @reasoning effort `low`, `medium`, `high` (default effort `medium`)
    */
   'gemini-4-carbon': GenerateContent_97fce35d;
   /**
-   * Gemini 4 Hydrogen. Released 2026-11-12.
-   * Default reasoning (models.dev): effort `high`.
+   * @name Gemini 4 Hydrogen
+   * @provider Google
+   * @family gemini
+   * @released 2026-11-12
+   * @updated 2026-11-12
+   * @knowledge 2026-03
+   * @context 1,048,576 tokens
+   * @maxOutput 65,536 tokens
+   * @modalities text, image/png, image/jpeg, image/webp, image/heic, image/heif, video/mp4, video/mpeg, video/mov, video/avi, video/x-flv, video/mpg, video/webm, video/wmv, video/3gpp, audio/wav, audio/mp3, audio/aiff, audio/aac, audio/ogg, audio/flac, audio/mpeg, audio/m4a, audio/l16, audio/opus, audio/alaw, audio/mulaw, audio/webm, application/pdf -> text
+   * @reasoning effort `low`, `medium`, `high`, `xhigh` (default effort `high`)
    */
   'gemini-4-hydrogen': GenerateContent_45780cae;
   /**
-   * Gemini 4 Neon. Released 2026-11-18.
-   * Default reasoning (models.dev): effort `high`.
+   * @name Gemini 4 Neon
+   * @provider Google
+   * @family gemini
+   * @released 2026-11-18
+   * @updated 2026-11-18
+   * @knowledge 2026-03
+   * @context 1,048,576 tokens
+   * @maxOutput 65,536 tokens
+   * @modalities text, image/png, image/jpeg, image/webp, image/heic, image/heif, video/mp4, video/mpeg, video/mov, video/avi, video/x-flv, video/mpg, video/webm, video/wmv, video/3gpp, audio/wav, audio/mp3, audio/aiff, audio/aac, audio/ogg, audio/flac, audio/mpeg, audio/m4a, audio/l16, audio/opus, audio/alaw, audio/mulaw, audio/webm, application/pdf -> text
+   * @reasoning effort `low`, `medium`, `high`, `xhigh` (default effort `high`)
    */
   'gemini-4-neon': GenerateContent_45780cae;
   /**
-   * Gemini Flash Latest. Released 2026-08-13.
+   * @name Gemini Flash Latest
+   * @provider Google
+   * @family gemini-flash
+   * @released 2026-08-13
+   * @updated 2026-08-13
+   * @knowledge 2026-03
+   * @context 1,048,576 tokens
+   * @maxOutput 65,536 tokens
+   * @modalities text, image/png, image/jpeg, image/webp, image/heic, image/heif, video/mp4, video/mpeg, video/mov, video/avi, video/x-flv, video/mpg, video/webm, video/wmv, video/3gpp, audio/wav, audio/mp3, audio/aiff, audio/aac, audio/ogg, audio/flac, audio/mpeg, audio/m4a, audio/l16, audio/opus, audio/alaw, audio/mulaw, audio/webm, application/pdf -> text
+   * @reasoning effort `low`, `medium`, `high`
    */
   'gemini-flash-latest': GenerateContent_b3a16e9b;
   /**
-   * Gemini Flash-Lite Latest. Released 2026-07-21.
+   * @name Gemini Flash-Lite Latest
+   * @provider Google
+   * @family gemini-flash-lite
+   * @released 2026-07-21
+   * @updated 2026-07-21
+   * @knowledge 2026-03
+   * @context 1,048,576 tokens
+   * @maxOutput 65,536 tokens
+   * @modalities text, image/png, image/jpeg, image/webp, image/heic, image/heif, video/mp4, video/mpeg, video/mov, video/avi, video/x-flv, video/mpg, video/webm, video/wmv, video/3gpp, audio/wav, audio/mp3, audio/aiff, audio/aac, audio/ogg, audio/flac, audio/mpeg, audio/m4a, audio/l16, audio/opus, audio/alaw, audio/mulaw, audio/webm, application/pdf -> text
+   * @reasoning effort `minimal`, `low`, `medium`, `high`
    */
   'gemini-flash-lite-latest': GenerateContent_47287253;
   /**
-   * Gemini Pro Latest. Released 2026-02-19.
-   * Default reasoning (models.dev): effort `high`.
+   * @name Gemini Pro Latest
+   * @provider Google
+   * @family gemini-pro
+   * @released 2026-02-19
+   * @updated 2026-02-19
+   * @knowledge 2025-01
+   * @context 1,048,576 tokens
+   * @maxOutput 65,536 tokens
+   * @modalities text, image/png, image/jpeg, image/webp, image/heic, image/heif, video/mp4, video/mpeg, video/mov, video/avi, video/x-flv, video/mpg, video/webm, video/wmv, video/3gpp, audio/wav, audio/mp3, audio/aiff, audio/aac, audio/ogg, audio/flac, audio/mpeg, audio/m4a, audio/l16, audio/opus, audio/alaw, audio/mulaw, audio/webm, application/pdf -> text
+   * @reasoning effort `low`, `medium`, `high` (default effort `high`)
    */
   'gemini-pro-latest': GenerateContent_b3a16e9b;
   /**
-   * Gemini Robotics-ER 2 Preview. Released 2026-07-30.
-   * Default reasoning (models.dev): effort `high`.
+   * @name Gemini Robotics-ER 2 Preview
+   * @provider Google
+   * @family gemini-robotics-er
+   * @released 2026-07-30
+   * @updated 2026-07-30
+   * @context 131,072 tokens
+   * @maxOutput 65,536 tokens
+   * @modalities text, image/png, image/jpeg, image/webp, image/heic, image/heif, video/mp4, video/mpeg, video/mov, video/avi, video/x-flv, video/mpg, video/webm, video/wmv, video/3gpp, audio/wav, audio/mp3, audio/aiff, audio/aac, audio/ogg, audio/flac, audio/mpeg, audio/m4a, audio/l16, audio/opus, audio/alaw, audio/mulaw, audio/webm -> text
+   * @reasoning effort `minimal`, `low`, `medium`, `high` (default effort `high`)
    */
   'gemini-robotics-er-2-preview': GenerateContent_47287253;
   /**
-   * Gemma 4 26B A4B IT. Released 2026-04-02.
+   * @name Gemma 4 26B A4B IT
+   * @provider Google
+   * @family gemma
+   * @released 2026-04-02
+   * @updated 2026-04-02
+   * @context 262,144 tokens
+   * @maxOutput 32,768 tokens
+   * @modalities text, image/png, image/jpeg, image/webp, image/heic, image/heif -> text
+   * @reasoning toggle
+   * @openWeights
    */
   'gemma-4-26b-a4b-it': GenerateContent_6dd8d976;
   /**
-   * Gemma 4 31B IT. Released 2026-04-02.
+   * @name Gemma 4 31B IT
+   * @provider Google
+   * @family gemma
+   * @released 2026-04-02
+   * @updated 2026-04-02
+   * @context 262,144 tokens
+   * @maxOutput 32,768 tokens
+   * @modalities text, image/png, image/jpeg, image/webp, image/heic, image/heif -> text
+   * @reasoning toggle
+   * @openWeights
    */
   'gemma-4-31b-it': GenerateContent_6dd8d976;
 };

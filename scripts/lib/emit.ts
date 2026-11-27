@@ -105,15 +105,63 @@ function renderFields({
   return fields.length === 0 ? undefined : `{ ${fields.join(' ')} }`;
 }
 
-function modelDoc(model: ModelsDevModel): string {
-  const lines = [`${model.name}. Released ${model.release_date}.`];
+function tokens(count: number | undefined): string | undefined {
+  return count ? `${count.toLocaleString('en-US')} tokens` : undefined;
+}
+
+function reasoningTag(model: ModelsDevModel): string | undefined {
   const reasoning = model.capabilities.reasoning;
-  if (reasoning.supported && reasoning.default) {
-    lines.push(
-      `Default reasoning (models.dev): ${reasoning.default.type} \`${reasoning.default.value}\`.`,
-    );
+  if (!reasoning.supported) return undefined;
+  const parts: Array<string> = [];
+  if (reasoning.effort?.length) {
+    parts.push(`effort ${reasoning.effort.map((value) => `\`${value}\``).join(', ')}`);
   }
-  if (model.status === 'alpha' || model.status === 'beta') lines.push(`Status: ${model.status}.`);
+  if (reasoning.toggle) parts.push('toggle');
+  if (reasoning.budget) {
+    const { min = 0, max } = reasoning.budget;
+    const range =
+      max === undefined
+        ? `${min.toLocaleString('en-US')}+`
+        : `${min.toLocaleString('en-US')}-${max.toLocaleString('en-US')}`;
+    parts.push(`budget ${range} tokens`);
+  }
+  const text = parts.length > 0 ? parts.join(', ') : 'supported';
+  const fallback = reasoning.default
+    ? ` (default ${reasoning.default.type} \`${reasoning.default.value}\`)`
+    : '';
+  return `${text}${fallback}`;
+}
+
+/**
+ * The doc comment of a model: one tag for each value that models.dev has. Editors
+ * show the tags on hover. `@deprecated` also marks the model as deprecated in the editor.
+ */
+function modelDoc({
+  model,
+  providerName,
+}: {
+  model: ModelsDevModel;
+  providerName: string;
+}): string {
+  const { modalities, limit } = model;
+  const tags: Array<[tag: string, value: string | undefined]> = [
+    ['name', model.name],
+    ['provider', providerName],
+    ['family', model.family],
+    ['status', model.status],
+    ['released', model.release_date],
+    ['updated', model.last_updated],
+    ['knowledge', model.knowledge],
+    ['context', tokens(limit?.context)],
+    ['maxInput', tokens(limit?.input)],
+    ['maxOutput', tokens(limit?.output)],
+    ['modalities', `${modalities.input.join(', ')} -> ${modalities.output.join(', ')}`],
+    ['reasoning', reasoningTag(model)],
+    ['openWeights', model.open_weights ? '' : undefined],
+  ];
+  const lines = tags
+    .filter(([, value]) => value !== undefined)
+    .map(([tag, value]) => (value ? `@${tag} ${value}` : `@${tag}`));
   if (model.status === 'deprecated') {
     const date = model.deprecation_date ? ` on ${model.deprecation_date}` : '';
     lines.push(`@deprecated The model is deprecated${date} (models.dev).`);
@@ -133,7 +181,7 @@ type TargetOutput = {
   subTypeName: string | undefined;
   byModelName: string;
   /** Model ID to the type expression of its options. */
-  models: Array<{ model: ModelsDevModel; typeName: string }>;
+  models: Array<{ model: ModelsDevModel; providerName: string; typeName: string }>;
   /** Shape name to its type expression. */
   shapes: Map<string, string>;
   /** Field path to all union values that some model uses, for the checks. */
@@ -164,7 +212,8 @@ function buildTarget({
     values: new Map(),
   };
 
-  for (const { model } of selectModels({ data, mapping, target })) {
+  for (const { providerId, model } of selectModels({ data, mapping, target })) {
+    const providerName = data.providers[providerId]!.name;
     const capabilities = apiCapabilities({ model, api: target.api });
     const results = Object.entries(target.fields).map(
       ([path, field]) => [path, resolveField({ field, capabilities })] as [string, FieldResult],
@@ -180,13 +229,17 @@ function buildTarget({
     if (output.subTypeName) {
       const base = `${output.subTypeName}<${literal(model.id)}>`;
       const fields = renderFields({ node: buildTree(results), base, loose: true });
-      output.models.push({ model, typeName: fields ? `PatchLoose<${base}, ${fields}>` : base });
+      output.models.push({
+        model,
+        providerName,
+        typeName: fields ? `PatchLoose<${base}, ${fields}>` : base,
+      });
       continue;
     }
 
     const fields = renderFields({ node: buildTree(results), base: baseName });
     if (fields === undefined) {
-      output.models.push({ model, typeName: baseName });
+      output.models.push({ model, providerName, typeName: baseName });
       continue;
     }
     // Models with the same patch share one shape. The name comes from a hash of the patch,
@@ -194,7 +247,7 @@ function buildTarget({
     const hash = createHash('sha1').update(fields).digest('hex').slice(0, 8);
     const typeName = `${prefix}_${hash}`;
     output.shapes.set(typeName, `Patch<${baseName}, ${fields}>`);
-    output.models.push({ model, typeName });
+    output.models.push({ model, providerName, typeName });
   }
   return output;
 }
@@ -277,7 +330,8 @@ export function emitProvider({
       types.push(`type ${name} = ${expression};`);
     }
     const entries = output.models.map(
-      ({ model, typeName }) => `${modelDoc(model)}\n${key(model.id)}: ${typeName};`,
+      ({ model, providerName, typeName }) =>
+        `${modelDoc({ model, providerName })}\n${key(model.id)}: ${typeName};`,
     );
     if (output.subTypeName) {
       // The models that the SDK knows but models.dev does not keep the SDK's per-model type.
@@ -446,25 +500,128 @@ function emitCheck({
   return `${lines.join('\n\n')}\n`;
 }
 
+/**
+ * A model ID is also the file name of its module and the subpath of its export, for example
+ * `types.ai/models/openai/gpt-6.1-terra`. It must be a safe file name on all platforms: ASCII
+ * letters, digits, `.`, `-` and `_`, no `.` at the start or the end, no Windows device name
+ * (`con`, `nul.json`) and no `.d` at the end (TypeScript reads `<id>.d.ts` as a declaration
+ * file).
+ */
+const SAFE_FILE_NAME = /^[A-Za-z0-9_-][A-Za-z0-9._-]*$/;
+const WINDOWS_DEVICE_NAME = /^(con|prn|aux|nul|com[0-9]|lpt[0-9])(\.|$)/i;
+const MAX_FILE_NAME_LENGTH = 200;
+
+function assertModelFileNames({
+  providerId,
+  modelIds,
+}: {
+  providerId: string;
+  modelIds: Array<string>;
+}): void {
+  const lowerCase = new Map<string, string>();
+  for (const id of modelIds) {
+    if (
+      !SAFE_FILE_NAME.test(id) ||
+      id.endsWith('.') ||
+      /\.d$/i.test(id) ||
+      WINDOWS_DEVICE_NAME.test(id) ||
+      id.length > MAX_FILE_NAME_LENGTH
+    ) {
+      throw new Error(
+        `Model "${id}" of provider "${providerId}" is not a safe file name, so it cannot have its own subpath export.`,
+      );
+    }
+    // Windows and macOS file systems ignore case, so these IDs would write the same file.
+    const other = lowerCase.get(id.toLowerCase());
+    if (other !== undefined) {
+      throw new Error(
+        `Models "${other}" and "${id}" of provider "${providerId}" differ only in case, so they cannot have their own files.`,
+      );
+    }
+    lowerCase.set(id.toLowerCase(), id);
+  }
+}
+
+/** Names that a model variable of the provider module cannot have. */
+const RESERVED_NAMES = new Set([
+  'models',
+  'provider',
+  'Models',
+  'ModelsShape',
+  ...'break case catch class const continue debugger default delete do else enum export extends false finally for function if import in instanceof let new null return static super switch this throw true try typeof var void while with yield await implements interface package private protected public arguments eval undefined'.split(
+    ' ',
+  ),
+]);
+
+/** Gives each model ID a unique variable name for the import of its module. */
+function variableNames(modelIds: Array<string>): Map<string, string> {
+  const used = new Set(RESERVED_NAMES);
+  const names = new Map<string, string>();
+  for (const id of modelIds) {
+    const base = id.replace(/[^A-Za-z0-9_$]/g, '_').replace(/^(?=[0-9])/, '_');
+    let name = base;
+    for (let index = 2; used.has(name); index++) name = `${base}_${index}`;
+    used.add(name);
+    names.set(id, name);
+  }
+  return names;
+}
+
+export type ModelFile = {
+  id: string;
+  /** src/generated/models/<provider>/<model>.ts */
+  types: string;
+  /** src/models/<provider>/<model>.ts */
+  entry: string;
+};
+
+/**
+ * Emits the model data of one provider. Each model has its own module, so that a bundler keeps
+ * only the models that a consumer imports. The provider module imports all model modules and
+ * builds `models` from them, so the data of each model is in one file only.
+ */
 export function emitModels({
   providerId,
   provider,
 }: {
   providerId: string;
   provider: DataFile['providers'][string];
-}): { types: string; entry: string } {
-  const models = Object.fromEntries(
-    Object.entries(provider.models).sort(([a], [b]) => a.localeCompare(b)),
-  );
+}): { types: string; entry: string; modelFiles: Array<ModelFile> } {
+  const modelIds = Object.keys(provider.models).sort((a, b) => a.localeCompare(b));
+  assertModelFileNames({ providerId, modelIds });
+  const names = variableNames(modelIds);
   const info = { id: provider.id, name: provider.name, doc: provider.doc };
+
+  const modelFiles = modelIds.map((id): ModelFile => {
+    const model = provider.models[id]!;
+    return {
+      id,
+      types: [
+        HEADER,
+        `import type { Model as ModelShape } from '../../../core/types';`,
+        `${modelDoc({ model, providerName: provider.name })}\nexport const model = ${JSON.stringify(model)} as const satisfies ModelShape;`,
+        `export type Model = typeof model;`,
+        '',
+      ].join('\n\n'),
+      entry: [
+        HEADER,
+        `export { model, type Model } from '../../generated/models/${providerId}/${id}';`,
+        '',
+      ].join('\n\n'),
+    };
+  });
+
   return {
     types: [
       HEADER,
       `import type { Models as ModelsShape } from '../../core/types';`,
+      modelIds
+        .map((id) => `import { model as ${names.get(id)} } from './${providerId}/${id}';`)
+        .join('\n'),
       `/** The provider as models.dev describes it. */`,
       `export const provider = ${JSON.stringify(info)} as const;`,
       `/** The models of the provider, from models.dev. */`,
-      `export const models = ${JSON.stringify(models)} as const satisfies ModelsShape;`,
+      `export const models = {\n${modelIds.map((id) => `${key(id)}: ${names.get(id)},`).join('\n')}\n} as const satisfies ModelsShape;`,
       `export type Models = typeof models;`,
       '',
     ].join('\n\n'),
@@ -473,6 +630,7 @@ export function emitModels({
       `export { models, provider, type Models } from '../generated/models/${providerId}';`,
       '',
     ].join('\n\n'),
+    modelFiles,
   };
 }
 
