@@ -231,203 +231,663 @@ type Responses_f2131aa6 = Patch<
 
 export type OpenAILanguageModelResponsesOptionsByModel = {
   /**
-   * Chat Latest. Released 2026-05-05.
+   * @name Chat Latest
+   * @provider OpenAI
+   * @family gpt
+   * @released 2026-05-05
+   * @updated 2026-05-28
+   * @knowledge 2026-04-20
+   * @context 400,000 tokens
+   * @maxInput 272,000 tokens
+   * @maxOutput 128,000 tokens
+   * @modalities text, image/jpeg, image/png, image/gif, image/webp, application/pdf -> text
+   * @reasoning supported
    */
   'chat-latest': Responses_e9c72a24;
   /**
-   * GPT-3.5-turbo. Released 2023-03-01.
+   * @name GPT-3.5-turbo
+   * @provider OpenAI
+   * @family gpt
+   * @status deprecated
+   * @released 2023-03-01
+   * @updated 2023-11-06
+   * @knowledge 2021-09-01
+   * @context 16,385 tokens
+   * @maxOutput 4,096 tokens
+   * @modalities text -> text
    * @deprecated The model is deprecated (models.dev).
    */
   'gpt-3.5-turbo': Responses_e9c72a24;
   /**
-   * GPT-4. Released 2023-11-06.
+   * @name GPT-4
+   * @provider OpenAI
+   * @family gpt
+   * @status deprecated
+   * @released 2023-11-06
+   * @updated 2024-04-09
+   * @knowledge 2023-11
+   * @context 8,192 tokens
+   * @maxOutput 8,192 tokens
+   * @modalities text -> text
    * @deprecated The model is deprecated (models.dev).
    */
   'gpt-4': Responses_e9c72a24;
   /**
-   * GPT-4 Turbo. Released 2023-11-06.
+   * @name GPT-4 Turbo
+   * @provider OpenAI
+   * @family gpt
+   * @status deprecated
+   * @released 2023-11-06
+   * @updated 2024-04-09
+   * @knowledge 2023-12
+   * @context 128,000 tokens
+   * @maxOutput 4,096 tokens
+   * @modalities text, image/jpeg, image/png, image/gif, image/webp -> text
    * @deprecated The model is deprecated (models.dev).
    */
   'gpt-4-turbo': Responses_e9c72a24;
   /**
-   * GPT-4.1. Released 2025-04-14.
+   * @name GPT-4.1
+   * @provider OpenAI
+   * @family gpt
+   * @released 2025-04-14
+   * @updated 2025-04-14
+   * @knowledge 2024-04
+   * @context 1,047,576 tokens
+   * @maxOutput 32,768 tokens
+   * @modalities text, image/jpeg, image/png, image/gif, image/webp, application/pdf -> text
    */
   'gpt-4.1': Responses_88d80b4c;
   /**
-   * GPT-4.1 mini. Released 2025-04-14.
+   * @name GPT-4.1 mini
+   * @provider OpenAI
+   * @family gpt-mini
+   * @released 2025-04-14
+   * @updated 2025-04-14
+   * @knowledge 2024-04
+   * @context 1,047,576 tokens
+   * @maxOutput 32,768 tokens
+   * @modalities text, image/jpeg, image/png, image/gif, image/webp, application/pdf -> text
    */
   'gpt-4.1-mini': Responses_88d80b4c;
   /**
-   * GPT-4.1 nano. Released 2025-04-14.
+   * @name GPT-4.1 nano
+   * @provider OpenAI
+   * @family gpt-nano
+   * @status deprecated
+   * @released 2025-04-14
+   * @updated 2025-04-14
+   * @knowledge 2024-04
+   * @context 1,047,576 tokens
+   * @maxOutput 32,768 tokens
+   * @modalities text, image/jpeg, image/png, image/gif, image/webp -> text
    * @deprecated The model is deprecated (models.dev).
    */
   'gpt-4.1-nano': Responses_88d80b4c;
   /**
-   * GPT-4o. Released 2024-05-13.
+   * @name GPT-4o
+   * @provider OpenAI
+   * @family gpt
+   * @released 2024-05-13
+   * @updated 2024-08-06
+   * @knowledge 2023-09
+   * @context 128,000 tokens
+   * @maxOutput 16,384 tokens
+   * @modalities text, image/jpeg, image/png, image/gif, image/webp, application/pdf -> text
    */
   'gpt-4o': Responses_88d80b4c;
   /**
-   * GPT-4o (2024-05-13). Released 2024-05-13.
+   * @name GPT-4o (2024-05-13)
+   * @provider OpenAI
+   * @family gpt
+   * @status deprecated
+   * @released 2024-05-13
+   * @updated 2024-05-13
+   * @knowledge 2023-09
+   * @context 128,000 tokens
+   * @maxOutput 4,096 tokens
+   * @modalities text, image/jpeg, image/png, image/gif, image/webp -> text
    * @deprecated The model is deprecated (models.dev).
    */
   'gpt-4o-2024-05-13': Responses_88d80b4c;
   /**
-   * GPT-4o (2024-08-06). Released 2024-08-06.
+   * @name GPT-4o (2024-08-06)
+   * @provider OpenAI
+   * @family gpt
+   * @released 2024-08-06
+   * @updated 2024-08-06
+   * @knowledge 2023-09
+   * @context 128,000 tokens
+   * @maxOutput 16,384 tokens
+   * @modalities text, image/jpeg, image/png, image/gif, image/webp -> text
    */
   'gpt-4o-2024-08-06': Responses_e9c72a24;
   /**
-   * GPT-4o (2024-11-20). Released 2024-11-20.
+   * @name GPT-4o (2024-11-20)
+   * @provider OpenAI
+   * @family gpt
+   * @released 2024-11-20
+   * @updated 2024-11-20
+   * @knowledge 2023-09
+   * @context 128,000 tokens
+   * @maxOutput 16,384 tokens
+   * @modalities text, image/jpeg, image/png, image/gif, image/webp -> text
    */
   'gpt-4o-2024-11-20': Responses_e9c72a24;
   /**
-   * GPT-4o mini. Released 2024-07-18.
+   * @name GPT-4o mini
+   * @provider OpenAI
+   * @family gpt-mini
+   * @released 2024-07-18
+   * @updated 2024-07-18
+   * @knowledge 2023-09
+   * @context 128,000 tokens
+   * @maxOutput 16,384 tokens
+   * @modalities text, image/jpeg, image/png, image/gif, image/webp, application/pdf -> text
    */
   'gpt-4o-mini': Responses_88d80b4c;
   /**
-   * GPT-5. Released 2025-08-07.
+   * @name GPT-5
+   * @provider OpenAI
+   * @family gpt
+   * @released 2025-08-07
+   * @updated 2025-08-07
+   * @knowledge 2024-09-30
+   * @context 400,000 tokens
+   * @maxInput 272,000 tokens
+   * @maxOutput 128,000 tokens
+   * @modalities text, image/jpeg, image/png, image/gif, image/webp -> text
+   * @reasoning effort `minimal`, `low`, `medium`, `high`
    */
   'gpt-5': Responses_81ba2498;
   /**
-   * GPT-5 Mini. Released 2025-08-07.
+   * @name GPT-5 Mini
+   * @provider OpenAI
+   * @family gpt-mini
+   * @released 2025-08-07
+   * @updated 2025-08-07
+   * @knowledge 2024-05-30
+   * @context 400,000 tokens
+   * @maxInput 272,000 tokens
+   * @maxOutput 128,000 tokens
+   * @modalities text, image/jpeg, image/png, image/gif, image/webp -> text
+   * @reasoning effort `minimal`, `low`, `medium`, `high`
    */
   'gpt-5-mini': Responses_81ba2498;
   /**
-   * GPT-5 Nano. Released 2025-08-07.
+   * @name GPT-5 Nano
+   * @provider OpenAI
+   * @family gpt-nano
+   * @released 2025-08-07
+   * @updated 2025-08-07
+   * @knowledge 2024-05-30
+   * @context 400,000 tokens
+   * @maxInput 272,000 tokens
+   * @maxOutput 128,000 tokens
+   * @modalities text, image/jpeg, image/png, image/gif, image/webp -> text
+   * @reasoning effort `minimal`, `low`, `medium`, `high`
    */
   'gpt-5-nano': Responses_4f605e9d;
   /**
-   * GPT-5 Pro. Released 2025-10-06.
+   * @name GPT-5 Pro
+   * @provider OpenAI
+   * @family gpt-pro
+   * @released 2025-10-06
+   * @updated 2025-10-06
+   * @knowledge 2024-09-30
+   * @context 400,000 tokens
+   * @maxInput 272,000 tokens
+   * @maxOutput 272,000 tokens
+   * @modalities text, image/jpeg, image/png, image/gif, image/webp -> text
+   * @reasoning effort `high`
    */
   'gpt-5-pro': Responses_f2131aa6;
   /**
-   * GPT-5.1. Released 2025-11-13.
+   * @name GPT-5.1
+   * @provider OpenAI
+   * @family gpt
+   * @released 2025-11-13
+   * @updated 2025-11-13
+   * @knowledge 2024-09-30
+   * @context 400,000 tokens
+   * @maxInput 272,000 tokens
+   * @maxOutput 128,000 tokens
+   * @modalities text, image/jpeg, image/png, image/gif, image/webp -> text
+   * @reasoning effort `none`, `low`, `medium`, `high`
    */
   'gpt-5.1': Responses_492be964;
   /**
-   * GPT-5.2. Released 2025-12-11.
+   * @name GPT-5.2
+   * @provider OpenAI
+   * @family gpt
+   * @released 2025-12-11
+   * @updated 2025-12-11
+   * @knowledge 2025-08-31
+   * @context 400,000 tokens
+   * @maxInput 272,000 tokens
+   * @maxOutput 128,000 tokens
+   * @modalities text, image/jpeg, image/png, image/gif, image/webp -> text
+   * @reasoning effort `none`, `low`, `medium`, `high`, `xhigh`
    */
   'gpt-5.2': Responses_2a1f63b9;
   /**
-   * GPT-5.2 Pro. Released 2025-12-11.
+   * @name GPT-5.2 Pro
+   * @provider OpenAI
+   * @family gpt-pro
+   * @released 2025-12-11
+   * @updated 2025-12-11
+   * @knowledge 2025-08-31
+   * @context 400,000 tokens
+   * @maxInput 272,000 tokens
+   * @maxOutput 128,000 tokens
+   * @modalities text, image/jpeg, image/png, image/gif, image/webp -> text
+   * @reasoning effort `medium`, `high`, `xhigh`
    */
   'gpt-5.2-pro': Responses_c6f185e4;
   /**
-   * GPT-5.3 Codex. Released 2026-02-05.
+   * @name GPT-5.3 Codex
+   * @provider OpenAI
+   * @family gpt-codex
+   * @released 2026-02-05
+   * @updated 2026-02-05
+   * @knowledge 2025-08-31
+   * @context 400,000 tokens
+   * @maxInput 272,000 tokens
+   * @maxOutput 128,000 tokens
+   * @modalities text, image/jpeg, image/png, image/gif, image/webp, application/pdf -> text
+   * @reasoning effort `none`, `low`, `medium`, `high`, `xhigh`
    */
   'gpt-5.3-codex': Responses_9a0f73d4;
   /**
-   * GPT-5.3 Codex Spark. Released 2026-02-05.
+   * @name GPT-5.3 Codex Spark
+   * @provider OpenAI
+   * @family gpt-codex-spark
+   * @released 2026-02-05
+   * @updated 2026-02-05
+   * @knowledge 2025-08-31
+   * @context 128,000 tokens
+   * @maxInput 100,000 tokens
+   * @maxOutput 32,000 tokens
+   * @modalities text, image/jpeg, image/png, image/gif, image/webp, application/pdf -> text
+   * @reasoning effort `none`, `low`, `medium`, `high`, `xhigh`
    */
   'gpt-5.3-codex-spark': Responses_7b3f3862;
   /**
-   * GPT-5.4. Released 2026-03-05.
+   * @name GPT-5.4
+   * @provider OpenAI
+   * @family gpt
+   * @released 2026-03-05
+   * @updated 2026-03-05
+   * @knowledge 2025-08-31
+   * @context 1,050,000 tokens
+   * @maxInput 922,000 tokens
+   * @maxOutput 128,000 tokens
+   * @modalities text, image/jpeg, image/png, image/gif, image/webp, application/pdf -> text
+   * @reasoning effort `none`, `low`, `medium`, `high`, `xhigh`
    */
   'gpt-5.4': Responses_2a1f63b9;
   /**
-   * GPT-5.4 mini. Released 2026-03-17.
+   * @name GPT-5.4 mini
+   * @provider OpenAI
+   * @family gpt-mini
+   * @released 2026-03-17
+   * @updated 2026-03-17
+   * @knowledge 2025-08-31
+   * @context 400,000 tokens
+   * @maxInput 272,000 tokens
+   * @maxOutput 128,000 tokens
+   * @modalities text, image/jpeg, image/png, image/gif, image/webp -> text
+   * @reasoning effort `none`, `low`, `medium`, `high`, `xhigh`
    */
   'gpt-5.4-mini': Responses_2a1f63b9;
   /**
-   * GPT-5.4 nano. Released 2026-03-17.
+   * @name GPT-5.4 nano
+   * @provider OpenAI
+   * @family gpt-nano
+   * @released 2026-03-17
+   * @updated 2026-03-17
+   * @knowledge 2025-08-31
+   * @context 400,000 tokens
+   * @maxInput 272,000 tokens
+   * @maxOutput 128,000 tokens
+   * @modalities text, image/jpeg, image/png, image/gif, image/webp -> text
+   * @reasoning effort `none`, `low`, `medium`, `high`, `xhigh`
    */
   'gpt-5.4-nano': Responses_4895440c;
   /**
-   * GPT-5.4 Pro. Released 2026-03-05.
+   * @name GPT-5.4 Pro
+   * @provider OpenAI
+   * @family gpt-pro
+   * @released 2026-03-05
+   * @updated 2026-03-05
+   * @knowledge 2025-08-31
+   * @context 1,050,000 tokens
+   * @maxInput 922,000 tokens
+   * @maxOutput 128,000 tokens
+   * @modalities text, image/jpeg, image/png, image/gif, image/webp -> text
+   * @reasoning effort `medium`, `high`, `xhigh`
    */
   'gpt-5.4-pro': Responses_bb9a7d61;
   /**
-   * GPT-5.5. Released 2026-04-23.
+   * @name GPT-5.5
+   * @provider OpenAI
+   * @family gpt
+   * @released 2026-04-23
+   * @updated 2026-04-23
+   * @knowledge 2025-12-01
+   * @context 1,050,000 tokens
+   * @maxInput 922,000 tokens
+   * @maxOutput 128,000 tokens
+   * @modalities text, image/jpeg, image/png, image/gif, image/webp, application/pdf -> text
+   * @reasoning effort `none`, `low`, `medium`, `high`, `xhigh`
    */
   'gpt-5.5': Responses_2a1f63b9;
   /**
-   * GPT-5.5 Pro. Released 2026-04-23.
+   * @name GPT-5.5 Pro
+   * @provider OpenAI
+   * @family gpt-pro
+   * @released 2026-04-23
+   * @updated 2026-04-23
+   * @knowledge 2025-12-01
+   * @context 1,050,000 tokens
+   * @maxInput 922,000 tokens
+   * @maxOutput 128,000 tokens
+   * @modalities text, image/jpeg, image/png, image/gif, image/webp, application/pdf -> text
+   * @reasoning effort `medium`, `high`, `xhigh`
    */
   'gpt-5.5-pro': Responses_bb9a7d61;
   /**
-   * GPT-5.6. Released 2026-07-09.
+   * @name GPT-5.6
+   * @provider OpenAI
+   * @family gpt-sol
+   * @released 2026-07-09
+   * @updated 2026-07-09
+   * @knowledge 2026-02-16
+   * @context 1,050,000 tokens
+   * @maxInput 922,000 tokens
+   * @maxOutput 128,000 tokens
+   * @modalities text, image/jpeg, image/png, image/gif, image/webp, application/pdf -> text
+   * @reasoning effort `none`, `low`, `medium`, `high`, `xhigh`, `max`
    */
   'gpt-5.6': Responses_187a5f95;
   /**
-   * GPT-5.6 Cyber. Released 2026-08-07.
+   * @name GPT-5.6 Cyber
+   * @provider OpenAI
+   * @family gpt
+   * @released 2026-08-07
+   * @updated 2026-08-07
+   * @knowledge 2026-02-16
+   * @context 400,000 tokens
+   * @maxInput 272,000 tokens
+   * @maxOutput 128,000 tokens
+   * @modalities text, image/jpeg, image/png, image/gif, image/webp -> text
+   * @reasoning effort `none`, `low`, `medium`, `high`, `xhigh`, `max`
    */
   'gpt-5.6-cyber': Responses_094dc607;
   /**
-   * GPT-5.6 Luna. Released 2026-07-09.
+   * @name GPT-5.6 Luna
+   * @provider OpenAI
+   * @family gpt-luna
+   * @released 2026-07-09
+   * @updated 2026-07-09
+   * @knowledge 2026-02-16
+   * @context 1,050,000 tokens
+   * @maxInput 922,000 tokens
+   * @maxOutput 128,000 tokens
+   * @modalities text, image/jpeg, image/png, image/gif, image/webp, application/pdf -> text
+   * @reasoning effort `none`, `low`, `medium`, `high`, `xhigh`, `max`
    */
   'gpt-5.6-luna': Responses_187a5f95;
   /**
-   * GPT-5.6 Sol. Released 2026-07-09.
+   * @name GPT-5.6 Sol
+   * @provider OpenAI
+   * @family gpt-sol
+   * @released 2026-07-09
+   * @updated 2026-07-09
+   * @knowledge 2026-02-16
+   * @context 1,050,000 tokens
+   * @maxInput 922,000 tokens
+   * @maxOutput 128,000 tokens
+   * @modalities text, image/jpeg, image/png, image/gif, image/webp, application/pdf -> text
+   * @reasoning effort `none`, `low`, `medium`, `high`, `xhigh`, `max`
    */
   'gpt-5.6-sol': Responses_187a5f95;
   /**
-   * GPT-5.6 Terra. Released 2026-07-09.
+   * @name GPT-5.6 Terra
+   * @provider OpenAI
+   * @family gpt-terra
+   * @released 2026-07-09
+   * @updated 2026-07-09
+   * @knowledge 2026-02-16
+   * @context 1,050,000 tokens
+   * @maxInput 922,000 tokens
+   * @maxOutput 128,000 tokens
+   * @modalities text, image/jpeg, image/png, image/gif, image/webp, application/pdf -> text
+   * @reasoning effort `none`, `low`, `medium`, `high`, `xhigh`, `max`
    */
   'gpt-5.6-terra': Responses_187a5f95;
   /**
-   * GPT-6 Astra. Released 2026-09-04.
+   * @name GPT-6 Astra
+   * @provider OpenAI
+   * @family gpt-astra
+   * @released 2026-09-04
+   * @updated 2026-09-04
+   * @knowledge 2026-04-30
+   * @context 1,050,000 tokens
+   * @maxInput 922,000 tokens
+   * @maxOutput 128,000 tokens
+   * @modalities text, image/jpeg, image/png, image/gif, image/webp, application/pdf -> text
+   * @reasoning effort `low`, `medium`, `high`, `xhigh`, `max`
    */
   'gpt-6-astra': Responses_504d577b;
   /**
-   * GPT-6 Cyber. Released 2026-11-05.
+   * @name GPT-6 Cyber
+   * @provider OpenAI
+   * @family gpt
+   * @released 2026-11-05
+   * @updated 2026-11-05
+   * @context 1,050,000 tokens
+   * @maxInput 922,000 tokens
+   * @maxOutput 128,000 tokens
+   * @modalities text, image/jpeg, image/png, image/gif, image/webp -> text
+   * @reasoning effort `low`, `medium`, `high`, `xhigh`, `max`
    */
   'gpt-6-cyber': Responses_9f0193e5;
   /**
-   * GPT-6 Luna. Released 2026-09-22.
+   * @name GPT-6 Luna
+   * @provider OpenAI
+   * @family gpt-luna
+   * @released 2026-09-22
+   * @updated 2026-09-22
+   * @knowledge 2026-05-18
+   * @context 1,050,000 tokens
+   * @maxInput 922,000 tokens
+   * @maxOutput 128,000 tokens
+   * @modalities text, image/jpeg, image/png, image/gif, image/webp, application/pdf -> text
+   * @reasoning effort `none`, `low`, `medium`, `high`, `xhigh`, `max`
    */
   'gpt-6-luna': Responses_187a5f95;
   /**
-   * GPT-6 Sol. Released 2026-09-22.
+   * @name GPT-6 Sol
+   * @provider OpenAI
+   * @family gpt-sol
+   * @released 2026-09-22
+   * @updated 2026-09-22
+   * @knowledge 2026-04-20
+   * @context 1,050,000 tokens
+   * @maxInput 922,000 tokens
+   * @maxOutput 128,000 tokens
+   * @modalities text, image/jpeg, image/png, image/gif, image/webp, application/pdf -> text
+   * @reasoning effort `none`, `low`, `medium`, `high`, `xhigh`, `max`
    */
   'gpt-6-sol': Responses_187a5f95;
   /**
-   * GPT-6.1 Sol. Released 2026-09-29.
+   * @name GPT-6.1 Sol
+   * @provider OpenAI
+   * @family gpt-sol
+   * @released 2026-09-29
+   * @updated 2026-09-29
+   * @knowledge 2026-04-30
+   * @context 1,050,000 tokens
+   * @maxInput 922,000 tokens
+   * @maxOutput 128,000 tokens
+   * @modalities text, image/jpeg, image/png, image/gif, image/webp, application/pdf -> text
+   * @reasoning effort `low`, `medium`, `high`, `xhigh`, `max`
    */
   'gpt-6.1-sol': Responses_504d577b;
   /**
-   * GPT-6.1 Terra. Released 2026-10-26.
+   * @name GPT-6.1 Terra
+   * @provider OpenAI
+   * @family gpt-terra
+   * @released 2026-10-26
+   * @updated 2026-10-26
+   * @knowledge 2026-06-01
+   * @context 1,050,000 tokens
+   * @maxInput 922,000 tokens
+   * @maxOutput 128,000 tokens
+   * @modalities text, image/jpeg, image/png, image/gif, image/webp, application/pdf -> text
+   * @reasoning effort `none`, `low`, `medium`, `high`, `xhigh`, `max`
    */
   'gpt-6.1-terra': Responses_187a5f95;
   /**
-   * GPT-6.2 Astra. Released 2026-11-17.
+   * @name GPT-6.2 Astra
+   * @provider OpenAI
+   * @family gpt-astra
+   * @released 2026-11-17
+   * @updated 2026-11-17
+   * @knowledge 2026-05-18
+   * @context 1,050,000 tokens
+   * @maxInput 922,000 tokens
+   * @maxOutput 128,000 tokens
+   * @modalities text, image/jpeg, image/png, image/gif, image/webp, application/pdf -> text
+   * @reasoning effort `low`, `medium`, `high`, `xhigh`, `max`
    */
   'gpt-6.2-astra': Responses_a3672e8e;
   /**
-   * GPT-6.2 Sol. Released 2026-11-17.
+   * @name GPT-6.2 Sol
+   * @provider OpenAI
+   * @family gpt-sol
+   * @released 2026-11-17
+   * @updated 2026-11-17
+   * @knowledge 2026-06-01
+   * @context 1,050,000 tokens
+   * @maxInput 922,000 tokens
+   * @maxOutput 128,000 tokens
+   * @modalities text, image/jpeg, image/png, image/gif, image/webp, application/pdf -> text
+   * @reasoning effort `low`, `medium`, `high`, `xhigh`, `max`
    */
   'gpt-6.2-sol': Responses_a3672e8e;
   /**
-   * Daybreak Blue. Released 2026-08-07.
+   * @name Daybreak Blue
+   * @provider OpenAI
+   * @family gpt-sol
+   * @released 2026-08-07
+   * @updated 2026-08-07
+   * @knowledge 2026-02-16
+   * @context 1,050,000 tokens
+   * @maxInput 922,000 tokens
+   * @maxOutput 128,000 tokens
+   * @modalities text, image/jpeg, image/png, image/gif, image/webp, application/pdf -> text
+   * @reasoning effort `none`, `low`, `medium`, `high`, `xhigh`, `max`
    */
   'gpt-daybreak-blue-latest': Responses_271be344;
   /**
-   * Daybreak Red. Released 2026-08-07.
+   * @name Daybreak Red
+   * @provider OpenAI
+   * @family gpt
+   * @released 2026-08-07
+   * @updated 2026-08-07
+   * @knowledge 2026-02-16
+   * @context 400,000 tokens
+   * @maxInput 272,000 tokens
+   * @maxOutput 128,000 tokens
+   * @modalities text, image/jpeg, image/png, image/gif, image/webp -> text
+   * @reasoning effort `none`, `low`, `medium`, `high`, `xhigh`, `max`
    */
   'gpt-daybreak-red-latest': Responses_094dc607;
   /**
-   * o1. Released 2024-12-05.
+   * @name o1
+   * @provider OpenAI
+   * @family o
+   * @status deprecated
+   * @released 2024-12-05
+   * @updated 2024-12-05
+   * @knowledge 2023-09
+   * @context 200,000 tokens
+   * @maxOutput 100,000 tokens
+   * @modalities text, image/jpeg, image/png, image/gif, image/webp, application/pdf -> text
+   * @reasoning effort `low`, `medium`, `high`
    * @deprecated The model is deprecated (models.dev).
    */
   o1: Responses_1ec3f5aa;
   /**
-   * o1-pro. Released 2025-03-19.
+   * @name o1-pro
+   * @provider OpenAI
+   * @family o-pro
+   * @status deprecated
+   * @released 2025-03-19
+   * @updated 2025-03-19
+   * @knowledge 2023-09
+   * @context 200,000 tokens
+   * @maxOutput 100,000 tokens
+   * @modalities text, image/jpeg, image/png, image/gif, image/webp -> text
+   * @reasoning effort `low`, `medium`, `high`
    * @deprecated The model is deprecated (models.dev).
    */
   'o1-pro': Responses_1ec3f5aa;
   /**
-   * o3. Released 2025-04-16.
+   * @name o3
+   * @provider OpenAI
+   * @family o
+   * @released 2025-04-16
+   * @updated 2025-04-16
+   * @knowledge 2024-05
+   * @context 200,000 tokens
+   * @maxOutput 100,000 tokens
+   * @modalities text, image/jpeg, image/png, image/gif, image/webp, application/pdf -> text
+   * @reasoning effort `low`, `medium`, `high`
    */
   o3: Responses_efbadb48;
   /**
-   * o3-mini. Released 2024-12-20.
+   * @name o3-mini
+   * @provider OpenAI
+   * @family o-mini
+   * @status deprecated
+   * @released 2024-12-20
+   * @updated 2025-01-29
+   * @knowledge 2024-05
+   * @context 200,000 tokens
+   * @maxOutput 100,000 tokens
+   * @modalities text -> text
+   * @reasoning effort `low`, `medium`, `high`
    * @deprecated The model is deprecated (models.dev).
    */
   'o3-mini': Responses_1ec3f5aa;
   /**
-   * o3-pro. Released 2025-06-10.
+   * @name o3-pro
+   * @provider OpenAI
+   * @family o-pro
+   * @released 2025-06-10
+   * @updated 2025-06-10
+   * @knowledge 2024-05
+   * @context 200,000 tokens
+   * @maxOutput 100,000 tokens
+   * @modalities text, image/jpeg, image/png, image/gif, image/webp -> text
+   * @reasoning effort `low`, `medium`, `high`
    */
   'o3-pro': Responses_1ec3f5aa;
   /**
-   * o4-mini. Released 2025-04-16.
+   * @name o4-mini
+   * @provider OpenAI
+   * @family o-mini
+   * @status deprecated
+   * @released 2025-04-16
+   * @updated 2025-04-16
+   * @knowledge 2024-05
+   * @context 200,000 tokens
+   * @maxOutput 100,000 tokens
+   * @modalities text, image/jpeg, image/png, image/gif, image/webp -> text
+   * @reasoning effort `low`, `medium`, `high`
    * @deprecated The model is deprecated (models.dev).
    */
   'o4-mini': Responses_efbadb48;
@@ -552,172 +1012,547 @@ type Chat_f6ccff78 = Patch<
 
 export type OpenAILanguageModelChatOptionsByModel = {
   /**
-   * Chat Latest. Released 2026-05-05.
+   * @name Chat Latest
+   * @provider OpenAI
+   * @family gpt
+   * @released 2026-05-05
+   * @updated 2026-05-28
+   * @knowledge 2026-04-20
+   * @context 400,000 tokens
+   * @maxInput 272,000 tokens
+   * @maxOutput 128,000 tokens
+   * @modalities text, image/jpeg, image/png, image/gif, image/webp, application/pdf -> text
+   * @reasoning supported
    */
   'chat-latest': Chat_eb03a43e;
   /**
-   * GPT-3.5-turbo. Released 2023-03-01.
+   * @name GPT-3.5-turbo
+   * @provider OpenAI
+   * @family gpt
+   * @status deprecated
+   * @released 2023-03-01
+   * @updated 2023-11-06
+   * @knowledge 2021-09-01
+   * @context 16,385 tokens
+   * @maxOutput 4,096 tokens
+   * @modalities text -> text
    * @deprecated The model is deprecated (models.dev).
    */
   'gpt-3.5-turbo': Chat_eb03a43e;
   /**
-   * GPT-4. Released 2023-11-06.
+   * @name GPT-4
+   * @provider OpenAI
+   * @family gpt
+   * @status deprecated
+   * @released 2023-11-06
+   * @updated 2024-04-09
+   * @knowledge 2023-11
+   * @context 8,192 tokens
+   * @maxOutput 8,192 tokens
+   * @modalities text -> text
    * @deprecated The model is deprecated (models.dev).
    */
   'gpt-4': Chat_eb03a43e;
   /**
-   * GPT-4 Turbo. Released 2023-11-06.
+   * @name GPT-4 Turbo
+   * @provider OpenAI
+   * @family gpt
+   * @status deprecated
+   * @released 2023-11-06
+   * @updated 2024-04-09
+   * @knowledge 2023-12
+   * @context 128,000 tokens
+   * @maxOutput 4,096 tokens
+   * @modalities text, image/jpeg, image/png, image/gif, image/webp -> text
    * @deprecated The model is deprecated (models.dev).
    */
   'gpt-4-turbo': Chat_eb03a43e;
   /**
-   * GPT-4.1. Released 2025-04-14.
+   * @name GPT-4.1
+   * @provider OpenAI
+   * @family gpt
+   * @released 2025-04-14
+   * @updated 2025-04-14
+   * @knowledge 2024-04
+   * @context 1,047,576 tokens
+   * @maxOutput 32,768 tokens
+   * @modalities text, image/jpeg, image/png, image/gif, image/webp, application/pdf -> text
    */
   'gpt-4.1': Chat_91d241e4;
   /**
-   * GPT-4.1 mini. Released 2025-04-14.
+   * @name GPT-4.1 mini
+   * @provider OpenAI
+   * @family gpt-mini
+   * @released 2025-04-14
+   * @updated 2025-04-14
+   * @knowledge 2024-04
+   * @context 1,047,576 tokens
+   * @maxOutput 32,768 tokens
+   * @modalities text, image/jpeg, image/png, image/gif, image/webp, application/pdf -> text
    */
   'gpt-4.1-mini': Chat_91d241e4;
   /**
-   * GPT-4.1 nano. Released 2025-04-14.
+   * @name GPT-4.1 nano
+   * @provider OpenAI
+   * @family gpt-nano
+   * @status deprecated
+   * @released 2025-04-14
+   * @updated 2025-04-14
+   * @knowledge 2024-04
+   * @context 1,047,576 tokens
+   * @maxOutput 32,768 tokens
+   * @modalities text, image/jpeg, image/png, image/gif, image/webp -> text
    * @deprecated The model is deprecated (models.dev).
    */
   'gpt-4.1-nano': Chat_91d241e4;
   /**
-   * GPT-4o. Released 2024-05-13.
+   * @name GPT-4o
+   * @provider OpenAI
+   * @family gpt
+   * @released 2024-05-13
+   * @updated 2024-08-06
+   * @knowledge 2023-09
+   * @context 128,000 tokens
+   * @maxOutput 16,384 tokens
+   * @modalities text, image/jpeg, image/png, image/gif, image/webp, application/pdf -> text
    */
   'gpt-4o': Chat_91d241e4;
   /**
-   * GPT-4o (2024-05-13). Released 2024-05-13.
+   * @name GPT-4o (2024-05-13)
+   * @provider OpenAI
+   * @family gpt
+   * @status deprecated
+   * @released 2024-05-13
+   * @updated 2024-05-13
+   * @knowledge 2023-09
+   * @context 128,000 tokens
+   * @maxOutput 4,096 tokens
+   * @modalities text, image/jpeg, image/png, image/gif, image/webp -> text
    * @deprecated The model is deprecated (models.dev).
    */
   'gpt-4o-2024-05-13': Chat_91d241e4;
   /**
-   * GPT-4o (2024-08-06). Released 2024-08-06.
+   * @name GPT-4o (2024-08-06)
+   * @provider OpenAI
+   * @family gpt
+   * @released 2024-08-06
+   * @updated 2024-08-06
+   * @knowledge 2023-09
+   * @context 128,000 tokens
+   * @maxOutput 16,384 tokens
+   * @modalities text, image/jpeg, image/png, image/gif, image/webp -> text
    */
   'gpt-4o-2024-08-06': Chat_eb03a43e;
   /**
-   * GPT-4o (2024-11-20). Released 2024-11-20.
+   * @name GPT-4o (2024-11-20)
+   * @provider OpenAI
+   * @family gpt
+   * @released 2024-11-20
+   * @updated 2024-11-20
+   * @knowledge 2023-09
+   * @context 128,000 tokens
+   * @maxOutput 16,384 tokens
+   * @modalities text, image/jpeg, image/png, image/gif, image/webp -> text
    */
   'gpt-4o-2024-11-20': Chat_eb03a43e;
   /**
-   * GPT-4o mini. Released 2024-07-18.
+   * @name GPT-4o mini
+   * @provider OpenAI
+   * @family gpt-mini
+   * @released 2024-07-18
+   * @updated 2024-07-18
+   * @knowledge 2023-09
+   * @context 128,000 tokens
+   * @maxOutput 16,384 tokens
+   * @modalities text, image/jpeg, image/png, image/gif, image/webp, application/pdf -> text
    */
   'gpt-4o-mini': Chat_91d241e4;
   /**
-   * GPT-5. Released 2025-08-07.
+   * @name GPT-5
+   * @provider OpenAI
+   * @family gpt
+   * @released 2025-08-07
+   * @updated 2025-08-07
+   * @knowledge 2024-09-30
+   * @context 400,000 tokens
+   * @maxInput 272,000 tokens
+   * @maxOutput 128,000 tokens
+   * @modalities text, image/jpeg, image/png, image/gif, image/webp -> text
+   * @reasoning effort `minimal`, `low`, `medium`, `high`
    */
   'gpt-5': Chat_f6ccff78;
   /**
-   * GPT-5 Mini. Released 2025-08-07.
+   * @name GPT-5 Mini
+   * @provider OpenAI
+   * @family gpt-mini
+   * @released 2025-08-07
+   * @updated 2025-08-07
+   * @knowledge 2024-05-30
+   * @context 400,000 tokens
+   * @maxInput 272,000 tokens
+   * @maxOutput 128,000 tokens
+   * @modalities text, image/jpeg, image/png, image/gif, image/webp -> text
+   * @reasoning effort `minimal`, `low`, `medium`, `high`
    */
   'gpt-5-mini': Chat_f6ccff78;
   /**
-   * GPT-5 Nano. Released 2025-08-07.
+   * @name GPT-5 Nano
+   * @provider OpenAI
+   * @family gpt-nano
+   * @released 2025-08-07
+   * @updated 2025-08-07
+   * @knowledge 2024-05-30
+   * @context 400,000 tokens
+   * @maxInput 272,000 tokens
+   * @maxOutput 128,000 tokens
+   * @modalities text, image/jpeg, image/png, image/gif, image/webp -> text
+   * @reasoning effort `minimal`, `low`, `medium`, `high`
    */
   'gpt-5-nano': Chat_ce815f79;
   /**
-   * GPT-5 Search API. Released 2025-10-14.
+   * @name GPT-5 Search API
+   * @provider OpenAI
+   * @family gpt
+   * @released 2025-10-14
+   * @updated 2025-10-14
+   * @context 200,000 tokens
+   * @maxOutput 100,000 tokens
+   * @modalities text -> text
    */
   'gpt-5-search-api': Chat_eb03a43e;
   /**
-   * GPT-5.1. Released 2025-11-13.
+   * @name GPT-5.1
+   * @provider OpenAI
+   * @family gpt
+   * @released 2025-11-13
+   * @updated 2025-11-13
+   * @knowledge 2024-09-30
+   * @context 400,000 tokens
+   * @maxInput 272,000 tokens
+   * @maxOutput 128,000 tokens
+   * @modalities text, image/jpeg, image/png, image/gif, image/webp -> text
+   * @reasoning effort `none`, `low`, `medium`, `high`
    */
   'gpt-5.1': Chat_785f1848;
   /**
-   * GPT-5.2. Released 2025-12-11.
+   * @name GPT-5.2
+   * @provider OpenAI
+   * @family gpt
+   * @released 2025-12-11
+   * @updated 2025-12-11
+   * @knowledge 2025-08-31
+   * @context 400,000 tokens
+   * @maxInput 272,000 tokens
+   * @maxOutput 128,000 tokens
+   * @modalities text, image/jpeg, image/png, image/gif, image/webp -> text
+   * @reasoning effort `none`, `low`, `medium`, `high`, `xhigh`
    */
   'gpt-5.2': Chat_7ef2d02c;
   /**
-   * GPT-5.4. Released 2026-03-05.
+   * @name GPT-5.4
+   * @provider OpenAI
+   * @family gpt
+   * @released 2026-03-05
+   * @updated 2026-03-05
+   * @knowledge 2025-08-31
+   * @context 1,050,000 tokens
+   * @maxInput 922,000 tokens
+   * @maxOutput 128,000 tokens
+   * @modalities text, image/jpeg, image/png, image/gif, image/webp, application/pdf -> text
+   * @reasoning effort `none`, `low`, `medium`, `high`, `xhigh`
    */
   'gpt-5.4': Chat_7ef2d02c;
   /**
-   * GPT-5.4 mini. Released 2026-03-17.
+   * @name GPT-5.4 mini
+   * @provider OpenAI
+   * @family gpt-mini
+   * @released 2026-03-17
+   * @updated 2026-03-17
+   * @knowledge 2025-08-31
+   * @context 400,000 tokens
+   * @maxInput 272,000 tokens
+   * @maxOutput 128,000 tokens
+   * @modalities text, image/jpeg, image/png, image/gif, image/webp -> text
+   * @reasoning effort `none`, `low`, `medium`, `high`, `xhigh`
    */
   'gpt-5.4-mini': Chat_7ef2d02c;
   /**
-   * GPT-5.4 nano. Released 2026-03-17.
+   * @name GPT-5.4 nano
+   * @provider OpenAI
+   * @family gpt-nano
+   * @released 2026-03-17
+   * @updated 2026-03-17
+   * @knowledge 2025-08-31
+   * @context 400,000 tokens
+   * @maxInput 272,000 tokens
+   * @maxOutput 128,000 tokens
+   * @modalities text, image/jpeg, image/png, image/gif, image/webp -> text
+   * @reasoning effort `none`, `low`, `medium`, `high`, `xhigh`
    */
   'gpt-5.4-nano': Chat_cbd5f1f7;
   /**
-   * GPT-5.5. Released 2026-04-23.
+   * @name GPT-5.5
+   * @provider OpenAI
+   * @family gpt
+   * @released 2026-04-23
+   * @updated 2026-04-23
+   * @knowledge 2025-12-01
+   * @context 1,050,000 tokens
+   * @maxInput 922,000 tokens
+   * @maxOutput 128,000 tokens
+   * @modalities text, image/jpeg, image/png, image/gif, image/webp, application/pdf -> text
+   * @reasoning effort `none`, `low`, `medium`, `high`, `xhigh`
    */
   'gpt-5.5': Chat_7ef2d02c;
   /**
-   * GPT-5.6. Released 2026-07-09.
+   * @name GPT-5.6
+   * @provider OpenAI
+   * @family gpt-sol
+   * @released 2026-07-09
+   * @updated 2026-07-09
+   * @knowledge 2026-02-16
+   * @context 1,050,000 tokens
+   * @maxInput 922,000 tokens
+   * @maxOutput 128,000 tokens
+   * @modalities text, image/jpeg, image/png, image/gif, image/webp, application/pdf -> text
+   * @reasoning effort `none`, `low`, `medium`, `high`, `xhigh`, `max`
    */
   'gpt-5.6': Chat_81f4aecc;
   /**
-   * GPT-5.6 Luna. Released 2026-07-09.
+   * @name GPT-5.6 Luna
+   * @provider OpenAI
+   * @family gpt-luna
+   * @released 2026-07-09
+   * @updated 2026-07-09
+   * @knowledge 2026-02-16
+   * @context 1,050,000 tokens
+   * @maxInput 922,000 tokens
+   * @maxOutput 128,000 tokens
+   * @modalities text, image/jpeg, image/png, image/gif, image/webp, application/pdf -> text
+   * @reasoning effort `none`, `low`, `medium`, `high`, `xhigh`, `max`
    */
   'gpt-5.6-luna': Chat_81f4aecc;
   /**
-   * GPT-5.6 Sol. Released 2026-07-09.
+   * @name GPT-5.6 Sol
+   * @provider OpenAI
+   * @family gpt-sol
+   * @released 2026-07-09
+   * @updated 2026-07-09
+   * @knowledge 2026-02-16
+   * @context 1,050,000 tokens
+   * @maxInput 922,000 tokens
+   * @maxOutput 128,000 tokens
+   * @modalities text, image/jpeg, image/png, image/gif, image/webp, application/pdf -> text
+   * @reasoning effort `none`, `low`, `medium`, `high`, `xhigh`, `max`
    */
   'gpt-5.6-sol': Chat_81f4aecc;
   /**
-   * GPT-5.6 Terra. Released 2026-07-09.
+   * @name GPT-5.6 Terra
+   * @provider OpenAI
+   * @family gpt-terra
+   * @released 2026-07-09
+   * @updated 2026-07-09
+   * @knowledge 2026-02-16
+   * @context 1,050,000 tokens
+   * @maxInput 922,000 tokens
+   * @maxOutput 128,000 tokens
+   * @modalities text, image/jpeg, image/png, image/gif, image/webp, application/pdf -> text
+   * @reasoning effort `none`, `low`, `medium`, `high`, `xhigh`, `max`
    */
   'gpt-5.6-terra': Chat_81f4aecc;
   /**
-   * GPT-6 Astra. Released 2026-09-04.
+   * @name GPT-6 Astra
+   * @provider OpenAI
+   * @family gpt-astra
+   * @released 2026-09-04
+   * @updated 2026-09-04
+   * @knowledge 2026-04-30
+   * @context 1,050,000 tokens
+   * @maxInput 922,000 tokens
+   * @maxOutput 128,000 tokens
+   * @modalities text, image/jpeg, image/png, image/gif, image/webp, application/pdf -> text
+   * @reasoning effort `low`, `medium`, `high`, `xhigh`, `max`
    */
   'gpt-6-astra': Chat_9918e8f1;
   /**
-   * GPT-6 Luna. Released 2026-09-22.
+   * @name GPT-6 Luna
+   * @provider OpenAI
+   * @family gpt-luna
+   * @released 2026-09-22
+   * @updated 2026-09-22
+   * @knowledge 2026-05-18
+   * @context 1,050,000 tokens
+   * @maxInput 922,000 tokens
+   * @maxOutput 128,000 tokens
+   * @modalities text, image/jpeg, image/png, image/gif, image/webp, application/pdf -> text
+   * @reasoning effort `none`, `low`, `medium`, `high`, `xhigh`, `max`
    */
   'gpt-6-luna': Chat_81f4aecc;
   /**
-   * GPT-6 Sol. Released 2026-09-22.
+   * @name GPT-6 Sol
+   * @provider OpenAI
+   * @family gpt-sol
+   * @released 2026-09-22
+   * @updated 2026-09-22
+   * @knowledge 2026-04-20
+   * @context 1,050,000 tokens
+   * @maxInput 922,000 tokens
+   * @maxOutput 128,000 tokens
+   * @modalities text, image/jpeg, image/png, image/gif, image/webp, application/pdf -> text
+   * @reasoning effort `none`, `low`, `medium`, `high`, `xhigh`, `max`
    */
   'gpt-6-sol': Chat_81f4aecc;
   /**
-   * GPT-6.1 Sol. Released 2026-09-29.
+   * @name GPT-6.1 Sol
+   * @provider OpenAI
+   * @family gpt-sol
+   * @released 2026-09-29
+   * @updated 2026-09-29
+   * @knowledge 2026-04-30
+   * @context 1,050,000 tokens
+   * @maxInput 922,000 tokens
+   * @maxOutput 128,000 tokens
+   * @modalities text, image/jpeg, image/png, image/gif, image/webp, application/pdf -> text
+   * @reasoning effort `low`, `medium`, `high`, `xhigh`, `max`
    */
   'gpt-6.1-sol': Chat_9918e8f1;
   /**
-   * GPT-6.1 Terra. Released 2026-10-26.
+   * @name GPT-6.1 Terra
+   * @provider OpenAI
+   * @family gpt-terra
+   * @released 2026-10-26
+   * @updated 2026-10-26
+   * @knowledge 2026-06-01
+   * @context 1,050,000 tokens
+   * @maxInput 922,000 tokens
+   * @maxOutput 128,000 tokens
+   * @modalities text, image/jpeg, image/png, image/gif, image/webp, application/pdf -> text
+   * @reasoning effort `none`, `low`, `medium`, `high`, `xhigh`, `max`
    */
   'gpt-6.1-terra': Chat_81f4aecc;
   /**
-   * GPT-6.2 Astra. Released 2026-11-17.
+   * @name GPT-6.2 Astra
+   * @provider OpenAI
+   * @family gpt-astra
+   * @released 2026-11-17
+   * @updated 2026-11-17
+   * @knowledge 2026-05-18
+   * @context 1,050,000 tokens
+   * @maxInput 922,000 tokens
+   * @maxOutput 128,000 tokens
+   * @modalities text, image/jpeg, image/png, image/gif, image/webp, application/pdf -> text
+   * @reasoning effort `low`, `medium`, `high`, `xhigh`, `max`
    */
   'gpt-6.2-astra': Chat_3cc5d749;
   /**
-   * GPT-6.2 Sol. Released 2026-11-17.
+   * @name GPT-6.2 Sol
+   * @provider OpenAI
+   * @family gpt-sol
+   * @released 2026-11-17
+   * @updated 2026-11-17
+   * @knowledge 2026-06-01
+   * @context 1,050,000 tokens
+   * @maxInput 922,000 tokens
+   * @maxOutput 128,000 tokens
+   * @modalities text, image/jpeg, image/png, image/gif, image/webp, application/pdf -> text
+   * @reasoning effort `low`, `medium`, `high`, `xhigh`, `max`
    */
   'gpt-6.2-sol': Chat_3cc5d749;
   /**
-   * GPT-Audio. Released 2025-08-28.
+   * @name GPT-Audio
+   * @provider OpenAI
+   * @family gpt-audio
+   * @status deprecated
+   * @released 2025-08-28
+   * @updated 2025-08-28
+   * @knowledge 2023-10-01
+   * @context 128,000 tokens
+   * @maxOutput 16,384 tokens
+   * @modalities text, audio/wav, audio/mpeg -> text, audio/wav, audio/aac, audio/mpeg, audio/flac, audio/opus, audio/pcm
    * @deprecated The model is deprecated (models.dev).
    */
   'gpt-audio': Chat_eb03a43e;
   /**
-   * GPT-Audio-1.5. Released 2026-02-23.
+   * @name GPT-Audio-1.5
+   * @provider OpenAI
+   * @family gpt-audio
+   * @released 2026-02-23
+   * @updated 2026-02-23
+   * @knowledge 2024-09-30
+   * @context 128,000 tokens
+   * @maxOutput 16,384 tokens
+   * @modalities text, audio/wav, audio/mpeg -> text, audio/wav, audio/aac, audio/mpeg, audio/flac, audio/opus, audio/pcm
    */
   'gpt-audio-1.5': Chat_eb03a43e;
   /**
-   * GPT-Audio Mini. Released 2025-10-06.
+   * @name GPT-Audio Mini
+   * @provider OpenAI
+   * @family gpt-audio-mini
+   * @status deprecated
+   * @released 2025-10-06
+   * @updated 2025-10-06
+   * @knowledge 2023-10-01
+   * @context 128,000 tokens
+   * @maxOutput 16,384 tokens
+   * @modalities text, audio/wav, audio/mpeg -> text, audio/wav, audio/aac, audio/mpeg, audio/flac, audio/opus, audio/pcm
    * @deprecated The model is deprecated (models.dev).
    */
   'gpt-audio-mini': Chat_eb03a43e;
   /**
-   * o1. Released 2024-12-05.
+   * @name o1
+   * @provider OpenAI
+   * @family o
+   * @status deprecated
+   * @released 2024-12-05
+   * @updated 2024-12-05
+   * @knowledge 2023-09
+   * @context 200,000 tokens
+   * @maxOutput 100,000 tokens
+   * @modalities text, image/jpeg, image/png, image/gif, image/webp, application/pdf -> text
+   * @reasoning effort `low`, `medium`, `high`
    * @deprecated The model is deprecated (models.dev).
    */
   o1: Chat_c5a15e8b;
   /**
-   * o3. Released 2025-04-16.
+   * @name o3
+   * @provider OpenAI
+   * @family o
+   * @released 2025-04-16
+   * @updated 2025-04-16
+   * @knowledge 2024-05
+   * @context 200,000 tokens
+   * @maxOutput 100,000 tokens
+   * @modalities text, image/jpeg, image/png, image/gif, image/webp, application/pdf -> text
+   * @reasoning effort `low`, `medium`, `high`
    */
   o3: Chat_a6d7a29a;
   /**
-   * o3-mini. Released 2024-12-20.
+   * @name o3-mini
+   * @provider OpenAI
+   * @family o-mini
+   * @status deprecated
+   * @released 2024-12-20
+   * @updated 2025-01-29
+   * @knowledge 2024-05
+   * @context 200,000 tokens
+   * @maxOutput 100,000 tokens
+   * @modalities text -> text
+   * @reasoning effort `low`, `medium`, `high`
    * @deprecated The model is deprecated (models.dev).
    */
   'o3-mini': Chat_c5a15e8b;
   /**
-   * o4-mini. Released 2025-04-16.
+   * @name o4-mini
+   * @provider OpenAI
+   * @family o-mini
+   * @status deprecated
+   * @released 2025-04-16
+   * @updated 2025-04-16
+   * @knowledge 2024-05
+   * @context 200,000 tokens
+   * @maxOutput 100,000 tokens
+   * @modalities text, image/jpeg, image/png, image/gif, image/webp -> text
+   * @reasoning effort `low`, `medium`, `high`
    * @deprecated The model is deprecated (models.dev).
    */
   'o4-mini': Chat_a6d7a29a;

@@ -35,40 +35,102 @@ type ResponsesSubType<MODEL extends string> =
 
 export type OpenAITextProviderOptionsByModelGenerated = {
   /**
-   * Chat Latest. Released 2026-05-05.
+   * @name Chat Latest
+   * @provider OpenAI
+   * @family gpt
+   * @released 2026-05-05
+   * @updated 2026-05-28
+   * @knowledge 2026-04-20
+   * @context 400,000 tokens
+   * @maxInput 272,000 tokens
+   * @maxOutput 128,000 tokens
+   * @modalities text, image/jpeg, image/png, image/gif, image/webp, application/pdf -> text
+   * @reasoning supported
    */
   'chat-latest': PatchLoose<ResponsesSubType<'chat-latest'>, { temperature: never; top_p: never }>;
   /**
-   * GPT-3.5-turbo. Released 2023-03-01.
+   * @name GPT-3.5-turbo
+   * @provider OpenAI
+   * @family gpt
+   * @status deprecated
+   * @released 2023-03-01
+   * @updated 2023-11-06
+   * @knowledge 2021-09-01
+   * @context 16,385 tokens
+   * @maxOutput 4,096 tokens
+   * @modalities text -> text
    * @deprecated The model is deprecated (models.dev).
    */
   'gpt-3.5-turbo': ResponsesSubType<'gpt-3.5-turbo'>;
   /**
-   * GPT-4. Released 2023-11-06.
+   * @name GPT-4
+   * @provider OpenAI
+   * @family gpt
+   * @status deprecated
+   * @released 2023-11-06
+   * @updated 2024-04-09
+   * @knowledge 2023-11
+   * @context 8,192 tokens
+   * @maxOutput 8,192 tokens
+   * @modalities text -> text
    * @deprecated The model is deprecated (models.dev).
    */
   'gpt-4': ResponsesSubType<'gpt-4'>;
   /**
-   * GPT-4 Turbo. Released 2023-11-06.
+   * @name GPT-4 Turbo
+   * @provider OpenAI
+   * @family gpt
+   * @status deprecated
+   * @released 2023-11-06
+   * @updated 2024-04-09
+   * @knowledge 2023-12
+   * @context 128,000 tokens
+   * @maxOutput 4,096 tokens
+   * @modalities text, image/jpeg, image/png, image/gif, image/webp -> text
    * @deprecated The model is deprecated (models.dev).
    */
   'gpt-4-turbo': ResponsesSubType<'gpt-4-turbo'>;
   /**
-   * GPT-4.1. Released 2025-04-14.
+   * @name GPT-4.1
+   * @provider OpenAI
+   * @family gpt
+   * @released 2025-04-14
+   * @updated 2025-04-14
+   * @knowledge 2024-04
+   * @context 1,047,576 tokens
+   * @maxOutput 32,768 tokens
+   * @modalities text, image/jpeg, image/png, image/gif, image/webp, application/pdf -> text
    */
   'gpt-4.1': PatchLoose<
     ResponsesSubType<'gpt-4.1'>,
     { service_tier: 'priority' | 'auto' | 'default' }
   >;
   /**
-   * GPT-4.1 mini. Released 2025-04-14.
+   * @name GPT-4.1 mini
+   * @provider OpenAI
+   * @family gpt-mini
+   * @released 2025-04-14
+   * @updated 2025-04-14
+   * @knowledge 2024-04
+   * @context 1,047,576 tokens
+   * @maxOutput 32,768 tokens
+   * @modalities text, image/jpeg, image/png, image/gif, image/webp, application/pdf -> text
    */
   'gpt-4.1-mini': PatchLoose<
     ResponsesSubType<'gpt-4.1-mini'>,
     { service_tier: 'priority' | 'auto' | 'default' }
   >;
   /**
-   * GPT-4.1 nano. Released 2025-04-14.
+   * @name GPT-4.1 nano
+   * @provider OpenAI
+   * @family gpt-nano
+   * @status deprecated
+   * @released 2025-04-14
+   * @updated 2025-04-14
+   * @knowledge 2024-04
+   * @context 1,047,576 tokens
+   * @maxOutput 32,768 tokens
+   * @modalities text, image/jpeg, image/png, image/gif, image/webp -> text
    * @deprecated The model is deprecated (models.dev).
    */
   'gpt-4.1-nano': PatchLoose<
@@ -76,14 +138,31 @@ export type OpenAITextProviderOptionsByModelGenerated = {
     { service_tier: 'priority' | 'auto' | 'default' }
   >;
   /**
-   * GPT-4o. Released 2024-05-13.
+   * @name GPT-4o
+   * @provider OpenAI
+   * @family gpt
+   * @released 2024-05-13
+   * @updated 2024-08-06
+   * @knowledge 2023-09
+   * @context 128,000 tokens
+   * @maxOutput 16,384 tokens
+   * @modalities text, image/jpeg, image/png, image/gif, image/webp, application/pdf -> text
    */
   'gpt-4o': PatchLoose<
     ResponsesSubType<'gpt-4o'>,
     { service_tier: 'priority' | 'auto' | 'default' }
   >;
   /**
-   * GPT-4o (2024-05-13). Released 2024-05-13.
+   * @name GPT-4o (2024-05-13)
+   * @provider OpenAI
+   * @family gpt
+   * @status deprecated
+   * @released 2024-05-13
+   * @updated 2024-05-13
+   * @knowledge 2023-09
+   * @context 128,000 tokens
+   * @maxOutput 4,096 tokens
+   * @modalities text, image/jpeg, image/png, image/gif, image/webp -> text
    * @deprecated The model is deprecated (models.dev).
    */
   'gpt-4o-2024-05-13': PatchLoose<
@@ -91,249 +170,630 @@ export type OpenAITextProviderOptionsByModelGenerated = {
     { service_tier: 'priority' | 'auto' | 'default' }
   >;
   /**
-   * GPT-4o (2024-08-06). Released 2024-08-06.
+   * @name GPT-4o (2024-08-06)
+   * @provider OpenAI
+   * @family gpt
+   * @released 2024-08-06
+   * @updated 2024-08-06
+   * @knowledge 2023-09
+   * @context 128,000 tokens
+   * @maxOutput 16,384 tokens
+   * @modalities text, image/jpeg, image/png, image/gif, image/webp -> text
    */
   'gpt-4o-2024-08-06': ResponsesSubType<'gpt-4o-2024-08-06'>;
   /**
-   * GPT-4o (2024-11-20). Released 2024-11-20.
+   * @name GPT-4o (2024-11-20)
+   * @provider OpenAI
+   * @family gpt
+   * @released 2024-11-20
+   * @updated 2024-11-20
+   * @knowledge 2023-09
+   * @context 128,000 tokens
+   * @maxOutput 16,384 tokens
+   * @modalities text, image/jpeg, image/png, image/gif, image/webp -> text
    */
   'gpt-4o-2024-11-20': ResponsesSubType<'gpt-4o-2024-11-20'>;
   /**
-   * GPT-4o mini. Released 2024-07-18.
+   * @name GPT-4o mini
+   * @provider OpenAI
+   * @family gpt-mini
+   * @released 2024-07-18
+   * @updated 2024-07-18
+   * @knowledge 2023-09
+   * @context 128,000 tokens
+   * @maxOutput 16,384 tokens
+   * @modalities text, image/jpeg, image/png, image/gif, image/webp, application/pdf -> text
    */
   'gpt-4o-mini': PatchLoose<
     ResponsesSubType<'gpt-4o-mini'>,
     { service_tier: 'priority' | 'auto' | 'default' }
   >;
   /**
-   * GPT-5. Released 2025-08-07.
+   * @name GPT-5
+   * @provider OpenAI
+   * @family gpt
+   * @released 2025-08-07
+   * @updated 2025-08-07
+   * @knowledge 2024-09-30
+   * @context 400,000 tokens
+   * @maxInput 272,000 tokens
+   * @maxOutput 128,000 tokens
+   * @modalities text, image/jpeg, image/png, image/gif, image/webp -> text
+   * @reasoning effort `minimal`, `low`, `medium`, `high`
    */
   'gpt-5': PatchLoose<
     ResponsesSubType<'gpt-5'>,
     { service_tier: 'flex' | 'priority' | 'auto' | 'default'; temperature: never; top_p: never }
   >;
   /**
-   * GPT-5 Mini. Released 2025-08-07.
+   * @name GPT-5 Mini
+   * @provider OpenAI
+   * @family gpt-mini
+   * @released 2025-08-07
+   * @updated 2025-08-07
+   * @knowledge 2024-05-30
+   * @context 400,000 tokens
+   * @maxInput 272,000 tokens
+   * @maxOutput 128,000 tokens
+   * @modalities text, image/jpeg, image/png, image/gif, image/webp -> text
+   * @reasoning effort `minimal`, `low`, `medium`, `high`
    */
   'gpt-5-mini': PatchLoose<
     ResponsesSubType<'gpt-5-mini'>,
     { service_tier: 'flex' | 'priority' | 'auto' | 'default'; temperature: never }
   >;
   /**
-   * GPT-5 Nano. Released 2025-08-07.
+   * @name GPT-5 Nano
+   * @provider OpenAI
+   * @family gpt-nano
+   * @released 2025-08-07
+   * @updated 2025-08-07
+   * @knowledge 2024-05-30
+   * @context 400,000 tokens
+   * @maxInput 272,000 tokens
+   * @maxOutput 128,000 tokens
+   * @modalities text, image/jpeg, image/png, image/gif, image/webp -> text
+   * @reasoning effort `minimal`, `low`, `medium`, `high`
    */
   'gpt-5-nano': PatchLoose<
     ResponsesSubType<'gpt-5-nano'>,
     { service_tier: 'flex' | 'auto' | 'default'; temperature: never }
   >;
   /**
-   * GPT-5 Pro. Released 2025-10-06.
+   * @name GPT-5 Pro
+   * @provider OpenAI
+   * @family gpt-pro
+   * @released 2025-10-06
+   * @updated 2025-10-06
+   * @knowledge 2024-09-30
+   * @context 400,000 tokens
+   * @maxInput 272,000 tokens
+   * @maxOutput 272,000 tokens
+   * @modalities text, image/jpeg, image/png, image/gif, image/webp -> text
+   * @reasoning effort `high`
    */
   'gpt-5-pro': PatchLoose<ResponsesSubType<'gpt-5-pro'>, { temperature: never }>;
   /**
-   * GPT-5.1. Released 2025-11-13.
+   * @name GPT-5.1
+   * @provider OpenAI
+   * @family gpt
+   * @released 2025-11-13
+   * @updated 2025-11-13
+   * @knowledge 2024-09-30
+   * @context 400,000 tokens
+   * @maxInput 272,000 tokens
+   * @maxOutput 128,000 tokens
+   * @modalities text, image/jpeg, image/png, image/gif, image/webp -> text
+   * @reasoning effort `none`, `low`, `medium`, `high`
    */
   'gpt-5.1': PatchLoose<
     ResponsesSubType<'gpt-5.1'>,
     { service_tier: 'flex' | 'priority' | 'auto' | 'default' }
   >;
   /**
-   * GPT-5.2. Released 2025-12-11.
+   * @name GPT-5.2
+   * @provider OpenAI
+   * @family gpt
+   * @released 2025-12-11
+   * @updated 2025-12-11
+   * @knowledge 2025-08-31
+   * @context 400,000 tokens
+   * @maxInput 272,000 tokens
+   * @maxOutput 128,000 tokens
+   * @modalities text, image/jpeg, image/png, image/gif, image/webp -> text
+   * @reasoning effort `none`, `low`, `medium`, `high`, `xhigh`
    */
   'gpt-5.2': PatchLoose<
     ResponsesSubType<'gpt-5.2'>,
     { service_tier: 'flex' | 'priority' | 'auto' | 'default' }
   >;
   /**
-   * GPT-5.2 Pro. Released 2025-12-11.
+   * @name GPT-5.2 Pro
+   * @provider OpenAI
+   * @family gpt-pro
+   * @released 2025-12-11
+   * @updated 2025-12-11
+   * @knowledge 2025-08-31
+   * @context 400,000 tokens
+   * @maxInput 272,000 tokens
+   * @maxOutput 128,000 tokens
+   * @modalities text, image/jpeg, image/png, image/gif, image/webp -> text
+   * @reasoning effort `medium`, `high`, `xhigh`
    */
   'gpt-5.2-pro': PatchLoose<ResponsesSubType<'gpt-5.2-pro'>, { temperature: never }>;
   /**
-   * GPT-5.3 Codex. Released 2026-02-05.
+   * @name GPT-5.3 Codex
+   * @provider OpenAI
+   * @family gpt-codex
+   * @released 2026-02-05
+   * @updated 2026-02-05
+   * @knowledge 2025-08-31
+   * @context 400,000 tokens
+   * @maxInput 272,000 tokens
+   * @maxOutput 128,000 tokens
+   * @modalities text, image/jpeg, image/png, image/gif, image/webp, application/pdf -> text
+   * @reasoning effort `none`, `low`, `medium`, `high`, `xhigh`
    */
   'gpt-5.3-codex': PatchLoose<
     ResponsesSubType<'gpt-5.3-codex'>,
     { service_tier: 'priority' | 'auto' | 'default' }
   >;
   /**
-   * GPT-5.3 Codex Spark. Released 2026-02-05.
+   * @name GPT-5.3 Codex Spark
+   * @provider OpenAI
+   * @family gpt-codex-spark
+   * @released 2026-02-05
+   * @updated 2026-02-05
+   * @knowledge 2025-08-31
+   * @context 128,000 tokens
+   * @maxInput 100,000 tokens
+   * @maxOutput 32,000 tokens
+   * @modalities text, image/jpeg, image/png, image/gif, image/webp, application/pdf -> text
+   * @reasoning effort `none`, `low`, `medium`, `high`, `xhigh`
    */
   'gpt-5.3-codex-spark': PatchLoose<
     ResponsesSubType<'gpt-5.3-codex-spark'>,
     { temperature: never }
   >;
   /**
-   * GPT-5.4. Released 2026-03-05.
+   * @name GPT-5.4
+   * @provider OpenAI
+   * @family gpt
+   * @released 2026-03-05
+   * @updated 2026-03-05
+   * @knowledge 2025-08-31
+   * @context 1,050,000 tokens
+   * @maxInput 922,000 tokens
+   * @maxOutput 128,000 tokens
+   * @modalities text, image/jpeg, image/png, image/gif, image/webp, application/pdf -> text
+   * @reasoning effort `none`, `low`, `medium`, `high`, `xhigh`
    */
   'gpt-5.4': PatchLoose<
     ResponsesSubType<'gpt-5.4'>,
     { service_tier: 'flex' | 'priority' | 'auto' | 'default' }
   >;
   /**
-   * GPT-5.4 mini. Released 2026-03-17.
+   * @name GPT-5.4 mini
+   * @provider OpenAI
+   * @family gpt-mini
+   * @released 2026-03-17
+   * @updated 2026-03-17
+   * @knowledge 2025-08-31
+   * @context 400,000 tokens
+   * @maxInput 272,000 tokens
+   * @maxOutput 128,000 tokens
+   * @modalities text, image/jpeg, image/png, image/gif, image/webp -> text
+   * @reasoning effort `none`, `low`, `medium`, `high`, `xhigh`
    */
   'gpt-5.4-mini': PatchLoose<
     ResponsesSubType<'gpt-5.4-mini'>,
     { service_tier: 'flex' | 'priority' | 'auto' | 'default' }
   >;
   /**
-   * GPT-5.4 nano. Released 2026-03-17.
+   * @name GPT-5.4 nano
+   * @provider OpenAI
+   * @family gpt-nano
+   * @released 2026-03-17
+   * @updated 2026-03-17
+   * @knowledge 2025-08-31
+   * @context 400,000 tokens
+   * @maxInput 272,000 tokens
+   * @maxOutput 128,000 tokens
+   * @modalities text, image/jpeg, image/png, image/gif, image/webp -> text
+   * @reasoning effort `none`, `low`, `medium`, `high`, `xhigh`
    */
   'gpt-5.4-nano': PatchLoose<
     ResponsesSubType<'gpt-5.4-nano'>,
     { service_tier: 'flex' | 'auto' | 'default' }
   >;
   /**
-   * GPT-5.4 Pro. Released 2026-03-05.
+   * @name GPT-5.4 Pro
+   * @provider OpenAI
+   * @family gpt-pro
+   * @released 2026-03-05
+   * @updated 2026-03-05
+   * @knowledge 2025-08-31
+   * @context 1,050,000 tokens
+   * @maxInput 922,000 tokens
+   * @maxOutput 128,000 tokens
+   * @modalities text, image/jpeg, image/png, image/gif, image/webp -> text
+   * @reasoning effort `medium`, `high`, `xhigh`
    */
   'gpt-5.4-pro': PatchLoose<
     ResponsesSubType<'gpt-5.4-pro'>,
     { service_tier: 'flex' | 'auto' | 'default'; temperature: never }
   >;
   /**
-   * GPT-5.5. Released 2026-04-23.
+   * @name GPT-5.5
+   * @provider OpenAI
+   * @family gpt
+   * @released 2026-04-23
+   * @updated 2026-04-23
+   * @knowledge 2025-12-01
+   * @context 1,050,000 tokens
+   * @maxInput 922,000 tokens
+   * @maxOutput 128,000 tokens
+   * @modalities text, image/jpeg, image/png, image/gif, image/webp, application/pdf -> text
+   * @reasoning effort `none`, `low`, `medium`, `high`, `xhigh`
    */
   'gpt-5.5': PatchLoose<
     ResponsesSubType<'gpt-5.5'>,
     { service_tier: 'flex' | 'priority' | 'auto' | 'default' }
   >;
   /**
-   * GPT-5.5 Pro. Released 2026-04-23.
+   * @name GPT-5.5 Pro
+   * @provider OpenAI
+   * @family gpt-pro
+   * @released 2026-04-23
+   * @updated 2026-04-23
+   * @knowledge 2025-12-01
+   * @context 1,050,000 tokens
+   * @maxInput 922,000 tokens
+   * @maxOutput 128,000 tokens
+   * @modalities text, image/jpeg, image/png, image/gif, image/webp, application/pdf -> text
+   * @reasoning effort `medium`, `high`, `xhigh`
    */
   'gpt-5.5-pro': PatchLoose<
     ResponsesSubType<'gpt-5.5-pro'>,
     { service_tier: 'flex' | 'auto' | 'default'; temperature: never }
   >;
   /**
-   * GPT-5.6. Released 2026-07-09.
+   * @name GPT-5.6
+   * @provider OpenAI
+   * @family gpt-sol
+   * @released 2026-07-09
+   * @updated 2026-07-09
+   * @knowledge 2026-02-16
+   * @context 1,050,000 tokens
+   * @maxInput 922,000 tokens
+   * @maxOutput 128,000 tokens
+   * @modalities text, image/jpeg, image/png, image/gif, image/webp, application/pdf -> text
+   * @reasoning effort `none`, `low`, `medium`, `high`, `xhigh`, `max`
    */
   'gpt-5.6': PatchLoose<
     ResponsesSubType<'gpt-5.6'>,
     { service_tier: 'flex' | 'priority' | 'auto' | 'default' }
   >;
   /**
-   * GPT-5.6 Cyber. Released 2026-08-07.
+   * @name GPT-5.6 Cyber
+   * @provider OpenAI
+   * @family gpt
+   * @released 2026-08-07
+   * @updated 2026-08-07
+   * @knowledge 2026-02-16
+   * @context 400,000 tokens
+   * @maxInput 272,000 tokens
+   * @maxOutput 128,000 tokens
+   * @modalities text, image/jpeg, image/png, image/gif, image/webp -> text
+   * @reasoning effort `none`, `low`, `medium`, `high`, `xhigh`, `max`
    */
   'gpt-5.6-cyber': PatchLoose<
     ResponsesSubType<'gpt-5.6-cyber'>,
     { temperature: never; top_p: never }
   >;
   /**
-   * GPT-5.6 Luna. Released 2026-07-09.
+   * @name GPT-5.6 Luna
+   * @provider OpenAI
+   * @family gpt-luna
+   * @released 2026-07-09
+   * @updated 2026-07-09
+   * @knowledge 2026-02-16
+   * @context 1,050,000 tokens
+   * @maxInput 922,000 tokens
+   * @maxOutput 128,000 tokens
+   * @modalities text, image/jpeg, image/png, image/gif, image/webp, application/pdf -> text
+   * @reasoning effort `none`, `low`, `medium`, `high`, `xhigh`, `max`
    */
   'gpt-5.6-luna': PatchLoose<
     ResponsesSubType<'gpt-5.6-luna'>,
     { service_tier: 'flex' | 'priority' | 'auto' | 'default' }
   >;
   /**
-   * GPT-5.6 Sol. Released 2026-07-09.
+   * @name GPT-5.6 Sol
+   * @provider OpenAI
+   * @family gpt-sol
+   * @released 2026-07-09
+   * @updated 2026-07-09
+   * @knowledge 2026-02-16
+   * @context 1,050,000 tokens
+   * @maxInput 922,000 tokens
+   * @maxOutput 128,000 tokens
+   * @modalities text, image/jpeg, image/png, image/gif, image/webp, application/pdf -> text
+   * @reasoning effort `none`, `low`, `medium`, `high`, `xhigh`, `max`
    */
   'gpt-5.6-sol': PatchLoose<
     ResponsesSubType<'gpt-5.6-sol'>,
     { service_tier: 'flex' | 'priority' | 'auto' | 'default' }
   >;
   /**
-   * GPT-5.6 Terra. Released 2026-07-09.
+   * @name GPT-5.6 Terra
+   * @provider OpenAI
+   * @family gpt-terra
+   * @released 2026-07-09
+   * @updated 2026-07-09
+   * @knowledge 2026-02-16
+   * @context 1,050,000 tokens
+   * @maxInput 922,000 tokens
+   * @maxOutput 128,000 tokens
+   * @modalities text, image/jpeg, image/png, image/gif, image/webp, application/pdf -> text
+   * @reasoning effort `none`, `low`, `medium`, `high`, `xhigh`, `max`
    */
   'gpt-5.6-terra': PatchLoose<
     ResponsesSubType<'gpt-5.6-terra'>,
     { service_tier: 'flex' | 'priority' | 'auto' | 'default' }
   >;
   /**
-   * GPT-6 Astra. Released 2026-09-04.
+   * @name GPT-6 Astra
+   * @provider OpenAI
+   * @family gpt-astra
+   * @released 2026-09-04
+   * @updated 2026-09-04
+   * @knowledge 2026-04-30
+   * @context 1,050,000 tokens
+   * @maxInput 922,000 tokens
+   * @maxOutput 128,000 tokens
+   * @modalities text, image/jpeg, image/png, image/gif, image/webp, application/pdf -> text
+   * @reasoning effort `low`, `medium`, `high`, `xhigh`, `max`
    */
   'gpt-6-astra': PatchLoose<
     ResponsesSubType<'gpt-6-astra'>,
     { service_tier: 'flex' | 'priority' | 'auto' | 'default'; temperature: never; top_p: never }
   >;
   /**
-   * GPT-6 Cyber. Released 2026-11-05.
+   * @name GPT-6 Cyber
+   * @provider OpenAI
+   * @family gpt
+   * @released 2026-11-05
+   * @updated 2026-11-05
+   * @context 1,050,000 tokens
+   * @maxInput 922,000 tokens
+   * @maxOutput 128,000 tokens
+   * @modalities text, image/jpeg, image/png, image/gif, image/webp -> text
+   * @reasoning effort `low`, `medium`, `high`, `xhigh`, `max`
    */
   'gpt-6-cyber': PatchLoose<ResponsesSubType<'gpt-6-cyber'>, { temperature: never; top_p: never }>;
   /**
-   * GPT-6 Luna. Released 2026-09-22.
+   * @name GPT-6 Luna
+   * @provider OpenAI
+   * @family gpt-luna
+   * @released 2026-09-22
+   * @updated 2026-09-22
+   * @knowledge 2026-05-18
+   * @context 1,050,000 tokens
+   * @maxInput 922,000 tokens
+   * @maxOutput 128,000 tokens
+   * @modalities text, image/jpeg, image/png, image/gif, image/webp, application/pdf -> text
+   * @reasoning effort `none`, `low`, `medium`, `high`, `xhigh`, `max`
    */
   'gpt-6-luna': PatchLoose<
     ResponsesSubType<'gpt-6-luna'>,
     { service_tier: 'flex' | 'priority' | 'auto' | 'default' }
   >;
   /**
-   * GPT-6 Sol. Released 2026-09-22.
+   * @name GPT-6 Sol
+   * @provider OpenAI
+   * @family gpt-sol
+   * @released 2026-09-22
+   * @updated 2026-09-22
+   * @knowledge 2026-04-20
+   * @context 1,050,000 tokens
+   * @maxInput 922,000 tokens
+   * @maxOutput 128,000 tokens
+   * @modalities text, image/jpeg, image/png, image/gif, image/webp, application/pdf -> text
+   * @reasoning effort `none`, `low`, `medium`, `high`, `xhigh`, `max`
    */
   'gpt-6-sol': PatchLoose<
     ResponsesSubType<'gpt-6-sol'>,
     { service_tier: 'flex' | 'priority' | 'auto' | 'default' }
   >;
   /**
-   * GPT-6.1 Sol. Released 2026-09-29.
+   * @name GPT-6.1 Sol
+   * @provider OpenAI
+   * @family gpt-sol
+   * @released 2026-09-29
+   * @updated 2026-09-29
+   * @knowledge 2026-04-30
+   * @context 1,050,000 tokens
+   * @maxInput 922,000 tokens
+   * @maxOutput 128,000 tokens
+   * @modalities text, image/jpeg, image/png, image/gif, image/webp, application/pdf -> text
+   * @reasoning effort `low`, `medium`, `high`, `xhigh`, `max`
    */
   'gpt-6.1-sol': PatchLoose<
     ResponsesSubType<'gpt-6.1-sol'>,
     { service_tier: 'flex' | 'priority' | 'auto' | 'default'; temperature: never; top_p: never }
   >;
   /**
-   * GPT-6.1 Terra. Released 2026-10-26.
+   * @name GPT-6.1 Terra
+   * @provider OpenAI
+   * @family gpt-terra
+   * @released 2026-10-26
+   * @updated 2026-10-26
+   * @knowledge 2026-06-01
+   * @context 1,050,000 tokens
+   * @maxInput 922,000 tokens
+   * @maxOutput 128,000 tokens
+   * @modalities text, image/jpeg, image/png, image/gif, image/webp, application/pdf -> text
+   * @reasoning effort `none`, `low`, `medium`, `high`, `xhigh`, `max`
    */
   'gpt-6.1-terra': PatchLoose<
     ResponsesSubType<'gpt-6.1-terra'>,
     { service_tier: 'flex' | 'priority' | 'auto' | 'default' }
   >;
   /**
-   * GPT-6.2 Astra. Released 2026-11-17.
+   * @name GPT-6.2 Astra
+   * @provider OpenAI
+   * @family gpt-astra
+   * @released 2026-11-17
+   * @updated 2026-11-17
+   * @knowledge 2026-05-18
+   * @context 1,050,000 tokens
+   * @maxInput 922,000 tokens
+   * @maxOutput 128,000 tokens
+   * @modalities text, image/jpeg, image/png, image/gif, image/webp, application/pdf -> text
+   * @reasoning effort `low`, `medium`, `high`, `xhigh`, `max`
    */
   'gpt-6.2-astra': PatchLoose<
     ResponsesSubType<'gpt-6.2-astra'>,
     { service_tier: 'priority' | 'auto' | 'default'; temperature: never; top_p: never }
   >;
   /**
-   * GPT-6.2 Sol. Released 2026-11-17.
+   * @name GPT-6.2 Sol
+   * @provider OpenAI
+   * @family gpt-sol
+   * @released 2026-11-17
+   * @updated 2026-11-17
+   * @knowledge 2026-06-01
+   * @context 1,050,000 tokens
+   * @maxInput 922,000 tokens
+   * @maxOutput 128,000 tokens
+   * @modalities text, image/jpeg, image/png, image/gif, image/webp, application/pdf -> text
+   * @reasoning effort `low`, `medium`, `high`, `xhigh`, `max`
    */
   'gpt-6.2-sol': PatchLoose<
     ResponsesSubType<'gpt-6.2-sol'>,
     { service_tier: 'priority' | 'auto' | 'default'; temperature: never; top_p: never }
   >;
   /**
-   * Daybreak Blue. Released 2026-08-07.
+   * @name Daybreak Blue
+   * @provider OpenAI
+   * @family gpt-sol
+   * @released 2026-08-07
+   * @updated 2026-08-07
+   * @knowledge 2026-02-16
+   * @context 1,050,000 tokens
+   * @maxInput 922,000 tokens
+   * @maxOutput 128,000 tokens
+   * @modalities text, image/jpeg, image/png, image/gif, image/webp, application/pdf -> text
+   * @reasoning effort `none`, `low`, `medium`, `high`, `xhigh`, `max`
    */
   'gpt-daybreak-blue-latest': PatchLoose<
     ResponsesSubType<'gpt-daybreak-blue-latest'>,
     { service_tier: 'flex' | 'priority' | 'auto' | 'default' }
   >;
   /**
-   * Daybreak Red. Released 2026-08-07.
+   * @name Daybreak Red
+   * @provider OpenAI
+   * @family gpt
+   * @released 2026-08-07
+   * @updated 2026-08-07
+   * @knowledge 2026-02-16
+   * @context 400,000 tokens
+   * @maxInput 272,000 tokens
+   * @maxOutput 128,000 tokens
+   * @modalities text, image/jpeg, image/png, image/gif, image/webp -> text
+   * @reasoning effort `none`, `low`, `medium`, `high`, `xhigh`, `max`
    */
   'gpt-daybreak-red-latest': PatchLoose<
     ResponsesSubType<'gpt-daybreak-red-latest'>,
     { temperature: never; top_p: never }
   >;
   /**
-   * o1. Released 2024-12-05.
+   * @name o1
+   * @provider OpenAI
+   * @family o
+   * @status deprecated
+   * @released 2024-12-05
+   * @updated 2024-12-05
+   * @knowledge 2023-09
+   * @context 200,000 tokens
+   * @maxOutput 100,000 tokens
+   * @modalities text, image/jpeg, image/png, image/gif, image/webp, application/pdf -> text
+   * @reasoning effort `low`, `medium`, `high`
    * @deprecated The model is deprecated (models.dev).
    */
   o1: PatchLoose<ResponsesSubType<'o1'>, { temperature: never }>;
   /**
-   * o1-pro. Released 2025-03-19.
+   * @name o1-pro
+   * @provider OpenAI
+   * @family o-pro
+   * @status deprecated
+   * @released 2025-03-19
+   * @updated 2025-03-19
+   * @knowledge 2023-09
+   * @context 200,000 tokens
+   * @maxOutput 100,000 tokens
+   * @modalities text, image/jpeg, image/png, image/gif, image/webp -> text
+   * @reasoning effort `low`, `medium`, `high`
    * @deprecated The model is deprecated (models.dev).
    */
   'o1-pro': PatchLoose<ResponsesSubType<'o1-pro'>, { temperature: never }>;
   /**
-   * o3. Released 2025-04-16.
+   * @name o3
+   * @provider OpenAI
+   * @family o
+   * @released 2025-04-16
+   * @updated 2025-04-16
+   * @knowledge 2024-05
+   * @context 200,000 tokens
+   * @maxOutput 100,000 tokens
+   * @modalities text, image/jpeg, image/png, image/gif, image/webp, application/pdf -> text
+   * @reasoning effort `low`, `medium`, `high`
    */
   o3: PatchLoose<
     ResponsesSubType<'o3'>,
     { service_tier: 'flex' | 'priority' | 'auto' | 'default'; temperature: never }
   >;
   /**
-   * o3-mini. Released 2024-12-20.
+   * @name o3-mini
+   * @provider OpenAI
+   * @family o-mini
+   * @status deprecated
+   * @released 2024-12-20
+   * @updated 2025-01-29
+   * @knowledge 2024-05
+   * @context 200,000 tokens
+   * @maxOutput 100,000 tokens
+   * @modalities text -> text
+   * @reasoning effort `low`, `medium`, `high`
    * @deprecated The model is deprecated (models.dev).
    */
   'o3-mini': PatchLoose<ResponsesSubType<'o3-mini'>, { temperature: never }>;
   /**
-   * o3-pro. Released 2025-06-10.
+   * @name o3-pro
+   * @provider OpenAI
+   * @family o-pro
+   * @released 2025-06-10
+   * @updated 2025-06-10
+   * @knowledge 2024-05
+   * @context 200,000 tokens
+   * @maxOutput 100,000 tokens
+   * @modalities text, image/jpeg, image/png, image/gif, image/webp -> text
+   * @reasoning effort `low`, `medium`, `high`
    */
   'o3-pro': PatchLoose<ResponsesSubType<'o3-pro'>, { temperature: never }>;
   /**
-   * o4-mini. Released 2025-04-16.
+   * @name o4-mini
+   * @provider OpenAI
+   * @family o-mini
+   * @status deprecated
+   * @released 2025-04-16
+   * @updated 2025-04-16
+   * @knowledge 2024-05
+   * @context 200,000 tokens
+   * @maxOutput 100,000 tokens
+   * @modalities text, image/jpeg, image/png, image/gif, image/webp -> text
+   * @reasoning effort `low`, `medium`, `high`
    * @deprecated The model is deprecated (models.dev).
    */
   'o4-mini': PatchLoose<
@@ -380,37 +840,99 @@ type ChatSubType<MODEL extends string> =
 
 export type OpenAIChatCompletionsProviderOptionsByModelGenerated = {
   /**
-   * Chat Latest. Released 2026-05-05.
+   * @name Chat Latest
+   * @provider OpenAI
+   * @family gpt
+   * @released 2026-05-05
+   * @updated 2026-05-28
+   * @knowledge 2026-04-20
+   * @context 400,000 tokens
+   * @maxInput 272,000 tokens
+   * @maxOutput 128,000 tokens
+   * @modalities text, image/jpeg, image/png, image/gif, image/webp, application/pdf -> text
+   * @reasoning supported
    */
   'chat-latest': PatchLoose<ChatSubType<'chat-latest'>, { temperature: never; top_p: never }>;
   /**
-   * GPT-3.5-turbo. Released 2023-03-01.
+   * @name GPT-3.5-turbo
+   * @provider OpenAI
+   * @family gpt
+   * @status deprecated
+   * @released 2023-03-01
+   * @updated 2023-11-06
+   * @knowledge 2021-09-01
+   * @context 16,385 tokens
+   * @maxOutput 4,096 tokens
+   * @modalities text -> text
    * @deprecated The model is deprecated (models.dev).
    */
   'gpt-3.5-turbo': ChatSubType<'gpt-3.5-turbo'>;
   /**
-   * GPT-4. Released 2023-11-06.
+   * @name GPT-4
+   * @provider OpenAI
+   * @family gpt
+   * @status deprecated
+   * @released 2023-11-06
+   * @updated 2024-04-09
+   * @knowledge 2023-11
+   * @context 8,192 tokens
+   * @maxOutput 8,192 tokens
+   * @modalities text -> text
    * @deprecated The model is deprecated (models.dev).
    */
   'gpt-4': ChatSubType<'gpt-4'>;
   /**
-   * GPT-4 Turbo. Released 2023-11-06.
+   * @name GPT-4 Turbo
+   * @provider OpenAI
+   * @family gpt
+   * @status deprecated
+   * @released 2023-11-06
+   * @updated 2024-04-09
+   * @knowledge 2023-12
+   * @context 128,000 tokens
+   * @maxOutput 4,096 tokens
+   * @modalities text, image/jpeg, image/png, image/gif, image/webp -> text
    * @deprecated The model is deprecated (models.dev).
    */
   'gpt-4-turbo': ChatSubType<'gpt-4-turbo'>;
   /**
-   * GPT-4.1. Released 2025-04-14.
+   * @name GPT-4.1
+   * @provider OpenAI
+   * @family gpt
+   * @released 2025-04-14
+   * @updated 2025-04-14
+   * @knowledge 2024-04
+   * @context 1,047,576 tokens
+   * @maxOutput 32,768 tokens
+   * @modalities text, image/jpeg, image/png, image/gif, image/webp, application/pdf -> text
    */
   'gpt-4.1': PatchLoose<ChatSubType<'gpt-4.1'>, { service_tier: 'priority' | 'auto' | 'default' }>;
   /**
-   * GPT-4.1 mini. Released 2025-04-14.
+   * @name GPT-4.1 mini
+   * @provider OpenAI
+   * @family gpt-mini
+   * @released 2025-04-14
+   * @updated 2025-04-14
+   * @knowledge 2024-04
+   * @context 1,047,576 tokens
+   * @maxOutput 32,768 tokens
+   * @modalities text, image/jpeg, image/png, image/gif, image/webp, application/pdf -> text
    */
   'gpt-4.1-mini': PatchLoose<
     ChatSubType<'gpt-4.1-mini'>,
     { service_tier: 'priority' | 'auto' | 'default' }
   >;
   /**
-   * GPT-4.1 nano. Released 2025-04-14.
+   * @name GPT-4.1 nano
+   * @provider OpenAI
+   * @family gpt-nano
+   * @status deprecated
+   * @released 2025-04-14
+   * @updated 2025-04-14
+   * @knowledge 2024-04
+   * @context 1,047,576 tokens
+   * @maxOutput 32,768 tokens
+   * @modalities text, image/jpeg, image/png, image/gif, image/webp -> text
    * @deprecated The model is deprecated (models.dev).
    */
   'gpt-4.1-nano': PatchLoose<
@@ -418,11 +940,28 @@ export type OpenAIChatCompletionsProviderOptionsByModelGenerated = {
     { service_tier: 'priority' | 'auto' | 'default' }
   >;
   /**
-   * GPT-4o. Released 2024-05-13.
+   * @name GPT-4o
+   * @provider OpenAI
+   * @family gpt
+   * @released 2024-05-13
+   * @updated 2024-08-06
+   * @knowledge 2023-09
+   * @context 128,000 tokens
+   * @maxOutput 16,384 tokens
+   * @modalities text, image/jpeg, image/png, image/gif, image/webp, application/pdf -> text
    */
   'gpt-4o': PatchLoose<ChatSubType<'gpt-4o'>, { service_tier: 'priority' | 'auto' | 'default' }>;
   /**
-   * GPT-4o (2024-05-13). Released 2024-05-13.
+   * @name GPT-4o (2024-05-13)
+   * @provider OpenAI
+   * @family gpt
+   * @status deprecated
+   * @released 2024-05-13
+   * @updated 2024-05-13
+   * @knowledge 2023-09
+   * @context 128,000 tokens
+   * @maxOutput 4,096 tokens
+   * @modalities text, image/jpeg, image/png, image/gif, image/webp -> text
    * @deprecated The model is deprecated (models.dev).
    */
   'gpt-4o-2024-05-13': PatchLoose<
@@ -430,200 +969,496 @@ export type OpenAIChatCompletionsProviderOptionsByModelGenerated = {
     { service_tier: 'priority' | 'auto' | 'default' }
   >;
   /**
-   * GPT-4o (2024-08-06). Released 2024-08-06.
+   * @name GPT-4o (2024-08-06)
+   * @provider OpenAI
+   * @family gpt
+   * @released 2024-08-06
+   * @updated 2024-08-06
+   * @knowledge 2023-09
+   * @context 128,000 tokens
+   * @maxOutput 16,384 tokens
+   * @modalities text, image/jpeg, image/png, image/gif, image/webp -> text
    */
   'gpt-4o-2024-08-06': ChatSubType<'gpt-4o-2024-08-06'>;
   /**
-   * GPT-4o (2024-11-20). Released 2024-11-20.
+   * @name GPT-4o (2024-11-20)
+   * @provider OpenAI
+   * @family gpt
+   * @released 2024-11-20
+   * @updated 2024-11-20
+   * @knowledge 2023-09
+   * @context 128,000 tokens
+   * @maxOutput 16,384 tokens
+   * @modalities text, image/jpeg, image/png, image/gif, image/webp -> text
    */
   'gpt-4o-2024-11-20': ChatSubType<'gpt-4o-2024-11-20'>;
   /**
-   * GPT-4o mini. Released 2024-07-18.
+   * @name GPT-4o mini
+   * @provider OpenAI
+   * @family gpt-mini
+   * @released 2024-07-18
+   * @updated 2024-07-18
+   * @knowledge 2023-09
+   * @context 128,000 tokens
+   * @maxOutput 16,384 tokens
+   * @modalities text, image/jpeg, image/png, image/gif, image/webp, application/pdf -> text
    */
   'gpt-4o-mini': PatchLoose<
     ChatSubType<'gpt-4o-mini'>,
     { service_tier: 'priority' | 'auto' | 'default' }
   >;
   /**
-   * GPT-5. Released 2025-08-07.
+   * @name GPT-5
+   * @provider OpenAI
+   * @family gpt
+   * @released 2025-08-07
+   * @updated 2025-08-07
+   * @knowledge 2024-09-30
+   * @context 400,000 tokens
+   * @maxInput 272,000 tokens
+   * @maxOutput 128,000 tokens
+   * @modalities text, image/jpeg, image/png, image/gif, image/webp -> text
+   * @reasoning effort `minimal`, `low`, `medium`, `high`
    */
   'gpt-5': PatchLoose<
     ChatSubType<'gpt-5'>,
     { service_tier: 'flex' | 'priority' | 'auto' | 'default'; temperature: never; top_p: never }
   >;
   /**
-   * GPT-5 Mini. Released 2025-08-07.
+   * @name GPT-5 Mini
+   * @provider OpenAI
+   * @family gpt-mini
+   * @released 2025-08-07
+   * @updated 2025-08-07
+   * @knowledge 2024-05-30
+   * @context 400,000 tokens
+   * @maxInput 272,000 tokens
+   * @maxOutput 128,000 tokens
+   * @modalities text, image/jpeg, image/png, image/gif, image/webp -> text
+   * @reasoning effort `minimal`, `low`, `medium`, `high`
    */
   'gpt-5-mini': PatchLoose<
     ChatSubType<'gpt-5-mini'>,
     { service_tier: 'flex' | 'priority' | 'auto' | 'default'; temperature: never }
   >;
   /**
-   * GPT-5 Nano. Released 2025-08-07.
+   * @name GPT-5 Nano
+   * @provider OpenAI
+   * @family gpt-nano
+   * @released 2025-08-07
+   * @updated 2025-08-07
+   * @knowledge 2024-05-30
+   * @context 400,000 tokens
+   * @maxInput 272,000 tokens
+   * @maxOutput 128,000 tokens
+   * @modalities text, image/jpeg, image/png, image/gif, image/webp -> text
+   * @reasoning effort `minimal`, `low`, `medium`, `high`
    */
   'gpt-5-nano': PatchLoose<
     ChatSubType<'gpt-5-nano'>,
     { service_tier: 'flex' | 'auto' | 'default'; temperature: never }
   >;
   /**
-   * GPT-5 Search API. Released 2025-10-14.
+   * @name GPT-5 Search API
+   * @provider OpenAI
+   * @family gpt
+   * @released 2025-10-14
+   * @updated 2025-10-14
+   * @context 200,000 tokens
+   * @maxOutput 100,000 tokens
+   * @modalities text -> text
    */
   'gpt-5-search-api': PatchLoose<
     ChatSubType<'gpt-5-search-api'>,
     { temperature: never; top_p: never }
   >;
   /**
-   * GPT-5.1. Released 2025-11-13.
+   * @name GPT-5.1
+   * @provider OpenAI
+   * @family gpt
+   * @released 2025-11-13
+   * @updated 2025-11-13
+   * @knowledge 2024-09-30
+   * @context 400,000 tokens
+   * @maxInput 272,000 tokens
+   * @maxOutput 128,000 tokens
+   * @modalities text, image/jpeg, image/png, image/gif, image/webp -> text
+   * @reasoning effort `none`, `low`, `medium`, `high`
    */
   'gpt-5.1': PatchLoose<
     ChatSubType<'gpt-5.1'>,
     { service_tier: 'flex' | 'priority' | 'auto' | 'default' }
   >;
   /**
-   * GPT-5.2. Released 2025-12-11.
+   * @name GPT-5.2
+   * @provider OpenAI
+   * @family gpt
+   * @released 2025-12-11
+   * @updated 2025-12-11
+   * @knowledge 2025-08-31
+   * @context 400,000 tokens
+   * @maxInput 272,000 tokens
+   * @maxOutput 128,000 tokens
+   * @modalities text, image/jpeg, image/png, image/gif, image/webp -> text
+   * @reasoning effort `none`, `low`, `medium`, `high`, `xhigh`
    */
   'gpt-5.2': PatchLoose<
     ChatSubType<'gpt-5.2'>,
     { service_tier: 'flex' | 'priority' | 'auto' | 'default' }
   >;
   /**
-   * GPT-5.4. Released 2026-03-05.
+   * @name GPT-5.4
+   * @provider OpenAI
+   * @family gpt
+   * @released 2026-03-05
+   * @updated 2026-03-05
+   * @knowledge 2025-08-31
+   * @context 1,050,000 tokens
+   * @maxInput 922,000 tokens
+   * @maxOutput 128,000 tokens
+   * @modalities text, image/jpeg, image/png, image/gif, image/webp, application/pdf -> text
+   * @reasoning effort `none`, `low`, `medium`, `high`, `xhigh`
    */
   'gpt-5.4': PatchLoose<
     ChatSubType<'gpt-5.4'>,
     { service_tier: 'flex' | 'priority' | 'auto' | 'default' }
   >;
   /**
-   * GPT-5.4 mini. Released 2026-03-17.
+   * @name GPT-5.4 mini
+   * @provider OpenAI
+   * @family gpt-mini
+   * @released 2026-03-17
+   * @updated 2026-03-17
+   * @knowledge 2025-08-31
+   * @context 400,000 tokens
+   * @maxInput 272,000 tokens
+   * @maxOutput 128,000 tokens
+   * @modalities text, image/jpeg, image/png, image/gif, image/webp -> text
+   * @reasoning effort `none`, `low`, `medium`, `high`, `xhigh`
    */
   'gpt-5.4-mini': PatchLoose<
     ChatSubType<'gpt-5.4-mini'>,
     { service_tier: 'flex' | 'priority' | 'auto' | 'default' }
   >;
   /**
-   * GPT-5.4 nano. Released 2026-03-17.
+   * @name GPT-5.4 nano
+   * @provider OpenAI
+   * @family gpt-nano
+   * @released 2026-03-17
+   * @updated 2026-03-17
+   * @knowledge 2025-08-31
+   * @context 400,000 tokens
+   * @maxInput 272,000 tokens
+   * @maxOutput 128,000 tokens
+   * @modalities text, image/jpeg, image/png, image/gif, image/webp -> text
+   * @reasoning effort `none`, `low`, `medium`, `high`, `xhigh`
    */
   'gpt-5.4-nano': PatchLoose<
     ChatSubType<'gpt-5.4-nano'>,
     { service_tier: 'flex' | 'auto' | 'default' }
   >;
   /**
-   * GPT-5.5. Released 2026-04-23.
+   * @name GPT-5.5
+   * @provider OpenAI
+   * @family gpt
+   * @released 2026-04-23
+   * @updated 2026-04-23
+   * @knowledge 2025-12-01
+   * @context 1,050,000 tokens
+   * @maxInput 922,000 tokens
+   * @maxOutput 128,000 tokens
+   * @modalities text, image/jpeg, image/png, image/gif, image/webp, application/pdf -> text
+   * @reasoning effort `none`, `low`, `medium`, `high`, `xhigh`
    */
   'gpt-5.5': PatchLoose<
     ChatSubType<'gpt-5.5'>,
     { service_tier: 'flex' | 'priority' | 'auto' | 'default' }
   >;
   /**
-   * GPT-5.6. Released 2026-07-09.
+   * @name GPT-5.6
+   * @provider OpenAI
+   * @family gpt-sol
+   * @released 2026-07-09
+   * @updated 2026-07-09
+   * @knowledge 2026-02-16
+   * @context 1,050,000 tokens
+   * @maxInput 922,000 tokens
+   * @maxOutput 128,000 tokens
+   * @modalities text, image/jpeg, image/png, image/gif, image/webp, application/pdf -> text
+   * @reasoning effort `none`, `low`, `medium`, `high`, `xhigh`, `max`
    */
   'gpt-5.6': PatchLoose<
     ChatSubType<'gpt-5.6'>,
     { service_tier: 'flex' | 'priority' | 'auto' | 'default' }
   >;
   /**
-   * GPT-5.6 Luna. Released 2026-07-09.
+   * @name GPT-5.6 Luna
+   * @provider OpenAI
+   * @family gpt-luna
+   * @released 2026-07-09
+   * @updated 2026-07-09
+   * @knowledge 2026-02-16
+   * @context 1,050,000 tokens
+   * @maxInput 922,000 tokens
+   * @maxOutput 128,000 tokens
+   * @modalities text, image/jpeg, image/png, image/gif, image/webp, application/pdf -> text
+   * @reasoning effort `none`, `low`, `medium`, `high`, `xhigh`, `max`
    */
   'gpt-5.6-luna': PatchLoose<
     ChatSubType<'gpt-5.6-luna'>,
     { service_tier: 'flex' | 'priority' | 'auto' | 'default' }
   >;
   /**
-   * GPT-5.6 Sol. Released 2026-07-09.
+   * @name GPT-5.6 Sol
+   * @provider OpenAI
+   * @family gpt-sol
+   * @released 2026-07-09
+   * @updated 2026-07-09
+   * @knowledge 2026-02-16
+   * @context 1,050,000 tokens
+   * @maxInput 922,000 tokens
+   * @maxOutput 128,000 tokens
+   * @modalities text, image/jpeg, image/png, image/gif, image/webp, application/pdf -> text
+   * @reasoning effort `none`, `low`, `medium`, `high`, `xhigh`, `max`
    */
   'gpt-5.6-sol': PatchLoose<
     ChatSubType<'gpt-5.6-sol'>,
     { service_tier: 'flex' | 'priority' | 'auto' | 'default' }
   >;
   /**
-   * GPT-5.6 Terra. Released 2026-07-09.
+   * @name GPT-5.6 Terra
+   * @provider OpenAI
+   * @family gpt-terra
+   * @released 2026-07-09
+   * @updated 2026-07-09
+   * @knowledge 2026-02-16
+   * @context 1,050,000 tokens
+   * @maxInput 922,000 tokens
+   * @maxOutput 128,000 tokens
+   * @modalities text, image/jpeg, image/png, image/gif, image/webp, application/pdf -> text
+   * @reasoning effort `none`, `low`, `medium`, `high`, `xhigh`, `max`
    */
   'gpt-5.6-terra': PatchLoose<
     ChatSubType<'gpt-5.6-terra'>,
     { service_tier: 'flex' | 'priority' | 'auto' | 'default' }
   >;
   /**
-   * GPT-6 Astra. Released 2026-09-04.
+   * @name GPT-6 Astra
+   * @provider OpenAI
+   * @family gpt-astra
+   * @released 2026-09-04
+   * @updated 2026-09-04
+   * @knowledge 2026-04-30
+   * @context 1,050,000 tokens
+   * @maxInput 922,000 tokens
+   * @maxOutput 128,000 tokens
+   * @modalities text, image/jpeg, image/png, image/gif, image/webp, application/pdf -> text
+   * @reasoning effort `low`, `medium`, `high`, `xhigh`, `max`
    */
   'gpt-6-astra': PatchLoose<
     ChatSubType<'gpt-6-astra'>,
     { service_tier: 'flex' | 'priority' | 'auto' | 'default'; temperature: never; top_p: never }
   >;
   /**
-   * GPT-6 Luna. Released 2026-09-22.
+   * @name GPT-6 Luna
+   * @provider OpenAI
+   * @family gpt-luna
+   * @released 2026-09-22
+   * @updated 2026-09-22
+   * @knowledge 2026-05-18
+   * @context 1,050,000 tokens
+   * @maxInput 922,000 tokens
+   * @maxOutput 128,000 tokens
+   * @modalities text, image/jpeg, image/png, image/gif, image/webp, application/pdf -> text
+   * @reasoning effort `none`, `low`, `medium`, `high`, `xhigh`, `max`
    */
   'gpt-6-luna': PatchLoose<
     ChatSubType<'gpt-6-luna'>,
     { service_tier: 'flex' | 'priority' | 'auto' | 'default' }
   >;
   /**
-   * GPT-6 Sol. Released 2026-09-22.
+   * @name GPT-6 Sol
+   * @provider OpenAI
+   * @family gpt-sol
+   * @released 2026-09-22
+   * @updated 2026-09-22
+   * @knowledge 2026-04-20
+   * @context 1,050,000 tokens
+   * @maxInput 922,000 tokens
+   * @maxOutput 128,000 tokens
+   * @modalities text, image/jpeg, image/png, image/gif, image/webp, application/pdf -> text
+   * @reasoning effort `none`, `low`, `medium`, `high`, `xhigh`, `max`
    */
   'gpt-6-sol': PatchLoose<
     ChatSubType<'gpt-6-sol'>,
     { service_tier: 'flex' | 'priority' | 'auto' | 'default' }
   >;
   /**
-   * GPT-6.1 Sol. Released 2026-09-29.
+   * @name GPT-6.1 Sol
+   * @provider OpenAI
+   * @family gpt-sol
+   * @released 2026-09-29
+   * @updated 2026-09-29
+   * @knowledge 2026-04-30
+   * @context 1,050,000 tokens
+   * @maxInput 922,000 tokens
+   * @maxOutput 128,000 tokens
+   * @modalities text, image/jpeg, image/png, image/gif, image/webp, application/pdf -> text
+   * @reasoning effort `low`, `medium`, `high`, `xhigh`, `max`
    */
   'gpt-6.1-sol': PatchLoose<
     ChatSubType<'gpt-6.1-sol'>,
     { service_tier: 'flex' | 'priority' | 'auto' | 'default'; temperature: never; top_p: never }
   >;
   /**
-   * GPT-6.1 Terra. Released 2026-10-26.
+   * @name GPT-6.1 Terra
+   * @provider OpenAI
+   * @family gpt-terra
+   * @released 2026-10-26
+   * @updated 2026-10-26
+   * @knowledge 2026-06-01
+   * @context 1,050,000 tokens
+   * @maxInput 922,000 tokens
+   * @maxOutput 128,000 tokens
+   * @modalities text, image/jpeg, image/png, image/gif, image/webp, application/pdf -> text
+   * @reasoning effort `none`, `low`, `medium`, `high`, `xhigh`, `max`
    */
   'gpt-6.1-terra': PatchLoose<
     ChatSubType<'gpt-6.1-terra'>,
     { service_tier: 'flex' | 'priority' | 'auto' | 'default' }
   >;
   /**
-   * GPT-6.2 Astra. Released 2026-11-17.
+   * @name GPT-6.2 Astra
+   * @provider OpenAI
+   * @family gpt-astra
+   * @released 2026-11-17
+   * @updated 2026-11-17
+   * @knowledge 2026-05-18
+   * @context 1,050,000 tokens
+   * @maxInput 922,000 tokens
+   * @maxOutput 128,000 tokens
+   * @modalities text, image/jpeg, image/png, image/gif, image/webp, application/pdf -> text
+   * @reasoning effort `low`, `medium`, `high`, `xhigh`, `max`
    */
   'gpt-6.2-astra': PatchLoose<
     ChatSubType<'gpt-6.2-astra'>,
     { service_tier: 'priority' | 'auto' | 'default'; temperature: never; top_p: never }
   >;
   /**
-   * GPT-6.2 Sol. Released 2026-11-17.
+   * @name GPT-6.2 Sol
+   * @provider OpenAI
+   * @family gpt-sol
+   * @released 2026-11-17
+   * @updated 2026-11-17
+   * @knowledge 2026-06-01
+   * @context 1,050,000 tokens
+   * @maxInput 922,000 tokens
+   * @maxOutput 128,000 tokens
+   * @modalities text, image/jpeg, image/png, image/gif, image/webp, application/pdf -> text
+   * @reasoning effort `low`, `medium`, `high`, `xhigh`, `max`
    */
   'gpt-6.2-sol': PatchLoose<
     ChatSubType<'gpt-6.2-sol'>,
     { service_tier: 'priority' | 'auto' | 'default'; temperature: never; top_p: never }
   >;
   /**
-   * GPT-Audio. Released 2025-08-28.
+   * @name GPT-Audio
+   * @provider OpenAI
+   * @family gpt-audio
+   * @status deprecated
+   * @released 2025-08-28
+   * @updated 2025-08-28
+   * @knowledge 2023-10-01
+   * @context 128,000 tokens
+   * @maxOutput 16,384 tokens
+   * @modalities text, audio/wav, audio/mpeg -> text, audio/wav, audio/aac, audio/mpeg, audio/flac, audio/opus, audio/pcm
    * @deprecated The model is deprecated (models.dev).
    */
   'gpt-audio': ChatSubType<'gpt-audio'>;
   /**
-   * GPT-Audio-1.5. Released 2026-02-23.
+   * @name GPT-Audio-1.5
+   * @provider OpenAI
+   * @family gpt-audio
+   * @released 2026-02-23
+   * @updated 2026-02-23
+   * @knowledge 2024-09-30
+   * @context 128,000 tokens
+   * @maxOutput 16,384 tokens
+   * @modalities text, audio/wav, audio/mpeg -> text, audio/wav, audio/aac, audio/mpeg, audio/flac, audio/opus, audio/pcm
    */
   'gpt-audio-1.5': ChatSubType<'gpt-audio-1.5'>;
   /**
-   * GPT-Audio Mini. Released 2025-10-06.
+   * @name GPT-Audio Mini
+   * @provider OpenAI
+   * @family gpt-audio-mini
+   * @status deprecated
+   * @released 2025-10-06
+   * @updated 2025-10-06
+   * @knowledge 2023-10-01
+   * @context 128,000 tokens
+   * @maxOutput 16,384 tokens
+   * @modalities text, audio/wav, audio/mpeg -> text, audio/wav, audio/aac, audio/mpeg, audio/flac, audio/opus, audio/pcm
    * @deprecated The model is deprecated (models.dev).
    */
   'gpt-audio-mini': ChatSubType<'gpt-audio-mini'>;
   /**
-   * o1. Released 2024-12-05.
+   * @name o1
+   * @provider OpenAI
+   * @family o
+   * @status deprecated
+   * @released 2024-12-05
+   * @updated 2024-12-05
+   * @knowledge 2023-09
+   * @context 200,000 tokens
+   * @maxOutput 100,000 tokens
+   * @modalities text, image/jpeg, image/png, image/gif, image/webp, application/pdf -> text
+   * @reasoning effort `low`, `medium`, `high`
    * @deprecated The model is deprecated (models.dev).
    */
   o1: PatchLoose<ChatSubType<'o1'>, { temperature: never }>;
   /**
-   * o3. Released 2025-04-16.
+   * @name o3
+   * @provider OpenAI
+   * @family o
+   * @released 2025-04-16
+   * @updated 2025-04-16
+   * @knowledge 2024-05
+   * @context 200,000 tokens
+   * @maxOutput 100,000 tokens
+   * @modalities text, image/jpeg, image/png, image/gif, image/webp, application/pdf -> text
+   * @reasoning effort `low`, `medium`, `high`
    */
   o3: PatchLoose<
     ChatSubType<'o3'>,
     { service_tier: 'flex' | 'priority' | 'auto' | 'default'; temperature: never }
   >;
   /**
-   * o3-mini. Released 2024-12-20.
+   * @name o3-mini
+   * @provider OpenAI
+   * @family o-mini
+   * @status deprecated
+   * @released 2024-12-20
+   * @updated 2025-01-29
+   * @knowledge 2024-05
+   * @context 200,000 tokens
+   * @maxOutput 100,000 tokens
+   * @modalities text -> text
+   * @reasoning effort `low`, `medium`, `high`
    * @deprecated The model is deprecated (models.dev).
    */
   'o3-mini': PatchLoose<ChatSubType<'o3-mini'>, { temperature: never }>;
   /**
-   * o4-mini. Released 2025-04-16.
+   * @name o4-mini
+   * @provider OpenAI
+   * @family o-mini
+   * @status deprecated
+   * @released 2025-04-16
+   * @updated 2025-04-16
+   * @knowledge 2024-05
+   * @context 200,000 tokens
+   * @maxOutput 100,000 tokens
+   * @modalities text, image/jpeg, image/png, image/gif, image/webp -> text
+   * @reasoning effort `low`, `medium`, `high`
    * @deprecated The model is deprecated (models.dev).
    */
   'o4-mini': PatchLoose<

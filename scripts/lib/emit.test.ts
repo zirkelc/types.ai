@@ -1,5 +1,5 @@
 import { describe, expect, test } from 'vitest';
-import { emitProvider } from './emit';
+import { emitModels, emitProvider } from './emit';
 import type { Mapping } from '../../mappings/define';
 import type { ModelsDevModel } from './models-dev-schema';
 import type { DataFile } from './select';
@@ -163,5 +163,130 @@ describe('emitProvider model IDs', () => {
 
     // Assert
     expect(types).toContain('export type OtherModelIds = Record<never, never>;');
+  });
+});
+
+describe('emitModels', () => {
+  const provider = data.providers.openai!;
+
+  test('should emit one module per model with the data of only that model', () => {
+    // Act
+    const { modelFiles } = emitModels({ providerId: 'openai', provider });
+
+    // Assert
+    expect(modelFiles.map((file) => file.id)).toEqual(['model-a', 'model-b', 'model-c', 'model-d']);
+    const modelC = modelFiles.find((file) => file.id === 'model-c')!;
+    expect(modelC.types).toContain(' */\nexport const model = {');
+    expect(modelC.types).toContain('"id":"model-c"');
+    expect(modelC.types).not.toContain('model-a');
+    expect(modelC.entry).toContain(
+      "export { model, type Model } from '../../generated/models/openai/model-c';",
+    );
+  });
+
+  test('should document a model with one tag for each value that models.dev has', () => {
+    // Arrange
+    const documented = {
+      ...provider,
+      models: {
+        'model-x': {
+          ...model('model-x', {
+            reasoning: {
+              supported: true,
+              effort: ['low', 'high'],
+              budget: { min: 1_024 },
+              default: { type: 'effort', value: 'high' },
+            },
+          }),
+          name: 'Model X',
+          family: 'model',
+          status: 'deprecated',
+          deprecation_date: '2026-06-01',
+          knowledge: '2025-12',
+          last_updated: '2026-02-01',
+          open_weights: true,
+          modalities: { input: ['text', 'image/png'], output: ['text'] },
+          limit: { context: 400_000, input: 272_000, output: 0 },
+        } satisfies ModelsDevModel,
+      },
+    };
+
+    // Act
+    const { modelFiles } = emitModels({ providerId: 'openai', provider: documented });
+
+    // Assert
+    expect(modelFiles[0]!.types).toContain(
+      [
+        '/**',
+        ' * @name Model X',
+        ' * @provider OpenAI',
+        ' * @family model',
+        ' * @status deprecated',
+        ' * @released 2026-01-01',
+        ' * @updated 2026-02-01',
+        ' * @knowledge 2025-12',
+        ' * @context 400,000 tokens',
+        ' * @maxInput 272,000 tokens',
+        ' * @modalities text, image/png -> text',
+        ' * @reasoning effort `low`, `high`, budget 1,024+ tokens (default effort `high`)',
+        ' * @openWeights',
+        ' * @deprecated The model is deprecated on 2026-06-01 (models.dev).',
+        ' */',
+        'export const model',
+      ].join('\n'),
+    );
+  });
+
+  test('should build the provider models from the model modules', () => {
+    // Act
+    const { types } = emitModels({ providerId: 'openai', provider });
+
+    // Assert
+    expect(types).toContain("import { model as model_a } from './openai/model-a';");
+    expect(types).toContain("'model-a': model_a,");
+    expect(types).not.toContain('"id":"model-a"');
+  });
+
+  test('should give each model module a unique variable name', () => {
+    // Arrange
+    const dotted = {
+      ...provider,
+      models: { 'gpt-6.1': model('gpt-6.1', {}), 'gpt-6-1': model('gpt-6-1', {}) },
+    };
+
+    // Act
+    const { types } = emitModels({ providerId: 'openai', provider: dotted });
+
+    // Assert
+    expect(types).toContain("import { model as gpt_6_1 } from './openai/gpt-6-1';");
+    expect(types).toContain("import { model as gpt_6_1_2 } from './openai/gpt-6.1';");
+  });
+
+  test.each(['con', 'nul.json', 'a/b', 'a\\b', '.hidden', 'model.', 'model.d', 'mo:del', ''])(
+    'should reject the model ID %j, which is not a safe file name',
+    (id) => {
+      // Arrange
+      const invalid = { ...provider, models: { [id]: model(id, {}) } };
+
+      // Act
+      const result = () => emitModels({ providerId: 'openai', provider: invalid });
+
+      // Assert
+      expect(result).toThrow();
+    },
+  );
+
+  test('should reject two model IDs that differ only in case', () => {
+    // Arrange
+    const invalid = {
+      ...provider,
+      models: { 'Model-A': model('Model-A', {}), 'model-a': model('model-a', {}) },
+    };
+
+    // Act
+    const result = () => emitModels({ providerId: 'openai', provider: invalid });
+
+    // Assert
+    expect(result).toThrow();
   });
 });
