@@ -7,6 +7,7 @@ import type { Model as ModelShape } from '../../../core/types';
  * @name GPT-5 Pro
  * @provider OpenAI
  * @family gpt-pro
+ * @status deprecated
  * @released 2025-10-06
  * @updated 2025-10-06
  * @knowledge 2024-09-30
@@ -15,6 +16,7 @@ import type { Model as ModelShape } from '../../../core/types';
  * @maxOutput 272,000 tokens
  * @modalities text, image/jpeg, image/png, image/gif, image/webp -> text
  * @reasoning effort `high`
+ * @deprecated The model is deprecated (models.dev).
  */
 export const model = {
   api: {
@@ -52,6 +54,7 @@ export const model = {
   name: 'GPT-5 Pro',
   open_weights: false,
   release_date: '2025-10-06',
+  status: 'deprecated',
   type: 'chat',
 } as const satisfies ModelShape;
 

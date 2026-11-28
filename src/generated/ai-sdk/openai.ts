@@ -24,6 +24,19 @@ export type ResponsesModelIds = KnownModelIds<Parameters<Sdk.OpenAIProvider['res
 /** The model IDs of other model types that this target does not accept. */
 type ResponsesWrongModels = WrongModels<ResponsesModelIds, OtherModelIds>;
 
+type Responses_00f0567c = Patch<
+  ResponsesBase,
+  {
+    reasoningEffort: 'low' | 'medium' | 'high' | 'xhigh' | 'max';
+    reasoningEffortUpdate: 'low' | 'medium' | 'high' | 'xhigh' | 'max';
+    serviceTier: 'priority' | 'fast' | 'auto' | 'default';
+    promptCacheOptions: Patch<
+      NonNullable<ResponsesBase['promptCacheOptions']>,
+      { ttl: '30m' | '12h' }
+    >;
+  }
+>;
+
 type Responses_094dc607 = Patch<
   ResponsesBase,
   {
@@ -121,15 +134,6 @@ type Responses_504d577b = Patch<
       NonNullable<ResponsesBase['promptCacheOptions']>,
       { ttl: '30m' | '12h' }
     >;
-  }
->;
-
-type Responses_7b3f3862 = Patch<
-  ResponsesBase,
-  {
-    reasoningEffort: 'none' | 'low' | 'medium' | 'high' | 'xhigh';
-    reasoningEffortUpdate: never;
-    promptCacheOptions: never;
   }
 >;
 
@@ -245,151 +249,94 @@ export type OpenAILanguageModelResponsesOptionsByModel = {
    */
   'chat-latest': Responses_e9c72a24;
   /**
-   * @name GPT-3.5-turbo
-   * @provider OpenAI
-   * @family gpt
-   * @status deprecated
-   * @released 2023-03-01
-   * @updated 2023-11-06
-   * @knowledge 2021-09-01
-   * @context 16,385 tokens
-   * @maxOutput 4,096 tokens
-   * @modalities text -> text
-   * @deprecated The model is deprecated (models.dev).
-   */
-  'gpt-3.5-turbo': Responses_e9c72a24;
-  /**
-   * @name GPT-4
-   * @provider OpenAI
-   * @family gpt
-   * @status deprecated
-   * @released 2023-11-06
-   * @updated 2024-04-09
-   * @knowledge 2023-11
-   * @context 8,192 tokens
-   * @maxOutput 8,192 tokens
-   * @modalities text -> text
-   * @deprecated The model is deprecated (models.dev).
-   */
-  'gpt-4': Responses_e9c72a24;
-  /**
-   * @name GPT-4 Turbo
-   * @provider OpenAI
-   * @family gpt
-   * @status deprecated
-   * @released 2023-11-06
-   * @updated 2024-04-09
-   * @knowledge 2023-12
-   * @context 128,000 tokens
-   * @maxOutput 4,096 tokens
-   * @modalities text, image/jpeg, image/png, image/gif, image/webp -> text
-   * @deprecated The model is deprecated (models.dev).
-   */
-  'gpt-4-turbo': Responses_e9c72a24;
-  /**
    * @name GPT-4.1
    * @provider OpenAI
    * @family gpt
+   * @status deprecated
    * @released 2025-04-14
    * @updated 2025-04-14
    * @knowledge 2024-04
    * @context 1,047,576 tokens
    * @maxOutput 32,768 tokens
    * @modalities text, image/jpeg, image/png, image/gif, image/webp, application/pdf -> text
+   * @deprecated The model is deprecated (models.dev).
    */
   'gpt-4.1': Responses_88d80b4c;
   /**
    * @name GPT-4.1 mini
    * @provider OpenAI
    * @family gpt-mini
-   * @released 2025-04-14
-   * @updated 2025-04-14
-   * @knowledge 2024-04
-   * @context 1,047,576 tokens
-   * @maxOutput 32,768 tokens
-   * @modalities text, image/jpeg, image/png, image/gif, image/webp, application/pdf -> text
-   */
-  'gpt-4.1-mini': Responses_88d80b4c;
-  /**
-   * @name GPT-4.1 nano
-   * @provider OpenAI
-   * @family gpt-nano
    * @status deprecated
    * @released 2025-04-14
    * @updated 2025-04-14
    * @knowledge 2024-04
    * @context 1,047,576 tokens
    * @maxOutput 32,768 tokens
-   * @modalities text, image/jpeg, image/png, image/gif, image/webp -> text
+   * @modalities text, image/jpeg, image/png, image/gif, image/webp, application/pdf -> text
    * @deprecated The model is deprecated (models.dev).
    */
-  'gpt-4.1-nano': Responses_88d80b4c;
+  'gpt-4.1-mini': Responses_88d80b4c;
   /**
    * @name GPT-4o
    * @provider OpenAI
    * @family gpt
+   * @status deprecated
    * @released 2024-05-13
    * @updated 2024-08-06
    * @knowledge 2023-09
    * @context 128,000 tokens
    * @maxOutput 16,384 tokens
    * @modalities text, image/jpeg, image/png, image/gif, image/webp, application/pdf -> text
-   */
-  'gpt-4o': Responses_88d80b4c;
-  /**
-   * @name GPT-4o (2024-05-13)
-   * @provider OpenAI
-   * @family gpt
-   * @status deprecated
-   * @released 2024-05-13
-   * @updated 2024-05-13
-   * @knowledge 2023-09
-   * @context 128,000 tokens
-   * @maxOutput 4,096 tokens
-   * @modalities text, image/jpeg, image/png, image/gif, image/webp -> text
    * @deprecated The model is deprecated (models.dev).
    */
-  'gpt-4o-2024-05-13': Responses_88d80b4c;
+  'gpt-4o': Responses_88d80b4c;
   /**
    * @name GPT-4o (2024-08-06)
    * @provider OpenAI
    * @family gpt
+   * @status deprecated
    * @released 2024-08-06
    * @updated 2024-08-06
    * @knowledge 2023-09
    * @context 128,000 tokens
    * @maxOutput 16,384 tokens
    * @modalities text, image/jpeg, image/png, image/gif, image/webp -> text
+   * @deprecated The model is deprecated (models.dev).
    */
   'gpt-4o-2024-08-06': Responses_e9c72a24;
   /**
    * @name GPT-4o (2024-11-20)
    * @provider OpenAI
    * @family gpt
+   * @status deprecated
    * @released 2024-11-20
    * @updated 2024-11-20
    * @knowledge 2023-09
    * @context 128,000 tokens
    * @maxOutput 16,384 tokens
    * @modalities text, image/jpeg, image/png, image/gif, image/webp -> text
+   * @deprecated The model is deprecated (models.dev).
    */
   'gpt-4o-2024-11-20': Responses_e9c72a24;
   /**
    * @name GPT-4o mini
    * @provider OpenAI
    * @family gpt-mini
+   * @status deprecated
    * @released 2024-07-18
    * @updated 2024-07-18
    * @knowledge 2023-09
    * @context 128,000 tokens
    * @maxOutput 16,384 tokens
    * @modalities text, image/jpeg, image/png, image/gif, image/webp, application/pdf -> text
+   * @deprecated The model is deprecated (models.dev).
    */
   'gpt-4o-mini': Responses_88d80b4c;
   /**
    * @name GPT-5
    * @provider OpenAI
    * @family gpt
+   * @status deprecated
    * @released 2025-08-07
    * @updated 2025-08-07
    * @knowledge 2024-09-30
@@ -398,12 +345,14 @@ export type OpenAILanguageModelResponsesOptionsByModel = {
    * @maxOutput 128,000 tokens
    * @modalities text, image/jpeg, image/png, image/gif, image/webp -> text
    * @reasoning effort `minimal`, `low`, `medium`, `high`
+   * @deprecated The model is deprecated (models.dev).
    */
   'gpt-5': Responses_81ba2498;
   /**
    * @name GPT-5 Mini
    * @provider OpenAI
    * @family gpt-mini
+   * @status deprecated
    * @released 2025-08-07
    * @updated 2025-08-07
    * @knowledge 2024-05-30
@@ -412,12 +361,14 @@ export type OpenAILanguageModelResponsesOptionsByModel = {
    * @maxOutput 128,000 tokens
    * @modalities text, image/jpeg, image/png, image/gif, image/webp -> text
    * @reasoning effort `minimal`, `low`, `medium`, `high`
+   * @deprecated The model is deprecated (models.dev).
    */
   'gpt-5-mini': Responses_81ba2498;
   /**
    * @name GPT-5 Nano
    * @provider OpenAI
    * @family gpt-nano
+   * @status deprecated
    * @released 2025-08-07
    * @updated 2025-08-07
    * @knowledge 2024-05-30
@@ -426,12 +377,14 @@ export type OpenAILanguageModelResponsesOptionsByModel = {
    * @maxOutput 128,000 tokens
    * @modalities text, image/jpeg, image/png, image/gif, image/webp -> text
    * @reasoning effort `minimal`, `low`, `medium`, `high`
+   * @deprecated The model is deprecated (models.dev).
    */
   'gpt-5-nano': Responses_4f605e9d;
   /**
    * @name GPT-5 Pro
    * @provider OpenAI
    * @family gpt-pro
+   * @status deprecated
    * @released 2025-10-06
    * @updated 2025-10-06
    * @knowledge 2024-09-30
@@ -440,12 +393,14 @@ export type OpenAILanguageModelResponsesOptionsByModel = {
    * @maxOutput 272,000 tokens
    * @modalities text, image/jpeg, image/png, image/gif, image/webp -> text
    * @reasoning effort `high`
+   * @deprecated The model is deprecated (models.dev).
    */
   'gpt-5-pro': Responses_f2131aa6;
   /**
    * @name GPT-5.1
    * @provider OpenAI
    * @family gpt
+   * @status deprecated
    * @released 2025-11-13
    * @updated 2025-11-13
    * @knowledge 2024-09-30
@@ -454,6 +409,7 @@ export type OpenAILanguageModelResponsesOptionsByModel = {
    * @maxOutput 128,000 tokens
    * @modalities text, image/jpeg, image/png, image/gif, image/webp -> text
    * @reasoning effort `none`, `low`, `medium`, `high`
+   * @deprecated The model is deprecated (models.dev).
    */
   'gpt-5.1': Responses_492be964;
   /**
@@ -488,6 +444,7 @@ export type OpenAILanguageModelResponsesOptionsByModel = {
    * @name GPT-5.3 Codex
    * @provider OpenAI
    * @family gpt-codex
+   * @status deprecated
    * @released 2026-02-05
    * @updated 2026-02-05
    * @knowledge 2025-08-31
@@ -496,22 +453,9 @@ export type OpenAILanguageModelResponsesOptionsByModel = {
    * @maxOutput 128,000 tokens
    * @modalities text, image/jpeg, image/png, image/gif, image/webp, application/pdf -> text
    * @reasoning effort `none`, `low`, `medium`, `high`, `xhigh`
+   * @deprecated The model is deprecated (models.dev).
    */
   'gpt-5.3-codex': Responses_9a0f73d4;
-  /**
-   * @name GPT-5.3 Codex Spark
-   * @provider OpenAI
-   * @family gpt-codex-spark
-   * @released 2026-02-05
-   * @updated 2026-02-05
-   * @knowledge 2025-08-31
-   * @context 128,000 tokens
-   * @maxInput 100,000 tokens
-   * @maxOutput 32,000 tokens
-   * @modalities text, image/jpeg, image/png, image/gif, image/webp, application/pdf -> text
-   * @reasoning effort `none`, `low`, `medium`, `high`, `xhigh`
-   */
-  'gpt-5.3-codex-spark': Responses_7b3f3862;
   /**
    * @name GPT-5.4
    * @provider OpenAI
@@ -544,6 +488,7 @@ export type OpenAILanguageModelResponsesOptionsByModel = {
    * @name GPT-5.4 nano
    * @provider OpenAI
    * @family gpt-nano
+   * @status deprecated
    * @released 2026-03-17
    * @updated 2026-03-17
    * @knowledge 2025-08-31
@@ -552,6 +497,7 @@ export type OpenAILanguageModelResponsesOptionsByModel = {
    * @maxOutput 128,000 tokens
    * @modalities text, image/jpeg, image/png, image/gif, image/webp -> text
    * @reasoning effort `none`, `low`, `medium`, `high`, `xhigh`
+   * @deprecated The model is deprecated (models.dev).
    */
   'gpt-5.4-nano': Responses_4895440c;
   /**
@@ -681,6 +627,20 @@ export type OpenAILanguageModelResponsesOptionsByModel = {
    */
   'gpt-6-astra': Responses_504d577b;
   /**
+   * @name GPT-6 Astra Healthcare
+   * @provider OpenAI
+   * @family gpt-astra
+   * @released 2026-11-24
+   * @updated 2026-11-24
+   * @knowledge 2026-04-30
+   * @context 1,050,000 tokens
+   * @maxInput 922,000 tokens
+   * @maxOutput 128,000 tokens
+   * @modalities text, image/jpeg, image/png, image/gif, image/webp, application/pdf -> text
+   * @reasoning effort `low`, `medium`, `high`, `xhigh`, `max`
+   */
+  'gpt-6-astra-healthcare': Responses_00f0567c;
+  /**
    * @name GPT-6 Cyber
    * @provider OpenAI
    * @family gpt
@@ -736,6 +696,20 @@ export type OpenAILanguageModelResponsesOptionsByModel = {
    */
   'gpt-6.1-sol': Responses_504d577b;
   /**
+   * @name GPT-6.1 Sol Healthcare
+   * @provider OpenAI
+   * @family gpt-sol
+   * @released 2026-11-24
+   * @updated 2026-11-24
+   * @knowledge 2026-04-30
+   * @context 1,050,000 tokens
+   * @maxInput 922,000 tokens
+   * @maxOutput 128,000 tokens
+   * @modalities text, image/jpeg, image/png, image/gif, image/webp, application/pdf -> text
+   * @reasoning effort `low`, `medium`, `high`, `xhigh`, `max`
+   */
+  'gpt-6.1-sol-healthcare': Responses_00f0567c;
+  /**
    * @name GPT-6.1 Terra
    * @provider OpenAI
    * @family gpt-terra
@@ -764,6 +738,20 @@ export type OpenAILanguageModelResponsesOptionsByModel = {
    */
   'gpt-6.2-astra': Responses_a3672e8e;
   /**
+   * @name GPT-6.2 Astra Healthcare
+   * @provider OpenAI
+   * @family gpt-astra
+   * @released 2026-11-24
+   * @updated 2026-11-24
+   * @knowledge 2026-05-18
+   * @context 1,050,000 tokens
+   * @maxInput 922,000 tokens
+   * @maxOutput 128,000 tokens
+   * @modalities text, image/jpeg, image/png, image/gif, image/webp, application/pdf -> text
+   * @reasoning effort `low`, `medium`, `high`, `xhigh`, `max`
+   */
+  'gpt-6.2-astra-healthcare': Responses_00f0567c;
+  /**
    * @name GPT-6.2 Sol
    * @provider OpenAI
    * @family gpt-sol
@@ -777,6 +765,20 @@ export type OpenAILanguageModelResponsesOptionsByModel = {
    * @reasoning effort `low`, `medium`, `high`, `xhigh`, `max`
    */
   'gpt-6.2-sol': Responses_a3672e8e;
+  /**
+   * @name GPT-6.2 Sol Healthcare
+   * @provider OpenAI
+   * @family gpt-sol
+   * @released 2026-11-24
+   * @updated 2026-11-24
+   * @knowledge 2026-06-01
+   * @context 1,050,000 tokens
+   * @maxInput 922,000 tokens
+   * @maxOutput 128,000 tokens
+   * @modalities text, image/jpeg, image/png, image/gif, image/webp, application/pdf -> text
+   * @reasoning effort `low`, `medium`, `high`, `xhigh`, `max`
+   */
+  'gpt-6.2-sol-healthcare': Responses_00f0567c;
   /**
    * @name Daybreak Blue
    * @provider OpenAI
@@ -806,39 +808,10 @@ export type OpenAILanguageModelResponsesOptionsByModel = {
    */
   'gpt-daybreak-red-latest': Responses_094dc607;
   /**
-   * @name o1
-   * @provider OpenAI
-   * @family o
-   * @status deprecated
-   * @released 2024-12-05
-   * @updated 2024-12-05
-   * @knowledge 2023-09
-   * @context 200,000 tokens
-   * @maxOutput 100,000 tokens
-   * @modalities text, image/jpeg, image/png, image/gif, image/webp, application/pdf -> text
-   * @reasoning effort `low`, `medium`, `high`
-   * @deprecated The model is deprecated (models.dev).
-   */
-  o1: Responses_1ec3f5aa;
-  /**
-   * @name o1-pro
-   * @provider OpenAI
-   * @family o-pro
-   * @status deprecated
-   * @released 2025-03-19
-   * @updated 2025-03-19
-   * @knowledge 2023-09
-   * @context 200,000 tokens
-   * @maxOutput 100,000 tokens
-   * @modalities text, image/jpeg, image/png, image/gif, image/webp -> text
-   * @reasoning effort `low`, `medium`, `high`
-   * @deprecated The model is deprecated (models.dev).
-   */
-  'o1-pro': Responses_1ec3f5aa;
-  /**
    * @name o3
    * @provider OpenAI
    * @family o
+   * @status deprecated
    * @released 2025-04-16
    * @updated 2025-04-16
    * @knowledge 2024-05
@@ -846,27 +819,14 @@ export type OpenAILanguageModelResponsesOptionsByModel = {
    * @maxOutput 100,000 tokens
    * @modalities text, image/jpeg, image/png, image/gif, image/webp, application/pdf -> text
    * @reasoning effort `low`, `medium`, `high`
-   */
-  o3: Responses_efbadb48;
-  /**
-   * @name o3-mini
-   * @provider OpenAI
-   * @family o-mini
-   * @status deprecated
-   * @released 2024-12-20
-   * @updated 2025-01-29
-   * @knowledge 2024-05
-   * @context 200,000 tokens
-   * @maxOutput 100,000 tokens
-   * @modalities text -> text
-   * @reasoning effort `low`, `medium`, `high`
    * @deprecated The model is deprecated (models.dev).
    */
-  'o3-mini': Responses_1ec3f5aa;
+  o3: Responses_efbadb48;
   /**
    * @name o3-pro
    * @provider OpenAI
    * @family o-pro
+   * @status deprecated
    * @released 2025-06-10
    * @updated 2025-06-10
    * @knowledge 2024-05
@@ -874,23 +834,9 @@ export type OpenAILanguageModelResponsesOptionsByModel = {
    * @maxOutput 100,000 tokens
    * @modalities text, image/jpeg, image/png, image/gif, image/webp -> text
    * @reasoning effort `low`, `medium`, `high`
-   */
-  'o3-pro': Responses_1ec3f5aa;
-  /**
-   * @name o4-mini
-   * @provider OpenAI
-   * @family o-mini
-   * @status deprecated
-   * @released 2025-04-16
-   * @updated 2025-04-16
-   * @knowledge 2024-05
-   * @context 200,000 tokens
-   * @maxOutput 100,000 tokens
-   * @modalities text, image/jpeg, image/png, image/gif, image/webp -> text
-   * @reasoning effort `low`, `medium`, `high`
    * @deprecated The model is deprecated (models.dev).
    */
-  'o4-mini': Responses_efbadb48;
+  'o3-pro': Responses_1ec3f5aa;
 };
 
 /**
@@ -980,8 +926,6 @@ type Chat_a6d7a29a = Patch<
   }
 >;
 
-type Chat_c5a15e8b = Patch<ChatBase, { reasoningEffort: 'low' | 'medium' | 'high' }>;
-
 type Chat_cbd5f1f7 = Patch<
   ChatBase,
   {
@@ -1026,151 +970,94 @@ export type OpenAILanguageModelChatOptionsByModel = {
    */
   'chat-latest': Chat_eb03a43e;
   /**
-   * @name GPT-3.5-turbo
-   * @provider OpenAI
-   * @family gpt
-   * @status deprecated
-   * @released 2023-03-01
-   * @updated 2023-11-06
-   * @knowledge 2021-09-01
-   * @context 16,385 tokens
-   * @maxOutput 4,096 tokens
-   * @modalities text -> text
-   * @deprecated The model is deprecated (models.dev).
-   */
-  'gpt-3.5-turbo': Chat_eb03a43e;
-  /**
-   * @name GPT-4
-   * @provider OpenAI
-   * @family gpt
-   * @status deprecated
-   * @released 2023-11-06
-   * @updated 2024-04-09
-   * @knowledge 2023-11
-   * @context 8,192 tokens
-   * @maxOutput 8,192 tokens
-   * @modalities text -> text
-   * @deprecated The model is deprecated (models.dev).
-   */
-  'gpt-4': Chat_eb03a43e;
-  /**
-   * @name GPT-4 Turbo
-   * @provider OpenAI
-   * @family gpt
-   * @status deprecated
-   * @released 2023-11-06
-   * @updated 2024-04-09
-   * @knowledge 2023-12
-   * @context 128,000 tokens
-   * @maxOutput 4,096 tokens
-   * @modalities text, image/jpeg, image/png, image/gif, image/webp -> text
-   * @deprecated The model is deprecated (models.dev).
-   */
-  'gpt-4-turbo': Chat_eb03a43e;
-  /**
    * @name GPT-4.1
    * @provider OpenAI
    * @family gpt
+   * @status deprecated
    * @released 2025-04-14
    * @updated 2025-04-14
    * @knowledge 2024-04
    * @context 1,047,576 tokens
    * @maxOutput 32,768 tokens
    * @modalities text, image/jpeg, image/png, image/gif, image/webp, application/pdf -> text
+   * @deprecated The model is deprecated (models.dev).
    */
   'gpt-4.1': Chat_91d241e4;
   /**
    * @name GPT-4.1 mini
    * @provider OpenAI
    * @family gpt-mini
-   * @released 2025-04-14
-   * @updated 2025-04-14
-   * @knowledge 2024-04
-   * @context 1,047,576 tokens
-   * @maxOutput 32,768 tokens
-   * @modalities text, image/jpeg, image/png, image/gif, image/webp, application/pdf -> text
-   */
-  'gpt-4.1-mini': Chat_91d241e4;
-  /**
-   * @name GPT-4.1 nano
-   * @provider OpenAI
-   * @family gpt-nano
    * @status deprecated
    * @released 2025-04-14
    * @updated 2025-04-14
    * @knowledge 2024-04
    * @context 1,047,576 tokens
    * @maxOutput 32,768 tokens
-   * @modalities text, image/jpeg, image/png, image/gif, image/webp -> text
+   * @modalities text, image/jpeg, image/png, image/gif, image/webp, application/pdf -> text
    * @deprecated The model is deprecated (models.dev).
    */
-  'gpt-4.1-nano': Chat_91d241e4;
+  'gpt-4.1-mini': Chat_91d241e4;
   /**
    * @name GPT-4o
    * @provider OpenAI
    * @family gpt
+   * @status deprecated
    * @released 2024-05-13
    * @updated 2024-08-06
    * @knowledge 2023-09
    * @context 128,000 tokens
    * @maxOutput 16,384 tokens
    * @modalities text, image/jpeg, image/png, image/gif, image/webp, application/pdf -> text
-   */
-  'gpt-4o': Chat_91d241e4;
-  /**
-   * @name GPT-4o (2024-05-13)
-   * @provider OpenAI
-   * @family gpt
-   * @status deprecated
-   * @released 2024-05-13
-   * @updated 2024-05-13
-   * @knowledge 2023-09
-   * @context 128,000 tokens
-   * @maxOutput 4,096 tokens
-   * @modalities text, image/jpeg, image/png, image/gif, image/webp -> text
    * @deprecated The model is deprecated (models.dev).
    */
-  'gpt-4o-2024-05-13': Chat_91d241e4;
+  'gpt-4o': Chat_91d241e4;
   /**
    * @name GPT-4o (2024-08-06)
    * @provider OpenAI
    * @family gpt
+   * @status deprecated
    * @released 2024-08-06
    * @updated 2024-08-06
    * @knowledge 2023-09
    * @context 128,000 tokens
    * @maxOutput 16,384 tokens
    * @modalities text, image/jpeg, image/png, image/gif, image/webp -> text
+   * @deprecated The model is deprecated (models.dev).
    */
   'gpt-4o-2024-08-06': Chat_eb03a43e;
   /**
    * @name GPT-4o (2024-11-20)
    * @provider OpenAI
    * @family gpt
+   * @status deprecated
    * @released 2024-11-20
    * @updated 2024-11-20
    * @knowledge 2023-09
    * @context 128,000 tokens
    * @maxOutput 16,384 tokens
    * @modalities text, image/jpeg, image/png, image/gif, image/webp -> text
+   * @deprecated The model is deprecated (models.dev).
    */
   'gpt-4o-2024-11-20': Chat_eb03a43e;
   /**
    * @name GPT-4o mini
    * @provider OpenAI
    * @family gpt-mini
+   * @status deprecated
    * @released 2024-07-18
    * @updated 2024-07-18
    * @knowledge 2023-09
    * @context 128,000 tokens
    * @maxOutput 16,384 tokens
    * @modalities text, image/jpeg, image/png, image/gif, image/webp, application/pdf -> text
+   * @deprecated The model is deprecated (models.dev).
    */
   'gpt-4o-mini': Chat_91d241e4;
   /**
    * @name GPT-5
    * @provider OpenAI
    * @family gpt
+   * @status deprecated
    * @released 2025-08-07
    * @updated 2025-08-07
    * @knowledge 2024-09-30
@@ -1179,12 +1066,14 @@ export type OpenAILanguageModelChatOptionsByModel = {
    * @maxOutput 128,000 tokens
    * @modalities text, image/jpeg, image/png, image/gif, image/webp -> text
    * @reasoning effort `minimal`, `low`, `medium`, `high`
+   * @deprecated The model is deprecated (models.dev).
    */
   'gpt-5': Chat_f6ccff78;
   /**
    * @name GPT-5 Mini
    * @provider OpenAI
    * @family gpt-mini
+   * @status deprecated
    * @released 2025-08-07
    * @updated 2025-08-07
    * @knowledge 2024-05-30
@@ -1193,12 +1082,14 @@ export type OpenAILanguageModelChatOptionsByModel = {
    * @maxOutput 128,000 tokens
    * @modalities text, image/jpeg, image/png, image/gif, image/webp -> text
    * @reasoning effort `minimal`, `low`, `medium`, `high`
+   * @deprecated The model is deprecated (models.dev).
    */
   'gpt-5-mini': Chat_f6ccff78;
   /**
    * @name GPT-5 Nano
    * @provider OpenAI
    * @family gpt-nano
+   * @status deprecated
    * @released 2025-08-07
    * @updated 2025-08-07
    * @knowledge 2024-05-30
@@ -1207,6 +1098,7 @@ export type OpenAILanguageModelChatOptionsByModel = {
    * @maxOutput 128,000 tokens
    * @modalities text, image/jpeg, image/png, image/gif, image/webp -> text
    * @reasoning effort `minimal`, `low`, `medium`, `high`
+   * @deprecated The model is deprecated (models.dev).
    */
   'gpt-5-nano': Chat_ce815f79;
   /**
@@ -1224,6 +1116,7 @@ export type OpenAILanguageModelChatOptionsByModel = {
    * @name GPT-5.1
    * @provider OpenAI
    * @family gpt
+   * @status deprecated
    * @released 2025-11-13
    * @updated 2025-11-13
    * @knowledge 2024-09-30
@@ -1232,6 +1125,7 @@ export type OpenAILanguageModelChatOptionsByModel = {
    * @maxOutput 128,000 tokens
    * @modalities text, image/jpeg, image/png, image/gif, image/webp -> text
    * @reasoning effort `none`, `low`, `medium`, `high`
+   * @deprecated The model is deprecated (models.dev).
    */
   'gpt-5.1': Chat_785f1848;
   /**
@@ -1280,6 +1174,7 @@ export type OpenAILanguageModelChatOptionsByModel = {
    * @name GPT-5.4 nano
    * @provider OpenAI
    * @family gpt-nano
+   * @status deprecated
    * @released 2026-03-17
    * @updated 2026-03-17
    * @knowledge 2025-08-31
@@ -1288,6 +1183,7 @@ export type OpenAILanguageModelChatOptionsByModel = {
    * @maxOutput 128,000 tokens
    * @modalities text, image/jpeg, image/png, image/gif, image/webp -> text
    * @reasoning effort `none`, `low`, `medium`, `high`, `xhigh`
+   * @deprecated The model is deprecated (models.dev).
    */
   'gpt-5.4-nano': Chat_cbd5f1f7;
   /**
@@ -1499,24 +1395,10 @@ export type OpenAILanguageModelChatOptionsByModel = {
    */
   'gpt-audio-mini': Chat_eb03a43e;
   /**
-   * @name o1
-   * @provider OpenAI
-   * @family o
-   * @status deprecated
-   * @released 2024-12-05
-   * @updated 2024-12-05
-   * @knowledge 2023-09
-   * @context 200,000 tokens
-   * @maxOutput 100,000 tokens
-   * @modalities text, image/jpeg, image/png, image/gif, image/webp, application/pdf -> text
-   * @reasoning effort `low`, `medium`, `high`
-   * @deprecated The model is deprecated (models.dev).
-   */
-  o1: Chat_c5a15e8b;
-  /**
    * @name o3
    * @provider OpenAI
    * @family o
+   * @status deprecated
    * @released 2025-04-16
    * @updated 2025-04-16
    * @knowledge 2024-05
@@ -1524,38 +1406,9 @@ export type OpenAILanguageModelChatOptionsByModel = {
    * @maxOutput 100,000 tokens
    * @modalities text, image/jpeg, image/png, image/gif, image/webp, application/pdf -> text
    * @reasoning effort `low`, `medium`, `high`
+   * @deprecated The model is deprecated (models.dev).
    */
   o3: Chat_a6d7a29a;
-  /**
-   * @name o3-mini
-   * @provider OpenAI
-   * @family o-mini
-   * @status deprecated
-   * @released 2024-12-20
-   * @updated 2025-01-29
-   * @knowledge 2024-05
-   * @context 200,000 tokens
-   * @maxOutput 100,000 tokens
-   * @modalities text -> text
-   * @reasoning effort `low`, `medium`, `high`
-   * @deprecated The model is deprecated (models.dev).
-   */
-  'o3-mini': Chat_c5a15e8b;
-  /**
-   * @name o4-mini
-   * @provider OpenAI
-   * @family o-mini
-   * @status deprecated
-   * @released 2025-04-16
-   * @updated 2025-04-16
-   * @knowledge 2024-05
-   * @context 200,000 tokens
-   * @maxOutput 100,000 tokens
-   * @modalities text, image/jpeg, image/png, image/gif, image/webp -> text
-   * @reasoning effort `low`, `medium`, `high`
-   * @deprecated The model is deprecated (models.dev).
-   */
-  'o4-mini': Chat_a6d7a29a;
 };
 
 /**

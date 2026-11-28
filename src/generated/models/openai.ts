@@ -4,14 +4,9 @@
 import type { Models as ModelsShape } from '../../core/types';
 
 import { model as chat_latest } from './openai/chat-latest';
-import { model as gpt_3_5_turbo } from './openai/gpt-3.5-turbo';
-import { model as gpt_4 } from './openai/gpt-4';
-import { model as gpt_4_turbo } from './openai/gpt-4-turbo';
 import { model as gpt_4_1 } from './openai/gpt-4.1';
 import { model as gpt_4_1_mini } from './openai/gpt-4.1-mini';
-import { model as gpt_4_1_nano } from './openai/gpt-4.1-nano';
 import { model as gpt_4o } from './openai/gpt-4o';
-import { model as gpt_4o_2024_05_13 } from './openai/gpt-4o-2024-05-13';
 import { model as gpt_4o_2024_08_06 } from './openai/gpt-4o-2024-08-06';
 import { model as gpt_4o_2024_11_20 } from './openai/gpt-4o-2024-11-20';
 import { model as gpt_4o_mini } from './openai/gpt-4o-mini';
@@ -24,7 +19,6 @@ import { model as gpt_5_1 } from './openai/gpt-5.1';
 import { model as gpt_5_2 } from './openai/gpt-5.2';
 import { model as gpt_5_2_pro } from './openai/gpt-5.2-pro';
 import { model as gpt_5_3_codex } from './openai/gpt-5.3-codex';
-import { model as gpt_5_3_codex_spark } from './openai/gpt-5.3-codex-spark';
 import { model as gpt_5_4 } from './openai/gpt-5.4';
 import { model as gpt_5_4_mini } from './openai/gpt-5.4-mini';
 import { model as gpt_5_4_nano } from './openai/gpt-5.4-nano';
@@ -37,24 +31,24 @@ import { model as gpt_5_6_luna } from './openai/gpt-5.6-luna';
 import { model as gpt_5_6_sol } from './openai/gpt-5.6-sol';
 import { model as gpt_5_6_terra } from './openai/gpt-5.6-terra';
 import { model as gpt_6_astra } from './openai/gpt-6-astra';
+import { model as gpt_6_astra_healthcare } from './openai/gpt-6-astra-healthcare';
 import { model as gpt_6_cyber } from './openai/gpt-6-cyber';
 import { model as gpt_6_luna } from './openai/gpt-6-luna';
 import { model as gpt_6_sol } from './openai/gpt-6-sol';
 import { model as gpt_6_1_sol } from './openai/gpt-6.1-sol';
+import { model as gpt_6_1_sol_healthcare } from './openai/gpt-6.1-sol-healthcare';
 import { model as gpt_6_1_terra } from './openai/gpt-6.1-terra';
 import { model as gpt_6_2_astra } from './openai/gpt-6.2-astra';
+import { model as gpt_6_2_astra_healthcare } from './openai/gpt-6.2-astra-healthcare';
 import { model as gpt_6_2_sol } from './openai/gpt-6.2-sol';
+import { model as gpt_6_2_sol_healthcare } from './openai/gpt-6.2-sol-healthcare';
 import { model as gpt_audio } from './openai/gpt-audio';
 import { model as gpt_audio_1_5 } from './openai/gpt-audio-1.5';
 import { model as gpt_audio_mini } from './openai/gpt-audio-mini';
 import { model as gpt_daybreak_blue_latest } from './openai/gpt-daybreak-blue-latest';
 import { model as gpt_daybreak_red_latest } from './openai/gpt-daybreak-red-latest';
-import { model as o1 } from './openai/o1';
-import { model as o1_pro } from './openai/o1-pro';
 import { model as o3 } from './openai/o3';
-import { model as o3_mini } from './openai/o3-mini';
 import { model as o3_pro } from './openai/o3-pro';
-import { model as o4_mini } from './openai/o4-mini';
 import { model as omni_moderation_latest } from './openai/omni-moderation-latest';
 
 /** The provider as models.dev describes it. */
@@ -69,14 +63,9 @@ export const provider = {
 
 export const models = {
   'chat-latest': chat_latest,
-  'gpt-3.5-turbo': gpt_3_5_turbo,
-  'gpt-4': gpt_4,
-  'gpt-4-turbo': gpt_4_turbo,
   'gpt-4.1': gpt_4_1,
   'gpt-4.1-mini': gpt_4_1_mini,
-  'gpt-4.1-nano': gpt_4_1_nano,
   'gpt-4o': gpt_4o,
-  'gpt-4o-2024-05-13': gpt_4o_2024_05_13,
   'gpt-4o-2024-08-06': gpt_4o_2024_08_06,
   'gpt-4o-2024-11-20': gpt_4o_2024_11_20,
   'gpt-4o-mini': gpt_4o_mini,
@@ -89,7 +78,6 @@ export const models = {
   'gpt-5.2': gpt_5_2,
   'gpt-5.2-pro': gpt_5_2_pro,
   'gpt-5.3-codex': gpt_5_3_codex,
-  'gpt-5.3-codex-spark': gpt_5_3_codex_spark,
   'gpt-5.4': gpt_5_4,
   'gpt-5.4-mini': gpt_5_4_mini,
   'gpt-5.4-nano': gpt_5_4_nano,
@@ -102,24 +90,24 @@ export const models = {
   'gpt-5.6-sol': gpt_5_6_sol,
   'gpt-5.6-terra': gpt_5_6_terra,
   'gpt-6-astra': gpt_6_astra,
+  'gpt-6-astra-healthcare': gpt_6_astra_healthcare,
   'gpt-6-cyber': gpt_6_cyber,
   'gpt-6-luna': gpt_6_luna,
   'gpt-6-sol': gpt_6_sol,
   'gpt-6.1-sol': gpt_6_1_sol,
+  'gpt-6.1-sol-healthcare': gpt_6_1_sol_healthcare,
   'gpt-6.1-terra': gpt_6_1_terra,
   'gpt-6.2-astra': gpt_6_2_astra,
+  'gpt-6.2-astra-healthcare': gpt_6_2_astra_healthcare,
   'gpt-6.2-sol': gpt_6_2_sol,
+  'gpt-6.2-sol-healthcare': gpt_6_2_sol_healthcare,
   'gpt-audio': gpt_audio,
   'gpt-audio-1.5': gpt_audio_1_5,
   'gpt-audio-mini': gpt_audio_mini,
   'gpt-daybreak-blue-latest': gpt_daybreak_blue_latest,
   'gpt-daybreak-red-latest': gpt_daybreak_red_latest,
-  o1: o1,
-  'o1-pro': o1_pro,
   o3: o3,
-  'o3-mini': o3_mini,
   'o3-pro': o3_pro,
-  'o4-mini': o4_mini,
   'omni-moderation-latest': omni_moderation_latest,
 } as const satisfies ModelsShape;
 

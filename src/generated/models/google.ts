@@ -5,13 +5,11 @@ import type { Models as ModelsShape } from '../../core/types';
 
 import { model as deep_research_max_preview_04_2026 } from './google/deep-research-max-preview-04-2026';
 import { model as deep_research_preview_04_2026 } from './google/deep-research-preview-04-2026';
-import { model as gemini_2_5_computer_use_preview_10_2025 } from './google/gemini-2.5-computer-use-preview-10-2025';
 import { model as gemini_2_5_flash } from './google/gemini-2.5-flash';
 import { model as gemini_2_5_flash_lite } from './google/gemini-2.5-flash-lite';
 import { model as gemini_2_5_pro } from './google/gemini-2.5-pro';
 import { model as gemini_3_flash_preview } from './google/gemini-3-flash-preview';
 import { model as gemini_3_1_flash_lite } from './google/gemini-3.1-flash-lite';
-import { model as gemini_3_1_flash_lite_preview } from './google/gemini-3.1-flash-lite-preview';
 import { model as gemini_3_1_pro_preview } from './google/gemini-3.1-pro-preview';
 import { model as gemini_3_1_pro_preview_customtools } from './google/gemini-3.1-pro-preview-customtools';
 import { model as gemini_3_5_flash } from './google/gemini-3.5-flash';
@@ -43,13 +41,11 @@ export const provider = {
 export const models = {
   'deep-research-max-preview-04-2026': deep_research_max_preview_04_2026,
   'deep-research-preview-04-2026': deep_research_preview_04_2026,
-  'gemini-2.5-computer-use-preview-10-2025': gemini_2_5_computer_use_preview_10_2025,
   'gemini-2.5-flash': gemini_2_5_flash,
   'gemini-2.5-flash-lite': gemini_2_5_flash_lite,
   'gemini-2.5-pro': gemini_2_5_pro,
   'gemini-3-flash-preview': gemini_3_flash_preview,
   'gemini-3.1-flash-lite': gemini_3_1_flash_lite,
-  'gemini-3.1-flash-lite-preview': gemini_3_1_flash_lite_preview,
   'gemini-3.1-pro-preview': gemini_3_1_pro_preview,
   'gemini-3.1-pro-preview-customtools': gemini_3_1_pro_preview_customtools,
   'gemini-3.5-flash': gemini_3_5_flash,

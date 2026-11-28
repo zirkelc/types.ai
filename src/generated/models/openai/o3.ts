@@ -7,6 +7,7 @@ import type { Model as ModelShape } from '../../../core/types';
  * @name o3
  * @provider OpenAI
  * @family o
+ * @status deprecated
  * @released 2025-04-16
  * @updated 2025-04-16
  * @knowledge 2024-05
@@ -14,6 +15,7 @@ import type { Model as ModelShape } from '../../../core/types';
  * @maxOutput 100,000 tokens
  * @modalities text, image/jpeg, image/png, image/gif, image/webp, application/pdf -> text
  * @reasoning effort `low`, `medium`, `high`
+ * @deprecated The model is deprecated (models.dev).
  */
 export const model = {
   api: {
@@ -54,6 +56,7 @@ export const model = {
   name: 'o3',
   open_weights: false,
   release_date: '2025-04-16',
+  status: 'deprecated',
   type: 'chat',
 } as const satisfies ModelShape;
 

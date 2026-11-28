@@ -7,13 +7,15 @@ import type { Model as ModelShape } from '../../../core/types';
  * @name Claude Opus 4.5
  * @provider Anthropic
  * @family claude-opus
+ * @status deprecated
  * @released 2025-11-24
- * @updated 2025-11-01
+ * @updated 2025-11-24
  * @knowledge 2025-05
  * @context 200,000 tokens
  * @maxOutput 64,000 tokens
  * @modalities text, image/jpeg, image/png, image/gif, image/webp, application/pdf -> text
- * @reasoning effort `low`, `medium`, `high`, budget 1,024+ tokens
+ * @reasoning effort `low`, `medium`, `high`, toggle, budget 1,024+ tokens
+ * @deprecated The model is deprecated (models.dev).
  */
 export const model = {
   api: {
@@ -43,7 +45,12 @@ export const model = {
       },
     },
     effort_updates: false,
-    reasoning: { budget: { min: 1024 }, effort: ['low', 'medium', 'high'], supported: true },
+    reasoning: {
+      budget: { min: 1024 },
+      effort: ['low', 'medium', 'high'],
+      supported: true,
+      toggle: true,
+    },
     structured_output: true,
     system_updates: false,
     temperature: true,
@@ -52,7 +59,7 @@ export const model = {
   family: 'claude-opus',
   id: 'claude-opus-4-5-20251101',
   knowledge: '2025-05',
-  last_updated: '2025-11-01',
+  last_updated: '2025-11-24',
   limit: { context: 200000, output: 64000 },
   modalities: {
     input: ['text', 'image/jpeg', 'image/png', 'image/gif', 'image/webp', 'application/pdf'],
@@ -61,6 +68,7 @@ export const model = {
   name: 'Claude Opus 4.5',
   open_weights: false,
   release_date: '2025-11-24',
+  status: 'deprecated',
   type: 'chat',
 } as const satisfies ModelShape;
 

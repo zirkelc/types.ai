@@ -7,6 +7,7 @@ import type { Model as ModelShape } from '../../../core/types';
  * @name Gemini 2.5 Flash
  * @provider Google
  * @family gemini-flash
+ * @status deprecated
  * @released 2025-06-17
  * @updated 2025-06-17
  * @knowledge 2025-01
@@ -14,6 +15,7 @@ import type { Model as ModelShape } from '../../../core/types';
  * @maxOutput 65,536 tokens
  * @modalities text, image/png, image/jpeg, image/webp, image/heic, image/heif, audio/wav, audio/mp3, audio/aiff, audio/aac, audio/ogg, audio/flac, audio/mpeg, audio/m4a, audio/l16, audio/opus, audio/alaw, audio/mulaw, audio/webm, video/mp4, video/mpeg, video/mov, video/avi, video/x-flv, video/mpg, video/webm, video/wmv, video/3gpp, application/pdf -> text
  * @reasoning toggle, budget 0-24,576 tokens (default toggle `true`)
+ * @deprecated The model is deprecated (models.dev).
  */
 export const model = {
   api: {
@@ -95,6 +97,7 @@ export const model = {
   name: 'Gemini 2.5 Flash',
   open_weights: false,
   release_date: '2025-06-17',
+  status: 'deprecated',
   type: 'chat',
 } as const satisfies ModelShape;
 

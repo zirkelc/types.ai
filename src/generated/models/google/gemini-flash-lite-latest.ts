@@ -13,7 +13,7 @@ import type { Model as ModelShape } from '../../../core/types';
  * @context 1,048,576 tokens
  * @maxOutput 65,536 tokens
  * @modalities text, image/png, image/jpeg, image/webp, image/heic, image/heif, video/mp4, video/mpeg, video/mov, video/avi, video/x-flv, video/mpg, video/webm, video/wmv, video/3gpp, audio/wav, audio/mp3, audio/aiff, audio/aac, audio/ogg, audio/flac, audio/mpeg, audio/m4a, audio/l16, audio/opus, audio/alaw, audio/mulaw, audio/webm, application/pdf -> text
- * @reasoning effort `minimal`, `low`, `medium`, `high`
+ * @reasoning effort `minimal`, `low`, `medium`, `high` (default effort `minimal`)
  */
 export const model = {
   api: {
@@ -39,7 +39,12 @@ export const model = {
   capabilities: {
     cache: { explicit: true, implicit: true },
     effort_updates: false,
-    reasoning: { effort: ['minimal', 'low', 'medium', 'high'], supported: true },
+    reasoning: {
+      default: { type: 'effort', value: 'minimal' },
+      effort: ['minimal', 'low', 'medium', 'high'],
+      supported: true,
+    },
+    service_tier: ['flex', 'priority'],
     structured_output: true,
     system_updates: false,
     temperature: true,

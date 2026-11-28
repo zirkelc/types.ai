@@ -13,7 +13,7 @@ import type { Model as ModelShape } from '../../../core/types';
  * @context 1,000,000 tokens
  * @maxOutput 128,000 tokens
  * @modalities text, image/jpeg, image/png, image/gif, image/webp, application/pdf -> text
- * @reasoning effort `low`, `medium`, `high`, `max`, budget 1,024+ tokens
+ * @reasoning effort `low`, `medium`, `high`, `max`, toggle, budget 1,024+ tokens
  */
 export const model = {
   api: {
@@ -43,7 +43,12 @@ export const model = {
       },
     },
     effort_updates: false,
-    reasoning: { budget: { min: 1024 }, effort: ['low', 'medium', 'high', 'max'], supported: true },
+    reasoning: {
+      budget: { min: 1024 },
+      effort: ['low', 'medium', 'high', 'max'],
+      supported: true,
+      toggle: true,
+    },
     structured_output: true,
     system_updates: false,
     temperature: true,

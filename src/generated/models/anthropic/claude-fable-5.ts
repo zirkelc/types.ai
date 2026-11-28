@@ -9,6 +9,7 @@ import type { Model as ModelShape } from '../../../core/types';
  * @family claude-fable
  * @released 2026-06-07
  * @updated 2026-06-09
+ * @knowledge 2026-01-31
  * @context 1,000,000 tokens
  * @maxOutput 128,000 tokens
  * @modalities text, image/jpeg, image/png, image/gif, image/webp, application/pdf -> text
@@ -51,6 +52,7 @@ export const model = {
   },
   family: 'claude-fable',
   id: 'claude-fable-5',
+  knowledge: '2026-01-31',
   last_updated: '2026-06-09',
   limit: { context: 1000000, output: 128000 },
   modalities: {

@@ -7,6 +7,7 @@ import type { Model as ModelShape } from '../../../core/types';
  * @name GPT-5 Mini
  * @provider OpenAI
  * @family gpt-mini
+ * @status deprecated
  * @released 2025-08-07
  * @updated 2025-08-07
  * @knowledge 2024-05-30
@@ -15,6 +16,7 @@ import type { Model as ModelShape } from '../../../core/types';
  * @maxOutput 128,000 tokens
  * @modalities text, image/jpeg, image/png, image/gif, image/webp -> text
  * @reasoning effort `minimal`, `low`, `medium`, `high`
+ * @deprecated The model is deprecated (models.dev).
  */
 export const model = {
   api: {
@@ -65,6 +67,7 @@ export const model = {
   name: 'GPT-5 Mini',
   open_weights: false,
   release_date: '2025-08-07',
+  status: 'deprecated',
   type: 'chat',
 } as const satisfies ModelShape;
 

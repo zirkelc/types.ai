@@ -7,12 +7,14 @@ import type { Model as ModelShape } from '../../../core/types';
  * @name GPT-4o (2024-08-06)
  * @provider OpenAI
  * @family gpt
+ * @status deprecated
  * @released 2024-08-06
  * @updated 2024-08-06
  * @knowledge 2023-09
  * @context 128,000 tokens
  * @maxOutput 16,384 tokens
  * @modalities text, image/jpeg, image/png, image/gif, image/webp -> text
+ * @deprecated The model is deprecated (models.dev).
  */
 export const model = {
   api: {
@@ -52,6 +54,7 @@ export const model = {
   name: 'GPT-4o (2024-08-06)',
   open_weights: false,
   release_date: '2024-08-06',
+  status: 'deprecated',
   type: 'chat',
 } as const satisfies ModelShape;
 
