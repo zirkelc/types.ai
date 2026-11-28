@@ -10,11 +10,11 @@ import type { Model as ModelShape } from '../../../core/types';
  * @status deprecated
  * @released 2025-09-29
  * @updated 2025-09-29
- * @knowledge 2025-07-31
+ * @knowledge 2025-01-31
  * @context 200,000 tokens
  * @maxOutput 64,000 tokens
  * @modalities text, image/jpeg, image/png, image/gif, image/webp, application/pdf -> text
- * @reasoning budget 1,024+ tokens
+ * @reasoning toggle, budget 1,024+ tokens
  * @deprecated The model is deprecated (models.dev).
  */
 export const model = {
@@ -45,7 +45,7 @@ export const model = {
       },
     },
     effort_updates: false,
-    reasoning: { budget: { min: 1024 }, supported: true },
+    reasoning: { budget: { min: 1024 }, supported: true, toggle: true },
     structured_output: true,
     system_updates: false,
     temperature: true,
@@ -55,7 +55,7 @@ export const model = {
   },
   family: 'claude-sonnet',
   id: 'claude-sonnet-4-5',
-  knowledge: '2025-07-31',
+  knowledge: '2025-01-31',
   last_updated: '2025-09-29',
   limit: { context: 200000, output: 64000 },
   modalities: {

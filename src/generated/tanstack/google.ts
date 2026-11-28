@@ -33,22 +33,10 @@ type GenerateContentSubType<MODEL extends string> =
 
 export type GeminiTextProviderOptionsByModelGenerated = {
   /**
-   * @name Gemini 2.5 Computer Use Preview 10-2025
-   * @provider Google
-   * @family gemini-computer-use
-   * @released 2025-10-07
-   * @updated 2025-10-07
-   * @knowledge 2025-01
-   * @context 128,000 tokens
-   * @maxOutput 64,000 tokens
-   * @modalities text, image/png, image/jpeg, image/webp, image/heic, image/heif -> text
-   * @reasoning supported
-   */
-  'gemini-2.5-computer-use-preview-10-2025': GenerateContentSubType<'gemini-2.5-computer-use-preview-10-2025'>;
-  /**
    * @name Gemini 2.5 Flash
    * @provider Google
    * @family gemini-flash
+   * @status deprecated
    * @released 2025-06-17
    * @updated 2025-06-17
    * @knowledge 2025-01
@@ -56,14 +44,15 @@ export type GeminiTextProviderOptionsByModelGenerated = {
    * @maxOutput 65,536 tokens
    * @modalities text, image/png, image/jpeg, image/webp, image/heic, image/heif, audio/wav, audio/mp3, audio/aiff, audio/aac, audio/ogg, audio/flac, audio/mpeg, audio/m4a, audio/l16, audio/opus, audio/alaw, audio/mulaw, audio/webm, video/mp4, video/mpeg, video/mov, video/avi, video/x-flv, video/mpg, video/webm, video/wmv, video/3gpp, application/pdf -> text
    * @reasoning toggle, budget 0-24,576 tokens (default toggle `true`)
+   * @deprecated The model is deprecated (models.dev).
    */
   'gemini-2.5-flash': GenerateContentSubType<'gemini-2.5-flash'>;
   /**
    * @name Gemini 2.5 Flash-Lite
    * @provider Google
    * @family gemini-flash-lite
-   * @released 2025-06-17
-   * @updated 2025-06-17
+   * @released 2025-07-22
+   * @updated 2025-07-22
    * @knowledge 2025-01
    * @context 1,048,576 tokens
    * @maxOutput 65,536 tokens
@@ -75,6 +64,7 @@ export type GeminiTextProviderOptionsByModelGenerated = {
    * @name Gemini 2.5 Pro
    * @provider Google
    * @family gemini-pro
+   * @status deprecated
    * @released 2025-06-17
    * @updated 2025-06-17
    * @knowledge 2025-01
@@ -82,6 +72,7 @@ export type GeminiTextProviderOptionsByModelGenerated = {
    * @maxOutput 65,536 tokens
    * @modalities text, image/png, image/jpeg, image/webp, image/heic, image/heif, audio/wav, audio/mp3, audio/aiff, audio/aac, audio/ogg, audio/flac, audio/mpeg, audio/m4a, audio/l16, audio/opus, audio/alaw, audio/mulaw, audio/webm, video/mp4, video/mpeg, video/mov, video/avi, video/x-flv, video/mpg, video/webm, video/wmv, video/3gpp, application/pdf -> text
    * @reasoning budget 128-32,768 tokens
+   * @deprecated The model is deprecated (models.dev).
    */
   'gemini-2.5-pro': GenerateContentSubType<'gemini-2.5-pro'>;
   /**
@@ -101,6 +92,7 @@ export type GeminiTextProviderOptionsByModelGenerated = {
    * @name Gemini 3.1 Flash Lite
    * @provider Google
    * @family gemini-flash-lite
+   * @status deprecated
    * @released 2026-05-07
    * @updated 2026-05-07
    * @knowledge 2025-01
@@ -108,23 +100,9 @@ export type GeminiTextProviderOptionsByModelGenerated = {
    * @maxOutput 65,536 tokens
    * @modalities text, image/png, image/jpeg, image/webp, image/heic, image/heif, video/mp4, video/mpeg, video/mov, video/avi, video/x-flv, video/mpg, video/webm, video/wmv, video/3gpp, audio/wav, audio/mp3, audio/aiff, audio/aac, audio/ogg, audio/flac, audio/mpeg, audio/m4a, audio/l16, audio/opus, audio/alaw, audio/mulaw, audio/webm, application/pdf -> text
    * @reasoning effort `minimal`, `low`, `medium`, `high`
-   */
-  'gemini-3.1-flash-lite': GenerateContentSubType<'gemini-3.1-flash-lite'>;
-  /**
-   * @name Gemini 3.1 Flash Lite Preview
-   * @provider Google
-   * @family gemini-flash-lite
-   * @status deprecated
-   * @released 2026-03-03
-   * @updated 2026-03-03
-   * @knowledge 2025-01
-   * @context 1,048,576 tokens
-   * @maxOutput 65,536 tokens
-   * @modalities text, image/png, image/jpeg, image/webp, image/heic, image/heif, video/mp4, video/mpeg, video/mov, video/avi, video/x-flv, video/mpg, video/webm, video/wmv, video/3gpp, audio/wav, audio/mp3, audio/aiff, audio/aac, audio/ogg, audio/flac, audio/mpeg, audio/m4a, audio/l16, audio/opus, audio/alaw, audio/mulaw, audio/webm, application/pdf -> text
-   * @reasoning effort `minimal`, `low`, `medium`, `high`
    * @deprecated The model is deprecated (models.dev).
    */
-  'gemini-3.1-flash-lite-preview': GenerateContentSubType<'gemini-3.1-flash-lite-preview'>;
+  'gemini-3.1-flash-lite': GenerateContentSubType<'gemini-3.1-flash-lite'>;
   /**
    * @name Gemini 3.1 Pro Preview
    * @provider Google
@@ -155,6 +133,7 @@ export type GeminiTextProviderOptionsByModelGenerated = {
    * @name Gemini 3.5 Flash
    * @provider Google
    * @family gemini-flash
+   * @status deprecated
    * @released 2026-05-19
    * @updated 2026-05-19
    * @knowledge 2025-01
@@ -162,6 +141,7 @@ export type GeminiTextProviderOptionsByModelGenerated = {
    * @maxOutput 65,536 tokens
    * @modalities text, image/png, image/jpeg, image/webp, image/heic, image/heif, video/mp4, video/mpeg, video/mov, video/avi, video/x-flv, video/mpg, video/webm, video/wmv, video/3gpp, audio/wav, audio/mp3, audio/aiff, audio/aac, audio/ogg, audio/flac, audio/mpeg, audio/m4a, audio/l16, audio/opus, audio/alaw, audio/mulaw, audio/webm, application/pdf -> text
    * @reasoning effort `minimal`, `low`, `medium`, `high`
+   * @deprecated The model is deprecated (models.dev).
    */
   'gemini-3.5-flash': GenerateContentSubType<'gemini-3.5-flash'>;
   /**
@@ -194,6 +174,7 @@ export type GeminiTextProviderOptionsByModelGenerated = {
    * @name Gemini 3.7 Flash
    * @provider Google
    * @family gemini-flash
+   * @status deprecated
    * @released 2026-08-13
    * @updated 2026-08-13
    * @knowledge 2026-03
@@ -201,6 +182,7 @@ export type GeminiTextProviderOptionsByModelGenerated = {
    * @maxOutput 65,536 tokens
    * @modalities text, image/png, image/jpeg, image/webp, image/heic, image/heif, video/mp4, video/mpeg, video/mov, video/avi, video/x-flv, video/mpg, video/webm, video/wmv, video/3gpp, audio/wav, audio/mp3, audio/aiff, audio/aac, audio/ogg, audio/flac, audio/mpeg, audio/m4a, audio/l16, audio/opus, audio/alaw, audio/mulaw, audio/webm, application/pdf -> text
    * @reasoning effort `low`, `medium`, `high`
+   * @deprecated The model is deprecated (models.dev).
    */
   'gemini-3.7-flash': GenerateContentSubType<'gemini-3.7-flash'>;
   /**
@@ -283,13 +265,12 @@ export type GeminiTextProviderOptionsByModelGenerated = {
    * @name Gemini Flash Latest
    * @provider Google
    * @family gemini-flash
-   * @released 2026-08-13
-   * @updated 2026-08-13
-   * @knowledge 2026-03
+   * @released 2026-09-02
+   * @updated 2026-09-02
    * @context 1,048,576 tokens
    * @maxOutput 65,536 tokens
    * @modalities text, image/png, image/jpeg, image/webp, image/heic, image/heif, video/mp4, video/mpeg, video/mov, video/avi, video/x-flv, video/mpg, video/webm, video/wmv, video/3gpp, audio/wav, audio/mp3, audio/aiff, audio/aac, audio/ogg, audio/flac, audio/mpeg, audio/m4a, audio/l16, audio/opus, audio/alaw, audio/mulaw, audio/webm, application/pdf -> text
-   * @reasoning effort `low`, `medium`, `high`
+   * @reasoning effort `low`, `medium`, `high` (default effort `medium`)
    */
   'gemini-flash-latest': GenerateContentSubType<'gemini-flash-latest'>;
   /**
@@ -302,7 +283,7 @@ export type GeminiTextProviderOptionsByModelGenerated = {
    * @context 1,048,576 tokens
    * @maxOutput 65,536 tokens
    * @modalities text, image/png, image/jpeg, image/webp, image/heic, image/heif, video/mp4, video/mpeg, video/mov, video/avi, video/x-flv, video/mpg, video/webm, video/wmv, video/3gpp, audio/wav, audio/mp3, audio/aiff, audio/aac, audio/ogg, audio/flac, audio/mpeg, audio/m4a, audio/l16, audio/opus, audio/alaw, audio/mulaw, audio/webm, application/pdf -> text
-   * @reasoning effort `minimal`, `low`, `medium`, `high`
+   * @reasoning effort `minimal`, `low`, `medium`, `high` (default effort `minimal`)
    */
   'gemini-flash-lite-latest': GenerateContentSubType<'gemini-flash-lite-latest'>;
   /**

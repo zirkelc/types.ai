@@ -34,6 +34,7 @@ export type AnthropicTextProviderOptionsByModelGenerated = {
    * @family claude-fable
    * @released 2026-06-07
    * @updated 2026-06-09
+   * @knowledge 2026-01-31
    * @context 1,000,000 tokens
    * @maxOutput 128,000 tokens
    * @modalities text, image/jpeg, image/png, image/gif, image/webp, application/pdf -> text
@@ -85,7 +86,7 @@ export type AnthropicTextProviderOptionsByModelGenerated = {
    * @context 1,000,000 tokens
    * @maxOutput 128,000 tokens
    * @modalities text, image/jpeg, image/png, image/gif, image/webp, application/pdf -> text
-   * @reasoning effort `low`, `medium`, `high`, `xhigh`, `max`
+   * @reasoning effort `low`, `medium`, `high`, `xhigh`, `max` (default effort `high`)
    */
   'claude-fable-5-2': PatchLoose<
     MessagesSubType<'claude-fable-5-2'>,
@@ -110,7 +111,7 @@ export type AnthropicTextProviderOptionsByModelGenerated = {
    * @context 200,000 tokens
    * @maxOutput 64,000 tokens
    * @modalities text, image/jpeg, image/png, image/gif, image/webp, application/pdf -> text
-   * @reasoning budget 1,024+ tokens
+   * @reasoning toggle, budget 1,024+ tokens
    */
   'claude-haiku-4-5': PatchLoose<
     MessagesSubType<'claude-haiku-4-5'>,
@@ -132,7 +133,7 @@ export type AnthropicTextProviderOptionsByModelGenerated = {
    * @context 200,000 tokens
    * @maxOutput 64,000 tokens
    * @modalities text, image/jpeg, image/png, image/gif, image/webp, application/pdf -> text
-   * @reasoning budget 1,024+ tokens
+   * @reasoning toggle, budget 1,024+ tokens
    */
   'claude-haiku-4-5-20251001': PatchLoose<
     MessagesSubType<'claude-haiku-4-5-20251001'>,
@@ -154,7 +155,7 @@ export type AnthropicTextProviderOptionsByModelGenerated = {
    * @context 1,000,000 tokens
    * @maxOutput 128,000 tokens
    * @modalities text, image/jpeg, image/png, image/gif, image/webp, application/pdf -> text
-   * @reasoning effort `low`, `medium`, `high`, `xhigh`, `max`, toggle
+   * @reasoning effort `low`, `medium`, `high`, `xhigh`, `max`, toggle (default effort `medium`)
    */
   'claude-haiku-5-5': PatchLoose<
     MessagesSubType<'claude-haiku-5-5'>,
@@ -173,13 +174,15 @@ export type AnthropicTextProviderOptionsByModelGenerated = {
    * @name Claude Opus 4.5 (latest)
    * @provider Anthropic
    * @family claude-opus
+   * @status deprecated
    * @released 2025-11-24
    * @updated 2025-11-24
    * @knowledge 2025-05
    * @context 200,000 tokens
    * @maxOutput 64,000 tokens
    * @modalities text, image/jpeg, image/png, image/gif, image/webp, application/pdf -> text
-   * @reasoning effort `low`, `medium`, `high`, budget 1,024+ tokens
+   * @reasoning effort `low`, `medium`, `high`, toggle, budget 1,024+ tokens
+   * @deprecated The model is deprecated (models.dev).
    */
   'claude-opus-4-5': PatchLoose<
     MessagesSubType<'claude-opus-4-5'>,
@@ -195,13 +198,15 @@ export type AnthropicTextProviderOptionsByModelGenerated = {
    * @name Claude Opus 4.5
    * @provider Anthropic
    * @family claude-opus
+   * @status deprecated
    * @released 2025-11-24
-   * @updated 2025-11-01
+   * @updated 2025-11-24
    * @knowledge 2025-05
    * @context 200,000 tokens
    * @maxOutput 64,000 tokens
    * @modalities text, image/jpeg, image/png, image/gif, image/webp, application/pdf -> text
-   * @reasoning effort `low`, `medium`, `high`, budget 1,024+ tokens
+   * @reasoning effort `low`, `medium`, `high`, toggle, budget 1,024+ tokens
+   * @deprecated The model is deprecated (models.dev).
    */
   'claude-opus-4-5-20251101': PatchLoose<
     MessagesSubType<'claude-opus-4-5-20251101'>,
@@ -223,7 +228,7 @@ export type AnthropicTextProviderOptionsByModelGenerated = {
    * @context 1,000,000 tokens
    * @maxOutput 128,000 tokens
    * @modalities text, image/jpeg, image/png, image/gif, image/webp, application/pdf -> text
-   * @reasoning effort `low`, `medium`, `high`, `max`, budget 1,024+ tokens
+   * @reasoning effort `low`, `medium`, `high`, `max`, toggle, budget 1,024+ tokens
    */
   'claude-opus-4-6': PatchLoose<
     MessagesSubType<'claude-opus-4-6'>,
@@ -245,7 +250,7 @@ export type AnthropicTextProviderOptionsByModelGenerated = {
    * @context 1,000,000 tokens
    * @maxOutput 128,000 tokens
    * @modalities text, image/jpeg, image/png, image/gif, image/webp, application/pdf -> text
-   * @reasoning effort `low`, `medium`, `high`, `xhigh`, `max`
+   * @reasoning effort `low`, `medium`, `high`, `xhigh`, `max`, toggle
    */
   'claude-opus-4-7': PatchLoose<
     MessagesSubType<'claude-opus-4-7'>,
@@ -268,7 +273,7 @@ export type AnthropicTextProviderOptionsByModelGenerated = {
    * @context 1,000,000 tokens
    * @maxOutput 128,000 tokens
    * @modalities text, image/jpeg, image/png, image/gif, image/webp, application/pdf -> text
-   * @reasoning effort `low`, `medium`, `high`, `xhigh`, `max`
+   * @reasoning effort `low`, `medium`, `high`, `xhigh`, `max`, toggle
    */
   'claude-opus-4-8': PatchLoose<
     MessagesSubType<'claude-opus-4-8'>,
@@ -291,7 +296,7 @@ export type AnthropicTextProviderOptionsByModelGenerated = {
    * @context 1,000,000 tokens
    * @maxOutput 128,000 tokens
    * @modalities text, image/jpeg, image/png, image/gif, image/webp, application/pdf -> text
-   * @reasoning effort `low`, `medium`, `high`, `xhigh`, `max`
+   * @reasoning effort `low`, `medium`, `high`, `xhigh`, `max`, toggle
    */
   'claude-opus-5': PatchLoose<
     MessagesSubType<'claude-opus-5'>,
@@ -316,7 +321,7 @@ export type AnthropicTextProviderOptionsByModelGenerated = {
    * @context 1,000,000 tokens
    * @maxOutput 128,000 tokens
    * @modalities text, image/jpeg, image/png, image/gif, image/webp, application/pdf -> text
-   * @reasoning effort `low`, `medium`, `high`, `xhigh`, `max`
+   * @reasoning effort `low`, `medium`, `high`, `xhigh`, `max` (default effort `medium`)
    */
   'claude-opus-5-5': PatchLoose<
     MessagesSubType<'claude-opus-5-5'>,
@@ -338,11 +343,11 @@ export type AnthropicTextProviderOptionsByModelGenerated = {
    * @status deprecated
    * @released 2025-09-29
    * @updated 2025-09-29
-   * @knowledge 2025-07-31
+   * @knowledge 2025-01-31
    * @context 200,000 tokens
    * @maxOutput 64,000 tokens
    * @modalities text, image/jpeg, image/png, image/gif, image/webp, application/pdf -> text
-   * @reasoning budget 1,024+ tokens
+   * @reasoning toggle, budget 1,024+ tokens
    * @deprecated The model is deprecated (models.dev).
    */
   'claude-sonnet-4-5': PatchLoose<
@@ -362,11 +367,11 @@ export type AnthropicTextProviderOptionsByModelGenerated = {
    * @status deprecated
    * @released 2025-09-29
    * @updated 2025-09-29
-   * @knowledge 2025-07-31
+   * @knowledge 2025-01-31
    * @context 200,000 tokens
    * @maxOutput 64,000 tokens
    * @modalities text, image/jpeg, image/png, image/gif, image/webp, application/pdf -> text
-   * @reasoning budget 1,024+ tokens
+   * @reasoning toggle, budget 1,024+ tokens
    * @deprecated The model is deprecated (models.dev).
    */
   'claude-sonnet-4-5-20250929': PatchLoose<
@@ -389,7 +394,7 @@ export type AnthropicTextProviderOptionsByModelGenerated = {
    * @context 1,000,000 tokens
    * @maxOutput 128,000 tokens
    * @modalities text, image/jpeg, image/png, image/gif, image/webp, application/pdf -> text
-   * @reasoning effort `low`, `medium`, `high`, `max`, budget 1,024+ tokens
+   * @reasoning effort `low`, `medium`, `high`, `max`, toggle, budget 1,024+ tokens
    */
   'claude-sonnet-4-6': PatchLoose<
     MessagesSubType<'claude-sonnet-4-6'>,
@@ -434,7 +439,7 @@ export type AnthropicTextProviderOptionsByModelGenerated = {
    * @context 1,000,000 tokens
    * @maxOutput 128,000 tokens
    * @modalities text, image/jpeg, image/png, image/gif, image/webp, application/pdf -> text
-   * @reasoning effort `low`, `medium`, `high`, `xhigh`, `max`
+   * @reasoning effort `low`, `medium`, `high`, `xhigh`, `max` (default effort `high`)
    */
   'claude-sonnet-5-5': PatchLoose<
     MessagesSubType<'claude-sonnet-5-5'>,

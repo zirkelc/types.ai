@@ -70,6 +70,7 @@ export type AnthropicLanguageModelOptionsByModel = {
    * @family claude-fable
    * @released 2026-06-07
    * @updated 2026-06-09
+   * @knowledge 2026-01-31
    * @context 1,000,000 tokens
    * @maxOutput 128,000 tokens
    * @modalities text, image/jpeg, image/png, image/gif, image/webp, application/pdf -> text
@@ -99,7 +100,7 @@ export type AnthropicLanguageModelOptionsByModel = {
    * @context 1,000,000 tokens
    * @maxOutput 128,000 tokens
    * @modalities text, image/jpeg, image/png, image/gif, image/webp, application/pdf -> text
-   * @reasoning effort `low`, `medium`, `high`, `xhigh`, `max`
+   * @reasoning effort `low`, `medium`, `high`, `xhigh`, `max` (default effort `high`)
    */
   'claude-fable-5-2': Messages_7d935ff2;
   /**
@@ -112,7 +113,7 @@ export type AnthropicLanguageModelOptionsByModel = {
    * @context 200,000 tokens
    * @maxOutput 64,000 tokens
    * @modalities text, image/jpeg, image/png, image/gif, image/webp, application/pdf -> text
-   * @reasoning budget 1,024+ tokens
+   * @reasoning toggle, budget 1,024+ tokens
    */
   'claude-haiku-4-5': Messages_071eee39;
   /**
@@ -125,7 +126,7 @@ export type AnthropicLanguageModelOptionsByModel = {
    * @context 200,000 tokens
    * @maxOutput 64,000 tokens
    * @modalities text, image/jpeg, image/png, image/gif, image/webp, application/pdf -> text
-   * @reasoning budget 1,024+ tokens
+   * @reasoning toggle, budget 1,024+ tokens
    */
   'claude-haiku-4-5-20251001': Messages_071eee39;
   /**
@@ -138,33 +139,37 @@ export type AnthropicLanguageModelOptionsByModel = {
    * @context 1,000,000 tokens
    * @maxOutput 128,000 tokens
    * @modalities text, image/jpeg, image/png, image/gif, image/webp, application/pdf -> text
-   * @reasoning effort `low`, `medium`, `high`, `xhigh`, `max`, toggle
+   * @reasoning effort `low`, `medium`, `high`, `xhigh`, `max`, toggle (default effort `medium`)
    */
   'claude-haiku-5-5': Messages_3b6d679a;
   /**
    * @name Claude Opus 4.5 (latest)
    * @provider Anthropic
    * @family claude-opus
+   * @status deprecated
    * @released 2025-11-24
    * @updated 2025-11-24
    * @knowledge 2025-05
    * @context 200,000 tokens
    * @maxOutput 64,000 tokens
    * @modalities text, image/jpeg, image/png, image/gif, image/webp, application/pdf -> text
-   * @reasoning effort `low`, `medium`, `high`, budget 1,024+ tokens
+   * @reasoning effort `low`, `medium`, `high`, toggle, budget 1,024+ tokens
+   * @deprecated The model is deprecated (models.dev).
    */
   'claude-opus-4-5': Messages_2a0333b6;
   /**
    * @name Claude Opus 4.5
    * @provider Anthropic
    * @family claude-opus
+   * @status deprecated
    * @released 2025-11-24
-   * @updated 2025-11-01
+   * @updated 2025-11-24
    * @knowledge 2025-05
    * @context 200,000 tokens
    * @maxOutput 64,000 tokens
    * @modalities text, image/jpeg, image/png, image/gif, image/webp, application/pdf -> text
-   * @reasoning effort `low`, `medium`, `high`, budget 1,024+ tokens
+   * @reasoning effort `low`, `medium`, `high`, toggle, budget 1,024+ tokens
+   * @deprecated The model is deprecated (models.dev).
    */
   'claude-opus-4-5-20251101': Messages_2a0333b6;
   /**
@@ -177,7 +182,7 @@ export type AnthropicLanguageModelOptionsByModel = {
    * @context 1,000,000 tokens
    * @maxOutput 128,000 tokens
    * @modalities text, image/jpeg, image/png, image/gif, image/webp, application/pdf -> text
-   * @reasoning effort `low`, `medium`, `high`, `max`, budget 1,024+ tokens
+   * @reasoning effort `low`, `medium`, `high`, `max`, toggle, budget 1,024+ tokens
    */
   'claude-opus-4-6': Messages_e54a7b19;
   /**
@@ -190,7 +195,7 @@ export type AnthropicLanguageModelOptionsByModel = {
    * @context 1,000,000 tokens
    * @maxOutput 128,000 tokens
    * @modalities text, image/jpeg, image/png, image/gif, image/webp, application/pdf -> text
-   * @reasoning effort `low`, `medium`, `high`, `xhigh`, `max`
+   * @reasoning effort `low`, `medium`, `high`, `xhigh`, `max`, toggle
    */
   'claude-opus-4-7': Messages_3b6d679a;
   /**
@@ -203,7 +208,7 @@ export type AnthropicLanguageModelOptionsByModel = {
    * @context 1,000,000 tokens
    * @maxOutput 128,000 tokens
    * @modalities text, image/jpeg, image/png, image/gif, image/webp, application/pdf -> text
-   * @reasoning effort `low`, `medium`, `high`, `xhigh`, `max`
+   * @reasoning effort `low`, `medium`, `high`, `xhigh`, `max`, toggle
    */
   'claude-opus-4-8': Messages_7d935ff2;
   /**
@@ -216,7 +221,7 @@ export type AnthropicLanguageModelOptionsByModel = {
    * @context 1,000,000 tokens
    * @maxOutput 128,000 tokens
    * @modalities text, image/jpeg, image/png, image/gif, image/webp, application/pdf -> text
-   * @reasoning effort `low`, `medium`, `high`, `xhigh`, `max`
+   * @reasoning effort `low`, `medium`, `high`, `xhigh`, `max`, toggle
    */
   'claude-opus-5': Messages_7d935ff2;
   /**
@@ -229,7 +234,7 @@ export type AnthropicLanguageModelOptionsByModel = {
    * @context 1,000,000 tokens
    * @maxOutput 128,000 tokens
    * @modalities text, image/jpeg, image/png, image/gif, image/webp, application/pdf -> text
-   * @reasoning effort `low`, `medium`, `high`, `xhigh`, `max`
+   * @reasoning effort `low`, `medium`, `high`, `xhigh`, `max` (default effort `medium`)
    */
   'claude-opus-5-5': Messages_7d935ff2;
   /**
@@ -239,11 +244,11 @@ export type AnthropicLanguageModelOptionsByModel = {
    * @status deprecated
    * @released 2025-09-29
    * @updated 2025-09-29
-   * @knowledge 2025-07-31
+   * @knowledge 2025-01-31
    * @context 200,000 tokens
    * @maxOutput 64,000 tokens
    * @modalities text, image/jpeg, image/png, image/gif, image/webp, application/pdf -> text
-   * @reasoning budget 1,024+ tokens
+   * @reasoning toggle, budget 1,024+ tokens
    * @deprecated The model is deprecated (models.dev).
    */
   'claude-sonnet-4-5': Messages_071eee39;
@@ -254,11 +259,11 @@ export type AnthropicLanguageModelOptionsByModel = {
    * @status deprecated
    * @released 2025-09-29
    * @updated 2025-09-29
-   * @knowledge 2025-07-31
+   * @knowledge 2025-01-31
    * @context 200,000 tokens
    * @maxOutput 64,000 tokens
    * @modalities text, image/jpeg, image/png, image/gif, image/webp, application/pdf -> text
-   * @reasoning budget 1,024+ tokens
+   * @reasoning toggle, budget 1,024+ tokens
    * @deprecated The model is deprecated (models.dev).
    */
   'claude-sonnet-4-5-20250929': Messages_071eee39;
@@ -272,7 +277,7 @@ export type AnthropicLanguageModelOptionsByModel = {
    * @context 1,000,000 tokens
    * @maxOutput 128,000 tokens
    * @modalities text, image/jpeg, image/png, image/gif, image/webp, application/pdf -> text
-   * @reasoning effort `low`, `medium`, `high`, `max`, budget 1,024+ tokens
+   * @reasoning effort `low`, `medium`, `high`, `max`, toggle, budget 1,024+ tokens
    */
   'claude-sonnet-4-6': Messages_e54a7b19;
   /**
@@ -298,7 +303,7 @@ export type AnthropicLanguageModelOptionsByModel = {
    * @context 1,000,000 tokens
    * @maxOutput 128,000 tokens
    * @modalities text, image/jpeg, image/png, image/gif, image/webp, application/pdf -> text
-   * @reasoning effort `low`, `medium`, `high`, `xhigh`, `max`
+   * @reasoning effort `low`, `medium`, `high`, `xhigh`, `max` (default effort `high`)
    */
   'claude-sonnet-5-5': Messages_3b6d679a;
 };

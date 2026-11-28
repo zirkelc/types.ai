@@ -7,6 +7,7 @@ import type { Model as ModelShape } from '../../../core/types';
  * @name GPT-5.3 Codex
  * @provider OpenAI
  * @family gpt-codex
+ * @status deprecated
  * @released 2026-02-05
  * @updated 2026-02-05
  * @knowledge 2025-08-31
@@ -15,6 +16,7 @@ import type { Model as ModelShape } from '../../../core/types';
  * @maxOutput 128,000 tokens
  * @modalities text, image/jpeg, image/png, image/gif, image/webp, application/pdf -> text
  * @reasoning effort `none`, `low`, `medium`, `high`, `xhigh`
+ * @deprecated The model is deprecated (models.dev).
  */
 export const model = {
   api: {
@@ -54,6 +56,7 @@ export const model = {
   name: 'GPT-5.3 Codex',
   open_weights: false,
   release_date: '2026-02-05',
+  status: 'deprecated',
   type: 'chat',
 } as const satisfies ModelShape;
 

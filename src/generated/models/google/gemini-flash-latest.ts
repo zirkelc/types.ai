@@ -7,13 +7,12 @@ import type { Model as ModelShape } from '../../../core/types';
  * @name Gemini Flash Latest
  * @provider Google
  * @family gemini-flash
- * @released 2026-08-13
- * @updated 2026-08-13
- * @knowledge 2026-03
+ * @released 2026-09-02
+ * @updated 2026-09-02
  * @context 1,048,576 tokens
  * @maxOutput 65,536 tokens
  * @modalities text, image/png, image/jpeg, image/webp, image/heic, image/heif, video/mp4, video/mpeg, video/mov, video/avi, video/x-flv, video/mpg, video/webm, video/wmv, video/3gpp, audio/wav, audio/mp3, audio/aiff, audio/aac, audio/ogg, audio/flac, audio/mpeg, audio/m4a, audio/l16, audio/opus, audio/alaw, audio/mulaw, audio/webm, application/pdf -> text
- * @reasoning effort `low`, `medium`, `high`
+ * @reasoning effort `low`, `medium`, `high` (default effort `medium`)
  */
 export const model = {
   api: {
@@ -37,9 +36,14 @@ export const model = {
     },
   },
   capabilities: {
-    cache: { explicit: true, implicit: true },
+    cache: { explicit: true, implicit: { min_tokens: 4096 } },
     effort_updates: false,
-    reasoning: { effort: ['low', 'medium', 'high'], supported: true },
+    reasoning: {
+      default: { type: 'effort', value: 'medium' },
+      effort: ['low', 'medium', 'high'],
+      supported: true,
+    },
+    service_tier: ['flex', 'priority'],
     structured_output: true,
     system_updates: false,
     temperature: true,
@@ -49,8 +53,7 @@ export const model = {
   },
   family: 'gemini-flash',
   id: 'gemini-flash-latest',
-  knowledge: '2026-03',
-  last_updated: '2026-08-13',
+  last_updated: '2026-09-02',
   limit: { context: 1048576, output: 65536 },
   modalities: {
     input: [
@@ -88,7 +91,7 @@ export const model = {
   },
   name: 'Gemini Flash Latest',
   open_weights: false,
-  release_date: '2026-08-13',
+  release_date: '2026-09-02',
   type: 'chat',
 } as const satisfies ModelShape;
 

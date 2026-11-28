@@ -7,8 +7,8 @@ import type { Model as ModelShape } from '../../../core/types';
  * @name Gemini 2.5 Flash-Lite
  * @provider Google
  * @family gemini-flash-lite
- * @released 2025-06-17
- * @updated 2025-06-17
+ * @released 2025-07-22
+ * @updated 2025-07-22
  * @knowledge 2025-01
  * @context 1,048,576 tokens
  * @maxOutput 65,536 tokens
@@ -56,7 +56,7 @@ export const model = {
   family: 'gemini-flash-lite',
   id: 'gemini-2.5-flash-lite',
   knowledge: '2025-01',
-  last_updated: '2025-06-17',
+  last_updated: '2025-07-22',
   limit: { context: 1048576, output: 65536 },
   modalities: {
     input: [
@@ -94,7 +94,7 @@ export const model = {
   },
   name: 'Gemini 2.5 Flash-Lite',
   open_weights: false,
-  release_date: '2025-06-17',
+  release_date: '2025-07-22',
   type: 'chat',
 } as const satisfies ModelShape;
 

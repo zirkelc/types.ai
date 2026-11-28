@@ -7,6 +7,7 @@ import type { Model as ModelShape } from '../../../core/types';
  * @name GPT-5.4 nano
  * @provider OpenAI
  * @family gpt-nano
+ * @status deprecated
  * @released 2026-03-17
  * @updated 2026-03-17
  * @knowledge 2025-08-31
@@ -15,6 +16,7 @@ import type { Model as ModelShape } from '../../../core/types';
  * @maxOutput 128,000 tokens
  * @modalities text, image/jpeg, image/png, image/gif, image/webp -> text
  * @reasoning effort `none`, `low`, `medium`, `high`, `xhigh`
+ * @deprecated The model is deprecated (models.dev).
  */
 export const model = {
   api: {
@@ -65,6 +67,7 @@ export const model = {
   name: 'GPT-5.4 nano',
   open_weights: false,
   release_date: '2026-03-17',
+  status: 'deprecated',
   type: 'chat',
 } as const satisfies ModelShape;
 
